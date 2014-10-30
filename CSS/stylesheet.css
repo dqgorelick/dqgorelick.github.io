@@ -2,27 +2,29 @@
 	-webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 html{
-	background-color: #888;
+	background-color: #404041;
+	background-image:url("../photos/backdrop2.png");
+	background-size:100%;
+	background-repeat: none;
 }
 
-#toolbar{
-	width:100%;
-	position:absolute;
-	height:px;
-	background-color:#ddd;
-	top:0;
-	left:0;
+body{
+	width:850px;
+	margin:auto;
 }
-
-#upperdiv p{
-	font-family: 'Ubuntu', sans-serif;
+#upperdiv{
+	margin:auto;
 	text-align: center;
-	margin-bottom: 0px;
-	font-size:40px;
+	max-width:850px;
+}
+
+#billboard{
+	width: 80%;
+	height: auto;
+	max-width:700px;
 }
 
 #lowerdiv{
@@ -30,182 +32,7 @@ html{
 	max-width:600px;
 	height:600px;
 	margin:auto;
-}
-
-.triplets{
-	position:absolute;
-	width:200px;
-	height:50px;
-	text-align: center;
-	float:left;
-	margin-top:-8px;
-	font-size:22px;
-	font-family: 'Ubuntu', sans-serif;
-}
-
-#music{
-	margin-left:200px;
-}
-
-.image1{
-	width: 190px;
-	height: auto;
-	float: left;
-	margin-top: -5px;
-}
-.image2{
-	width: 190px;
-	height: auto;
-	float: left;
-}
-
-#instalink{
-	margin-top: -13px;
-}
-.coloring{
-	width:100px;
-	height: 70px;
-	float: left;
-	margin:15px;
-	border-radius: 15px;
-}
-
-.coloring p{
-	font-size:16px;
-}
-
-#color1{
-	background-color: #6EABDA;
-}
-#color2{
-	background-color: #305D8A;
-}
-#color3{
-	background-color: #AAAAAA;
-}
-#color4{
-	background-color: #151515;
-	color:#AAAAAA;
-}
-#musicdesc{
-	float:right;
-	font-size:20px;
-}
-
-
-#design{
-	margin-left:400px;
-}
-
-.extra{
-	float: left;
-	width: 150px;
-	margin-left:30px;
-	text-align: center;
-}
-.extra:nth-child(1){
-	margin-left:0;
-}
-
-.extra p{
-	font-size:16px;
-	margin-top:10px;
-	padding:10px;
-}
-
-.extrapic{
-	text-align: center;
-	width:100px;
-	height:auto;
-}
-#dropdown1, #dropdown2, #dropdown3{
-	position:absolute;
-	width:600px;
-	height:270px;
-	margin-top:50px;
-	padding:40px;
-	font-size:30px;
-	vertical-align: center;
-}
-#dropdown1 p{
-	padding-top: 40px;
-}
-
-#dropdown2 p{
-	padding-top:15px;
-}
-#dropdown1 a, #dropdown2 a, #dropdown3 a{
-	color:#488;
-	text-decoration:none;
-
-}
-#dropdown1 a:hover , #dropdown2 a:hover, #dropdown3 a:hover{
-	color:#eee;
-}
-#dropdown1 a:active , #dropdown2 a:active, #dropdown3 a:active{
-	color:#fff;
-}
-
-.dropdown{
-	text-align:center;
-	vertical-align: center;
-	
-}
-#backdropmain{
-	position:absolute;
-	width:600px;
-	height:270px;
-	margin-top:50px;
-	background-color:#eee;
-	opacity:0.5;
-	border-bottom-right-radius:25px;
-	border-bottom-left-radius: 25px;
-	border-top-right-radius: 25px;
-}
-#backdrop1{
-	position:absolute;
-	width:200px;
-	height:50px;
-	float:left;
-	background-color:#eee;
-	opacity:0.5;
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
-}
-#backdrop2{
-	position:absolute;
-	width:200px;
-	height:50px;
-	float:left;
-	margin-left:200px;
-	background-color:#eee;
-	opacity:0.5;
-	display:none;
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
-}
-#backdrop3{
-	position:absolute;
-	width:200px;
-	height:50px;
-	float:left;
-	margin-left:400px;
-	background-color:#eee;
-	opacity:0.5;
-	display:none;
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
-}
-/*****************************************************
-Changing Parts
-*****************************************************/
-#dropdown1{
-}
-#dropdown2{
-	display:none;
-}
-#dropdown3{
-	display:none;
+	color:#ddd;
 }
 
 /*****************************************************
@@ -247,14 +74,10 @@ footer p:nth-child(4){
 
 @media screen and (min-width:1200px){
 	html{
-	background-image:url("../photos/poster2.png");
-	background-size:cover;
 	}
 }
 
 @media screen and (max-width:900px){
 	html{
-	background-image:url("../photos/poster3.png");
-	background-size:cover;
 	}
 }
