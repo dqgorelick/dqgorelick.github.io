@@ -6,8 +6,7 @@
 }
 
 html{
-	background-image:url("../photos/poster2.png");
-	background-size:cover;
+	background-color: #888;
 }
 
 #toolbar{
