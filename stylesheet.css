@@ -17,6 +17,7 @@ body{
 	padding:1em;
 	margin:0 10%;
 	font-size: 40px;
+	font-family: 'PT Serif', serif;
 }
 span.unclickable:hover 
 { 
