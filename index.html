@@ -1,24 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>PHO Arcade</title>
-	<meta charset="utf-8">
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link type="text/css" rel="stylesheet" href="CSS/normalize.css">
-	<link type="text/css" rel="stylesheet" href="CSS/stylesheet.css">
-</head>
-<body>
-	<div id="upperdiv">
-		<img src = "photos/billboard.png" id = "billboard">
-	</div>
-	<div id="lowerdiv">
-	<p>info info info</p>
-	</div>
-</body>
-<footer>
-		<p>Boston University Photonics Arcade Student Group</p>
-</footer>
-	<script src="java/jquery1111.js"></script>
-	<script type="text/javascript" src="java/main.js"></script>
+<html lang="en">
+	<head>
+		<meta content = "text/html"; charset = "UTF-8"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- IE Compatability --> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile --> 
+		<title> DQG </title>
+		<link rel="stylesheet" type = "text/css" href = "normalize.css" >
+		<link rel="stylesheet" type = "text/css" href = "stylesheet.css" >
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link rel="icon" href = "favicon.png"> <!-- favicon --> 
+	</head>
+  <body>
+  		<div id = "upper"> 
+  			<img class = "dqgLogo" alt = "dqg" src = "dqgLogo.png">
+  		</div>
+  		<div id="skrollr-body">
+  			<!--Parallax example -->
+			<ul id="nav" data-0="position:static;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
+				<li>Mouse over this way -></li>
+				<!--<p data-0="position:static;left:10%" data-top-top="position:fixed;left:50%;" data-edge-strategy="set">Slide this way...</p>-->
+			
+			</ul>
+			<!--placeholder div to prevent jumpy content when nav gets pinned-->
+			<div style="padding:1em;" data-0="display:none;" data-top-top="display:block;" data-anchor-target="#nav" data-edge-strategy="set">&nbsp;</div>
+		</div>
+		<section>
+		<div id="icon-wrapper">
+		  <a href="map.html">
+			<div class="icons">
+			  <span onclick='return false;' class = "unclickable"> <div class="icon-slide-container">
+				<img class="slide-icon"  alt="The Kite Map Logo" height="100" src="panel1.png">
+				</div> </span>
+			  </div>
+			</a>
+	
+			<a href="kite-map.php">
+			  <div class="icons2">
+				<div class="icon-slide-container">
+				  <img class="slide-icon"  alt="The Kite Map Logo" height="100" src="panel2.png">
+				  </div>
+				</div>
+			  </a>
+	  
+			  <a href="location.php">
+				<div class="icons3">
+				  <div class="icon-slide-container">
+					<img class="slide-icon"  alt="The Kite Map Logo" height="100" src="panel3.png">
+					</div>
+				  </div>
+				</a>
+		
+				<a href="feedback.html">
+				  <div class="icons4">
+					<div class="icon-slide-container">
+					  <img class="slide-icon"  alt="The Kite Map Logo" height="100" src="panel4.png">
+					  </div>
+					</div>
+				  </a>
+			</div>
+		</section>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./dist/skrollr.min.js"></script>
+			<script type="text/javascript">
+		window.onload = function() {
+			skrollr.init({
+				forceHeight: false
+			});
+		}
+		</script>
+		
+  </body>
 </html>
-
