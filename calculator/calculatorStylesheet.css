@@ -3,7 +3,7 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   font: bold 20px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', Arial, sans-serif;
 /*  border:2px dotted blue;*/
 }
 html {
