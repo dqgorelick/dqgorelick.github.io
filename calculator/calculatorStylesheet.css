@@ -29,16 +29,31 @@ body{
 	float:left;
 }
 
+
+
 .inputbar{
 	padding-top:25px;
 	margin-top:25px;
 	margin-left:25px;
 }
 
-#inputbox{
+.inputbox{
  	white-space:nowrap;
  	float:right;
 }
+
+.inputbox.starting-text::after{
+	content: "enter an equation";
+	font-size: 15pt;
+	color: #AAAAAA;
+}
+
+.inputbox.cleared-text::after{
+	content: "cleared";
+	font-size: 15pt;
+	color: #AAAAAA;
+}
+
 #inputcontainer{
 	width:280px;
 	background:#444444;

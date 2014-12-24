@@ -19,8 +19,7 @@ $(document).ready(function(){
 	var operators = ['+','-','*','/'];
 	var decimal = true;
 	//if decimal is true: can add decimal to number
-	var calcDisplay = document.querySelector('#inputbox');
-	var preset = document.getElementById("inputbox").innerHTML;
+	var calcDisplay = document.querySelector('.inputbox');
 	var lastChar;
 	var keyCommands = {
 		'C': 'C',
@@ -87,16 +86,22 @@ $(document).ready(function(){
 	var updateDisplay = function (newInput) {
 		if (newInput !== calcDisplay.innerHTML) {
 			calcDisplay.innerHTML = newInput;
+			$(".inputbox").removeClass("cleared-text");
+			$(".inputbox.starting-text").removeClass("starting-text");
+			if(calcDisplay.innerHTML === ''){
+				$(".inputbox").addClass("cleared-text");
+			}
 		}
 	}
 
 	var evaluate = function (btn, inputVal){
-		var eq = inputVal.innerHTML !== preset ? inputVal.innerHTML : '';
+		var eq = inputVal.innerHTML;
+		console.log(btn);
 		lastChar = eq.slice(-1);
 		if (btn === 'C'){
 			eq = '';
 			decimal = true;
-			return preset;
+			return eq;
 		}
 		if (btn === '=') {
 			if (lastChar == '.') {
@@ -129,14 +134,16 @@ $(document).ready(function(){
 			if (!(isOperator(lastChar)) && eq !== ''){
 				return eq += btn;
 			}
-			if (isOperator(lastChar) || lastChar === '.'){
+			if (isOperator(lastChar)){
 				eq = eq.replace(/.$/,'');
 				return eq+btn;
+			}
+			if (lastChar === '.'){
+				return eq + '0' + btn;
 			}
 			else return eq;
 		}
 		else {
-			console.log("a number was pressed!")
 			return eq += btn;
 		}
 	}
