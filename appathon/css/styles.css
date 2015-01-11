@@ -163,6 +163,7 @@ HOME PAGE
 #home h3{
 	font-size:24px;
 }
+
 .date{
    font-family:"Open Sans";
    font-weight: 300;
@@ -479,7 +480,7 @@ SOCIAL MEDIA LINKS
 MEDIA QUERY
 *************************/
 
-@media (max-width: 1050px) {
+@media screen and (max-width: 1050px) {
  	header,#sidebar {
 		width: 100%;
 		height: 50px;
@@ -581,9 +582,65 @@ MEDIA QUERY
 	.fullpage{
 		min-height:800px;
 		overflow:hidden;
+		padding:0;
+		top:0;
 	}
-	.wrapper{
+	#GAI-logo{
+		display:none;
+	}
 
+	.wrapper{
+		padding:0;
+		padding-top:50px;
+		top:0;
+		transform: translateY(0);
+	}
+
+	.ticketBlue, .ticketGreen{
+		width:200px;
+		height:auto;
+		top:60px;
+	}
+
+	#tickets::after{
+		top:150px;
+	}
+
+	#about{
+		padding-top:200px;
+	}
+
+	#about h2 a{
+		padding-top:5px;
+	}
+
+	#about h3, .heading{
+		margin:0;
+		padding-top:5px;
+		font-size: 12px;
+	}
+
+	#schedule{
+	background: url('../img/slide3.jpg') 50% 0 no-repeat fixed;
+	z-index:3;
+	color: #fff;
+	background-size: cover;
+	line-height: 250%;
+	text-align: center;
+	}
+
+	#schedule table {
+		font-family:"Allerta";
+	   	font-weight: normal;
+	   	font-size: 13px;
+	  	margin: 5px 0;
+	 	padding: 0;
+	 	display: inline-block;
+	}
+
+	#schedule table td{
+		text-align: left;
+		padding-left:40px;
 	}
 
 }
