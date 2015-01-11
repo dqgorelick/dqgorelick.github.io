@@ -478,15 +478,8 @@ SOCIAL MEDIA LINKS
 /*************************
 MEDIA QUERY
 *************************/
-@media (min-width:1280px){
-	iframe{
-		width:"800"; 
-		height:"450";
-	}
 
-}
-
-@media all and (max-width: 1050px) {
+@media (max-width: 1050px) {
  	header,#sidebar {
 		width: 100%;
 		height: 50px;
@@ -582,4 +575,15 @@ MEDIA QUERY
 	#nav li a:hover {
 		opacity:1;
 	}
+}
+
+@media screen and (max-width: 500px) {
+	.fullpage{
+		min-height:800px;
+		overflow:hidden;
+	}
+	.wrapper{
+
+	}
+
 }
