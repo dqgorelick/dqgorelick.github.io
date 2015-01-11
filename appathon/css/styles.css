@@ -1,0 +1,585 @@
+/*************************
+GENERAL STYLING
+*************************/
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+    font-family:"Allerta";
+	font-weight:normal;
+	font-size: 55px;
+	text-align: center;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+   font-family:"Allerta";
+   font-weight: 300;
+   font-size: 40px;
+   text-align: center;
+   margin: 0;
+   padding: 0 0 40px 0;
+}
+
+h3 {
+   font-family: "Open Sans";
+   font-weight: normal;
+   font-size: 16px;
+   text-align: center;
+   margin: 5px 0;
+   padding: 0;
+}
+
+ul { 
+	list-style-type: none;
+	padding:0;
+}
+.center { margin: 0 auto; }
+.content{ margin: 0 auto; width: 960px; }
+
+.fullpage{
+	height:100vh;
+	position:relative;
+	min-height: 600px;
+	width:100%;
+	z-index:2;
+	overflow-x:hidden;
+}
+
+.bottom-arrow{
+	position:absolute;
+	bottom:25px;
+	margin: auto;
+	left:0; 
+	right:0;
+	width:0;
+	height:0;
+	border-left:40px solid transparent;
+	border-right:40px solid transparent;
+	border-top:30px solid #00dd8c;
+	opacity:0.9;
+	z-index:6;
+}
+
+.wrapper{
+	margin: 0 15% 0 15%;
+ 	position: absolute;
+  	right: 0; left: 0;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	z-index:4;
+}
+
+
+/*************************
+HEADER, SIDEBAR 
+*************************/
+
+header, #sidebar {
+	width: 175px;
+	height: 475px;
+	position: fixed;
+	margin:auto;
+	top:10%; left:2.5%;
+	z-index: 7;
+	border-radius: 87.5px;
+}
+#sidebar{
+	background-color:#00DD8C;
+	z-index: 6;
+}
+
+#fillbar{
+	position:fixed;
+	width:175px;
+	height:175px;
+	min-height: 175px;
+	top:10%; left:2.5%;
+	background-color:#07C2DB;
+	border-radius: 87.5px;
+	z-index:7;
+}
+
+#logo{
+	width:175px;
+	position:relative;
+	z-index:8;
+
+}
+
+#nav ul li:first-child{
+	display:none;
+}
+#nav li a{
+	text-decoration:none;
+	font-size:20px;
+	color:#fff;
+	font-family:"Allerta";
+	font-weight: bold;
+	opacity:0.8;
+}
+
+#nav li{
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:25px;
+}
+
+#nav li a.active { 
+	border-bottom: 2px solid #ffffff;
+	opacity:1;
+}
+
+#nav li a:hover {
+	opacity:1;
+}
+
+/*************************
+HOME PAGE
+*************************/
+
+#home{
+	background:url('../img/slide1.jpg') 50% 0 no-repeat fixed;
+	color: #fff;
+	margin: 0;
+	background-size: cover;
+	text-align: center;
+}
+
+.home-btn{
+	display:hidden;
+}
+
+#home h1{
+	font-size:36pt;
+	padding-bottom:10px;
+}
+
+#home h3{
+	font-size:24px;
+}
+.date{
+   font-family:"Open Sans";
+   font-weight: 300;
+   font-size: 32pt;
+   text-align: center;
+}
+
+.js-video{
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*************************
+INFO PAGE
+*************************/
+
+#info{
+	height:150vh;
+	overflow:hidden;
+}
+
+.halfpage{
+	height:50vh;
+	position:relative;
+	border:2px red dotted;
+}
+
+.ticket{
+	position:absolute;
+	width:400px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	margin-top:80px;
+	z-index:10;
+}
+
+#GAI-logo{
+	position:absolute;
+	z-index:1;
+	width:1200px;
+	margin:auto;
+	height:auto;
+	right:-700px; 
+	left:0;
+	top:500px;
+	opacity:0.3;
+/*	display:none;*/
+}
+
+.ticketBlue{
+	top:50px;
+	left:60px;
+    -ms-transform: rotate(15deg) translate(15%,10%); 
+    -webkit-transform: rotate(15deg) translate(15%,10%); 
+    transform: rotate(15deg) translate(15%,10%);
+}
+
+#tickets::after{
+	content:"Eventbrite site registration";
+	position:relative;
+	display:block;
+	text-align:center;
+	top:280px;
+	right:100px;
+	font-family: "Open Sans";
+   font-weight: normal;
+   font-size: 16px;
+}
+
+.ticketGreen{
+	top:30px;
+    -ms-transform: rotate(-7deg); 
+    -webkit-transform: rotate(-7deg); 
+    transform: rotate(-7deg);
+}
+
+.img-zoom{
+	width: 400px;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+}
+
+.transition {
+    -webkit-transform: scale(1); 
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+#tickets{
+	z-index:8;
+
+}
+#about{
+	position:relative;
+	color: #333333;
+	margin: 0 15% 0 15%;
+	padding-top:375px;
+	z-index:8;
+}
+
+#about h2 a{
+	padding-top:50px;
+	text-decoration:none;
+	color: #333;
+}
+
+#about h3{
+	margin:0;
+	padding-top:30px;
+}
+
+#about .heading {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#about .col .col-1 { float:left; width:28%; margin-left: 1% }
+#about .col .col-2 { float:left; width:32%; margin-left: 4% }
+#about .col .col-3 { float:right; width:34%; margin-left: 1% }
+
+/*************************
+SCHEDULE 
+*************************/
+
+#schedule{
+	background: url('../img/slide3.jpg') 50% 0 no-repeat fixed;
+	z-index:3;
+	color: #fff;
+	background-size: cover;
+	line-height: 250%;
+	text-align: center;
+}
+
+#schedule table {
+	font-family:"Allerta";
+   	font-weight: normal;
+   	font-size: 20px;
+  	margin: 5px 0;
+ 	padding: 0;
+ 	display: inline-block;
+}
+
+#schedule table td{
+	text-align: left;
+	padding-left:40px;
+}
+
+#spinning{
+}
+
+.clock{
+	width:800px;
+	height:auto;
+	position:absolute;
+	right:-400px;
+	margin-top:200px;
+	opacity:0.6;
+	display:none;
+}
+#clock-cover{
+	width:800px;
+	height:800px;
+	display:none;
+}
+
+/*************************
+SPONSORS
+*************************/
+
+#sponsors{
+	background-color: #FFF;
+	color: #333333;
+	text-align: center;
+	width:100%;
+}
+
+#sponsors a {
+	text-decoration: none;
+	color:#05B8CC;
+}
+
+#sponsors a .hariri{
+	text-decoration: none;
+	color:#6F4242;
+}
+
+#sponsors a .epic{
+	text-decoration: none;
+	color:#D80000;
+}
+
+#sponsors a .undergradfee{
+	text-decoration: none;
+	color:#000;
+}
+
+#sponsors a:visited .hariri{ text-decoration: none; color:#6F4242; }
+
+#sponsors a:visited .epic{ text-decoration: none; color:#D80000; }
+
+#sponsors a:visited .gai{ text-decoration: none; color:#05B8CC; }
+
+#sponsors a:visited .undergradfee{ text-decoration: none; color:#000; }
+
+.epic {
+	font-family: "Open Sans";
+	font-size: 25px;
+	font-weight: 300;
+}
+
+.undergradfee {
+	font-family: "Open Sans";
+	font-size: 25px;
+	font-weight: 300;
+}
+
+
+.hariri {
+	font-family: "Open Sans";
+	font-size: 25px;
+	font-weight: 300;
+}
+
+.terrapin{
+	width:230px;
+}
+
+.silly{
+	width:180px;
+}
+.gai {
+	font-family: "Open Sans";
+	font-size: 25px;
+	font-weight: 300;
+}
+
+.col .col-1-2 { float:left; width:30%; padding: 0 0 0 20%; height: 120px;}
+.col .col-2-2 { float:left; width:30%; padding: 0 20% 0 0; height: 120px;}
+
+/*************************
+FREE STUFF PAGE
+*************************/
+
+#freestuff{
+	background: url(../img/slide5.jpg) 50% 0 no-repeat fixed;
+	margin: 0 auto;
+	color: #fff;
+	background-size: cover;
+}
+
+#freestuff span {
+	font-size:20px;
+}
+
+#freestuff .wrapper{
+	text-align:center;
+	position:relative;
+}
+
+.prizes{
+	width:200px;
+	display:inline-block;
+	border-left:4px solid white;
+	border-right:4px solid white;
+	margin-bottom:60px;
+}
+
+.prizes h3{
+	font-family:"Open Sans";
+	padding-bottom:20px;
+}
+
+.prizecol1, .prizecol3, .prizecol5{
+	border-bottom:10px solid white;
+	padding-top:20px;
+	position:relative;
+	background-color:#07c2db;
+}
+
+.prizecol2, .prizecol4, .prizecol6{
+	height:150px;
+	padding-top:35px;
+	background-color:#00dd8c;
+}
+
+
+
+
+/*************************
+SOCIAL MEDIA LINKS
+*************************/
+
+#freestuff .bottom{
+	position:absolute;
+	bottom:10px; left:0; right:0;
+	text-align: center;
+}
+
+.social-links{
+	height:25px;
+	padding:0 10px 0 10px;
+}
+
+
+
+/*************************
+MEDIA QUERY
+*************************/
+@media (min-width:1280px){
+	iframe{
+		width:"800"; 
+		height:"450";
+	}
+
+}
+
+@media all and (max-width: 1050px) {
+ 	header,#sidebar {
+		width: 100%;
+		height: 50px;
+		position: fixed;
+		z-index: 6;
+		top:0; left:0;
+		border-radius:0;
+	}
+	#logo{
+		position:absolute;
+		height:40px;
+		top:5px;
+		left:5px;
+		width:auto;
+		z-index:8;
+		display:none;
+	}
+	#sidebar{
+		background-color:#00DD8C;
+		z-index:4;
+	}
+
+
+	#fillbar{
+		display:none;
+	}
+
+
+	#home h1{
+		font-size:30pt;
+		padding-bottom:10px;
+	}
+	.date{
+		font-size:25pt;
+	}
+
+	.wrapper, #about{
+		margin:0 5% 0 5%;
+	}
+
+	#about h2{
+		font-size:30px;
+	}
+
+	#about .heading{
+		font-size:18px;
+		font-weight: normal;
+	}
+	.col .col-1-2 { float:left; width:40%; padding: 0 0 0 5%; height: 120px;}
+	.col .col-2-2 { float:left; width:40%; padding: 0 5% 0 0; height: 120px;}
+
+	.prizes{
+		width:150px;
+	}
+
+	#freestuff .wrapper{
+		min-width:500px;
+	}
+
+	#nav ul{
+		width:100%;
+		text-align:center;
+	}
+
+	#nav ul li:first-child{
+		display:inline-block;
+	}
+
+	#nav li a{
+		text-decoration:none;
+		font-size:13px;
+		color:#fff;
+		font-family:"Allerta";
+		font-weight: bold;
+		opacity:0.8;
+		top:0;
+	}
+
+	#nav li{
+		position:relative;
+		display:inline-block;
+		z-index:5;
+		padding:0;
+		margin:0;
+		padding-left:15px;
+	}
+
+	#nav li a.active { 
+		border-bottom: 2px solid #ffffff;
+		opacity:1;
+	}
+
+	#nav li a:hover {
+		opacity:1;
+	}
+}
