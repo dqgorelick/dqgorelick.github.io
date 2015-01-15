@@ -1,0 +1,37 @@
+
+
+@media only screen and (max-width: 1300px) {
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+}
+
+@media only screen and (max-width: 840px) {
+ 
+}
+                        
+@media only screen and (max-width: 650px) {
+
+}
+                                  
+@media only screen and (max-width: 570px) {
+
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) 
+{
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) 
+{
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) 
+{ 
+}

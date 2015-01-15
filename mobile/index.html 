@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Global Appathon 2015</title>
+	<link rel="stylesheet" type = "text/css" href = "css/normalize.css">
+	<link rel="stylesheet" type="text/css"  href="css/stylesheet.css">
+	
+</head>
+<body>
+<p>Hello you are on mobile</p>
+</body>
+</html>	
