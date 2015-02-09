@@ -70,6 +70,9 @@ $(document).ready(function(){
 	for(var i=0; i < keys.length; i++){
 		keys[i].onclick = function(e) {
 			var btnVal = this.innerHTML;
+			if (btnVal === '÷'){
+				btnVal ='/';
+			}
 			inputHandler(btnVal);
 			e.preventDefault();
 		}
@@ -104,6 +107,7 @@ $(document).ready(function(){
 			return eq;
 		}
 		if (btn === '=') {
+
 			if (lastChar == '.') {
 				decimal = true;
 			} 

@@ -1,37 +1,67 @@
-
-
-@media only screen and (max-width: 1300px) {
-
+html{
+	/*background-color: #FAFFFF;*/
+	height:100%;
+	background-size: cover;
+	background: radial-gradient(circle, #fff 20%, #FAFFFF);
+}
+*{
+	font-family: 'BonvenoCF-Light', sans-serif;
 }
 
-@media only screen and (max-width: 1000px) {
-
+.logo{
+	margin:0 0 10px 0;
+	width:120px;
+	height:auto;
 }
 
-@media only screen and (max-width: 840px) {
- 
-}
-                        
-@media only screen and (max-width: 650px) {
-
-}
-                                  
-@media only screen and (max-width: 570px) {
-
+h1,h2,h3,p{
+	padding:0;
+	margin:0;
 }
 
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) 
-{
+.wrapper{
+	z-index:2;
+	padding:20px 0 20px 0;
+	width:400px;
+	border:solid;
+	border-color: #333333;
+	border-width:2px;
+	border-radius:25px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform:  translate(-50%,-50%) ;
+	-moz-transform:     translate(-50%,-50%) ;
+	-ms-transform:    	translate(-50%,-50%) ;
+	-o-transform:       translate(-50%,-50%) ;
+	transform:          translate(-50%,-50%) ;
+	text-align:center;
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) 
-{
+.wrapper h2{
+	color:#25AAE1;
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) 
-{ 
+.wrapper h3{
+	color:#333333;
+}
+
+.wrapper p{
+	color:#333333;
+}
+.wrapper a{
+	text-decoration: none;
+	color:#333333;
+}
+
+.contact li{
+	list-style: none
+}
+
+/*************************************
+FONTS
+**************************************/
+@font-face {
+  font-family: "BonvenoCF-Light";
+  src: url(../fonts/BonvenoCF-Light.otf) format("opentype");
 }

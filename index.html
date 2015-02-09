@@ -2,39 +2,34 @@
 <html lang="en">
 	<head>
 		<meta content = "text/html"; charset = "UTF-8"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<script>
-		if (document.location.search.indexOf("skipmobile") >= 0) {
-		document.cookie = "skipmobile=1";
-		}
-		else if ((document.location.hostname.match(/\.mobi$/) || screen.width < 699)
-		&& document.cookie.indexOf("skipmobile") == -1)
-		{
-		document.location = "mobile/index.html";
-		}
-		</script>
-
 		<title> DQG </title>
 		<link rel="stylesheet" type = "text/css" href = "css/normalize.css" >
 		<link rel="stylesheet" type = "text/css" href = "css/stylesheet.css" >
 		<link rel="icon" href = "favicon.png">
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 	</head>
-  <body>
-  		<div id = "upper"> 
-  			<img class = "dqgLogo" alt = "dqg" src = "dqgLogo.png">
-  		</div>
-  		<div>
-			<ul id="nav">
-				<li>Here are some projects I am working on</li>
-				<li><a href = "./calculator/calculator.html">JavaScript Calculator</a></li>
-				<li><a href = "./appathon/index.html">Global Appathon site</a></li>
-			
-			</ul>
+  	<body>
+  		<div class = "wrapper">
+	  		<div class="upper">
+	  			<img class = "logo" alt = "dqg" src = "img/dqgLogo.png">
+	  			<h2>DANIEL Q GORELICK</h2>
+	  			<h3>Boston, MA <br> developer/designer</h3>
+	  		</div>
+	  		<!-- <hr> -->
+  			<br>
+			<p>Some projects:</p>
+			<p><a href = "http://wikinauts.github.io">Wikinauts</a></p>
+			<p><a href = "./calculator/calculator.html">JS Calculator</a></p>
+			<p><a href = "http://globalappathon.org">Hackathon Site</a></p>
+			<br>
+			<div class="contact">
+				<p><a href = "mailto:dqgorelick@gmail.com">Email</a></p>
+				<p><a href = "http://github.com/dqgorelick">Github</a></p>
+				<p><a href = "http://www.linkedin.com/pub/daniel-gorelick/68/295/9a4/en">LinkedIn</a></p>
+			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		
   </body>
 </html>
 

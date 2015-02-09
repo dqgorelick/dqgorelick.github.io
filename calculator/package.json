@@ -1,0 +1,26 @@
+{
+  "name": "js-calculator",
+  "version": "0.9.0",
+  "description": "Simple and elegant calculator project",
+  "main": "calculator.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dqgorelick/JS_Calculator.git"
+  },
+  "keywords": [
+    "Calculator"
+  ],
+  "author": "Daniel Q Gorelick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dqgorelick/JS_Calculator/issues"
+  },
+  "homepage": "https://github.com/dqgorelick/JS_Calculator",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}
