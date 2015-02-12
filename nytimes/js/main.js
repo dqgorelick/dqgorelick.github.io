@@ -39,7 +39,6 @@ $(document).ready(function(){
 		year = (date.getFullYear() - random);
 		flash(year);
 	})
-	
 });//end of ready
 
 function flash(back){	
@@ -53,13 +52,13 @@ function flash(back){
 		day = "0"+day;
 	}
 	beginDate = (back)+month+(day);
-	endDate = (back)+month+(day+1);
+	endDate = (back)+month+(day);
 
 	urlDate = back + month + day;
 	console.log(urlDate);
 	//api call
-	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&sort=oldest&api-key=18db54dfa62f1e62a054c842b2f3da90:6:66888243";
-	url += '&end_date='+endDate+'&begin_date='+beginDate;
+	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&sort=newest&api-key=18db54dfa62f1e62a054c842b2f3da90:6:66888243";
+	url += '&end_date='+endDate;
 	$.getJSON(url,function(data){
 		console.log(data);
 		var HTMLresponse = '';
