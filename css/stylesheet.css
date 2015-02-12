@@ -5,7 +5,7 @@ html{
 	background: radial-gradient(circle, #fff 20%, #FAFFFF);
 }
 *{
-	font-family: 'BonvenoCF-Light', sans-serif;
+	font-family: 'Nunito', sans-serif;
 }
 
 .logo{
@@ -63,3 +63,4 @@ FONTS
   font-family: "BonvenoCF-Light";
   src: url(../fonts/BonvenoCF-Light.otf) format("opentype");
 }
+
