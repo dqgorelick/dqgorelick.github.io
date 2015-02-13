@@ -4,6 +4,7 @@ html{
 	background-size: cover;
 	background: radial-gradient(circle, #fff 20%, #FAFFFF);
 }
+
 *{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
@@ -20,12 +21,45 @@ h1,h2,h3,p{
 	margin:0;
 }
 
+.squid{
+	height:100%;
+	position:absolute;
+	width:100%;
+	top:0;
+/*	-webkit-transform:  translateY(-50%) ;
+	-moz-transform:     translateY(-50%) ;
+	-ms-transform:    	translateY(-50%) ;
+	-o-transform:       translateY(-50%) ;
+	transform:          translateY(-50%) ;*/
+	-webkit-transition: all 0.4s ease;
+	-webkit-backface-visibility: hidden;
+}
+
+.squid img{
+	margin-top:250px;
+	width:250px;
+	height:auto;
+}
+
+.squid:hover{
+	opacity:0;
+	z-index:1;
+}
+
+.teaser{
+	pointer-events: none;
+	font-size:12px;
+	color:#222222;
+	text-decoration:underline;
+	padding-top:10px;
+}
+
 .wrapper{
-	z-index:2;
+	z-index:1;
 	padding:20px 0 20px 0;
 	width:400px;
 	border:solid;
-	border-color: #333333;
+	border-color: #1A1A1A;
 	border-width:2px;
 	border-radius:25px;
 	position:absolute;
@@ -37,23 +71,30 @@ h1,h2,h3,p{
 	-o-transform:       translate(-50%,-50%) ;
 	transform:          translate(-50%,-50%) ;
 	text-align:center;
+	-webkit-transition: background-color 0.45s ease;
+	-webkit-backface-visibility: hidden;
+}
+
+.wrapper:hover{
+	background-color:#222222;
+	color:#FFFFFF;
 }
 
 .wrapper h2{
-	color:#25AAE1;
-}
-
-.wrapper h3{
-	color:#333333;
+	color:#00AEEF;
 }
 
 .wrapper p{
-	color:#333333;
 	font-size:18px;
 }
+
 .wrapper a{
 	text-decoration: none;
-	color:#333333;
+	color:#222222;
+}
+
+.wrapper:hover a, .wrapper:hover .teaser{
+	color:#FFFFFF;
 }
 
 .wrapper a:hover{
@@ -61,12 +102,20 @@ h1,h2,h3,p{
 }
 
 
-
-/*************************************
-FONTS
-**************************************/
-@font-face {
-  font-family: "BonvenoCF-Light";
-  src: url(../fonts/BonvenoCF-Light.otf) format("opentype");
+@media (min-width: 0px) and (max-width: 992px){
+	.wrapper a, .wrapper p, .wrapper h2, .wrapper h3{
+		color:#222222;
+	}
+	.wrapper:hover{
+		background-color:#FFFFFF;
+	}
+	.wrapper:hover a{
+		color:#222222;
+	}
+	.wrapper a:hover{
+		color:#25AAE1;
+	}
+	.teaser{
+		color:#FFFFFF;
+	}
 }
-

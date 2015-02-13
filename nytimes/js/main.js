@@ -59,7 +59,10 @@ function flash(back){
 	//api call
 	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&sort=newest&api-key=18db54dfa62f1e62a054c842b2f3da90:6:66888243";
 	url += '&end_date='+endDate;
-	$.getJSON(url,function(data){
+	data = {
+		hello:"this"
+	}
+	$.getJSON(url,data,function(data){
 		console.log(data);
 		var HTMLresponse = '';
 		for(var i = 0; i < data.response.docs.length; i++){
