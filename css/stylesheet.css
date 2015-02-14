@@ -75,10 +75,10 @@ h1,h2,h3,p{
 	-webkit-backface-visibility: hidden;
 }
 
-.wrapper:hover{
+/*.wrapper:hover{
 	background-color:#222222;
 	color:#FFFFFF;
-}
+}*/
 
 .wrapper h2{
 	color:#00AEEF;
@@ -92,10 +92,10 @@ h1,h2,h3,p{
 	text-decoration: none;
 	color:#222222;
 }
-
+/*
 .wrapper:hover a, .wrapper:hover .teaser{
 	color:#FFFFFF;
-}
+}*/
 
 .wrapper a:hover{
 	color:#25AAE1;
