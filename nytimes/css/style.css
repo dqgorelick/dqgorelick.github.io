@@ -5,7 +5,9 @@ html{
 }
 
 button{
-	margin:0 10px 0 10px;
+	margin:0 5px 0 5px;
+	font-size:14px;
+	/*background-color:#ffffff;*/
 }
 
 .wrapper{
@@ -17,7 +19,7 @@ button{
 	margin-top:40px;
 	margin-bottom:40px;
 	padding-top:40px;
-	padding-bottom:75px;
+	padding-bottom:0;
 	-webkit-box-shadow: 0px 2px 19px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 2px 19px 1px rgba(0,0,0,0.75);
 	box-shadow: 0px 2px 19px 1px rgba(0,0,0,0.75);
@@ -29,11 +31,25 @@ button{
 	margin-top:20px;
 }
 
-.date{
-	font-size:30px;
+.date h3{
+	font-size:25px;
+	padding-top:7px;
 	margin:0;
-	line-height: 10px
+	width:100%;
+	font-style:italic;
 }
+
+.photo{
+	width:50px;
+	height:auto;
+}
+
+.box{
+	border:solid black;
+	border-width:2px 0 2px 0;
+	margin-bottom:10px;
+}
+
 .logo{
 	width:200px;
 	height:auto;
@@ -50,6 +66,12 @@ button{
 .images{
 	max-width:300px;
 	height:auto;
+}
+
+.loading{
+	margin:0;
+	padding-bottom:50px;
+	display:none;
 }
 
 @media (min-width: 0px) and (max-width: 992px){
