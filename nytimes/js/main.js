@@ -164,7 +164,6 @@ function DayOfWeek(){
 			else{MDS=MDS-2}
 		}
 	}
-	// DOW = MDS
 	if (MDS % 7 == 0) {DOW = "Saturday"}
 	if (MDS % 7 == 1) {DOW = "Sunday"}
 	if (MDS % 7 == 2) {DOW = "Monday"}
