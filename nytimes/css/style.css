@@ -31,9 +31,12 @@ button{
 	margin-top:20px;
 }
 
+.date{
+	padding: 2px;
+}
+
 .date h3{
 	font-size:25px;
-	padding-top:7px;
 	margin:0;
 	width:100%;
 	font-style:italic;
