@@ -54,13 +54,13 @@
 			<div class="content">
 				<h1>Orator!~</h1><br>
 				<div id="mode">
-				  <button value="Teleprompter" onclick="displayOptions()" onclick="display_tele()">Teleprompter</button><br>
+				  <button value="Teleprompter" onclick="displayOptions();display_tele()">Teleprompter</button><br>
 					  <div id="tele-dropdown">
 					  	<input id="upload"></input>
-					  	<button onclick="copyText()">Upload</button>
+					  	<button onclick="copyText();next1();">Upload</button>
 					  	<p>Copy and paste your speech into the <br> input box and click upload!</p>
 					  </div>
-				  <button id="subs" value="Subtitles" onclick="display_subs()">Subtitles</button>
+				  <button id="subs" value="Subtitles" onclick="display_subs();next1()">Subtitles</button>
 				</div>
 			</div>
 		<button id="next1" class="next fp-controlArrow fp-next ">Click to continue!</button>
@@ -76,8 +76,9 @@
 			</div>
 			<h2>Click when ready to record</h2>
 			<div id="starting">
-				<button id="start_button" onclick="startButton(event)" class="fp-controlArrow fp-next "><img alt="Start" id="start_img" src="img/phone.png"></button>
+				<button id="start_button" onclick="startButton(event)"class="fp-controlArrow fp-next"><img alt="Start" id="start_img" src="img/phone.png"></button>
 			</div>
+			
 		</div>
 	</div>
 	<!-- SLIDE 2 -->
@@ -108,10 +109,12 @@
 				    <button class="" value="display_timer" onclick="display_timer()">Hide/Display</button>
 				  </div>
 				</div>
-				<div id="starting">
-					<button id="start_button" onclick="startButton(event)" class="fp-controlArrow fp-next "><img alt="Start" id="start_img" src="img/phone.png"></button>
+				<div id="starting2">
+					<button id="start_button" onclick="startButton(event)" class="next fp-controlArrow fp-next" ><img alt="Start" id="start_img" src="img/phone.png"></button>
 				</div>
+<!-- 				<button id="next2" class="next fp-controlArrow fp-next ">Click to see results!</button> -->
 		</div>
+
 		</div>
        	<!-- SLIDE 3 -->
 		<div class="slide" id="slide3">
@@ -122,40 +125,23 @@
 				<table id="score_table" border="0" cellpadding="5" cellspacing="0" width="600">
 				<tr><td align="center" valign="top" width="200">
 
-				Clarity
+				Clarity Coeficient <br> 0.89999% <br>
+				Body Language Evaluation
+				<span id="fidgit"></span>
 
 				</td><td align="center" valign="top" width="200">
 
-				Mood
-				<div id="speech_rating">testing testing</div>	
+				Mood <br>
+				<div id="speech_rating">Sentiment: 0.12</div>	
 
 				</td><td align="center" valign="top" width="200">
 
-				Movement
-
-				</td></tr></table>
-			</div>
-		</div>
-		<!-- SLIDE 4 -->
-		<div class="slide" id="slide4">
-			<div class="content">
-				<h1>ANALYTICS</h1>
-				<div id="score"></div>
-				<h1>SCORES</h1>
-
-				<table id="score_table" border="0" cellpadding="5" cellspacing="0" width="600">
-				<tr><td align="center" valign="top" width="200">
-
-				TIME
-
-				</td><td align="center" valign="top" width="200">
-
-				
-
-				</td><td align="center" valign="top" width="200">
-
-				Movement
-
+				Red Flags:
+				<div>
+					<ul>
+					<span id="redflags"></span>
+					</ul>
+				</div>
 				</td></tr></table>
 			</div>
 		</div>
@@ -163,6 +149,7 @@
 		<div class="slide" id="slide5">
 			<div class="content">
 				<h1>REPLAY?</h1>
+				<button id="next5" class="next fp-controlArrow fp-next ">Click to continue!</button>
 			</div>
 		</div>
 	</div>

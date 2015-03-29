@@ -16,6 +16,7 @@ var next1 = function() {
   $("#next4").css("display","none");
   $("#next5").css("display","none");
   $("#next1").css("display","block");
+  console.log("clicked");
 }
 
 
@@ -256,6 +257,7 @@ if (!('webkitSpeechRecognition' in window)) {
     total_time = ((end_m*6000 + end_s*1000 + end_d) - (start_m*6000 + start_s*1000 + start_d));
 
     //recording is complete:
+    randomNums(); 
     $("#tele-wrapper").css("display","none");
     $("#tele-background").css("display","none");
     clearInterval(interval);
@@ -404,6 +406,14 @@ var wordReader = function() {
         if (splited[i][2] === "*") count_curse++;
         }
     }
+    var innerHTML2 = "";
+    innerHTML2+=('<li> Likes...' + count_like + "</li>")
+    innerHTML2+=('<li> Ums... ' + count_um + "</li>")
+    innerHTML2+=('<li> Sort ofs: ' + count_sort + "</li>")
+    innerHTML2+=('<li> Kind ofs: ' + count_kind + "</li>")
+    innerHTML2+=('<li> Profanity: ' + count_curse + "</li>")
+    $("#redflags").html(innerHTML2);
+
     console.log("likes " + count_like);
     console.log("um " + count_um);
     console.log("sort " + count_sort);
@@ -498,4 +508,13 @@ var display_timer = function () {
 // talking rate
 // sentiment
 // transitions
-
+var randomNums = function() {
+  var x = Math.random()*40000;
+  if(x < 15001 && x > 7001){
+      $("#fidgit").html("<p>You are fidgiting too much, try to stand still more</p>")
+  } else if (x > 3000 && x < 7000) {
+     $("#fidgit").html("<p>You have good posture while presenting!</p>")
+  } else {
+     $("#fidgit").html("<p>Try to have a little more body language, <br> you are standing too still</p>")
+  }
+}

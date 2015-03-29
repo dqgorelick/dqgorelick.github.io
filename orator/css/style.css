@@ -57,6 +57,9 @@ h1{
     font-size:50px;
 }
 
+button{
+    z-index:30;
+}
 .transition{
     -webkit-transition: all 5s linear;
     -moz-transition: all 5s linear;
@@ -86,7 +89,6 @@ h1{
     text-align:left; 
     white-space: nowrap;
     direction: rtl;
-    overflow-y:hidden;
     overflow-x:scroll;
 }
 
@@ -136,35 +138,11 @@ button{
     width:auto;
 }
 
-#timer{
-    width:20%;
-    border-bottom-right-radius: 50px;
-    position:fixed;
-    top:0;
-    left:0;
-    font-size:75px;
-    background-color:#ffffff;
-    border: 2px solid #ddd;
-    padding:10px;
-    text-align:center;
-}
-
-#timer p{
-    height:80px;
-    padding:0;
-    margin:0;
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-}
-
 #speech_rating{
-    overflow:scroll;
-    max-height: 150px;
+    max-height: 30px;
     width:100%;
-    font-size:40px;
-    padding:10px;
+    font-size:20px;
+    padding:5px;
 }
 
 #tele-wrapper, #tele-background{
@@ -172,7 +150,8 @@ button{
     top: 0;
     left: 0;
     height:100%;
-    width:100%;
+    width:70%;
+    left:15%;
     overflow:hidden;
     z-index: 5;
     display:none;
@@ -204,7 +183,7 @@ button{
 }
 
 .next{
-    top:0;
+    top:-50%;
     height:75px;
     width:200px;
     float:right;
@@ -220,7 +199,6 @@ button{
 #subs{
     margin-top:25px;
 }
-
 
 #info{
     position:absolute;
@@ -239,12 +217,58 @@ button{
 
 #score_table{
     margin: auto;
-
 }
 
-#starting, #timer_wrapper{
+#starting{
     position:absolute;
+    left:50%;
+    right:50%;
     height:100px;
     width:150px;
     z-index:10;
+    -webkit-transform:  translate(-50%,0) ;
+    -moz-transform:     translate(-50%,0) ;
+    -ms-transform:      translate(-50%,0) ;
+    -o-transform:       translate(-50%,0) ;
+    transform:          translate(-50%,0) ;
+}
+
+#starting2{
+    width:20%;
+    position:fixed;
+    top:0;
+    right:0;
+    font-size:75px;
+    border: 2px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+#next1, #next2, #next3, #next4, #next5{
+    display:none;
+    z-index:15;
+} 
+
+#next5, #next2{
+    display:block;
+}
+#timer{
+    width:20%;
+    border-bottom-right-radius: 50px;
+    position:fixed;
+    top:0;
+    left:0;
+    font-size:75px;
+    border: 2px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+#timer p{
+    height:80px;
+    padding:0;
+    margin:0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
