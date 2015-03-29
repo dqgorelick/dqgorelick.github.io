@@ -28,13 +28,6 @@ function setTime(){
 
 function submit(){
 	$("input").keypress(function (e){
-		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)){
-			console.log("hello");
-			return false;
-		} else {
-			return true;
-			console.log("byebye");
-		}
 
 	})
 }

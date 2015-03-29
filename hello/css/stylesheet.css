@@ -23,6 +23,9 @@ input[type="text"] {
 
 }
 
+*:focus {
+    outline: 0;
+}
 .wrapper, .enter{
 	position:absolute;
 	width:100%;

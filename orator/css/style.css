@@ -1,0 +1,242 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration:none;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+    font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#444;
+}
+q:before,q:after {
+    content:'';
+}
+
+.content{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    border:blue dotted 2px;
+}
+
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Lato', sans-serif;
+ /*   border:red 2px dotted;*/
+}
+
+h1{
+    font-size:50px;
+}
+
+.transition{
+    -webkit-transition: all 5s linear;
+    -moz-transition: all 5s linear;
+    -ms-transition: all 5s linear;
+    -o-transition: all 5s linear;
+    transition: all 5s linear;
+}
+
+.transition2{
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+
+#results, #subtitles {
+    position:relative;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width:90%;
+    margin:0 5%;
+    min-height: 150px;
+    font-size: 80px;
+    text-align:left; 
+    white-space: nowrap;
+    direction: rtl;
+    overflow-y:hidden;
+    overflow-x:scroll;
+    border: blue 2px dotted;
+}
+
+video{
+    position:relative;
+    height:80%;
+    width:auto;
+    margin-top:100px;
+    background-color: #000000;
+}
+
+
+button{
+    z-index:10;
+    padding:10px;
+    border-radius:10;
+    background-color:white;
+}
+
+#start_button{
+    /*text-align: center;*/
+/*    position:absolute;*/
+    /*left:50%;
+    right:50%;
+    top:50px;
+    -webkit-transform:  translate(-50%,0) ;
+    -moz-transform:     translate(-50%,0) ;
+    -ms-transform:      translate(-50%,0) ;
+    -o-transform:       translate(-50%,0) ;
+    transform:          translate(-50%,0) ;*/
+/*    width:20%;
+    border-bottom-left-radius: 50px;
+    position:fixed;
+    top:0;
+    right:0;
+    font-size:75px;
+    background-color:#ffffff;
+    border: 2px solid #ddd;
+    padding:10px;
+    text-align:center;*/
+}
+
+#start_button img{
+    padding:0;
+    margin:0;
+    height:30px;
+    width:auto;
+}
+
+#timer{
+    width:20%;
+    border-bottom-right-radius: 50px;
+    position:fixed;
+    top:0;
+    left:0;
+    font-size:75px;
+    background-color:#ffffff;
+    border: 2px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+#timer p{
+    height:80px;
+    padding:0;
+    margin:0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+#speech_rating{
+    overflow:scroll;
+    max-height: 150px;
+    width:100%;
+    font-size:40px;
+    padding:10px;
+}
+
+#tele-wrapper, #tele-background{
+    position:absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    z-index: 5;
+    display:none;
+}
+
+#tele-background{
+    background-color:blue;
+    opacity:0;
+}
+
+#teleprompter{
+    position:absolute;
+    width:100%;
+    margin-top:100px;
+    top:0px;
+    font-size:140px;
+    overflow:none;
+    z-index: 5;
+    opacity:0;
+}
+
+#teleprompter p{
+    color:#ffffff;
+    line-height:200px;
+}
+
+#tele-dropdown{
+    display:none;
+}
+
+#tele-dropdown button, #tele-dropdown input{
+    height:50px;
+    width:100px;
+    padding:5px;
+    margin-top:15px;
+}
+
+#subs{
+    margin-top:25px;
+}
+
+
+#info{
+    position:absolute;
+    height:100px;
+    width:100px;
+    top:0;
+    left:50%;
+    right:50%;
+    border:2px red dotted;
+    color :black;
+}
+
+
+#score_table{
+    margin: auto;
+
+}
+
+#starting, #timer_wrapper{
+    position:absolute;
+    height:100px;
+    width:150px;
+    z-index:10;
+}
