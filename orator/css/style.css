@@ -44,7 +44,6 @@ q:before,q:after {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    border:blue dotted 2px;
 }
 
 *{
@@ -89,7 +88,6 @@ h1{
     direction: rtl;
     overflow-y:hidden;
     overflow-x:scroll;
-    border: blue 2px dotted;
 }
 
 video{
@@ -205,6 +203,13 @@ button{
     display:none;
 }
 
+.next{
+    top:0;
+    height:75px;
+    width:200px;
+    float:right;
+}
+
 #tele-dropdown button, #tele-dropdown input{
     height:50px;
     width:100px;
@@ -224,10 +229,13 @@ button{
     top:0;
     left:50%;
     right:50%;
-    border:2px red dotted;
     color :black;
+    -webkit-transform:  translate(-50%,0) ;
+    -moz-transform:     translate(-50%,0) ;
+    -ms-transform:      translate(-50%,0) ;
+    -o-transform:       translate(-50%,0) ;
+    transform:          translate(-50%,0) ;
 }
-
 
 #score_table{
     margin: auto;

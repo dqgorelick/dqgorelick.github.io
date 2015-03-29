@@ -50,6 +50,8 @@ var next5 = function() {
   $("#next5").css("display","none");
   $("#next1").css("display","block");
 }
+
+
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],
