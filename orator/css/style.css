@@ -80,7 +80,6 @@ button{
 #results, #subtitles {
     position:relative;
     font-weight: bold;
-    border: 1px solid #ddd;
     padding: 15px;
     width:90%;
     margin:0 5%;
@@ -139,10 +138,11 @@ button{
 }
 
 #speech_rating{
-    max-height: 30px;
     width:100%;
     font-size:20px;
     padding:5px;
+    overflow:scroll;
+    min-height: 200px
 }
 
 #tele-wrapper, #tele-background{
@@ -167,10 +167,11 @@ button{
     width:100%;
     margin-top:100px;
     top:0px;
-    font-size:140px;
+    font-size:100px;
     overflow:none;
     z-index: 5;
     opacity:0;
+    color:#ffffff;
 }
 
 #teleprompter p{

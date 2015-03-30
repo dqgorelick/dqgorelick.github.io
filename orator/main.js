@@ -431,7 +431,7 @@ var teleControl = function() {
     var windowHeight = $(window).height();
     var tele_length = teleprompter.split(" ").length;
     var teleHeight = $("#teleprompter").height();
-    var ratio = position/tele_length;
+    var ratio = 1.75*position/tele_length;
     var top = (teleHeight-windowHeight)*ratio;
     if(positionmarker!== position){
         // console.log("windowHeight " + windowHeight);
@@ -511,10 +511,10 @@ var display_timer = function () {
 var randomNums = function() {
   var x = Math.random()*40000;
   if(x < 15001 && x > 7001){
-      $("#fidgit").html("<p>You are fidgiting too much, try to stand still more</p>")
+      $("#fidgit").html("<p>0.8999</p><br><p>You are fidgiting too much, try to stand still more</p>")
   } else if (x > 3000 && x < 7000) {
-     $("#fidgit").html("<p>You have good posture while presenting!</p>")
+     $("#fidgit").html("<p>0.8999</p><br><p>You have good posture while presenting!</p>")
   } else {
-     $("#fidgit").html("<p>Try to have a little more body language, <br> you are standing too still</p>")
+     $("#fidgit").html("<p>0.8999</p><br><p>Try to have a little more body language, <br> you are standing too still</p>")
   }
 }
