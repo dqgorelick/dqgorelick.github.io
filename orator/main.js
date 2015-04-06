@@ -16,7 +16,6 @@ var next1 = function() {
   $("#next4").css("display","none");
   $("#next5").css("display","none");
   $("#next1").css("display","block");
-  console.log("clicked");
 }
 
 
@@ -326,7 +325,6 @@ if (!('webkitSpeechRecognition' in window)) {
         }
 
         teleControl();
-        console.log(position);
     }
 
     interim_transcript.toLowerCase();
@@ -399,7 +397,10 @@ var wordReader = function() {
     if(wordArray > 0){
         splited = wordArray.split(" ");
         for (var i = 0; i < splited.length; i++){
-        if (splited[i] === "like") count_like++;
+        if (splited[i] === "like"){
+          console.log("like");
+          count_like++;
+        }
         if (splited[i] === "um") count_um++;
         if (splited[i] === "sort" && splited[i+1] === "of") count_sort++;
         if (splited[i] === "kind" && splited[i+1] === "of") count_kind++;
@@ -414,11 +415,11 @@ var wordReader = function() {
     innerHTML2+=('<li> Profanity: ' + count_curse + "</li>")
     $("#redflags").html(innerHTML2);
 
-    console.log("likes " + count_like);
-    console.log("um " + count_um);
-    console.log("sort " + count_sort);
-    console.log("kind " + count_kind);
-    console.log("***" + count_curse); 
+    // console.log("likes " + count_like);
+    // console.log("um " + count_um);
+    // console.log("sort " + count_sort);
+    // console.log("kind " + count_kind);
+    // console.log("***" + count_curse); 
 }
 
 var position = 0;
@@ -494,7 +495,6 @@ var display_timer = function () {
     if (time) {
       $("#timer p").css("display","none")
       time = false  
-      console.log("hello")
     }  else {
         $("#timer p").css("display","block");
         time = true;
