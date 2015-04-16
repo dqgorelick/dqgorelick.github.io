@@ -177,7 +177,6 @@ function startButton(event) {
   start_time();
   start_m = new Date().getMinutes();
   start_s = new Date().getSeconds();
-  start_d = new Date().getMilliseconds();
   teleControl();
   final_transcript = '';
   recognition.lang = select_dialect.value;
@@ -247,20 +246,21 @@ if (!('webkitSpeechRecognition' in window)) {
     }
   };
 
+  //RECORDING IS OVER
   recognition.onend = function() {
     recognizing = false;
     gameover = true;
-    var end_m = new Date().getMinutes();
+    var end_m = new Date().getMinutes(); 
     var end_s = new Date().getSeconds();
-    var end_d = new Date().getMilliseconds();
-    total_time = ((end_m*6000 + end_s*1000 + end_d) - (start_m*6000 + start_s*1000 + start_d));
+    total_time = ((end_m) - (start_m));
 
     //recording is complete:
     randomNums(); 
     $("#tele-wrapper").css("display","none");
     $("#tele-background").css("display","none");
-    clearInterval(interval);
     wordReader();
+    displayTime();
+    clearInterval(interval);
     runTestApp(final_transcript);
 
     if (ignore_onend) {
@@ -344,6 +344,8 @@ if (!('webkitSpeechRecognition' in window)) {
   };
 }
 var total_time;
+var number_of_words = 1;
+var final_words;
 
 var word_indexer = 0;
 var endWord = '';
@@ -394,18 +396,18 @@ var reset = function () {
 }
 
 var wordReader = function() {
-    if(wordArray > 0){
+    splited = wordArray;
+    final_words = wordArray;
+    if(wordArray.length > 0){
         splited = wordArray.split(" ");
-        for (var i = 0; i < splited.length; i++){
-        if (splited[i] === "like"){
-          console.log("like");
-          count_like++;
-        }
+    }
+    number_of_words = splited.length;
+    for (var i = 0; i < number_of_words; i++){
+        if (splited[i] === "like"){count_like++;}
         if (splited[i] === "um") count_um++;
         if (splited[i] === "sort" && splited[i+1] === "of") count_sort++;
         if (splited[i] === "kind" && splited[i+1] === "of") count_kind++;
         if (splited[i][2] === "*") count_curse++;
-        }
     }
     var innerHTML2 = "";
     innerHTML2+=('<li> Likes...' + count_like + "</li>")
@@ -464,7 +466,6 @@ var score2;
 var score3;
 var score4;
 var scores = function () { 
-    // score1 = 
 
 }
 
@@ -493,14 +494,19 @@ var time = true;
 
 var display_timer = function () {
     if (time) {
-      $("#timer p").css("display","none")
+      $("#timing p").css("display","none")
       time = false  
     }  else {
-        $("#timer p").css("display","block");
+        $("#timing p").css("display","block");
         time = true;
     }
 }
 
+var displayTime = function() { 
+  $(".timing").html(final_words + "<br>");
+  $(".timing").append("<br>Time = " + seconds);
+  $(".timing").append("<br>Words Per Minute: " + number_of_words/(seconds/60) + "<br><br>");
+}
 //create 
 // button
 //better text
@@ -511,10 +517,10 @@ var display_timer = function () {
 var randomNums = function() {
   var x = Math.random()*40000;
   if(x < 15001 && x > 7001){
-      $("#fidgit").html("<p>0.8999</p><br><p>You are fidgiting too much, try to stand still more</p>")
+      $("#fidgit").html("<p>0.8999</p><br><strong>Body Language Evaluation</strong><br><p>You are fidgiting too much, try to stand still more</p>")
   } else if (x > 3000 && x < 7000) {
-     $("#fidgit").html("<p>0.8999</p><br><p>You have good posture while presenting!</p>")
+     $("#fidgit").html("<p>0.8999</p><br><strong>Body Language Evaluation</strong><br><p>You have good posture while presenting!</p>")
   } else {
-     $("#fidgit").html("<p>0.8999</p><br><p>Try to have a little more body language, <br> you are standing too still</p>")
+     $("#fidgit").html("<p>0.8999</p><br><strong>Body Language Evaluation</strong><br><p>Try to have a little more body language, <br> you are standing too still</p>")
   }
 }

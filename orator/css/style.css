@@ -139,7 +139,7 @@ button{
 
 #speech_rating{
     width:100%;
-    font-size:20px;
+    font-size:15px;
     padding:5px;
     overflow:scroll;
     min-height: 200px
@@ -218,10 +218,12 @@ button{
 
 #score_table{
     margin: auto;
+    max-height:400px;
+    overflow-y:hidden;
 }
 
 #starting{
-    position:absolute;
+    position:fixed;
     left:50%;
     right:50%;
     height:100px;
@@ -237,13 +239,20 @@ button{
 #starting2{
     width:20%;
     position:fixed;
-    top:0;
+    top:50px;
     right:0;
     font-size:75px;
-    border: 2px solid #ddd;
     padding:10px;
     text-align:center;
 }
+
+#starting2{
+    top:150px;
+}
+
+/*#timer_wrapper{
+    top:300px;
+}*/
 #next1, #next2, #next3, #next4, #next5{
     display:none;
     z-index:15;
@@ -252,14 +261,32 @@ button{
 #next5, #next2{
     display:block;
 }
+
+#next1,#next6{
+    position:absolute;
+    top:0;
+    font-size:20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#next1{
+    left:8.5%;
+}
+#next6{
+    display:block;
+    right:28.5%;
+}
+
 #timer{
     width:20%;
     border-bottom-right-radius: 50px;
     position:fixed;
     top:0;
     left:0;
+    top:150px;
     font-size:75px;
-    border: 2px solid #ddd;
+    border: 0px solid #ddd;
     padding:10px;
     text-align:center;
 }
@@ -272,4 +299,25 @@ button{
     -webkit-margin-after: 0em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
+}
+
+#starting2 p{
+    font-size:20px;
+    text-align: right;
+}
+
+.fp-controlArrow{
+    z-index:40;
+}
+
+#tele,#subs{
+    font-size:20px;
+    width:150px;
+}
+
+#info{
+/*    display:none;*/
+    font-size:16px;
+    width:100px;
+    text-align: center;
 }

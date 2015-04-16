@@ -22,9 +22,10 @@ var test = "I am happy to join with you today in what will go down in history as
   }
 
   function processResponse(analyticData) {
+    $("#speech_rating").html("");
     for(var i=0, data;data=analyticData[i];i++) {
       // Printing of document sentiment score
-      log(SemantriaActiveSession.tpl("Document {id}. Sentiment score: {sentiment_score}", data));
+      log(SemantriaActiveSession.tpl("Sentiment score: {sentiment_score}", data));
       // Printing of document themes
       log("<div>Document themes:");
       if (data.themes) {
@@ -32,7 +33,7 @@ var test = "I am happy to join with you today in what will go down in history as
           log(SemantriaActiveSession.tpl("<div style='margin-left: 30px;'/>{title} (sentiment: {sentiment_score})", theme));
         }
       } else {
-        log("<div>No themes were extracted for this text");
+        log("<div>");
       }
 
       // Printing of document entities
@@ -44,7 +45,7 @@ var test = "I am happy to join with you today in what will go down in history as
           ));
         }
       } else {
-        log("<div> No entities were extracted for this text");
+        log("<div>");
       }
       
       // Printing of document entities
@@ -56,7 +57,7 @@ var test = "I am happy to join with you today in what will go down in history as
           ));
         }
       } else {
-        log("<div>No topics were extracted for this text");
+        log("<div>");
       }
     }
 }
@@ -95,18 +96,14 @@ var test = "I am happy to join with you today in what will go down in history as
         },
 
         onRequest: function() {
-          console.log("onRequest:");
-         console.log(arguments);
         },
 
         onResponse: function() {
-          console.log("onResponse:");
-         console.log(arguments);
+        
         },
 
         onAfterResponse: function() {
-          console.log("onAfterResponse:");
-         console.log(arguments);
+        
         }
       });
       

@@ -19,7 +19,7 @@
 
 <div id="info">
   <p id="info_start">
-    Click to start
+    Select mode to start
   </p>
   <p id="info_speak_now" style="display:none">
     Recording...
@@ -52,9 +52,11 @@
 	<!-- SLIDE 0 -->
 	<div class="slide" id="slide0">
 			<div class="content">
-				<h1>Orator!~</h1><br>
+				<h1>Orator!~</h1>
+				<h2><i>The automatic telepromptor and speech improving machine!</i></h2>
+				<br>
 				<div id="mode">
-				  <button value="Teleprompter" onclick="displayOptions();display_tele()">Teleprompter</button><br>
+				  <button id="tele" value="Teleprompter" onclick="displayOptions();display_tele()">Teleprompter</button><br>
 					  <div id="tele-dropdown">
 					  	<input id="upload"></input>
 					  	<button onclick="copyText();next1();">Upload</button>
@@ -74,6 +76,7 @@
 			  <select id="select_language" onchange="updateCountry()">
 			    </select>&nbsp;&nbsp; <select id="select_dialect"></select>
 			</div>
+			<br>
 			<h2>Click when ready to record</h2>
 			<div id="starting">
 				<button id="start_button" onclick="startButton(event)"class="fp-controlArrow fp-next"><img alt="Start" id="start_img" src="img/phone.png"></button>
@@ -111,6 +114,8 @@
 				</div>
 				<div id="starting2">
 					<button id="start_button" onclick="startButton(event)" class="next fp-controlArrow fp-next" ><img alt="Start" id="start_img" src="img/phone.png"></button>
+					<br>
+					<p>click to stop recording</p>
 				</div>
 <!-- 				<button id="next2" class="next fp-controlArrow fp-next ">Click to see results!</button> -->
 		</div>
@@ -121,12 +126,12 @@
 			<div class="content">
 				<div id="score"></div>
 				<h1>SCORES</h1>
-
+				<p class="final_text"></p>
+				<p class="timing"></p>
 				<table id="score_table" border="0" cellpadding="5" cellspacing="0" width="600">
 				<tr><td align="center" valign="top" width="200">
 
 				<strong>Clarity Coeficient</strong> <br><br> 
-				Body Language Evaluation
 				<span id="fidgit"></span>
 
 				</td><td align="center" valign="top" width="200">
@@ -144,12 +149,13 @@
 				</div>
 				</td></tr></table>
 			</div>
+			<button id="next6" class="next fp-controlArrow fp-next " onclick="window.location.reload()">Re-record!</button>
 		</div>
 		<!-- SLIDE 5 -->
 		<div class="slide" id="slide5">
 			<div class="content">
 				<h1>REPLAY?</h1>
-				<button id="next5" class="next fp-controlArrow fp-next ">Click to continue!</button>
+				<button onclick="window.location.reload()">Replay</button> 
 			</div>
 		</div>
 	</div>
