@@ -27,7 +27,7 @@ var teaser = new PointText({
 })
 
 //	obama image
-var image = new Raster(photo);
+var image = new Raster("photo");
 var ratio = (view.size._width)/image.width;
 image.position = new Point(image.width*ratio/2, image.height*ratio/2)
 image.scale(ratio);
