@@ -1,0 +1,127 @@
+* {
+    font-family: 'Libre Baskerville', serif;
+}
+
+html {
+    background-color: #FFDBFD;
+}
+
+h2 {
+    font-size: 4vw;
+}
+
+h2 span {
+    font-style: italic;
+    font-size: 4.5vw;
+}
+
+p {
+    font-size: 3vw;
+}
+
+#wrapper {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+    text-align: center;
+    border: 8px double #BAA0B8;
+}
+
+#pancakes {
+    width: 100%;
+    max-width:400px;
+    height: auto;
+}
+
+@-webkit-keyframes hokeypokey {
+    0% 	{left: 110%;}
+    10% {left: 90%;}
+    20% {left: 70%;}
+    30%	{left: 50%;}
+    40%	{left: 40%;}
+    50%	{left: 30%;}
+    60%	{left: 20%;}
+    70%	{left: 10%;}
+    80%	{left: 0%;}
+    90%	{left: -10%;}
+    100%{left: -20%;}
+}
+
+@-moz-keyframes hokeypokey {
+    0% 	{left: 110%;}
+    10% {left: 90%;}
+    20% {left: 70%;}
+    30%	{left: 50%;}
+    40%	{left: 40%;}
+    50%	{left: 30%;}
+    60%	{left: 20%;}
+    70%	{left: 10%;}
+    80%	{left: 0%;}
+    90%	{left: -10%;}
+    100%{left: -20%;}
+}
+
+@-o-keyframes hokeypokey {
+    0% 	{left: 110%;}
+    10% {left: 90%;}
+    20% {left: 70%;}
+    30%	{left: 50%;}
+    40%	{left: 40%;}
+    50%	{left: 30%;}
+    60%	{left: 20%;}
+    70%	{left: 10%;}
+    80%	{left: 0%;}
+    90%	{left: -10%;}
+    100%{left: -20%;}
+}
+
+@keyframes hokeypokey {
+    0% 	{left: 110%;}
+    10% {left: 90%;}
+    20% {left: 70%;}
+    30%	{left: 50%;}
+    40%	{left: 40%;}
+    50%	{left: 30%;}
+    60%	{left: 20%;}
+    70%	{left: 10%;}
+    80%	{left: 0%;}
+    90%	{left: -10%;}
+    100%{left: -20%;}
+}
+
+#rabbit {
+    position: absolute;
+    width: 15vw;
+    max-width:150px;
+    height: auto;
+    -webkit-animation: hokeypokey 10s infinite ;
+    -moz-animation: hokeypokey 10s infinite ;
+    -o-animation: hokeypokey 10s infinite ;
+    animation: hokeypokey 10s infinite ;
+}
+
+
+@media (min-width: 960px) {
+  h2 {
+      font-size: 2vw;
+  }
+
+  h2 span {
+      font-style: italic;
+      font-size: 2.5vw;
+  }
+
+  p {
+      font-size: 2vw;
+  }
+
+  #wrapper{
+  	width:50%;
+  }
+
+  #rabbit{
+  	width:100px;
+  }
+
+}
