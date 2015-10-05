@@ -95,6 +95,7 @@ p {
     width: 15vw;
     max-width:150px;
     height: auto;
+    left:0;
     -webkit-animation: hokeypokey 10s infinite ;
     -moz-animation: hokeypokey 10s infinite ;
     -o-animation: hokeypokey 10s infinite ;

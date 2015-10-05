@@ -1,5 +1,4 @@
 html{
-	/*background-color: #FAFFFF;*/
 	height:100%;
 	background-size: cover;
 	background: radial-gradient(circle, #fff 20%, #FAFFFF);
@@ -41,13 +40,6 @@ h1,h2,h3,p{
 	z-index:1;
 }
 
-.blurb1:after, .blurb2:after, .blurb1:before, .blurb2:before{
-/*	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;*/
-	/*opacity:0;*/
-}
 
 .NYT:hover:after{
 	content:"Weekend hack playing with the NYTimes API using AJAX";
@@ -123,23 +115,13 @@ h1,h2,h3,p{
 	border-color: #1A1A1A;
 	border-width:2px;
 	border-radius:25px;
-	position:absolute;
-	top:50%;
-	left:50%;
-	-webkit-transform:  translate(-50%,-50%) ;
-	-moz-transform:     translate(-50%,-50%) ;
-	-ms-transform:    	translate(-50%,-50%) ;
-	-o-transform:       translate(-50%,-50%) ;
-	transform:          translate(-50%,-50%) ;
+	margin:auto;
+	margin-top:10vh;
+	margin-bottom:10vh;
 	text-align:center;
 	-webkit-transition: background-color 0.45s ease;
 	-webkit-backface-visibility: hidden;
 }
-
-/*.wrapper:hover{
-	background-color:#222222;
-	color:#FFFFFF;
-}*/
 
 .wrapper h2{
 	color:#00AEEF;
@@ -153,21 +135,17 @@ h1,h2,h3,p{
 	text-decoration: none;
 	color:#222222;
 }
-/*
-.wrapper:hover a, .wrapper:hover .teaser{
-	color:#FFFFFF;
-}*/
 
 .wrapper a:hover{
 	color:#25AAE1;
 }
 
-@media (min-width: 0px) and (max-width: 992px){
+@media (max-width: 992px){
 	.blurb1:hover:after, .blurb2:hover:after, .blurb1:hover:before, .blurb2:hover:before{
 		opacity:0;
 	}
 
-	.wrapper a, .wrapper p, .wrapper h2, .wrapper h3{
+	.wrapper a, .wrapper p, .wrapper h3{
 		color:#222222;
 	}
 	.wrapper:hover{
@@ -181,5 +159,11 @@ h1,h2,h3,p{
 	}
 	.teaser{
 		color:#FFFFFF;
+	}
+}
+
+@media (max-width: 410px){
+	.wrapper{
+		border-width:0;
 	}
 }
