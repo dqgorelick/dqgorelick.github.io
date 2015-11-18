@@ -81,7 +81,12 @@ h1,h2,h3,p{
 		.description{
 			padding: 10px 0 0 0;
 		}
-
+		.areas{
+			padding: 0 0 0 0;
+		}
+	}
+	.modal-wrapper::-webkit-scrollbar {
+    	display: none;
 	}
 	.slideshow{
 		overflow: scroll;
