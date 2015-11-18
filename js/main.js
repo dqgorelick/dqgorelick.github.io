@@ -24,6 +24,7 @@ var projects = {
 		"title": "Bostonhacks Live Page",
 		"link": "http://live.bostonhacks.io",
 		"github": "https://github.com/boston-hacks/boston-hacks.github.io",
+		"iframe": "http://live.bostonhacks.io/map",
 		"areas": "Design and development",
 		"description": "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.<br><br>Technologies:<br>Foundation<br>Parse backend<br>CSS Keyframes",
 		"images" :[
@@ -34,7 +35,8 @@ var projects = {
 	orator : {
 		"title": "Orator WebApp",
 		"link": "./orator",
-		"github": "https://github.com/dqgorelick/Orator",
+		"github": "https://github.com/dqgorelick/orator",
+		"iframe": "./orator",
 		"areas": "Development",
 		"description": "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity.<br><br>Technologies:<br>Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
 		"images" :[
@@ -45,6 +47,7 @@ var projects = {
 	wikinauts : {
 		"title": "Wikinauts Android App",
 		"link": "http://wikinauts.github.io",
+		"iframe" : "http://wikinauts.github.io",
 		"areas": "Design and development",
 		"description": "The mobile take on the popular ‘Wikipedia game’, where the goal is to find the shortest path between Wikipedia article pages by only clicking on the links. The application was completed as a final project in the EC327 course at Boston University. Demo and Google Play store link are on the live page.",
 		"images" :[
@@ -101,6 +104,7 @@ var projects = {
 }
 
 function openModal(id){
+	$(".wrapper").css("display", "none");
 	$(".modal").css("display", "inherit");
 	location.hash = id;
 	(projects[id].title ? $(".title").html(projects[id].title) : $(".title").html(""));
@@ -120,9 +124,22 @@ function openModal(id){
 	} else {
 		$(".slideshow").html("");
 	}
+	$(".browser").html("");
+	if (projects[id].iframe && !Modernizr.touch){
+		$(".browser").html("<iframe src='" + projects[id].iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
+	} else {
+		projects[id].images.forEach(function(image){
+			if (projects[id]["small-image"]){
+				$(".browser").append("<img class='smaller' src='"+ image + "'><br>");
+			} else {
+				$(".browser").append("<img src='"+ image + "'><br>");
+			}
+		});
+	}
 }
 
 function closeModal(){
 	$(".modal").css("display", "none");
+	$(".wrapper").css("display", "inherit");
 	location.hash = "";
 }

@@ -1,7 +1,7 @@
 $dev: 2px dotted red;
 
 // colors
-$blue: #25AAE1;
+$blue: #20BBED;
 $dots: #AAAAAA;
 $black: #202020;
 $background: #ffffff;
@@ -19,13 +19,13 @@ $notes-font: "DIN-Light", sans-serif;
 	background: -webkit-radial-gradient($dots 15%, rgba(0,0,0,0) 1%), -webkit-radial-gradient($dots 15%, rgba(0,0,0,0) 1%), rgb(255, 255, 255);
 	background: -moz-radial-gradient($dots 15%, rgba(0,0,0,0) 1%), -moz-radial-gradient($dots 15%, rgba(0,0,0,0) 1%), rgb(255, 255, 255);
 	background: radial-gradient($dots 15%, rgba(0,0,0,0) 1%), radial-gradient($dots 15%, rgba(0,0,0,0) 1%), rgb(255, 255, 255);
-	background-position: 0 0, 15px 0;
+	background-position: 0 0, 8px 0;
 	-webkit-background-origin: padding-box;
 	background-origin: padding-box;
 	-webkit-background-clip: border-box;
 	background-clip: border-box;
-	-webkit-background-size: 15px 15px;
-	background-size: 15px 15px;
+	-webkit-background-size: 8px 8px;
+	background-size: 8px 8px;
 	padding:0;
 	margin:0;
 }

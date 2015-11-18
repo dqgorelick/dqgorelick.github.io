@@ -85,10 +85,7 @@ h1,h2,h3,p{
 			padding: 0 0 0 0;
 		}
 	}
-	.modal-wrapper::-webkit-scrollbar {
-    	display: none;
-	}
-	.slideshow{
+	.slideshow, .browser{
 		overflow: scroll;
 		padding: 50px 0;
 		width: 60%;
@@ -111,6 +108,16 @@ h1,h2,h3,p{
 		.smaller:hover{
 			width: 50%;
 			height: auto;
+		}
+	}
+	.slideshow{
+		display:none;
+	}
+	.browser{
+		width: 60%;
+		iframe{
+			border: none;
+			height: 100vh;
 		}
 	}
 }
@@ -179,7 +186,7 @@ section.contact{
 			position: relative;
 			margin: 100px 5% 0 5%;
 		}
-		.slideshow{
+		.slideshow, .browser{
 			text-align: left;
 			float: left;
 			width: 90%;
@@ -200,6 +207,12 @@ section.contact{
 				width: 60%;
 				height: auto;
 			}
+		}
+		.slideshow{
+			display: inherit;
+		}
+		.browser{
+			display: none;
 		}
 	}
 }
