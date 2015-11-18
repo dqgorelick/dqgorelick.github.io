@@ -15,7 +15,7 @@ $(document).keydown(function(e) {
 });
 
 $(window).on('hashchange', function() {
-	if(location.hash == ""){
+	if(location.hash === ""){
 		closeModal();
 	}
 });
@@ -34,7 +34,7 @@ var projects = {
 		"title": "Orator WebApp",
 		"link": "./orator",
 		"github": "https://github.com/dqgorelick/Orator",
-		"description": "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.",
+		"description": "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity. Also offers support different languages!<br><br>Technologies:<br>Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
 		"images" :[
 			"../images/orator/screenshot1.png",
 			"../images/orator/screenshot2.png"
@@ -53,19 +53,20 @@ var projects = {
 		"small-image": true
 	},
 	newyorktimes : {
-		"title": "Times Trailers",
+		"title": "Times Trailers<br>Summer 2015",
 		"description" : "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.",
 		"images" :[
+			"../images/newyorktimes/example.gif",
 			"../images/newyorktimes/screenshot1.png",
 			"../images/newyorktimes/screenshot2.png",
 			"../images/newyorktimes/screenshot3.png"
 		]
 	},
 	calvin : {
-		"title": "Calvin Chin Design Portfolio",
+		"title": "Design Portfolio Concept",
 		"link" : "http://cvin519.github.io/",
 		"github" : "https://github.com/cvin519",
-		"description" : "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.",
+		"description" : "Visual and UX concept for a design portfolio. All pieces of work displayed are created by Calvin Chin (BU ‘16).",
 		"images" :[
 			"../images/calvin/screenshot1.png",
 			"../images/calvin/screenshot2.png"
@@ -73,7 +74,7 @@ var projects = {
 	},
 	map : {
 		"title": "Boston University Marauder's Map",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"description" : "Created for the Boston University chapter of Global Water Brigades’ Harry Potter Movie Marathon event. The maps are printed on tabloid size parchment paper in color. Painted elements created by Alison Staffin (BU ‘17).",
 		"images" :[
 			"../images/map/screenshot1.jpg",
 			"../images/map/screenshot2.jpg",
@@ -83,7 +84,7 @@ var projects = {
 	},
 	typespecimen : {
 		"title": "Type Specimens: Helvetica",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"description" : "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the College of Fine Arts at Boston University. The poster is 24 inches by 36 inches printed black and white.",
 		"images" : [
 			"../images/typespecimen/screenshot1.png",
 			"../images/typespecimen/screenshot2.png",
@@ -107,7 +108,7 @@ function openModal(id){
 			} else {
 				$(".slideshow").append("<img src='"+ image + "'><br>");
 			}
-		})
+		});
 	} else {
 		$(".slideshow").html("");
 	}

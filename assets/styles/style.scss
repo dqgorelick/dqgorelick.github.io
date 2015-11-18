@@ -29,39 +29,6 @@ h1,h2,h3,p{
 	margin:0;
 }
 
-.notes{
-	font: $notes-font;
-	p:hover:after, p:hover:before{
-		opacity:0;
-	}
-	p:before{
-		opacity:0;
-		position:absolute;
-		margin-top: -5px;
-		left:0px;
-		content:"";
-		width:100px;
-		height:12px;
-		border-bottom: solid;
-		border-width: 2px;
-		border-color: $blue;
-	}
-	p:after{
-		opacity:0;
-		position:absolute;
-		content:"";
-		left:-140px;
-		width:200px;
-		border: solid;
-		border-width: 2px;
-		border-color: $blue;
-		padding:7px;
-		color:$blue;
-		text-align: center;
-		background-color:#ffffff;
-	}
-}
-
 .modal{
 	display: none;
 	width:100%;
@@ -88,6 +55,7 @@ h1,h2,h3,p{
 			text-decoration: underline;
 			background-color: $background;
 			cursor: pointer;
+			z-index: 10000;
 		}
 	}
 	.modal-wrapper{
@@ -128,7 +96,7 @@ h1,h2,h3,p{
 			padding: 0 0 10px 0;
 		}
 		img:hover{
-			width:60%;
+			width:100%;
 			height:auto;
 		}
 		.smaller{
@@ -145,10 +113,9 @@ h1,h2,h3,p{
 	position: relative;
 	padding:40px 0 25px 0;
 	width:350px;
-	margin:0 auto;
+	margin:100px auto;
 	text-align:center;
 	background-color: #ffffff;
-	margin-top: 100px;
 	.upper{
 		h2{
 			text-decoration: underline;
@@ -213,19 +180,19 @@ section.contact{
 			width: 90%;
 			margin: 0 5% 0 5%;
 			img{
-				width:60%;
+				width:90%;
 				height:auto;
 			}
 			img:hover{
-				width:60%;
+				width:90%;
 				height:auto;
 			}
 			.smaller{
-				width: 50%;
+				width: 60%;
 				height: auto;
 			}
 			.smaller:hover{
-				width: 50%;
+				width: 60%;
 				height: auto;
 			}
 		}
