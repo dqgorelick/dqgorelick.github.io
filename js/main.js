@@ -26,7 +26,6 @@ var cubes = [
 	"http://38.media.tumblr.com/5cf28f70141757cb291d3bcc7e2be302/tumblr_nqu6envNSA1qzgw9to1_500.gif",
 	"https://media.giphy.com/media/phxXlMiXA1Xjy/giphy.gif"
 ];
-
 function changeCube(){
 	$(".cube").html("<img src='" + cubes[cube] + "'>");
 	cube++;
@@ -34,6 +33,8 @@ function changeCube(){
 		cube = 0;
 	}
 }
+cube = Math.floor(Math.random()*(cubes.length));
+changeCube();
 
 
 var projects = {
@@ -118,13 +119,25 @@ var projects = {
 			"../images/typespecimen/screenshot2.png",
 			"../images/typespecimen/screenshot3.png"
 		]
+	},
+	about : {
+		"title" : "A small word",
+		"areas" : "Jamestown, RI",
+		"description" : "<img src='../images/nyc_photo.jpg'><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"images" : []
 	}
 }
 
 function openModal(id){
 	$(".wrapper").css("display", "none");
 	$(".modal").css("display", "inherit");
+	$(".modal-wrapper").removeClass("bio");
 	location.hash = id;
+	if(id === "about") {
+		$(".browser").html("");
+		$(".slideshow").html("");
+		$(".modal-wrapper").addClass("bio");
+	}
 	(projects[id].title ? $(".title").html(projects[id].title) : $(".title").html(""));
 	(projects[id].areas ? $(".areas").html(projects[id].areas) : $(".areas").html(""));
 	(projects[id].link ? $(".html-link").html("&#8212;<a href='" + projects[id].link + "'>Live site</a>") : $(".html-link").html(""));
