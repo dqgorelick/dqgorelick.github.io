@@ -19,6 +19,23 @@ $(window).on('hashchange', function() {
 		closeModal();
 	}
 });
+
+var cube = 0;
+var cubes = [
+	"http://49.media.tumblr.com/f3a91e94721d65565ace30eafafae61c/tumblr_n5dulb9GMo1rpco88o1_400.gif",
+	"http://38.media.tumblr.com/5cf28f70141757cb291d3bcc7e2be302/tumblr_nqu6envNSA1qzgw9to1_500.gif",
+	"https://media.giphy.com/media/phxXlMiXA1Xjy/giphy.gif"
+];
+
+function changeCube(){
+	$(".cube").html("<img src='" + cubes[cube] + "'>");
+	cube++;
+	if (cube === cubes.length) {
+		cube = 0;
+	}
+}
+
+
 var projects = {
 	bostonhacks : {
 		"title": "Bostonhacks Live Page",
@@ -77,7 +94,8 @@ var projects = {
 		"description" : "Visual and UX concept for a design portfolio. All pieces of work displayed are created by Calvin Chin (BU ‘16).",
 		"images" :[
 			"../images/calvin/screenshot1.png",
-			"../images/calvin/screenshot2.png"
+			"../images/calvin/screenshot2.png",
+			"../images/calvin/screenshot3.png"
 		]
 	},
 	map : {
@@ -93,7 +111,7 @@ var projects = {
 	},
 	typespecimen : {
 		"title": "Type Specimens: Helvetica",
-		"description" : "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the College of Fine Arts at Boston University. The poster is 24 inches by 36 inches printed black and white.",
+		"description" : "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the College of Fine Arts at Boston University. The poster is 24&#34 x 36&#34 printed black and white.",
 		"areas": "Design",
 		"images" : [
 			"../images/typespecimen/screenshot1.png",

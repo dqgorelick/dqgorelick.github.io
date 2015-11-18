@@ -4,29 +4,78 @@
 html{
 }
 
-.cube{
-	width: 100%;
-	text-align: center;
-	z-index: 0;
-	position: absolute;
-	border: $dev;
-	> div{
-		width:100%;
-		height: 100%;
-	}
-}
-
 body{
 	font-family: $main-font;
 	padding:0;
 	margin:0;
-	z-index: 999;
 	color: #black;
 }
 
 h1,h2,h3,p{
 	padding:0;
 	margin:0;
+}
+
+.wrapper{
+	position: relative;
+	padding:40px 0 25px 0;
+	width:350px;
+	margin:0 auto;
+	height: 100%;
+	min-height: 410px;
+	margin: 120px auto;
+	text-align:center;
+	background-color: #ffffff;
+	.upper{
+		h2{
+			text-decoration: underline;
+			padding: 5px 0;
+		}
+	}
+}
+
+section.upper{
+	.logo{
+		margin:0 0 10px 0;
+		width:120px;
+		height:auto;
+	}
+	.cube{
+		min-height: 104px;
+		img{
+			width: 100px;
+			height: auto;
+			pointer-events: none;
+		}
+	}
+}
+
+section.projects, section.contact{
+	margin: 0 auto;
+	.section-title{
+		padding: 0 0 5px 0;
+	}
+	p{
+		font-size: 1.1em;
+		line-height: 1.25em;
+	}
+	p:hover, a:hover{
+		color: $blue;
+		cursor: pointer;
+	}
+	a{
+		text-decoration: none;
+		color: $black
+	}
+}
+
+section.contact{
+	padding-top: 25px;
+	p{
+		display: inline-block;
+		width: 70px;
+		font-size: 0.8em;
+	}
 }
 
 .modal{
@@ -38,7 +87,6 @@ h1,h2,h3,p{
 	top:0;
 	left:0;
 	overflow: scroll;
-	z-index: 9999;
 	a{
 		text-decoration: none;
 		color: $black;
@@ -50,12 +98,12 @@ h1,h2,h3,p{
 		width: 100%;
 		margin: 50px 5% 0;
 		position: fixed;
+		z-index: 10;
 		span{
 			font-size: 1.25em;
 			text-decoration: underline;
 			background-color: $background;
 			cursor: pointer;
-			z-index: 10000;
 		}
 	}
 	.modal-wrapper{
@@ -63,7 +111,7 @@ h1,h2,h3,p{
 		padding: 50px 10px;
 		width: 25%;
 		min-width: 250px;
-		margin: 150px 5% 0 5%;
+		margin: 100px 5% 150px 5%;
 		float: left;
 		text-align: left;
 		position: fixed;
@@ -87,7 +135,7 @@ h1,h2,h3,p{
 	}
 	.slideshow, .browser{
 		overflow: scroll;
-		padding: 50px 0;
+		padding: 100px 0;
 		width: 60%;
 		margin: 0 5% 0 0;
 		float: right;
@@ -121,70 +169,18 @@ h1,h2,h3,p{
 		}
 	}
 }
-.wrapper{
-	position: relative;
-	padding:40px 0 25px 0;
-	width:350px;
-	margin:100px auto;
-	text-align:center;
-	background-color: #ffffff;
-	.upper{
-		h2{
-			text-decoration: underline;
-			padding: 5px 0;
-		}
-	}
-}
-
-section.upper{
-	.logo{
-		margin:0 0 10px 0;
-		width:120px;
-		height:auto;
-	}
-	img{
-		width: 100px;
-		height: auto;
-		pointer-events: none;
-	}
-}
-
-section.projects, section.contact{
-	margin: 0 auto;
-	.section-title{
-		padding: 0 0 5px 0;
-	}
-	p{
-		line-height: 1.25em;
-	}
-	p:hover, a:hover{
-		color: $blue;
-		cursor: pointer;
-	}
-	a{
-		text-decoration: none;
-		color: $black
-	}
-}
-
-section.contact{
-	padding-top: 25px;
-	p{
-		display: inline-block;
-		width: 70px;
-		font-size: 0.8em;
-	}
-}
 
 /******************************************************
 	MEDIA QUERIES
 *******************************************************/
 
-@media only screen and (max-width: 40.063em) {
+@media only screen and (max-width: 64.063em) {
 	.modal{
 		.modal-wrapper{
 			position: relative;
 			margin: 100px 5% 0 5%;
+			padding: 10px 10px;
+			z-index: 0;
 		}
 		.slideshow, .browser{
 			text-align: left;
