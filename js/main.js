@@ -20,21 +20,21 @@ $(window).on('hashchange', function() {
 	}
 });
 
-var cube = 0;
-var cubes = [
-	"http://49.media.tumblr.com/f3a91e94721d65565ace30eafafae61c/tumblr_n5dulb9GMo1rpco88o1_400.gif",
-	"http://38.media.tumblr.com/5cf28f70141757cb291d3bcc7e2be302/tumblr_nqu6envNSA1qzgw9to1_500.gif",
-	"https://media.giphy.com/media/phxXlMiXA1Xjy/giphy.gif"
-];
-function changeCube(){
-	$(".cube").html("<img src='" + cubes[cube] + "'>");
-	cube++;
-	if (cube === cubes.length) {
-		cube = 0;
-	}
-}
-cube = Math.floor(Math.random()*(cubes.length));
-changeCube();
+// var cube = 0;
+// var cubes = [
+// 	"http://49.media.tumblr.com/f3a91e94721d65565ace30eafafae61c/tumblr_n5dulb9GMo1rpco88o1_400.gif",
+// 	"http://38.media.tumblr.com/5cf28f70141757cb291d3bcc7e2be302/tumblr_nqu6envNSA1qzgw9to1_500.gif",
+// 	"https://media.giphy.com/media/phxXlMiXA1Xjy/giphy.gif"
+// ];
+// function changeCube(){
+// 	$(".cube").html("<img src='" + cubes[cube] + "'>");
+// 	cube++;
+// 	if (cube === cubes.length) {
+// 		cube = 0;
+// 	}
+// }
+// cube = Math.floor(Math.random()*(cubes.length));
+// changeCube();
 
 
 var projects = {
