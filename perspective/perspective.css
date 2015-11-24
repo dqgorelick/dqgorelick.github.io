@@ -1,0 +1,84 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #ddd;
+}
+
+.dev{
+	border: red dotted 2px;
+}
+
+.container {
+	margin: 25% auto;
+	width: 200px;
+	height: 260px;
+	position: relative;
+	perspective: 800px;
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 1.2s ease;
+	cursor: pointer;
+	transform-origin: right center;
+}
+
+.card figure{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: block;
+	font-family: helvetica;
+	text-align: center;
+	font-size: 80px;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	     -o-backface-visibility: hidden;
+	        backface-visibility: hidden;
+}
+
+.card .front {
+  background-color: white;
+  color: black;
+}
+.card .back {
+  background-color: black;
+  color: white;
+  -webkit-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
+	 -o-transform: rotateY( 180deg );
+	    transform: rotateY( 180deg );
+}
+
+.active {
+  /*transform: rotateY( 180deg );*/
+  transform: translateX( -100% ) rotateY( 180deg );
+}
+
+
+
+
+/*
+figure{
+	display:inline-block;
+	padding: 0;
+	margin: 5px;
+	width:150px;
+	height:300px;
+	border: 2px white solid;
+	background-color: red;
+	-webkit-transition: all 250ms ease;
+	-moz-transition: all 250ms ease;
+	-o-transition: all 250ms ease;
+	-ms-transition: all 250ms ease;
+	transition: all 250ms ease;
+}
+
+.active{
+	transform: perspective(300px) rotateY(45deg);
+	transform-origin: center top;
+}*/

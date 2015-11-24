@@ -40,6 +40,7 @@ gulp.task('watch', function() {
 	livereload.listen();
 	gulp.watch('assets/styles/**.scss', ['styles']);
 	gulp.watch('**.html', ['htmls']);
+  gulp.watch('perspective/*', ['styles']);
 })
 
 gulp.task('default', ['watch','styles','jshint','server']);
