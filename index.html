@@ -22,7 +22,7 @@
   	<body class="grid">
   		<div class="modal grid">
   			<div class="modal-header">
-  				<div onclick="closeModal();">&#10094;BACK</div>
+  				<div onclick="closeModal('');">&#10094;BACK</div>
   			</div>
   			<div class="modal-wrapper">
 	  			<div class="title"></div>
@@ -46,13 +46,21 @@
 	  		</secion>
 			<section class="projects">
 				<div class="section-title">MY WORK</div>
+				<p id="pokemon" onclick="openModal(this.id)">Twitch Pokemon Go!</p>
+				<p id="breakerbot" onclick="openModal(this.id)">Breakerbot</p>
+				<p id="sharks_and_minnows" onclick="openModal(this.id)">Sharks and Minnows</p>
 				<p id="bostonhacks" onclick="openModal(this.id)">Bostonhacks Live</p>
+				<p id="neif" onclick="openModal(this.id)">NEIF</p>
 				<p id="typespecimen" onclick="openModal(this.id)">Type Specimen</p>
 				<p id="newyorktimes" onclick="openModal(this.id)">New York Times</p>
 				<p id="map" onclick="openModal(this.id)">Marauder's Map</p>
 				<p id="wikinauts" onclick="openModal(this.id)">Wikinauts App</p>
 				<p id="calvin" onclick="openModal(this.id)">Portfolio Concept</p>
 				<p id="orator" onclick="openModal(this.id)">Orator Project</p>
+				<br>
+			<!-- 	<a href="./blog">
+					<div class="section-title">MY BLOG</div>
+				</a> -->
 			</section>
 			<section class="contact notes">
 				<p class="MAIL"><a href = "mailto:dqgorelick@gmail.com">EMAIL</a></p>

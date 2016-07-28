@@ -15,26 +15,13 @@ $(document).keydown(function(e) {
 });
 
 $(window).on('hashchange', function() {
-	if(location.hash === ""){
+	var page = location.hash.slice(1);
+	if (projects[page]) {
+		openModal(page);
+	} else {
 		closeModal();
 	}
 });
-
-// var cube = 0;
-// var cubes = [
-// 	"http://49.media.tumblr.com/f3a91e94721d65565ace30eafafae61c/tumblr_n5dulb9GMo1rpco88o1_400.gif",
-// 	"http://38.media.tumblr.com/5cf28f70141757cb291d3bcc7e2be302/tumblr_nqu6envNSA1qzgw9to1_500.gif",
-// 	"https://media.giphy.com/media/phxXlMiXA1Xjy/giphy.gif"
-// ];
-// function changeCube(){
-// 	$(".cube").html("<img src='" + cubes[cube] + "'>");
-// 	cube++;
-// 	if (cube === cubes.length) {
-// 		cube = 0;
-// 	}
-// }
-// cube = Math.floor(Math.random()*(cubes.length));
-// changeCube();
 
 
 var projects = {
@@ -54,7 +41,6 @@ var projects = {
 		"title": "Orator WebApp",
 		"link": "./orator",
 		"github": "https://github.com/dqgorelick/orator",
-		"iframe": "./orator",
 		"areas": "Development",
 		"description": "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity.<br><br>Technologies:<br>Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
 		"images" :[
@@ -90,7 +76,6 @@ var projects = {
 	calvin : {
 		"title": "Design Portfolio Concept",
 		"link" : "http://cvin519.github.io/",
-		"github" : "https://github.com/cvin519",
 		"areas": "UX and development",
 		"description" : "Visual and UX concept for a design portfolio. All pieces of work displayed are created by Calvin Chin (BU ‘16).",
 		"images" :[
@@ -101,13 +86,13 @@ var projects = {
 	},
 	map : {
 		"title": "Boston University Marauder's Map",
-		"description" : "Created for the Boston University chapter of Global Water Brigades’ Harry Potter Movie Marathon event. The maps are printed on tabloid size parchment paper in color. Painted elements created by Alison Staffin (BU ‘17).",
+		"description" : "Created for the Boston University chapter of Global Water Brigades’ Harry Potter Movie Marathon event. The maps are printed on tabloid size parchment paper in color. Raised over $1.2k for the BU Global Water Brigades. Painted elements created by Alison Staffin (BU ‘17).",
 		"areas": "Design",
 		"images" :[
 			"../images/map/screenshot1.jpg",
 			"../images/map/screenshot2.jpg",
 			"../images/map/screenshot3.png",
-			"../images/map/screenshot3.png"
+			"../images/map/screenshot4.png"
 		]
 	},
 	typespecimen : {
@@ -125,6 +110,45 @@ var projects = {
 		"areas" : "Jamestown, RI",
 		"description" : "<img src='../images/nyc_photo.jpg'><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 		"images" : []
+	},
+	sharks_and_minnows : {
+		"title": "Sharks and Minnows",
+		"link": "http://sharksandminnows.xyz/",
+		"github": "https://github.com/dqgorelick/digital-ocean",
+		"areas": "Development",
+		"description": "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).<br><br>Technologies:<br>Socket.io<br>HTML5 Canvas",
+		"images" :[
+			"../images/sharks/screenshot0.png",
+			"../images/sharks/screenshot1.png",
+			"../images/sharks/screenshot2.png"
+		]
+	},
+	breakerbot : {
+		"title": "Breakerbot",
+		"github": "https://github.com/dqgorelick/breakerbot",
+		"areas": "Development / Project Management",
+		"description": "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br>Technologies:<br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
+		"iframe":"https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1&controls=0",
+	},
+	pokemon : {
+		"title": "Twitch Plays Pokemon Go!",
+		"link": "https://www.twitch.tv/twitchpokemongo",
+		"description": "Brought the phenomena of &#8220;Twitch plays&#8221; and &#8220;Pokemon Go&#8221; together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our hackNY team became <a href='www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.<br><br>Technologies:<br>Cycript<br>Python & VanillaJS",
+		"areas": "Development / Design",
+		"images" :[
+			"../images/pokemon/screenshot1.png",
+			"../images/pokemon/screenshot2.png",
+			"../images/pokemon/screenshot3.png",
+			"../images/pokemon/screenshot4.png",
+			"../images/pokemon/screenshot5.png",
+		]
+	},
+	neif : {
+		"title": "Nick Ebner Integrative Fitness",
+		"link": "http://nickebnerfitness.com/",
+		"areas": "Development",
+		"description": "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br>Technologies:<br>Middleman",
+		"iframe": "http://nickebnerfitness.com/"
 	}
 }
 
@@ -132,21 +156,22 @@ function openModal(id){
 	$(".wrapper").css("display", "none");
 	$(".modal").css("display", "inherit");
 	$(".modal-wrapper").removeClass("bio");
-	location.hash = id;
 	if(id === "about") {
 		$(".browser").html("");
 		$(".slideshow").html("");
 		$(".modal-wrapper").addClass("bio");
 	}
-	(projects[id].title ? $(".title").html(projects[id].title) : $(".title").html(""));
-	(projects[id].areas ? $(".areas").html(projects[id].areas) : $(".areas").html(""));
-	(projects[id].link ? $(".html-link").html("&#8212;<a href='" + projects[id].link + "'>Live site</a>") : $(".html-link").html(""));
-	(projects[id].github ? $(".github-link").html("&#8212;<a href='" + projects[id].github + "'>Github</a>") : $(".github-link").html(""));
-	(projects[id].description ? $(".description").html(projects[id].description) : $(".description").html(""));
-	if (projects[id].images){
+	location.hash = id;
+	var page = projects[id];
+	page.title ? $(".title").html(page.title) : $(".title").html("");
+	page.areas ? $(".areas").html(page.areas) : $(".areas").html("");
+	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>Demo</a>") : $(".html-link").html("");
+	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>Github</a>") : $(".github-link").html("");
+	page.description ? $(".description").html(page.description) : $(".description").html("");
+	if (page.images){
 		$(".slideshow").html("");
-		projects[id].images.forEach(function(image){
-			if (projects[id]["small-image"]){
+		page.images.forEach(function(image){
+			if (page["small-image"]){
 				$(".slideshow").append("<img class='smaller' src='"+ image + "'><br>");
 			} else {
 				$(".slideshow").append("<img src='"+ image + "'><br>");
@@ -156,11 +181,12 @@ function openModal(id){
 		$(".slideshow").html("");
 	}
 	$(".browser").html("");
-	if (projects[id].iframe && !Modernizr.touch){
-		$(".browser").html("<iframe src='" + projects[id].iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
-	} else {
-		projects[id].images.forEach(function(image){
-			if (projects[id]["small-image"]){
+	if (page.iframe && !Modernizr.touch){
+		$(".browser").html("<iframe src='" + page.iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
+	}
+	if (page.images) {
+		page.images.forEach(function(image){
+			if (page["small-image"]){
 				$(".browser").append("<img class='smaller' src='"+ image + "'><br>");
 			} else {
 				$(".browser").append("<img src='"+ image + "'><br>");
