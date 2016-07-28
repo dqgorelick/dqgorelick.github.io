@@ -22,7 +22,7 @@
   	<body class="grid">
   		<div class="modal grid">
   			<div class="modal-header">
-  				<div onclick="closeModal('');">&#10094;BACK</div>
+  				<div class="back" onclick="closeModal('');">&#10094;BACK</div>
   			</div>
   			<div class="modal-wrapper">
 	  			<div class="title"></div>
@@ -30,6 +30,7 @@
 	  			<div class="html-link"></div>
 	  			<div class="github-link"></div>
 	  			<div class="description"></div>
+	  			<div class="date"></div>
 	  		</div>
 			<div class="slideshow">
 			</div>
@@ -40,27 +41,76 @@
 	  		<section class="upper">
 	  			<h2 id="about">DANIEL GORELICK</h2>
 	  			<p>Boston, MA <br> developer / designer</p>
-	  			<div class="cube">
-	  				<img src="./images/tesseract.gif">
-	  			</div>
 	  		</secion>
 			<section class="projects">
 				<div class="section-title">MY WORK</div>
-				<p id="pokemon" onclick="openModal(this.id)">Twitch Pokemon Go!</p>
-				<p id="breakerbot" onclick="openModal(this.id)">Breakerbot</p>
-				<p id="sharks_and_minnows" onclick="openModal(this.id)">Sharks and Minnows</p>
-				<p id="bostonhacks" onclick="openModal(this.id)">Bostonhacks Live</p>
-				<p id="neif" onclick="openModal(this.id)">NEIF</p>
-				<p id="typespecimen" onclick="openModal(this.id)">Type Specimen</p>
-				<p id="newyorktimes" onclick="openModal(this.id)">New York Times</p>
-				<p id="map" onclick="openModal(this.id)">Marauder's Map</p>
-				<p id="wikinauts" onclick="openModal(this.id)">Wikinauts App</p>
-				<p id="calvin" onclick="openModal(this.id)">Portfolio Concept</p>
-				<p id="orator" onclick="openModal(this.id)">Orator Project</p>
+				<div class="tiles">
+					<div class="tile" id="pokemon" onclick="openModal(this.id)" style="background-image:url(images/pokemon/screenshot1.png)">
+						<div class="filter">
+							<p>TwitchPokemonGo</p>
+						</div>
+					</div>
+					<div class="tile" id="breakerbot" onclick="openModal(this.id)" style="background-image:url(images/breakerbot/screenshot1.png)">
+						<div class="filter">
+							<p>Breakerbot</p>
+						</div>
+					</div>
+					<div class="tile" id="processing" onclick="openModal(this.id)" >
+						<img src="./images/processing/tesseract.gif">
+						<div class="filter">
+							<p>InteractiveDesign</p>
+						</div>
+					</div>
+					<div class="tile" id="sharks_and_minnows" onclick="openModal(this.id)" style="background-image:url(images/sharks/screenshot1.png)">
+						<div class="filter">
+							<p>Sharks&amp;Minnows</p>
+						</div>
+					</div>
+					<div class="tile" id="neif" onclick="openModal(this.id)" style="background-image:url(images/neif/screenshot1.png)">
+						<div class="filter">
+							<p>NickEbnerGym</p>
+						</div>
+					</div>
+					<div class="tile" id="bostonhacks" onclick="openModal(this.id)" style="background-image:url(images/bostonhacks/screenshot1.png)">
+						<div class="filter">
+							<p>Bostonhacks</p>
+						</div>
+					</div>
+					<div class="tile" id="typespecimen" onclick="openModal(this.id)" style="background-image:url(images/typespecimen/screenshot2.png)">
+						<div class="filter">
+							<p>TypeSpecimen</p>
+						</div>
+					</div>
+					<div class="tile" id="map" onclick="openModal(this.id)" style="background-image:url(images/map/screenshot1.jpg)">
+						<div class="filter">
+							<p>Marauder&#8217;sMap</p>
+						</div>
+					</div>
+					<div class="tile" id="newyorktimes" onclick="openModal(this.id)" style="background-image:url(images/newyorktimes/example.gif)">
+						<div class="filter">
+							<p>NewYorkTimes</p>
+						</div>
+					</div>
+					<div class="tile" id="wikinauts" onclick="openModal(this.id)" style="background-image:url(images/wikinauts/screenshot4.png)">
+						<div class="filter">
+							<p>WikinautsApp</p>
+						</div>
+					</div>
+					<div class="tile" id="calvin" onclick="openModal(this.id)" style="background-image:url(images/calvin/screenshot3.png)">
+						<div class="filter">
+							<p>PortfolioConcept</p>
+						</div>
+					</div>
+					<div class="tile" id="orator" onclick="openModal(this.id)" style="background-image:url(images/orator/screenshot2.png)">
+						<div class="filter">
+							<p>OratorProject</p>
+						</div>
+					</div>
+				</div>
 				<br>
-			<!-- 	<a href="./blog">
-					<div class="section-title">MY BLOG</div>
-				</a> -->
+			</section>
+			<section>
+				<a href="./cv.pdf"><div class="section-title">MY CV</div></a>
 			</section>
 			<section class="contact notes">
 				<p class="MAIL"><a href = "mailto:dqgorelick@gmail.com">EMAIL</a></p>

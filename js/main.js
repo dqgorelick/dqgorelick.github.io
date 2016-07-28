@@ -35,7 +35,8 @@ var projects = {
 		"images" :[
 			"../images/bostonhacks/screenshot1.png",
 			"../images/bostonhacks/screenshot2.png"
-		]
+		],
+		"date": "Sep&#8212;Nov 2015",
 	},
 	orator : {
 		"title": "Orator WebApp",
@@ -46,7 +47,8 @@ var projects = {
 		"images" :[
 			"../images/orator/screenshot1.png",
 			"../images/orator/screenshot2.png"
-		]
+		],
+		"date": "Apr 2015",
 	},
 	wikinauts : {
 		"title": "Wikinauts Android App",
@@ -60,7 +62,8 @@ var projects = {
 			"../images/wikinauts/screenshot3.png",
 			"../images/wikinauts/screenshot4.png"
 		],
-		"small-image": true
+		"small-image": true,
+		"date": "Sep&#8212;Dec 2014",
 	},
 	newyorktimes : {
 		"title": "Times Trailers<br>Summer 2015",
@@ -71,7 +74,8 @@ var projects = {
 			"../images/newyorktimes/screenshot1.png",
 			"../images/newyorktimes/screenshot2.png",
 			"../images/newyorktimes/screenshot3.png"
-		]
+		],
+		"date": "Jun&#8212;Aug 2015",
 	},
 	calvin : {
 		"title": "Design Portfolio Concept",
@@ -82,7 +86,8 @@ var projects = {
 			"../images/calvin/screenshot1.png",
 			"../images/calvin/screenshot2.png",
 			"../images/calvin/screenshot3.png"
-		]
+		],
+		"date": "Feb 2015",
 	},
 	map : {
 		"title": "Boston University Marauder's Map",
@@ -93,7 +98,8 @@ var projects = {
 			"../images/map/screenshot2.jpg",
 			"../images/map/screenshot3.png",
 			"../images/map/screenshot4.png"
-		]
+		],
+		"date": "Oct&#8212;Nov 2015",
 	},
 	typespecimen : {
 		"title": "Type Specimens: Helvetica",
@@ -103,7 +109,8 @@ var projects = {
 			"../images/typespecimen/screenshot1.png",
 			"../images/typespecimen/screenshot2.png",
 			"../images/typespecimen/screenshot3.png"
-		]
+		],
+		"date": "Nov 2015",
 	},
 	about : {
 		"title" : "A small word",
@@ -121,7 +128,8 @@ var projects = {
 			"../images/sharks/screenshot0.png",
 			"../images/sharks/screenshot1.png",
 			"../images/sharks/screenshot2.png"
-		]
+		],
+		"date": "Jan 2016",
 	},
 	breakerbot : {
 		"title": "Breakerbot",
@@ -129,6 +137,11 @@ var projects = {
 		"areas": "Development / Project Management",
 		"description": "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br>Technologies:<br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
 		"iframe":"https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1&controls=0",
+		"images" : [
+			"../images/breakerbot/screenshot1.png",
+			"../images/breakerbot/screenshot2.jpeg",
+		],
+		"date": "Sep 2015&#8212;May 2016",
 	},
 	pokemon : {
 		"title": "Twitch Plays Pokemon Go!",
@@ -141,14 +154,29 @@ var projects = {
 			"../images/pokemon/screenshot3.png",
 			"../images/pokemon/screenshot4.png",
 			"../images/pokemon/screenshot5.png",
-		]
+		],
+		"date": "June 2016",
 	},
 	neif : {
 		"title": "Nick Ebner Integrative Fitness",
 		"link": "http://nickebnerfitness.com/",
 		"areas": "Development",
 		"description": "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br>Technologies:<br>Middleman",
-		"iframe": "http://nickebnerfitness.com/"
+		"iframe": "http://nickebnerfitness.com/",
+		"date": "Oct&#8212;Dec 2015",
+	},
+	processing : {
+		"title": "Interactive Design",
+		"areas": "Development / Design",
+		"github": "https://github.com/dqgorelick/processing",
+		"description": "Collection of projects created during the Boston University College of Fine Arts course Interactive Design. All of the projects are created using the Processing language.",
+		"images" :[
+			"../images/processing/screenshot1.png",
+			"../images/processing/screenshot2.png",
+			"../images/processing/screenshot3.jpg",
+			"../images/processing/screenshot4.png",
+		],
+		"date": "Jan&#8212;May 2016",
 	}
 }
 
@@ -168,6 +196,7 @@ function openModal(id){
 	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>Demo</a>") : $(".html-link").html("");
 	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>Github</a>") : $(".github-link").html("");
 	page.description ? $(".description").html(page.description) : $(".description").html("");
+	page.date ? $(".date").html(page.date) : $(".date").html("");
 	if (page.images){
 		$(".slideshow").html("");
 		page.images.forEach(function(image){
