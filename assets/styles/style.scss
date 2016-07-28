@@ -27,7 +27,7 @@ h1,h2,h3,p{
 		color: $blue;
 	}
 	position: relative;
-	padding:40px 25px 25px;
+	padding: 40px 25px 25px;
 	width: 75%;
 	min-width: 320px;
 	max-width: 600px;
@@ -46,6 +46,7 @@ h1,h2,h3,p{
 		}
 	}
 	.tiles {
+		padding: 20px 0 0;
 		display: -webkit-flex;
 		display: flex;
 		-webkit-align-items: center;

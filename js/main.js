@@ -7,11 +7,11 @@ $(document).ready(function(){
 $(document).keydown(function(e) {
     switch(e.which) {
         case 27:
+		    e.preventDefault();
         	closeModal();
         	break;
         default: return;
     }
-    e.preventDefault();
 });
 
 $(window).on('hashchange', function() {
@@ -23,6 +23,49 @@ $(window).on('hashchange', function() {
 	}
 });
 
+function openModal(id){
+	$(".wrapper").css("display", "none");
+	$(".modal").css("display", "inherit");
+	location.hash = id;
+	var page = projects[id];
+	page.title ? $(".title").html(page.title) : $(".title").html("");
+	page.areas ? $(".areas").html(page.areas) : $(".areas").html("");
+	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>Demo</a>") : $(".html-link").html("");
+	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>Github</a>") : $(".github-link").html("");
+	page.description ? $(".description").html(page.description) : $(".description").html("");
+	page.date ? $(".date").html(page.date) : $(".date").html("");
+	if (page.images){
+		$(".slideshow").html("");
+		page.images.forEach(function(image){
+			if (page["small-image"]){
+				$(".slideshow").append("<img class='smaller' src='"+ image + "'><br>");
+			} else {
+				$(".slideshow").append("<img src='"+ image + "'><br>");
+			}
+		});
+	} else {
+		$(".slideshow").html("");
+	}
+	$(".browser").html("");
+	if (page.iframe && !Modernizr.touch){
+		$(".browser").html("<iframe src='" + page.iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
+	}
+	if (page.images) {
+		page.images.forEach(function(image){
+			if (page["small-image"]){
+				$(".browser").append("<img class='smaller' src='"+ image + "'><br>");
+			} else {
+				$(".browser").append("<img src='"+ image + "'><br>");
+			}
+		});
+	}
+}
+
+function closeModal(){
+	$(".modal").css("display", "none");
+	$(".wrapper").css("display", "inherit");
+	location.hash = "";
+}
 
 var projects = {
 	bostonhacks : {
@@ -120,7 +163,6 @@ var projects = {
 	},
 	sharks_and_minnows : {
 		"title": "Sharks and Minnows",
-		"link": "http://sharksandminnows.xyz/",
 		"github": "https://github.com/dqgorelick/digital-ocean",
 		"areas": "Development",
 		"description": "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).<br><br>Technologies:<br>Socket.io<br>HTML5 Canvas",
@@ -178,54 +220,4 @@ var projects = {
 		],
 		"date": "Jan&#8212;May 2016",
 	}
-}
-
-function openModal(id){
-	$(".wrapper").css("display", "none");
-	$(".modal").css("display", "inherit");
-	$(".modal-wrapper").removeClass("bio");
-	if(id === "about") {
-		$(".browser").html("");
-		$(".slideshow").html("");
-		$(".modal-wrapper").addClass("bio");
-	}
-	location.hash = id;
-	var page = projects[id];
-	page.title ? $(".title").html(page.title) : $(".title").html("");
-	page.areas ? $(".areas").html(page.areas) : $(".areas").html("");
-	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>Demo</a>") : $(".html-link").html("");
-	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>Github</a>") : $(".github-link").html("");
-	page.description ? $(".description").html(page.description) : $(".description").html("");
-	page.date ? $(".date").html(page.date) : $(".date").html("");
-	if (page.images){
-		$(".slideshow").html("");
-		page.images.forEach(function(image){
-			if (page["small-image"]){
-				$(".slideshow").append("<img class='smaller' src='"+ image + "'><br>");
-			} else {
-				$(".slideshow").append("<img src='"+ image + "'><br>");
-			}
-		});
-	} else {
-		$(".slideshow").html("");
-	}
-	$(".browser").html("");
-	if (page.iframe && !Modernizr.touch){
-		$(".browser").html("<iframe src='" + page.iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
-	}
-	if (page.images) {
-		page.images.forEach(function(image){
-			if (page["small-image"]){
-				$(".browser").append("<img class='smaller' src='"+ image + "'><br>");
-			} else {
-				$(".browser").append("<img src='"+ image + "'><br>");
-			}
-		});
-	}
-}
-
-function closeModal(){
-	$(".modal").css("display", "none");
-	$(".wrapper").css("display", "inherit");
-	location.hash = "";
 }
