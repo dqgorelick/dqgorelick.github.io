@@ -30,8 +30,8 @@ function openModal(id){
 	var page = projects[id];
 	page.title ? $(".title").html(page.title) : $(".title").html("");
 	page.areas ? $(".areas").html(page.areas) : $(".areas").html("");
-	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>Demo</a>") : $(".html-link").html("");
-	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>Github</a>") : $(".github-link").html("");
+	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>DEMO</a>") : $(".html-link").html("");
+	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>GITHUB</a>") : $(".github-link").html("");
 	page.description ? $(".description").html(page.description) : $(".description").html("");
 	page.date ? $(".date").html(page.date) : $(".date").html("");
 	if (page.images){
@@ -74,7 +74,7 @@ var projects = {
 		"github": "https://github.com/boston-hacks/boston-hacks.github.io",
 		"iframe": "http://live.bostonhacks.io/map",
 		"areas": "Design and development",
-		"description": "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.<br><br>Technologies:<br>Foundation<br>Parse backend<br>CSS Keyframes",
+		"description": "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.<br><br><span>Technologies:</span><br>Foundation<br>Parse backend<br>CSS Keyframes",
 		"images" :[
 			"../images/bostonhacks/screenshot1.png",
 			"../images/bostonhacks/screenshot2.png"
@@ -86,7 +86,7 @@ var projects = {
 		"link": "./orator",
 		"github": "https://github.com/dqgorelick/orator",
 		"areas": "Development",
-		"description": "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity.<br><br>Technologies:<br>Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
+		"description": "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity.<br><br><span>Technologies:</span><br>Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
 		"images" :[
 			"../images/orator/screenshot1.png",
 			"../images/orator/screenshot2.png"
@@ -110,7 +110,7 @@ var projects = {
 	},
 	newyorktimes : {
 		"title": "Times Trailers<br>Summer 2015",
-		"description" : "Video editing and rendering web application created for the New York Times. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object. <br><br>Technologies:<br>HTML5 canvas and Fabric.js library<br>Angular.js<br>Ffmpeg.js<br>Node and express",
+		"description" : "Video editing and rendering web application created for the New York Times. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object. <br><br><span>Technologies:</span><br>HTML5 canvas and Fabric.js library<br>Angular.js<br>Ffmpeg.js<br>Node and express",
 		"areas": "Design and development",
 		"images" :[
 			"../images/newyorktimes/example.gif",
@@ -165,7 +165,7 @@ var projects = {
 		"title": "Sharks and Minnows",
 		"github": "https://github.com/dqgorelick/digital-ocean",
 		"areas": "Development",
-		"description": "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).<br><br>Technologies:<br>Socket.io<br>HTML5 Canvas",
+		"description": "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).<br><br><span>Technologies:</span><br>Socket.io<br>HTML5 Canvas",
 		"images" :[
 			"../images/sharks/screenshot0.png",
 			"../images/sharks/screenshot1.png",
@@ -177,7 +177,7 @@ var projects = {
 		"title": "Breakerbot",
 		"github": "https://github.com/dqgorelick/breakerbot",
 		"areas": "Development / Project Management",
-		"description": "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br>Technologies:<br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
+		"description": "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br><span>Technologies:</span><br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
 		"iframe":"https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1&controls=0",
 		"images" : [
 			"../images/breakerbot/screenshot1.png",
@@ -188,7 +188,7 @@ var projects = {
 	pokemon : {
 		"title": "Twitch Plays Pokemon Go!",
 		"link": "https://www.twitch.tv/twitchpokemongo",
-		"description": "Brought the phenomena of &#8220;Twitch plays&#8221; and &#8220;Pokemon Go&#8221; together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our hackNY team became <a href='www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.<br><br>Technologies:<br>Cycript<br>Python & VanillaJS",
+		"description": "Brought the phenomena of &#8220;Twitch plays&#8221; and &#8220;Pokemon Go&#8221; together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our hackNY team became <a href='www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.<br><br><span>Technologies:</span><br>Cycript<br>Python & VanillaJS",
 		"areas": "Development / Design",
 		"images" :[
 			"../images/pokemon/screenshot1.png",
@@ -203,7 +203,7 @@ var projects = {
 		"title": "Nick Ebner Integrative Fitness",
 		"link": "http://nickebnerfitness.com/",
 		"areas": "Development",
-		"description": "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br>Technologies:<br>Middleman",
+		"description": "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br><span>Technologies:</span><br>Middleman",
 		"iframe": "http://nickebnerfitness.com/",
 		"date": "Oct&#8212;Dec 2015",
 	},
