@@ -100,6 +100,7 @@ var projects = {
 		"areas": "Design and development",
 		"description": "The mobile take on the popular ‘Wikipedia game’, where the goal is to find the shortest path between Wikipedia article pages by only clicking on the links. The application was completed as a final project in the EC327 course at Boston University. Demo and Google Play store link are on the live page.",
 		"images" :[
+			"../images/wikinauts/screenshot0.png",
 			"../images/wikinauts/screenshot1.png",
 			"../images/wikinauts/screenshot2.png",
 			"../images/wikinauts/screenshot3.png",
@@ -180,6 +181,7 @@ var projects = {
 		"description": "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br><span>Technologies:</span><br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
 		"iframe":"https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1&controls=0",
 		"images" : [
+			"../images/breakerbot/screenshot0.jpeg",
 			"../images/breakerbot/screenshot1.png",
 			"../images/breakerbot/screenshot2.jpeg",
 		],
