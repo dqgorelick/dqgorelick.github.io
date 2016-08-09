@@ -32,7 +32,6 @@ h1,h2,h3,p{
 	min-width: 320px;
 	max-width: 600px;
 	height: 100%;
-	min-height: 410px;
 	margin: 90px auto;
 	text-align:center;
 	background-color: #ffffff;
@@ -72,7 +71,7 @@ h1,h2,h3,p{
 			width: 190px;
 			height: 130px;
 			margin: 3px;
-			-webkit-filter: grayscale(60%); /* Old WebKit */
+			-webkit-filter: grayscale(60%);
 			filter: grayscale(60%);
 			&:hover {
 				-webkit-filter: initial;
@@ -80,7 +79,6 @@ h1,h2,h3,p{
 			}
 			.filter {
 				z-index: 99;
-				// background-color: rgba(100,100,100,1);
 				position: absolute;
 				width: 100%;
 				height: 100%;
