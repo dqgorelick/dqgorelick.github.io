@@ -30,8 +30,8 @@ function openModal(id){
 	var page = projects[id];
 	page.title ? $(".title").html(page.title) : $(".title").html("");
 	page.areas ? $(".areas").html(page.areas) : $(".areas").html("");
-	page.link ? $(".html-link").html("&#8212;<a href='" + page.link + "'>DEMO</a>") : $(".html-link").html("");
-	page.github ? $(".github-link").html("&#8212;<a href='" + page.github + "'>GITHUB</a>") : $(".github-link").html("");
+	page.link ? $(".html-link").html("&#8212;<a target='_blank' href='" + page.link + "'>DEMO</a>") : $(".html-link").html("");
+	page.github ? $(".github-link").html("&#8212;<a target='_blank' href='" + page.github + "'>GITHUB</a>") : $(".github-link").html("");
 	page.description ? $(".description").html(page.description) : $(".description").html("");
 	page.date ? $(".date").html(page.date) : $(".date").html("");
 	if (page.images){
@@ -178,13 +178,15 @@ var projects = {
 		github: "https://github.com/dqgorelick/breakerbot",
 		areas: "Development / Project Management",
 		description: "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br><span>Technologies:</span><br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
-		iframe:"https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1&controls=0",
 		images : [
 			"../images/breakerbot/screenshot0.jpeg",
-			"../images/breakerbot/screenshot1.png",
+			"../images/breakerbot/screenshot1.jpeg",
 			"../images/breakerbot/screenshot2.jpeg",
+			"../images/breakerbot/screenshot3.jpeg",
+			"../images/breakerbot/screenshot4.jpeg",
 		],
 		date : "Sep 2015&#8212;May 2016",
+		link : "https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1",
 	},
 	pokemon : {
 		title: "Twitch Plays Pokemon Go!",

@@ -44,6 +44,10 @@ h1,h2,h3,p{
 		.section-title {
 			padding: 15px 0;
 		}
+
+		#tagline {
+			padding: 5px 0 10px 0;
+		}
 	}
 	.tiles {
 		padding: 20px 0 0;
@@ -68,8 +72,8 @@ h1,h2,h3,p{
 			width: 190px;
 			height: 130px;
 			margin: 3px;
-			-webkit-filter: grayscale(1); /* Old WebKit */
-			filter: grayscale(1);
+			-webkit-filter: grayscale(60%); /* Old WebKit */
+			filter: grayscale(60%);
 			&:hover {
 				-webkit-filter: initial;
 				filter: initial;
@@ -136,7 +140,7 @@ h1,h2,h3,p{
 				height: 200px;
 				margin-bottom: 35px;
 				.filter {
-					background-color: rgba(255,255,255,0.4);
+					background-color: rgba(255,255,255,0.2);
 					overflow: visible;
 					mix-blend-mode: initial;
 					p {
@@ -162,7 +166,6 @@ h1,h2,h3,p{
 }
 section.contact{
 	margin: 0 auto;
-	padding-top: 10px;
 	.section-title{
 		padding: 0 0 5px 0;
 	}
