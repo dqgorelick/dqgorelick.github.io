@@ -36,8 +36,9 @@ h1,h2,h3,p{
 	text-align:center;
 	background-color: #ffffff;
 	.upper{
-		h2{
+		#about {
 			text-decoration: underline;
+			font-family: $tile-font;
 			padding: 5px 0;
 		}
 		.section-title {
@@ -71,6 +72,7 @@ h1,h2,h3,p{
 			width: 190px;
 			height: 130px;
 			margin: 3px;
+			font-family: $tile-font;
 			-webkit-filter: grayscale(60%);
 			filter: grayscale(60%);
 			&:hover {

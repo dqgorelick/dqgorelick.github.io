@@ -141,11 +141,10 @@ var projects = {
         description: "Brought the phenomena of &#8220;Twitch plays&#8221; and &#8220;Pokemon Go&#8221; together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our hackNY team became <a href='http://www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.<br><br><span>Technologies:</span><br>Cycript<br>Python & VanillaJS",
         areas: "Development / Design",
         images: [
+            "../images/pokemon/screenshot0.png",
             "../images/pokemon/screenshot1.png",
             "../images/pokemon/screenshot2.png",
             "../images/pokemon/screenshot3.png",
-            "../images/pokemon/screenshot4.png",
-            "../images/pokemon/screenshot5.png",
         ],
         date: "June 2016",
         pretty: "Pokemon Go",
