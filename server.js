@@ -1,17 +1,17 @@
-var express = require("express");
-var app = express();
-var path = require("path");
-var port = process.argv[2] || 8080;
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('./webpack.config');
+var PORT = 9000;
 
-app.use(express.static(__dirname));
-app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
+new WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
+  hot: true,
+  historyApiFallback: true,
+  inline: true,
+}).listen(PORT, 'localhost', function (err, result) {
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log('Listening at http://localhost:'+PORT+'/');
 });
-app.listen(port, function() {
-    console.log("[ SERVER ] Hosting server on port " + port);
-});
-
-
-
