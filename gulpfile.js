@@ -38,6 +38,7 @@ gulp.task('server', function () {
 
 gulp.task('watch', function() {
 	livereload.listen();
+  gulp.watch('js/*.js', ['jshint']);
 	gulp.watch('assets/styles/**.scss', ['styles']);
 	gulp.watch('**.html', ['htmls']);
   gulp.watch('perspective/*', ['styles']);
