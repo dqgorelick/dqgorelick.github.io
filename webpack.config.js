@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -27,11 +26,6 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw',
         exclude: /node_modules/
-    },
-    {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css-loader?sourceMap&url=false!sass-loader?sourceMap'),
-        exclude: /(node_modules)/
     },
     {
         test: /\.css$/,

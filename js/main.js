@@ -1,27 +1,27 @@
-$(document).ready(function(){
-	if(location.hash.slice(1) !== ""){
-		openModal(location.hash.slice(1));
-	}
-});
+// $(document).ready(function(){
+// 	if(location.hash.slice(1) !== ""){
+// 		openModal(location.hash.slice(1));
+// 	}
+// });
 
-$(document).keydown(function(e) {
-    switch(e.which) {
-        case 27:
-		    e.preventDefault();
-        	closeModal();
-        	break;
-        default: return;
-    }
-});
+// $(document).keydown(function(e) {
+//     switch(e.which) {
+//         case 27:
+// 		    e.preventDefault();
+//         	closeModal();
+//         	break;
+//         default: return;
+//     }
+// });
 
-$(window).on('hashchange', function() {
-	var page = location.hash.slice(1);
-	if (projects[page]) {
-		openModal(page);
-	} else {
-		closeModal();
-	}
-});
+// $(window).on('hashchange', function() {
+// 	var page = location.hash.slice(1);
+// 	if (projects[page]) {
+// 		openModal(page);
+// 	} else {
+// 		closeModal();
+// 	}
+// });
 
 function openModal(id){
 	$(".wrapper").css("display", "none");
