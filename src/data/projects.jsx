@@ -16,6 +16,7 @@ export const ACTIVE_PROJECTS = [
 export const PROJECTS = {
     bostonhacks: {
         title: "Bostonhacks Live Page",
+        tagline: "This is just a test for now, to be filled in later",
         link: "http://live.bostonhacks.io",
         github: "https://github.com/boston-hacks/boston-hacks.github.io",
         iframe: "http://live.bostonhacks.io/map",
@@ -36,6 +37,7 @@ export const PROJECTS = {
     },
     orator: {
         title: "Orator WebApp",
+        tagline: "This is just a test for now, to be filled in later",
         link: "./orator",
         github: "https://github.com/dqgorelick/orator",
         areas: "Development",
@@ -55,6 +57,7 @@ export const PROJECTS = {
     },
     wikinauts: {
         title: "Wikinauts Android App",
+        tagline: "This is just a test for now, to be filled in later",
         link: "http://wikinauts.github.io",
         iframe: "http://wikinauts.github.io",
         areas: "Design and development",
@@ -73,6 +76,7 @@ export const PROJECTS = {
     },
     newyorktimes: {
         title: "Times Trailer",
+        tagline: "This is just a test for now, to be filled in later",
         description: "Video editing and rendering web application created for the <a target='_blank' href='nytimes.com'>New York Times</a>. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object.",
         technologies: [
             {name: "HTML5 canvas w/ Fabric.js library", link: "http://fabricjs.com/"},
@@ -93,6 +97,7 @@ export const PROJECTS = {
     },
     calvin: {
         title: "Design Portfolio Concept",
+        tagline: "This is just a test for now, to be filled in later",
         link: "http://cvin519.github.io/",
         areas: "UX and development",
         description: "Created a visual and UX concept for a design portfolio. All pieces of work displayed are created by <a target='_blank' href='https://www.instagram.com/cvin519/'>Calvin Chin</a> (BU ‘16).",
@@ -106,6 +111,7 @@ export const PROJECTS = {
     },
     map: {
         title: "Boston University Marauder's Map",
+        tagline: "This is just a test for now, to be filled in later",
         description: "Created for the Boston University chapter of <a target='_blank' href='https://www.globalbrigades.org/experience-water-brigades'>Global Water Brigades</a> Harry Potter Movie Marathon event. The maps are printed on tabloid size parchment paper in color. Raised over $1.2k for the BU Global Water Brigades. Painted elements created by Alison Staffin (BU ‘17).",
         areas: "Design",
         images: [
@@ -120,6 +126,7 @@ export const PROJECTS = {
     },
     typespecimen: {
         title: "Type Specimens: Helvetica",
+        tagline: "This is just a test for now, to be filled in later",
         description: "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> at Boston University. The poster is 24&#34 x 36&#34 printed black and white.",
         areas: "Design",
         images: [
@@ -133,6 +140,7 @@ export const PROJECTS = {
     },
     sharks_and_minnows: {
         title: "Sharks \u0026 Minnows",
+        tagline: "This is just a test for now, to be filled in later",
         github: "https://github.com/dqgorelick/digital-ocean",
         areas: "Development",
         description: "Hackathon project built at <a target='_blank' href='https://hackbeanpot.com/'>HackBeanpot 2016</a>. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).",
@@ -151,6 +159,7 @@ export const PROJECTS = {
     },
     breakerbot: {
         title: "Breakerbot",
+        tagline: "This is just a test for now, to be filled in later",
         github: "https://github.com/dqgorelick/breakerbot",
         areas: "Development / Project Management",
         description: "Senior Design project for Boston University <a target='_blank' href='http://www.bu.edu/eng/'>College of Engineering</a>. Created a semi-autonomous robot for <a target='_blank' href='http://www.conedison.com/'>Con Edison</a> which transports and aligns circuit breakers. Finalist in the <a target='_blank' href='http://www.systemseng.cornell.edu/intel/'>Intel Cornell Cup</a> Systems Engineering competition and won best overall project in the Computer and Electrical Engineering Department.",
@@ -173,6 +182,7 @@ export const PROJECTS = {
     },
     pokemon: {
         title: "Twitch Plays Pokemon Go!",
+        tagline: "This is just a test for now, to be filled in later",
         link: "https://www.twitch.tv/twitchpokemongo",
         description: "Brought the phenomena of <a target='_blank' href='https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon'>Twitch plays</a> and <a target='_blank' href='http://www.pokemongo.com/'>Pokemon Go</a> together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our <a target='_blank' href='hackny.org'>hackNY</a> team became <a target='_blank' href='http://www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.",
         technologies: [
@@ -192,6 +202,7 @@ export const PROJECTS = {
     },
     neif: {
         title: "Nick Ebner Integrative Fitness",
+        tagline: "This is just a test for now, to be filled in later",
         link: "http://nickebnerfitness.com/",
         areas: "Development",
         description: "Worked alongside <a target='_blank' href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for <a target='_blank' href='http://nickebnerfitness.com/'>Nick Ebner's gym</a>.",
@@ -207,6 +218,7 @@ export const PROJECTS = {
     },
     processing: {
         title: "Interactive Design",
+        tagline: "This is just a test for now, to be filled in later",
         areas: "Development / Design",
         github: "https://github.com/dqgorelick/processing",
         description: "Collection of projects created during the Boston University <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> course Interactive Design. All of the projects are created using the <a target='_blank' href='http://processingjs.org/'>Processing language</a>.",
@@ -222,6 +234,7 @@ export const PROJECTS = {
     },
     mbta: {
         title: "MBTA Alerts and Performance Analysis",
+        tagline: "This is just a test for now, to be filled in later",
         areas: "Development / Design",
         link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
         github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",

@@ -1,5 +1,16 @@
 @import "variables";
 
+* {
+	&::selection {
+		background-color: $blue-transparent;
+		color: #fff;
+	}
+	&::-moz-selection {
+		background-color: $blue-transparent;
+		color: #fff;
+	}
+}
+
 body{
 	font-family: $main-font;
 	padding:0;
@@ -40,7 +51,6 @@ h1,h2,h3,p{
 	background-color: #ffffff;
 	.upper{
 		#about {
-			text-decoration: underline;
 			font-family: $tile-font;
 			padding: 5px 0;
 		}
@@ -132,43 +142,6 @@ h1,h2,h3,p{
 	}
 }
 
-@media only screen and (max-width: 544px) {
-	.wrapper {
-		padding: 40px 5px 10px;
-		width:100%;
-		.tiles {
-			padding: 20px 50px 0;
-			.tile {
-				width: 100%;
-				height: 200px;
-				margin-bottom: 35px;
-				-webkit-filter: initial;
-					filter: initial;
-				.filter {
-					background-color: rgba(255,255,255,0.02);
-					overflow: visible;
-					mix-blend-mode: initial;
-					p {
-						color: #000;
-						width: 100%;
-						font-align: center;
-						top: initial;
-						bottom: -25px;
-						font-size: 20px;
-						text-align: center;
-						margin: 0;
-					}
-					&:hover {
-						background-color: transparent;
-						p {
-							color: $blue;
-						}
-					}
-				}
-			}
-		}
-	}
-}
 section.contact{
 	margin: 0 auto;
 	.section-title{
@@ -196,18 +169,16 @@ section.contact{
 	left:0;
 	overflow: scroll;
 	.navigation {
-		width: 100%;
-		margin: 0;
-		padding: 0;
+		width: 250px;
+		margin: 32px 0 0 5%;
 		position: fixed;
-		top: 0;
 		height: 30px;
 		background-color: transparent;
 		z-index: 9999;
 		.nav-btn {
-			font-size: 1.1em;
 			position: absolute;
-			background-color: $link-background;
+			// background-color: $link-background;
+			background-color: #fff;
 			width: 100px;
 			height: 100%;
 			line-height: 30px;
@@ -219,13 +190,11 @@ section.contact{
 			}
 			&.nav-back {
 				left: 0;
-				width: 25%;
-				margin-left: 5%;
+				width: 30%;
 			}
 			&.nav-next {
 				right: 0;
-				width: 25%;
-				margin-right: 5%;
+				width: 30%;
 			}
 			&.nav-home {
 				margin: 0 auto;
@@ -236,21 +205,40 @@ section.contact{
 		}
 	}
 	.project-details {
-		padding: 10px 10px;
 		width: 25%;
 		min-width: 250px;
 		margin: 100px 5% 150px 5%;
 		text-align: left;
 		position: fixed;
 		background-color: $background;
-		.title {
-			line-height: 1em;
-			font-size: 2em;
-			padding: 10px 0 10px 0;
+		.project-details-wrapper {
+			padding: 10px 10px;
+			.title {
+				line-height: 1em;
+				font-size: 2em;
+				padding: 10px 0 10px 0;
+			}
+			.description {
+				padding: 10px 0 0 0;
+				color: $copy;
+			}
+			.technologies {
+				padding: 10px 0 0 0;
+				color: $copy;
+				.technologies-title {
+					font-size: 1.1em;
+					color: $black;
+				}
+			}
+			.date, .areas {
+				padding: 0 0 0 0;
+				// color: $copy;
+				font-size: 1.1em;
+			}
 		}
 		.links {
-			margin: 20px -5% -5%;
-			width: calc(100% + 20px);
+			margin: 20px 0 0;
+			width: 100%;
 			position: relative;
 			height: 30px;
 			a {
@@ -265,24 +253,6 @@ section.contact{
 			.link-whole {
 				width: 100%;
 			}
-		}
-		.description {
-			padding: 10px 0 0 0;
-			color: $copy;
-		}
-		.technologies {
-			padding: 10px 0 0 0;
-			color: $copy;
-			.technologies-title {
-				font-size: 1.1em;
-				color: $black;
-				text-decoration: underline;
-			}
-		}
-		.date, .areas {
-			padding: 0 0 0 0;
-			// color: $copy;
-			font-size: 1.1em;
 		}
 	}
 	.slideshow, .browser {
@@ -330,25 +300,19 @@ section.contact{
 	}
 }
 
+
+// tablets
 @media only screen and (max-width: 64.063em) {
-	.modal{
+	.modal {
 		.navigation {
-			.nav-btn {
-				&.nav-back {
-					width: 30%;
-					margin-left: 0;
-				}
-				&.nav-next {
-					width: 30%;
-					margin-right: 0;
-				}
-			}
+			position: absolute;
 		}
 		.project-details{
 			position: relative;
-			margin: 60px 5% 0 5%;
-			padding: 10px 10px;
+			margin: 100px 5% 40px 5%;
 			z-index: 0;
+			width: 90%;
+			max-width: 700px;
 		}
 		.slideshow, .browser {
 			overflow: visible;
@@ -380,6 +344,68 @@ section.contact{
 		}
 		.browser {
 			display: none;
+		}
+	}
+}
+
+// smallest
+@media only screen and (max-width: 544px) {
+	.wrapper {
+		padding: 40px 5px 10px;
+		width:100%;
+		.tiles {
+			padding: 20px 50px 0;
+			.tile {
+				width: 100%;
+				height: 200px;
+				margin-bottom: 35px;
+				-webkit-filter: initial;
+					filter: initial;
+				.filter {
+					background-color: rgba(255,255,255,0.02);
+					overflow: visible;
+					mix-blend-mode: initial;
+					p {
+						color: #000;
+						width: 100%;
+						font-align: center;
+						top: initial;
+						bottom: -25px;
+						font-size: 20px;
+						text-align: center;
+						margin: 0;
+					}
+					&:hover {
+						background-color: transparent;
+						p {
+							color: $blue;
+						}
+					}
+				}
+			}
+		}
+	}
+	.modal {
+		.navigation {
+			width: 100%;
+			top: 0;
+			margin: 0;
+			padding: 0;
+			position: fixed;
+			.nav-btn {
+				background-color: $link-background;
+				&.nav-back {
+					width: 30%;
+					margin-left: 0;
+				}
+				&.nav-next {
+					width: 30%;
+					margin-right: 0;
+				}
+			}
+		}
+		.project-details {
+			margin: 60px 5% 0 5%;
 		}
 	}
 }
