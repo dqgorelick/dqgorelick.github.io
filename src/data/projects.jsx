@@ -61,7 +61,7 @@ export const PROJECTS = {
         pretty: "Wikinauts App"
     },
     newyorktimes: {
-        title: "Times Trailers<br>Summer 2015",
+        title: "Times Trailer",
         description: "Video editing and rendering web application created for the New York Times. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object. <br><br><span>Technologies:</span><br>HTML5 canvas and Fabric.js library<br>Angular.js<br>Ffmpeg.js<br>Node and express",
         areas: "Design and development",
         images :[
@@ -121,7 +121,7 @@ export const PROJECTS = {
         images: []
     },
     sharks_and_minnows: {
-        title: "Sharks and Minnows",
+        title: "Sharks \u0026 Minnows",
         github: "https://github.com/dqgorelick/digital-ocean",
         areas: "Development",
         description: "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).<br><br><span>Technologies:</span><br>Socket.io<br>HTML5 Canvas",
@@ -131,7 +131,7 @@ export const PROJECTS = {
             "../images/sharks/screenshot2.png"
         ],
         date: "Jan 2016",
-        pretty: "Sharks &amp; Minnows"
+        pretty: "Sharks \u0026 Minnows"
     },
     breakerbot: {
         title: "Breakerbot",
@@ -171,6 +171,10 @@ export const PROJECTS = {
         areas: "Development",
         description: "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br><span>Technologies:</span><br>Middleman",
         iframe: "http://nickebnerfitness.com/",
+        images: [
+            "../images/neif/screenshot1.png",
+            "../images/neif/screenshot2.png",
+        ],
         date: "Oct\u2014Dec 2015",
         pretty: "Nick Ebner Gym",
         classes: "break-word",

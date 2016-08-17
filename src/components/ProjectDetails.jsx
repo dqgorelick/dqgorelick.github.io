@@ -4,17 +4,28 @@ export default function ProjectDetails (props) {
     const details = props.details;
     return (
         <div className="project-details">
-            <div className="date">{`${details.date}`}</div>
-            <br/>
-            <div className="title">{details.title}</div>
-            <div className="areas">{details.areas}</div>
-            <div className="description" dangerouslySetInnerHTML={{__html: details.description}}/>
-            <div className="html-link">
-                <a target="_blank" href="{details.link}">{`\u2014DEMO`}</a>
-            </div>
-            <div className="github-link">
-                <a target="_blank" href="{details.github}">{`\u2014GITHUB`}</a>
-            </div>
+            { details.date &&
+                <div className="date">{`${details.date}`}</div>
+            }
+            { details.title &&
+                <div className="title">{details.title}</div>
+            }
+            { details.areas &&
+                <div className="areas">{details.areas}</div>
+            }
+            { details.description &&
+                <div className="description" dangerouslySetInnerHTML={{__html: details.description}}/>
+            }
+            { details.link &&
+                <div className="html-link">
+                    <a target="_blank" href="{details.link}">{`\u2014DEMO`}</a>
+                </div>
+            }
+            { details.github &&
+                <div className="github-link">
+                    <a target="_blank" href="{details.github}">{`\u2014GITHUB`}</a>
+                </div>
+            }
         </div>
     )
 }

@@ -22,7 +22,7 @@ function openModal(id){
 		$(".slideshow").html("");
 	}
 	$(".browser").html("");
-	if (page.iframe && !Modernizr.touch){
+	if (page.iframe && !!('ontouchstart' in window)){
 		$(".browser").html("<iframe src='" + page.iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
 	}
 	if (page.images) {

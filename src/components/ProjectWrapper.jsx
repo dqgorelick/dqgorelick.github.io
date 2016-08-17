@@ -15,8 +15,8 @@ export default function ProjectWrapper (props) {
                 <div className="back" onClick={() => { changeHash('') }}>&#10094;BACK</div>
             </div>
             <ProjectDetails details={details} />
-            <ProjectPhotos images={details.images} />
             <ProjectFrame iframe={details.iframe} />
+            <ProjectPhotos images={details.images} />
         </div>
     );
 }

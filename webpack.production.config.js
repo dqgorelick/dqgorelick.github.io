@@ -4,9 +4,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
+  cache: false,
+  debug: false,
+  bail: true,
   entry: [
-    'webpack-dev-server/client?http://localhost:9000',
-    'webpack/hot/only-dev-server',
+    // 'webpack-dev-server/client?http://localhost:9000',
+    // 'webpack/hot/only-dev-server',
     './src/app'
   ],
   output: {
@@ -15,7 +18,19 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify('production')
+        }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+      output: {
+        comments: false,
+      },
+    }),
     new ExtractTextPlugin('main.css', {
       allChunks: true,
     })
@@ -24,7 +39,6 @@ module.exports = {
     loaders: [{
       test: /\.jsx$/,
       loaders: [
-        'react-hot',
         'babel'
       ],
       include: path.join(__dirname, 'src')
