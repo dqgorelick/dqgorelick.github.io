@@ -1,28 +1,3 @@
-$(document).ready(function(){
-	if(location.hash.slice(1) !== ""){
-		openModal(location.hash.slice(1));
-	}
-});
-
-$(document).keydown(function(e) {
-    switch(e.which) {
-        case 27:
-		    e.preventDefault();
-        	closeModal();
-        	break;
-        default: return;
-    }
-});
-
-$(window).on('hashchange', function() {
-	var page = location.hash.slice(1);
-	if (projects[page]) {
-		openModal(page);
-	} else {
-		closeModal();
-	}
-});
-
 function openModal(id){
 	$(".wrapper").css("display", "none");
 	$(".modal").css("display", "inherit");
@@ -47,7 +22,7 @@ function openModal(id){
 		$(".slideshow").html("");
 	}
 	$(".browser").html("");
-	if (page.iframe && !Modernizr.touch){
+	if (page.iframe && !!('ontouchstart' in window)){
 		$(".browser").html("<iframe src='" + page.iframe + "'width='100%' height='600px'><p>Your browser does not support iframes.</p></iframe>");
 	}
 	if (page.images) {

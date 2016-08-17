@@ -139,8 +139,10 @@ h1,h2,h3,p{
 				width: 100%;
 				height: 200px;
 				margin-bottom: 35px;
+				-webkit-filter: initial;
+					filter: initial;
 				.filter {
-					background-color: rgba(255,255,255,0.2);
+					background-color: rgba(255,255,255,0.02);
 					overflow: visible;
 					mix-blend-mode: initial;
 					p {
@@ -185,10 +187,9 @@ section.contact{
 }
 
 .modal {
-	display: none;
 	width:100%;
 	height: 100%;
-	background-color: $background;
+	background-color: transparent;
 	position: absolute;
 	top:0;
 	left:0;
@@ -220,7 +221,7 @@ section.contact{
 			}
 		}
 	}
-	.modal-wrapper {
+	.project-details {
 		padding: 25px 10px;
 		width: 25%;
 		min-width: 250px;
@@ -250,7 +251,7 @@ section.contact{
 			}
 		}
 		.date {
-			padding: 10px 0 0 0;
+			padding: 8px 0 15px 0;
 		}
 		.areas{
 			padding: 0 0 0 0;
@@ -298,7 +299,7 @@ section.contact{
 	    display: none;
 	}
 	.slideshow{
-		display:none;
+		// display:none;
 	}
 	.browser{
 		width: 60%;
@@ -312,10 +313,9 @@ section.contact{
 @media only screen and (max-width: 64.063em) {
 	.modal{
 		.modal-header{
-			// margin: 25px 5%;
 			position: relative;
 		}
-		.modal-wrapper{
+		.project-details{
 			position: relative;
 			margin: 40px 5% 0 5%;
 			padding: 10px 10px;
@@ -353,50 +353,47 @@ section.contact{
 		.slideshow{
 			display: inherit;
 		}
-		.browser{
-			display: none;
-		}
 	}
 }
 
 #pokemon {
-	background-image:url("../images/pokemon/thumb.png");
+	background-image:url("../../images/pokemon/thumb.png");
 }
 #breakerbot {
-	background-image:url("../images/breakerbot/thumb.jpg");
+	background-image:url("../../images/breakerbot/thumb.jpg");
 }
 #processing {
-	background-image:url("../images/processing/tesseract.gif");
+	background-image:url("../../images/processing/tesseract.gif");
 	background-size: contain;
 }
 #sharks_and_minnows {
-	background-image:url("../images/sharks/thumb.png");
+	background-image:url("../../images/sharks/thumb.png");
 }
 #neif {
-	background-image:url("../images/neif/thumb.jpg");
+	background-image:url("../../images/neif/thumb.jpg");
 }
 #bostonhacks {
-	background-image:url("../images/bostonhacks/thumb.png");
+	background-image:url("../../images/bostonhacks/thumb.png");
 }
 #typespecimen {
-	background-image:url("../images/typespecimen/screenshot2.png");
+	background-image:url("../../images/typespecimen/thumb.png");
 }
 #map {
-	background-image:url("../images/map/thumb.png");
+	background-image:url("../../images/map/thumb.png");
 }
 #newyorktimes {
-	background-image:url("../images/newyorktimes/thumb.gif");
+	background-image:url("../../images/newyorktimes/thumb.gif");
 }
 #wikinauts {
-	background-image:url("../images/wikinauts/thumb1.png");
+	background-image:url("../../images/wikinauts/thumb1.png");
 }
 #calvin {
-	background-image:url("../images/calvin/thumb.png");
+	background-image:url("../../images/calvin/thumb.png");
 }
 #orator {
-	background-image:url("../images/orator/thumb.png");
+	background-image:url("../../images/orator/thumb.png");
 }
 
 #mbta {
-	background-image:url("../images/mbta/thumb.png");
+	background-image:url("../../images/mbta/thumb.png");
 }
