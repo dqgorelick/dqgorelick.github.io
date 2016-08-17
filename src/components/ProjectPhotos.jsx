@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 
 export default function ProjectPhotos (props) {
-    if (!props.images) return null;
-    const imageElements = props.images.map((image, imageIndex) => {
+    console.log('props',props);
+    if (!props.details.images) return null;
+    const imageElements = props.details.images.map((image, imageIndex) => {
         return (
             <div key={imageIndex}>
                 <img src={image}/>
@@ -11,7 +12,7 @@ export default function ProjectPhotos (props) {
         );
     })
     return (
-        <div className="slideshow">
+        <div className={'slideshow ' + (!!props.details.iframe ? 'has-iframe' : '')}>
             {imageElements}
         </div>
     )

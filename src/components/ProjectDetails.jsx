@@ -1,50 +1,50 @@
 import React, { PropTypes } from 'react';
+import ProjectLinks from './ProjectLinks';
 
 export default function ProjectDetails (props) {
     const details = props.details;
     return (
         <div className="project-details">
-            { details.date &&
-                <div className="date">{`${details.date}`}</div>
-            }
             { details.title &&
                 <div className="title">{details.title}</div>
             }
             { details.areas &&
                 <div className="areas">{details.areas}</div>
             }
+            { details.date &&
+                <div className="date">{`${details.date}`}</div>
+            }
             { details.description &&
                 <div className="description" dangerouslySetInnerHTML={{__html: details.description}}/>
             }
-            { details.link &&
-                <div className="html-link">
-                    <a target="_blank" href="{details.link}">{`\u2014DEMO`}</a>
+            { details.technologies &&
+                <div className="technologies">
+                    <p className="technologies-title">Technologies</p>
+                    {details.technologies.map((tech, index) => {
+                            if (tech.link) {
+                                return (
+                                    <div key={tech.name+index}>
+                                        {` \u2014 `}
+                                        <a target="_blank" href={tech.link}>
+                                            <span>{tech.name}</span>
+                                        </a>
+                                        <br/>
+                                    </div>
+                                );
+                            } else {
+                                return (
+                                    <div key={tech.name+index}>
+                                        {` \u2014 `}<span>{tech.name}</span>
+                                        <br/>
+                                    </div>
+                                );
+                            }
+                        })
+                    }
                 </div>
             }
-            { details.github &&
-                <div className="github-link">
-                    <a target="_blank" href="{details.github}">{`\u2014GITHUB`}</a>
-                </div>
-            }
+            <ProjectLinks details={details} />
         </div>
     )
 }
-// <div class="modal grid">
-//     <div class="modal-header">
-//         <div class="back" onclick="closeModal('');">&#10094;BACK</div>
-//     </div>
-//     <div class="project-details">
-//         <div class="date"></div>
-//         <br>
 
-//         <div class="title"></div>
-//         <div class="areas"></div>
-//         <div class="description"></div>
-//         <div class="html-link"></div>
-//         <div class="github-link"></div>
-//     </div>
-//     <div class="slideshow">
-//     </div>
-//     <div class="browser">
-//     </div>
-// </div>

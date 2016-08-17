@@ -16,7 +16,7 @@ export default function ProjectWrapper (props) {
             </div>
             <ProjectDetails details={details} />
             <ProjectFrame iframe={details.iframe} />
-            <ProjectPhotos images={details.images} />
+            <ProjectPhotos details={details} />
         </div>
     );
 }

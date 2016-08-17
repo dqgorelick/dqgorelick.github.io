@@ -6,7 +6,17 @@ body{
 	margin:0;
 	color: #black;
 	overflow-y: scroll;
+	min-height: 100vh;
 	-webkit-overflow-scrolling: touch;
+	a{
+		text-decoration: none;
+		color: $black;
+		background-color: $link-background;
+	}
+	a:hover{
+		color: #fff;
+		background-color: $blue;
+	}
 }
 
 .browser {
@@ -19,13 +29,6 @@ h1,h2,h3,p{
 }
 
 .wrapper{
-	a{
-		text-decoration: none;
-		color: $black;
-	}
-	a:hover{
-		color: $blue;
-	}
 	position: relative;
 	padding: 40px 25px 25px;
 	width: 75%;
@@ -171,18 +174,16 @@ section.contact{
 	.section-title{
 		padding: 0 0 5px 0;
 	}
-	p:hover, a:hover{
-		color: $blue;
-		cursor: pointer;
+	a {
+		background-color: transparent;
 	}
-	a{
-		text-decoration: none;
-		color: $black
+	a:hover {
+		background-color: $blue;
 	}
 	p{
 		display: inline-block;
 		width: 70px;
-		font-size: 0.8em;
+		font-size: 1em;
 	}
 }
 
@@ -194,14 +195,6 @@ section.contact{
 	top:0;
 	left:0;
 	overflow: scroll;
-	a {
-		text-decoration: none;
-		color: $black;
-	}
-	a:hover{
-		color: $blue;
-	}
-
 	.modal-header{
 		width: 100%;
 		margin: 50px 5% 0;
@@ -222,58 +215,62 @@ section.contact{
 		}
 	}
 	.project-details {
-		padding: 25px 10px;
+		padding: 10px 10px;
 		width: 25%;
 		min-width: 250px;
 		margin: 100px 5% 150px 5%;
-		float: left;
 		text-align: left;
 		position: fixed;
 		background-color: $background;
 		.title {
+			line-height: 1em;
 			font-size: 2em;
-		}
-		.html-link {
-			padding: 10px 0 0 0;
-			font-size: 1em;
-		}
-		.github-link {
-			font-size: 1em;
-		}
-		.description{
-			padding: 10px 0 0 0;
-			span {
-				text-decoration: underline;
-			}
-			a {
-				color: $blue;
-				text-decoration: underline;
-			}
-		}
-		.date {
-			padding: 8px 0 15px 0;
-		}
-		.areas{
-			padding: 0 0 0 0;
-		}
-	}
-	.bio{
-		width: 85%;
-		margin: 100px 5%;
-		background-color: $background;
-		padding: $bio-padding;
-		img{
-			width: 350px;
-			height: auto;
 			padding-bottom: 10px;
+		}
+		.links {
+			margin: 20px -5% -5%;
+			width: calc(100% + 20px);
+			position: relative;
+			height: 50px;
+			a {
+				display: inline-block;
+				text-align: center;
+				height: 100%;
+				line-height: 50px;
+			}
+			.link-half {
+				width: 50%;
+			}
+			.link-whole {
+				width: 100%;
+			}
+		}
+		.description {
+			padding: 10px 0 0 0;
+			color: $copy;
+		}
+		.technologies {
+			padding: 10px 0 0 0;
+			color: $copy;
+			.technologies-title {
+				font-size: 1.1em;
+				color: $black;
+				text-decoration: underline;
+			}
+		}
+		.date, .areas {
+			padding: 0 0 0 0;
+			// color: $copy;
+			font-size: 1.1em;
 		}
 	}
 	.slideshow, .browser {
+		position: absolute;
+		right: 0;
 		overflow: scroll;
 		padding: 100px 0;
 		width: 60%;
 		margin: 0 5% 0 0;
-		float: right;
 		text-align: center;
 		img{
 			width: 50%;
@@ -282,7 +279,7 @@ section.contact{
 			-webkit-transition: width 0.2s, height 0.2s, -webkit-transform 0.2s;
 			transition: width 0.2s, height 0.2s, transform 0.2s;
 			&:hover{
-				width:80%;
+				width:90%;
 				height:auto;
 			}
 		}
@@ -298,8 +295,10 @@ section.contact{
 	.slideshow::-webkit-scrollbar, .browser::-webkit-scrollbar  {
 	    display: none;
 	}
-	.slideshow{
-		// display:none;
+	.slideshow {
+		&.has-iframe {
+			display: none;
+		}
 	}
 	.browser{
 		width: 60%;
@@ -321,15 +320,9 @@ section.contact{
 			padding: 10px 10px;
 			z-index: 0;
 		}
-		.bio{
-			width: 85%;
-			margin: 100px 5%;
-			padding: $bio-padding;
-		}
-		.slideshow, .browser{
+		.slideshow, .browser {
 			overflow: visible;
 			text-align: left;
-			float: left;
 			width: 90%;
 			margin: 0 5% 0 5%;
 			padding: 25px 0;
@@ -350,8 +343,13 @@ section.contact{
 				}
 			}
 		}
-		.slideshow{
-			display: inherit;
+		.slideshow {
+			&.has-iframe {
+				display: initial;
+			}
+		}
+		.browser {
+			display: none;
 		}
 	}
 }
