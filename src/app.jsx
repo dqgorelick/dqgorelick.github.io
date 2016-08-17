@@ -12,7 +12,6 @@ class App extends React.Component {
         switch(currentPage) {
             case('') :
                 return (<MainWrapper />);
-
             default:
                 return (<ProjectWrapper page={currentPage}/>);
         }

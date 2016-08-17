@@ -25,7 +25,7 @@ export const PROJECTS = {
             "../images/bostonhacks/screenshot1.png",
             "../images/bostonhacks/screenshot2.png"
         ],
-        date: "Sep&#8212;Nov 2015",
+        date: "Sep\u2014Nov 2015",
         classes: "fixed-margin",
         pretty: "Bostonhacks",
     },
@@ -56,7 +56,7 @@ export const PROJECTS = {
             "../images/wikinauts/screenshot4.png"
         ],
         small_image: true,
-        date: "Sep&#8212;Dec 2014",
+        date: "Sep\u2014Dec 2014",
         classes: "fixed-margin",
         pretty: "Wikinauts App"
     },
@@ -70,7 +70,7 @@ export const PROJECTS = {
             "../images/newyorktimes/screenshot2.png",
             "../images/newyorktimes/screenshot3.png"
         ],
-        date: "Jun&#8212;Aug 2015",
+        date: "Jun\u2014Aug 2015",
         classes: "break-word",
         pretty: "New York Times",
     },
@@ -97,7 +97,7 @@ export const PROJECTS = {
             "../images/map/screenshot3.png",
             "../images/map/screenshot4.png"
         ],
-        date: "Oct&#8212;Nov 2015",
+        date: "Oct\u2014Nov 2015",
         pretty: "Marauders Map",
         classes: "fixed-margin-2",
     },
@@ -145,7 +145,7 @@ export const PROJECTS = {
             "../images/breakerbot/screenshot3.jpeg",
             "../images/breakerbot/screenshot4.jpeg",
         ],
-        date: "Sep 2015&#8212;May 2016",
+        date: "Sep 2015\u2014May 2016",
         link: "https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1",
         pretty: "Breakerbot",
         classes: "fixed-margin",
@@ -171,7 +171,7 @@ export const PROJECTS = {
         areas: "Development",
         description: "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br><span>Technologies:</span><br>Middleman",
         iframe: "http://nickebnerfitness.com/",
-        date: "Oct&#8212;Dec 2015",
+        date: "Oct\u2014Dec 2015",
         pretty: "Nick Ebner Gym",
         classes: "break-word",
     },
@@ -186,7 +186,7 @@ export const PROJECTS = {
             "../images/processing/screenshot3.jpg",
             "../images/processing/screenshot4.png",
         ],
-        date: "Jan&#8212;May 2016",
+        date: "Jan\u2014May 2016",
         pretty: "Interactive Design",
     },
     mbta: {
@@ -195,7 +195,7 @@ export const PROJECTS = {
         link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
         github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",
         description: "Worked with the Massachusetts Bay Transportation Authority to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br><span>Technologies</span><br>Python<br>Node<br>D3<br>Sqlite3",
-        date: "Feb&#8212;May 2016",
+        date: "Feb\u2014May 2016",
         images: [
             "../images/mbta/screenshot1.png",
             "../images/mbta/screenshot2.png",

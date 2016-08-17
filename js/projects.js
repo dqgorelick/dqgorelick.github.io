@@ -5,12 +5,13 @@ var projects = {
         github: "https://github.com/boston-hacks/boston-hacks.github.io",
         iframe: "http://live.bostonhacks.io/map",
         areas: "Design and development",
-        description: "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.<br><br><span>Technologies:</span><br>Foundation<br>Parse backend<br>CSS Keyframes",
+        description: "Website created for the first national hackathon at Boston University in October 2015. The site acted as the main form of communication with the 400 hackers who attended.",
+        technologies: "Foundation<br>Parse backend<br>CSS Keyframes",
         images :[
             "../images/bostonhacks/screenshot1.png",
             "../images/bostonhacks/screenshot2.png"
         ],
-        date: "Sep&#8212;Nov 2015",
+        date: "Sep\u2014Nov 2015",
         styles: "fixed-margin",
         pretty: "Bostonhacks",
     },
@@ -19,7 +20,8 @@ var projects = {
         link: "./orator",
         github: "https://github.com/dqgorelick/orator",
         areas: "Development",
-        description: "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity.<br><br><span>Technologies:</span><br>Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
+        description: "24-hour hackathon project project at Make BU 2014 to explore the uses of speech to text and text semantic analysis. Created a smart teleprompter that will follow the speakers progress during a speech, as well as a speech analyzing engine which will rate a speech on various metrics such as sentiment, posture, speed, and flag profanity.",
+        technologies: "Google Voice chrome webkit<br>Semantria API<br>HTML5 Canvas<br>HTML video and microphone",
         images  :[
             "../images/orator/screenshot1.png",
             "../images/orator/screenshot2.png"
@@ -41,13 +43,14 @@ var projects = {
             "../images/wikinauts/screenshot4.png"
         ],
         small_image: true,
-        date : "Sep&#8212;Dec 2014",
+        date : "Sep\u2014Dec 2014",
         styles: "fixed-margin",
         pretty: "Wikinauts App"
     },
     newyorktimes : {
         title: "Times Trailers<br>Summer 2015",
-        description : "Video editing and rendering web application created for the New York Times. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object. <br><br><span>Technologies:</span><br>HTML5 canvas and Fabric.js library<br>Angular.js<br>Ffmpeg.js<br>Node and express",
+        description : "Video editing and rendering web application created for the New York Times. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object. ",
+        technologies: "HTML5 canvas and Fabric.js library<br>Angular.js<br>Ffmpeg.js<br>Node and express",
         areas: "Design and development",
         images :[
             "../images/newyorktimes/example.gif",
@@ -55,7 +58,7 @@ var projects = {
             "../images/newyorktimes/screenshot2.png",
             "../images/newyorktimes/screenshot3.png"
         ],
-        date : "Jun&#8212;Aug 2015",
+        date : "Jun\u2014Aug 2015",
         styles: "break-word",
         pretty: "New York Times",
     },
@@ -82,7 +85,7 @@ var projects = {
             "../images/map/screenshot3.png",
             "../images/map/screenshot4.png"
         ],
-        date: "Oct&#8212;Nov 2015",
+        date: "Oct\u2014Nov 2015",
         pretty: "Marauders Map",
         styles: "fixed-margin-2",
     },
@@ -109,7 +112,8 @@ var projects = {
         title: "Sharks and Minnows",
         github: "https://github.com/dqgorelick/digital-ocean",
         areas: "Development",
-        description: "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).<br><br><span>Technologies:</span><br>Socket.io<br>HTML5 Canvas",
+        description: "Hackathon project built at HackBeanpot 2016. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).",
+        technologies: "Socket.io<br>HTML5 Canvas",
         images :[
             "../images/sharks/screenshot0.png",
             "../images/sharks/screenshot1.png",
@@ -122,7 +126,8 @@ var projects = {
         title: "Breakerbot",
         github: "https://github.com/dqgorelick/breakerbot",
         areas: "Development / Project Management",
-        description: "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.<br><br><span>Technologies:</span><br>Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
+        description: "Senior Design project for Boston University College of Engineering. Created a semi-autonomous robot for ConEd which transports and aligns circuit breakers. Finalist in the Intel Cornell Cup Systems Engineering national competition and won best overall project in the Computer and Electrical Engineering Department.",
+        technologies: "Angular<br>UNIX sockets (C++/Node)<br>IoT (Intel Edison)",
         images : [
             "../images/breakerbot/screenshot0.jpeg",
             "../images/breakerbot/screenshot1.jpeg",
@@ -130,7 +135,7 @@ var projects = {
             "../images/breakerbot/screenshot3.jpeg",
             "../images/breakerbot/screenshot4.jpeg",
         ],
-        date : "Sep 2015&#8212;May 2016",
+        date : "Sep 2015\u2014May 2016",
         link : "https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1",
         pretty: "Breakerbot",
         styles: "fixed-margin",
@@ -138,7 +143,8 @@ var projects = {
     pokemon : {
         title: "Twitch Plays Pokemon Go!",
         link: "https://www.twitch.tv/twitchpokemongo",
-        description: "Brought the phenomena of &#8220;Twitch plays&#8221; and &#8220;Pokemon Go&#8221; together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our hackNY team became <a href='http://www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.<br><br><span>Technologies:</span><br>Cycript<br>Python & VanillaJS",
+        description: "Brought the phenomena of &#8220;Twitch plays&#8221; and &#8220;Pokemon Go&#8221; together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Though the stream only ran for about a week, our hackNY team became <a href='http://www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>semi-internet famous</a> for a short stint.",
+        technologies: "Cycript<br>Python & VanillaJS",
         areas: "Development / Design",
         images: [
             "../images/pokemon/screenshot0.png",
@@ -154,9 +160,10 @@ var projects = {
         title: "Nick Ebner Integrative Fitness",
         link: "http://nickebnerfitness.com/",
         areas: "Development",
-        description: "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.<br><br><span>Technologies:</span><br>Middleman",
+        description: "Worked with <a href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for Nick Ebner's gym.",
+        technologies: "Middleman",
         iframe: "http://nickebnerfitness.com/",
-        date: "Oct&#8212;Dec 2015",
+        date: "Oct\u2014Dec 2015",
         pretty: "Nick Ebner Gym",
         styles: "break-word",
     },
@@ -171,7 +178,7 @@ var projects = {
             "../images/processing/screenshot3.jpg",
             "../images/processing/screenshot4.png",
         ],
-        date: "Jan&#8212;May 2016",
+        date: "Jan\u2014May 2016",
         pretty: "Interactive Design",
     },
     mbta : {
@@ -179,8 +186,9 @@ var projects = {
         areas: "Development / Design",
         link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
         github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",
-        description: "Worked with the Massachusetts Bay Transportation Authority to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br><span>Technologies</span><br>Python<br>Node<br>D3<br>Sqlite3",
-        date: "Feb&#8212;May 2016",
+        description: "Worked with the Massachusetts Bay Transportation Authority to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.",
+        technologies: "Python<br>Node<br>D3<br>Sqlite3",
+        date: "Feb\u2014May 2016",
         images: [
             "../images/mbta/screenshot1.png",
             "../images/mbta/screenshot2.png",
