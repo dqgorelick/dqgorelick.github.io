@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 export default function ProjectPhotos (props) {
-    console.log('props',props);
     if (!props.details.images) return null;
     const imageElements = props.details.images.map((image, imageIndex) => {
         return (

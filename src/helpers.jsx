@@ -19,7 +19,6 @@ export const validateHash = (hash) => {
 }
 
 export const changeHash = (newHash) => {
-    console.log('newHash',newHash);
     const match = validateHash(newHash);
     if (match.length) {
         location.hash = match[0];
