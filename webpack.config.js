@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -11,10 +12,21 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/dist/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     compress: {
+  //       warnings: false,
+  //     },
+  //     output: {
+  //       comments: false,
+  //     },
+  //   }),
+    new ExtractTextPlugin('main.css', {
+      allChunks: true,
+    })
   ],
   module: {
     loaders: [{
@@ -28,19 +40,17 @@ module.exports = {
         exclude: /node_modules/
     },
     {
-        test: /\.css$/,
-        loader: 'style!css',
-    },
-    {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
-    },
+      // Parse .scss files with node-sass & then autoprefix them, then make it css
+      test: /\.scss?$/,
+      loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
+    },
     {
       test: /\.(png|jpg|gif|jpeg)$/,
-      loader: 'url-loader?limit=10000'
+      loader: 'file-loader'
     }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.json', '.scss', 'sass', 'css']
-  }
+  },
+  watch: true
 };

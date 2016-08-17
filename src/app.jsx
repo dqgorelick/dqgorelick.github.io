@@ -1,27 +1,29 @@
-require('../assets/styles/style.scss');
+import '../assets/styles/style.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainWrapper from './components/MainWrapper';
+import ProjectWrapper from './components/ProjectWrapper';
+import { getHashLocation } from './helpers';
 
 class App extends React.Component {
-    constructor() {
-        super();
-    }
     render() {
-        console.log('this.props.page', this.props.page);
-        return (
-            <MainWrapper />
-        )
+        const currentPage = this.props.page;
+        switch(currentPage) {
+            case('') :
+                return (<MainWrapper />);
+
+            default:
+                return (<ProjectWrapper page={currentPage}/>);
+        }
     }
 }
 
 const Router = () => {
-    const page = location.hash.slice(1);
-    console.log('page',page);
+    const page = getHashLocation();
     ReactDOM.render(<App page={page} />, document.getElementById('app'));
 }
 
-window.addEventListener('hashchange', Router, true);
+window.addEventListener('hashchange', Router, false);
 
 Router();

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+
 import { PROJECTS, ACTIVE_PROJECTS } from '../data/projects';
 import ProjectTile from './ProjectTile';
 
