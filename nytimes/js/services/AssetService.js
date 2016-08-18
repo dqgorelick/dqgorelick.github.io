@@ -106,7 +106,7 @@ angular.module('AssetService', []).factory("assets", ['$http', '$q', function($h
 		}
 		// if (number === undefined) return;
 		number = lastNumber;
-	    var url = "/assets/articles/article" + number + ".json";
+	    var url = "./assets/articles/article" + number + ".json";
 	    return $http({
 	        method: 'GET',
 	        url: url
