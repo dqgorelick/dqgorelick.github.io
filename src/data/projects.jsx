@@ -3,7 +3,7 @@ export const ACTIVE_PROJECTS = [
     "breakerbot",
     "mbta",
     "sharks_and_minnows",
-    "processing",
+    "popallston",
     "bostonhacks",
     "neif",
     "map",
@@ -12,6 +12,30 @@ export const ACTIVE_PROJECTS = [
     "wikinauts",
     "calvin"
 ];
+
+export const PROCESSING_PROJECTS = {
+    cube: {
+        title: "Tesseract Project",
+    },
+    sophisticated: {
+        title: "Interactive Design Project 1",
+    },
+    circles: {
+        title: "Interactive Design Project 2",
+    },
+    music: {
+        title: "Interactive Design Project 3",
+    },
+    waves: {
+        title: "Interactive Design Project 4",
+    },
+    clock: {
+        title: "Interactive Design Final Project",
+    },
+    popallston: {
+        title: "Tell Me Everything",
+    }
+};
 
 export const PROJECTS = {
     bostonhacks: {
@@ -55,6 +79,22 @@ export const PROJECTS = {
         date: "Apr 2015",
         pretty: "Orator Project",
     },
+    popallston: {
+        title: "Tell Me Everything",
+        tagline: "Interactive installation created for a collaborative art show.",
+        link: "https://player.vimeo.com/video/179276133?autoplay=1",
+        github: "https://github.com/dqgorelick/processing/blob/master/pop_allston/pop_allston.pde",
+        areas: "Design and development",
+        description: "Installation created for the <a target='_blank' href='http://www.tellmeeverything.show/'>Tell Me Everything</a> art show. The artwork reacts to ambient music, continuously generating new designs. The show was co-curated by <a target='_blank' href='http://fritzhowser.com/'>Fritz Howser</a> and <a target='_blank' href='http://www.bryan-fountain.com/'>Bryan Fountain</a>. <br><br>More photos of the event <a target='_blank' href='http://www.bryan-fountain.com/tell-me-everything/'>&#10149;</a> <br>Artwork in action <a target='_blank' href='https://player.vimeo.com/video/179276133?autoplay=1'>&#10149;</a> ",
+        images: [
+            "../images/popallston/screenshot1.jpeg",
+            "../images/popallston/screenshot2.gif",
+        ],
+        technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
+        date: "Apr 2016",
+        classes: "fixed-margin-2",
+        pretty: "Tell Me Everything"
+    },
     wikinauts: {
         title: "Wikinauts Android App",
         tagline: "This is just a test for now, to be filled in later",
@@ -77,6 +117,7 @@ export const PROJECTS = {
     newyorktimes: {
         title: "Times Trailer",
         tagline: "This is just a test for now, to be filled in later",
+        link: "./nytimes/index.html",
         description: "Video editing and rendering web application created for the <a target='_blank' href='nytimes.com'>New York Times</a>. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object.",
         technologies: [
             {name: "HTML5 canvas w/ Fabric.js library", link: "http://fabricjs.com/"},
@@ -143,7 +184,7 @@ export const PROJECTS = {
         tagline: "This is just a test for now, to be filled in later",
         github: "https://github.com/dqgorelick/digital-ocean",
         areas: "Development",
-        description: "Hackathon project built at <a target='_blank' href='https://hackbeanpot.com/'>HackBeanpot 2016</a>. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).",
+        description: "A winning hackathon project built at <a target='_blank' href='https://hackbeanpot.com/'>HackBeanpot 2016</a>. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).",
         technologies: [
             {name: "Socket.io", link: "http://socket.io/"},
             {name: "Node and Express", link: "https://expressjs.com/"},

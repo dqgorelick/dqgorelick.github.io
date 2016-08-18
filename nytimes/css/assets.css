@@ -1,0 +1,64 @@
+.thumbnail {
+    width: 200px;
+    height:auto;
+}
+
+.directions{
+    text-align: center;
+    margin-top: 140px;
+    color: #7F7F7F;
+}
+.assets{
+    margin-top:2px;
+}
+
+.assets-scroll {
+    max-height: 400px;
+    overflow-y: scroll;
+    position:relative;
+}
+
+.asset-container {
+    margin:2px 0 2px 0;
+    padding-left: 0px;
+    max-height: 133px;
+    overflow: hidden;
+}
+
+.assets-scroll::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.nomargin {
+    margin: 0 0 !important;
+}
+
+.quote {
+    font-family: NYTCheltenhamExtBd-Regular;
+    font-style: italic;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+
+.quote-container {
+    margin: 3px;
+    background-color: black;
+}
+
+.asset-key,
+.asset-tooltip {
+    display: inline;
+}
+
+.asset-key {
+    font-family: NYTFranklinBold-Regular;
+}
+
+.asset-tooltip {
+    font-family: NYTFranklinLight-Regular;
+}
+
+.metadata {
+    margin: 10px;
+}

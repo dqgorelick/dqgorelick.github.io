@@ -1,0 +1,453 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/******************************
+		General CSS
+*******************************/
+
+
+body{
+    margin-top:70px;
+    min-height:650px;
+}
+
+.right {
+    width: 45%;
+    float: right;
+    margin: 0 4% 0 1%;
+}
+
+.left {
+    width: 45%;
+    float: left;
+    margin: 0 1% 0 4%;
+}
+.navbar h1{
+    line-height: 0.4;
+    margin-top: 5px;
+}
+.navbar {
+    width:100%;
+    /*background-color:rgba(225,225,225,0.9);*/
+    padding-top: 15px;
+    position:fixed;
+    top:0;
+    background: rgba(225,225,225,0.9);
+    left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,rgba(225,225,225,0.9))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,rgba(225,225,225,0.9) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.navbar > *,
+.karnak {
+    font-family: 'NYTKarnakDisplay-Regular';
+}
+
+#title {
+    font-size: 40px;
+}
+
+#search {
+    width: 500px;
+    margin-right: 0;
+}
+
+#search > input {
+    padding-top: 17px;
+}
+
+#font-holder {
+    display: inline-block;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+#font-button {
+    display: inline-block;
+}
+
+.font-family {
+    background-color: white;
+    padding: 5px;
+}
+
+.row-fluid {
+    display: inline-flex;
+}
+
+/******************************
+        Welcome Portal
+*******************************/
+/*outside*/
+.openModal{
+    position:absolute;
+    right:20px;
+    top:6px;
+}
+
+.keybindings{
+    position: absolute;
+    right: 160px;
+    top: 14px;
+    color: #7F7F7F;
+}
+
+#modalPage {
+    height:500px;
+    width:400px;
+    margin:auto;
+    text-align:center;
+    overflow:hidden;
+}
+
+#modalPage img{
+    width: 100px;
+    height: auto;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+#modalPage h1{
+    padding-bottom:15px;
+    margin-left: 71px;
+}
+
+#modalWrapper, #modalWrapper form{
+    text-align:center;
+    width:400px;
+}
+
+#recents{
+    margin-top:10px;
+    height:150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display:none;
+}
+
+.close_menu{
+    position:absolute;
+    left:3;
+    top:3;
+}
+
+.choose-article {
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 18px;
+    text-align: left;
+}
+
+/******************************
+        Overlay
+*******************************/
+.overlay{
+    padding-top:15px;
+}
+
+.overlay-preview, .overlay-preview-backdrop{
+    position: absolute;
+    height: 337.5px;
+    width: 600px;
+    left: 4%;
+    top: 112px;
+    border: 5px #BFBFBF dotted;
+    text-align: center;
+}
+
+ .overlay-preview-backdrop{
+    border:none;
+ }
+
+.overlay-preview:after{
+    content: "PREVIEW";
+    color: #dddddd;
+    position: absolute;
+    top: 0px;
+    left: 6px;
+}
+
+.overlay-preview h3{
+    margin-top:25px;
+}
+
+.overlay-draw, .addSlide{
+    top: 453px;
+    position: absolute;
+    left: 4%;
+    width: 600px;
+}
+
+.overlay-label{
+    width:50px;
+    text-align:right;
+}
+
+.overlay-input{
+    width:100px;
+}
+
+.overlay-color{
+    margin-left:54px;
+    width:176px;
+}
+.overlay-color:before{
+    content: "Color";
+    position: absolute;
+    font-weight: bold;
+    -webkit-transform: translatex(-55px);
+    color: #333333;
+}
+
+.overlay-checkbox{
+    padding: 5px;
+    font-size:12px;
+    color: #aaaaaa;
+}
+
+
+
+/******************************
+       Editing Module
+*******************************/
+#module{
+    margin-top:25px;
+    border:2px red dotted;
+    height:100px;
+    width:100%;
+}
+
+/******************************
+		Media Player
+*******************************/
+
+#modeWrapper {
+    background-color: #E3E3E3;
+    width: 600px;
+    padding: 6px;
+    position: relative;
+}
+
+#mainWrapper{
+    width:600px;
+    -webkit-box-shadow: 3px 3px 19px 1px rgba(148,148,148,1);
+    -moz-box-shadow: 3px 3px 19px 1px rgba(148,148,148,1);
+    box-shadow: 3px 3px 19px 1px rgba(148,148,148,1);
+}
+
+#canvas {
+    margin-top: 0px;
+    position:absolute;
+}
+
+#nyt-player {
+    min-height:337.5px;
+    width:600px;
+}
+
+#nyt-player h2{
+    text-align: center;
+    margin-top:140px;
+    color:#aaaaaa;
+}
+
+#mediaWrapper {
+    position: relative;
+}
+
+#toggle{
+    position: absolute;
+      right: 0;
+      top: 0px;
+      height: 42px;
+      font-size: 23px;
+      line-height: 1;
+      font-family: 'NYTFranklinHeadline-Regular';
+      width:114px;
+}
+
+/******************************
+        Media Query
+*******************************/
+@media (max-width: 1250px) {
+    .right {
+        width: 90%;
+        margin: 40px 5% 0 5%;
+        margin-bottom: 200px;
+    }
+
+    .left {
+        width: 90%;
+        margin: 0 4% 0 4%;
+    }
+
+    .overlay-draw, .addSlide{
+        top: 453px;
+    }
+}
+/******************************
+		buggy fonts
+*******************************/
+
+@font-face {
+    font-family: 'NYTCheltenhamBdCon-Regular';
+    src: url('./fonts/NYTCheltenhamBdCon-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamBdXCon-Regular';
+    src: url('./fonts/NYTCheltenhamBdXCon-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamBold-Italic';
+    src: url('./fonts/NYTCheltenhamBold-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamBold-Regular';
+    src: url('./fonts/NYTCheltenhamBold-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamBook-Italic';
+    src: url('./fonts/NYTCheltenhamBook-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamBook-Regular';
+    src: url('./fonts/NYTCheltenhamBook-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamExtBd-Italic';
+    src: url('./fonts/NYTCheltenhamExtBd-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamExtBd-Regular';
+    src: url('./fonts/NYTCheltenhamExtBd-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamExtLt-Italic';
+    src: url('./fonts/NYTCheltenhamExtLt-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamExtLt-Regular';
+    src: url('./fonts/NYTCheltenhamExtLt-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamLt-Italic';
+    src: url('./fonts/NYTCheltenhamLt-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamLt-Regular';
+    src: url('./fonts/NYTCheltenhamLt-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamLtCon-Regular';
+    src: url('./fonts/NYTCheltenhamLtCon-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamLtSC-Regular';
+    src: url('./fonts/NYTCheltenhamLtSC-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamMedCon-Regular';
+    src: url('./fonts/NYTCheltenhamMedCon-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamMedium-Italic';
+    src: url('./fonts/NYTCheltenhamMedium-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamMedium-Regular';
+    src: url('./fonts/NYTCheltenhamMedium-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamWide-Italic';
+    src: url('./fonts/NYTCheltenhamWide-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTCheltenhamWide-Regular';
+    src: url('./fonts/NYTCheltenhamWide-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinBold-Italic';
+    src: url('./fonts/NYTFranklinBold-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinBold-Regular';
+    src: url('./fonts/NYTFranklinBold-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinExtraBd-Italic';
+    src: url('./fonts/NYTFranklinExtraBd-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinExtraBd-Regular';
+    src: url('./fonts/NYTFranklinExtraBd-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinHeadline-Italic';
+    src: url('./fonts/NYTFranklinHeadline-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinHeadline-Regular';
+    src: url('./fonts/NYTFranklinHeadline-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinLight-Italic';
+    src: url('./fonts/NYTFranklinLight-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinLight-Regular';
+    src: url('./fonts/NYTFranklinLight-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinMedium-Italic';
+    src: url('./fonts/NYTFranklinMedium-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinMedium-Regular';
+    src: url('./fonts/NYTFranklinMedium-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTFranklinSemiBold-Regular';
+    src: url('./fonts/NYTFranklinSemiBold-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTImperial-Bold';
+    src: url('./fonts/NYTImperial-Bold.ttf')
+}
+@font-face {
+    font-family: 'NYTImperial-BoldItalic';
+    src: url('./fonts/NYTImperial-BoldItalic.ttf')
+}
+@font-face {
+    font-family: 'NYTImperial-Italic';
+    src: url('./fonts/NYTImperial-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTImperial-Regular';
+    src: url('./fonts/NYTImperial-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTImperialSemiBold-Italic';
+    src: url('./fonts/NYTImperialSemiBold-Italic.ttf')
+}
+@font-face {
+    font-family: 'NYTImperialSemiBold-Regular';
+    src: url('./fonts/NYTImperialSemiBold-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTKarnakDisplay-Regular';
+    src: url('./fonts/NYTKarnakDisplay-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTKarnakText-Regular';
+    src: url('./fonts/NYTKarnakText-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTStymieLight-Regular';
+    src: url('./fonts/NYTStymieLight-Regular.ttf')
+}
+@font-face {
+    font-family: 'NYTStymieMedium-Regular';
+    src: url('./fonts/NYTStymieMedium-Regular.ttf')
+}

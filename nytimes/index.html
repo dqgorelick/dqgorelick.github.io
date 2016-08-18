@@ -1,0 +1,219 @@
+<html ng-app="timesTrailer" ng-cloak>
+<head>
+    <title>Times Trailer</title>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="adcom/js/bootstrap.js"></script>
+    <script src="adcom/js/adcom.js"></script>
+    <script src="js/helpers.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-hotkeys/build/hotkeys.min.css">
+    <link rel="stylesheet" type="text/css" href="adcom/dist/css/adcom.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/assets.css">
+    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <link rel=”shortcut icon” href=”/favicon.ico”>
+    <script src="http://static01.nyt.com/video/vhs/vhs-2.x.min.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
+    <script src="js/vendor/underscore-min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/whammy.js"></script>
+    <script src="js/vendor/fabric.js"></script>
+    <script src="js/vendor/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
+    <script src="js/controllers/ArticleCtrl.js"></script>
+    <script src="js/controllers/CanvasCtrl.js"></script>
+    <script src="js/services/UploadService.js"></script>
+    <script src="js/services/ConfigService.js"></script>
+    <script src="js/services/SlidesService.js"></script>
+    <script src='js/services/AssetService.js'></script>
+    <script src="js/controllers/EditorCtrl.js"></script>
+    <script src="js/controllers/AssetCtrl.js"></script>
+    <script src="js/controllers/TimelineCtrl.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-sortable/src/sortable.js"></script>
+    <script type="text/ng-template" id="modal.html">
+        <div id="modalPage">
+            <div id="modalWrapper">
+                <img src="./assets/slides/logo.png"><br>
+                <h1 class="navbar-left karnak" >Times Trailer</h1>
+                <form id="search" class="navbar-right">
+                    <h4>Choose an article:</h4>
+                    <p class="choose-article" ng-click="$parent.getArticle(0)">The Most Dangerous Game</p>
+                    <p class="choose-article" ng-click="$parent.getArticle(2)">Summer Love Romance Tested By Fire And Other Calamities</p>
+                    <p class="choose-article" ng-click="$parent.getArticle(5)">The Bronx Zoos Loneliest Elephant</p>
+                </div>
+                </form>
+            </div>
+        </div>
+    </script>
+</head>
+
+<nav class="navbar navbar-static-top" ng-controller="ArticleCtrl" ng-init="open()">
+    <div class="container-fluid">
+        <h1 class="karnak">New York Times Trailer</h1>
+        <p class="keybindings">"?" for hotkeys</p>
+        <button type="button" ng-click="open();" class="openModal btn btn-primary">Choose Article</button>
+    </div>
+</nav>
+
+<body ng-init="initialize()" ng-controller="CanvasCtrl">
+    <div class="left">
+        <div id="mainWrapper">
+            <div id="modeWrapper">
+                <button class="btn btn-sm btn-primary" ng-click="createSlides();" value="Generate" type="button">
+                <span class='glyphicon glyphicon-flash'></span>
+                Generate
+                </button>
+                <button type="button" class="btn btn-sm" ng-class='playing ? "btn-danger" : "btn-primary"' ng-click="playing ? stop() : playSlides()" id="play">
+                    <span class="glyphicon" ng-class="playing ? 'glyphicon-stop' : 'glyphicon-play'">
+                    </span>
+                    {{playing ? 'Stop' : 'Play'}}
+                </button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="playSlides(true)">
+                    <span class="glyphicon glyphicon-record"></span>
+                     Render
+                </button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="popUndo()">
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                Undo
+                </button>
+                <button class="btn btn-sm btn-primary" value="Clear" type="button" ng-click="clearCanvas()">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+                Clear
+                </button>
+                <input class="btn btn btn-muted" ng-click="showCanvas = !showCanvas" id="toggle" value="{{showCanvas ? 'EDITOR' : 'PLAYER'}}" type="button">
+            </div>
+            <div id="mediaWrapper">
+                <canvas ng-show="showCanvas" id="canvas" class="media" width="600" height="338"></canvas>
+                <div ng-show="!showCanvas">
+                    <div id="video-container">
+                        <div class="media" id="nyt-player">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div ng-show="!showCanvas" id="socialWrapper">
+                <input class="btn btn-sm btn-primary" value="Download" type="button" ng-click="downloadWebM()"/>
+                <progressbar ng-show="writingGIF" class="progress-striped active" value="writingGIF" type="info"></progressbar>
+               <div id="finished">
+               </div>
+            </div>
+            <input ng-show="showCanvas" class="btn btn-sm btn-primary addSlide" ng-click="addToTimeline()" value="{{selected.slide ? 'Override' : 'Add slide'}}" type="button">
+        <div ng-controller="TimelineCtrl">
+            <div id="timeline" class="sliding" ng-class="{expanded: expandTimeline}">
+                <button class="btn btn-sm btn-primary" ng-click="expandTimeline = !expandTimeline;" type="button">
+                <span class="glyphicon glyphicon-resize-vertical"></span>
+                {{expandTimeline ? 'hide' : 'show'}}
+                </button>
+                <div class="videoTime">
+                    <span class="glyphicon glyphicon-time"></span>
+                    <label>{{SlidesService.time.display}}</label>
+                </div>
+
+                <div id="templates" style="display:none">
+                    <img id="starter" src="assets/slides/starter.jpg">
+                    <img id="ender" src="assets/slides/ender.jpg">
+                </div>
+                <div class="slideWrapper">
+                    <ul class="row-fluid no-overflow" ui-sortable="sortableOptions" ng-model="SlidesService.slides">
+                        <li class="slideView" ng-repeat="slide in SlidesService.slides track by $index">
+                            <div class="slideControls">
+                                <button type="button" class="remove btn btn-muted btn-xs" ng-click="SlidesService.removeSlide($index);">X</button>
+                                <button type="button" class="effects btn btn-success btn-xs" ng-click="effectShow($index);">fx
+                                </button>
+                                <div class="effect-controller" ng-class="{active: $index == effectIndex}">
+                                    <input class="effect-checkbox" type="checkbox" ng-model="slide.fadeIn" ng-true-value="60" ng-false-value="0">
+                                    <p class="effect-label">FADE OUT</p>
+                                    <input class="effect-checkbox" type="checkbox" ng-model="slide.fadeOut" ng-true-value="60" ng-false-value="0">
+                                     <select class="form-control kenBurns" ng-model="slide.kenBurns" ng-options="option.value as option.label for option in effects"></select>
+                                    <p class="effect-label">FADE IN</p>
+                                </div>
+                            </div>
+                            <div class="element" >
+                                <img class="ng-binding" ng-src="{{slide.thumb}}" ng-click="SlidesService.toggleSelected(slide); $parent.restoreSlide();" ng-class="{selectedBorder: SlidesService.selected.slide == slide}">
+                                <select class="form-control duration" ng-model="slide.duration" ng-options="option.value as option.label for option in durations" ng-change="SlidesService.getTime()"></select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div ng-controller="AssetCtrl" class="assets">
+            <tabset class="assets-tabs container-fluid">
+                <tab active="tabs[0].active" ng-click="tabs[0].active = true" heading="Metadata">
+                    <h3 class="directions" ng-hide="assets">Please select an <br> article to load.</h3>
+                    <div class="assets-scroll">
+                        <div ng-click="metadataClick(info.text)" class="asset-container metadata" ng-repeat="info in assets.metadata">
+                            <div class="asset-key">{{info.name}}</div>
+                            <div class="asset-tooltip">{{info.text || 'unavailable'}}</div>
+                        </div>
+                    </div>
+                </tab>
+                <tab active="tabs[1].active" ng-click="tabs[1].active = true" class="container-flud" heading="Images">
+                    <h3 class="directions" ng-hide="assets">Please select an <br> article to load.</h3>
+                    <div class="assets-scroll">
+                        <div class="row nomargin">
+                            <div class=" col-md-4 asset-container" ng-repeat="(index, image) in assets.images" tooltip-append-to-body="true" tooltip-placement="bottom" tooltip="{{image.caption}}">
+                                <img imageonload="imageLoaded()" class="thumbnail" crossorigin="anonymous" ng-click="$parent.chooseImage('image' + index)" id="image{{index}}" ng-src="{{image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab active="tabs[2].active" ng-click="tabs[2].active = true" heading="Quotes">
+                    <h3 class="directions" ng-hide="assets">Please select an <br> article to load.</h3>
+                    <div class="assets-scroll">
+                        <div class="quote-container asset-container" ng-repeat="quote in assets.quotes" ng-click="$parent.chooseText('“' + quote + '”')">
+                            <div class="asset-value quote">
+                                &#8220;{{quote}}&#8221;
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab active="tabs[3].active" ng-click="tabs[3].active = true" heading="Text" ng-controller="EditorCtrl">
+                    <div class="assets-scroll overlay">
+                        <form ng-init="initialize()">
+                            <div>
+                                <fieldset id="text" class="editor">
+                                    <legend>Text</legend>
+                                    <div class="form-group form-inline">
+                                        <label class="control-label overlay-label">Text</label>
+                                        <input class="form-control" ng-model="text.content" placeholder="text here" id="text-content" type="text"/>
+                                        <input class="btn btn-sm btn-primary" value="Draw text" type="button" ng-click="drawText()" />
+                                    </div>
+                                    <div class="form-group form-inline">
+                                        <label class="control-label overlay-label">Size</label>
+                                        <input class="form-control" ng-model="text.size" placeholder="font-size" id="font-size" type="number" />
+                                        <div id="font-button" dropdown dropdown-append-to-body>
+                                            <label class="control-label overlay-label">Font</label>
+                                            <button class="btn btn-sm btn-muted" dropdown-toggle class="dropdown" style="font-family:{{text.font}}">Choose Font</button>
+                                            <ul role="menu" class="dropdown-menu" id="font-holder">
+                                                <li ng-repeat="font in fonts" id="{{font}}" class="font-family" ng-class="{'active': font == text.font}" style="font-family:{{font}}" ng-click="text.font = font">{{font}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control overlay-color" ng-model="text.color" type="color" id="text-color"/>
+                                    </div>
+                                    <div class="form-group form-inline">
+                                        <label class="control-label overlay-label">Overlay</label>
+                                        <select class="form-control" ng-model="autoPosition" ng-options="option for option in autoPositions" id="position">
+                                        </select>
+                                        <input class="form-control overlay-color" ng-model="overlay.overlayColor" type="color" id="overlay-color">
+                                    </div>
+                                    <div class="form-group form-inline">
+                                        <label class="control-label overlay-label">Opacity</label>
+                                        <input class="form-control" ng-model="overlay.opacity" type="number" min="0" max="1" id="overlay-opacity" step=".1">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>

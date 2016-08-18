@@ -1,0 +1,200 @@
+/******************************
+        Timeline
+*******************************/
+
+#timeline, #backdrop {
+    padding: 11px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index:31;
+    background: rgba(225,225,225,0.9);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(225,225,225,0.9)), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(225,225,225,0.9) 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+}
+
+
+.sliding{
+    height: 51px;
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+}
+
+.expanded {
+    height: 165px;
+}
+
+.element {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    padding-top: 0px;
+    cursor: pointer;
+    clear: both;
+}
+
+.slideControls {
+    position: relative;
+    top: 20px;
+}
+
+.element img{
+    width: 120px;
+    height: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+.remove, .effects {
+    position:relative;
+    width: 24px;
+    z-index: 1;
+}
+.remove {
+    float: left;
+}
+
+.effects{
+    float: right;
+}
+
+.effect-controller{
+    position:absolute;
+    top:0;
+    right: -15px;
+    width:0px;
+    border-radius: 4px;
+    color:#ffffff;
+    background-color: #000000;
+    -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.25s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.25s;
+}
+
+.effect-controller.active{
+    right: 0px;
+    width: 100%;
+    height: 93px;
+}
+
+.effect-label, .effect-checkbox, .kenBurns{
+    -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.25s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.25s;
+}
+
+.effect-label, .effect-checkbox{
+    position:absolute;
+    top:3px;
+    right:3px;
+    font-size:0px;
+    text-align:right;
+}
+
+.effect-controller.active > .effect-label{
+    font-size:16px;
+    font-weight: bold;
+    right:29px;
+    top:24px;.
+}
+
+.effect-controller.active > .effect-checkbox{
+    right:8px;
+    top:24px;
+}
+.kenBurns{
+    display:none;
+    position: absolute;
+    top:2px;
+    height: 25px;
+    background-color: #000000;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.effect-controller.active >.effect-label:nth-child(2){
+    top:46px;
+}
+.effect-controller.active > .effect-checkbox:nth-child(3){
+    top:46px;
+}
+.effect-controller.active > .kenBurns{
+    top: 68px;
+    display:block;
+}
+
+.slideView {
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    margin: -5px 12px 10px 12px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.slideWrapper{
+    position:absolute;
+    width: 100%;
+    max-height: 100%;
+    overflow-x:auto;
+}
+
+.no-overflow{
+    overflow-y:hidden;
+}
+
+.duration{
+    height: 29px;
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: -3px;
+}
+
+.selectedBorder{
+    border:3px #4395e5 solid;
+}
+
+#timeline .videoTime{
+    position: absolute;
+    right: 10px;
+    padding-right: 10px;
+    top: 10px;
+}
+.videoTime span{
+    position: relative;
+    top: 1px;
+    display: inline;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 20px;
+}
+.videoTime label{
+    display: inline;
+    max-width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.changeAll{
+    -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+    display: inline;
+    height:28px;
+    width:0px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 12px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.changeAll.active{
+    height: 28px;
+    width: 340px;
+}
