@@ -4,7 +4,7 @@ import { PROJECTS, ACTIVE_PROJECTS } from '../data/projects';
 
 import ProjectNavigation from './ProjectNavigation';
 import ProjectDetails from './ProjectDetails';
-import ProjectPhotos from './ProjectPhotos';
+import ProjectMedia from './ProjectMedia';
 import ProjectFrame from './ProjectFrame';
 
 export default function ProjectWrapper (props) {
@@ -14,7 +14,7 @@ export default function ProjectWrapper (props) {
             <ProjectNavigation page={props.page} />
             <ProjectDetails details={details} />
             <ProjectFrame iframe={details.iframe} />
-            <ProjectPhotos details={details} />
+            <ProjectMedia details={details} />
         </div>
     );
 }

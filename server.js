@@ -8,6 +8,7 @@ new WebpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
   inline: true,
+  progress: true,
 }).listen(PORT, 'localhost', function (err, result) {
   if (err) {
     return console.log(err);

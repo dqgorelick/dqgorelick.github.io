@@ -4,13 +4,13 @@ export const ACTIVE_PROJECTS = [
     "mbta",
     "sharks_and_minnows",
     "popallston",
+    "processing",
     "bostonhacks",
     "neif",
     "map",
     "typespecimen",
     "newyorktimes",
     "wikinauts",
-    "calvin"
 ];
 
 export const PROCESSING_PROJECTS = {
@@ -51,7 +51,7 @@ export const PROJECTS = {
             {name: "Parse backend", link: "http://www.parse.com/"},
             {name: "CSS Keyframes"}
         ],
-        images :[
+        images: [
             "../images/bostonhacks/screenshot1.png",
             "../images/bostonhacks/screenshot2.png"
         ],
@@ -72,7 +72,7 @@ export const PROJECTS = {
             {name: "HTML5 Canvas"},
             {name: "HTML video and microphone"}
         ],
-        images  :[
+        images: [
             "../images/orator/screenshot1.png",
             "../images/orator/screenshot2.png"
         ],
@@ -90,6 +90,11 @@ export const PROJECTS = {
             "../images/popallston/screenshot1.jpeg",
             "../images/popallston/screenshot2.gif",
         ],
+        videos: [
+            {
+                src: "https://www.youtube.com/embed/WN6uD2r1it8?autoplay=1",
+            }
+        ],
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
         date: "Apr 2016",
         classes: "fixed-margin-2",
@@ -102,7 +107,7 @@ export const PROJECTS = {
         iframe: "http://wikinauts.github.io",
         areas: "Design and development",
         description: "The mobile take on the popular <a target='_blank' href='https://en.wikipedia.org/wiki/Wikipedia:Wiki_Game'>Wikipedia game</a>, where the goal is to find the shortest path between Wikipedia article pages by only clicking on the links. The application was completed as a final project in the EC327 course at Boston University. Available in the <a target='_blank' href='https://play.google.com/store/apps/details?id=com.beep_boop.Beep&hl=en'>Google Play store</a>.",
-        images  :[
+        images : [
             "../images/wikinauts/screenshot0.png",
             "../images/wikinauts/screenshot1.png",
             "../images/wikinauts/screenshot2.png",
@@ -126,7 +131,7 @@ export const PROJECTS = {
             {name: "Node and Express", link: "https://expressjs.com/"}
         ],
         areas: "Design and development",
-        images :[
+        images: [
             "../images/newyorktimes/example.gif",
             "../images/newyorktimes/screenshot1.png",
             "../images/newyorktimes/screenshot2.png",
@@ -190,10 +195,14 @@ export const PROJECTS = {
             {name: "Node and Express", link: "https://expressjs.com/"},
             {name: "HTML5 Canvas"}
         ],
-        images :[
+        images: [
             "../images/sharks/screenshot0.png",
-            "../images/sharks/screenshot1.png",
             "../images/sharks/screenshot2.png"
+        ],
+        videos: [
+            {
+                src: "https://www.youtube.com/embed/0qiosG5gr-A?autoplay=1"
+            }
         ],
         date: "Jan 2016",
         pretty: "Sharks \u0026 Minnows"
@@ -215,6 +224,11 @@ export const PROJECTS = {
             "../images/breakerbot/screenshot2.jpeg",
             "../images/breakerbot/screenshot3.jpeg",
             "../images/breakerbot/screenshot4.jpeg",
+        ],
+        videos: [
+            {
+                src: "https://www.youtube.com/embed/yyhNmTSDY2Q?start=66&autoplay=1",
+            }
         ],
         date: "Sep 2015\u2014May 2016",
         link: "https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1",
@@ -264,11 +278,19 @@ export const PROJECTS = {
         github: "https://github.com/dqgorelick/processing",
         description: "Collection of projects created during the Boston University <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> course Interactive Design. All of the projects are created using the <a target='_blank' href='http://processingjs.org/'>Processing language</a>.",
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
-        images :[
-            "../images/processing/screenshot1.png",
+        images: [
             "../images/processing/screenshot2.png",
-            "../images/processing/screenshot3.jpg",
-            "../images/processing/screenshot4.png",
+        ],
+        videos: [
+            {
+                src: "https://www.youtube.com/embed/hCtMevYWCf0?autoplay=1",
+            },
+            {
+                src: "https://www.youtube.com/embed/VOHYuH8qYiU?",
+            },
+            {
+                src: "https://www.youtube.com/embed/MKrYlIsjqiI?",
+            }
         ],
         date: "Jan\u2014May 2016",
         pretty: "Interactive Design",
