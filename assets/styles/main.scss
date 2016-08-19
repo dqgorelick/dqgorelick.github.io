@@ -201,7 +201,6 @@ section.contact{
 		z-index: 9999;
 		.nav-btn {
 			position: absolute;
-			// background-color: $link-background;
 			background-color: #fff;
 			width: 100px;
 			height: 100%;
@@ -256,7 +255,6 @@ section.contact{
 			}
 			.date, .areas {
 				padding: 0 0 0 0;
-				// color: $copy;
 				font-size: 1.1em;
 			}
 		}
@@ -327,6 +325,13 @@ section.contact{
 
 // tablets
 @media only screen and (max-width: 64.063em) {
+	.embed-video {
+		width: 90%;
+		margin: 0px auto 10px;
+		> div {
+			margin-left: -5%;
+		}
+	}
 	.modal {
 		.navigation {
 			position: absolute;
@@ -344,7 +349,7 @@ section.contact{
 			width: 90%;
 			margin: 0 5% 0 5%;
 			padding: 25px 0;
-			img{
+			img {
 				width:80%;
 				height:auto;
 				&:hover{

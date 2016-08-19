@@ -17,7 +17,7 @@ function VideoElements(props) {
                     return (
                         <div key={index} className="embed-video">
                             <div>
-                                <iframe src={`${video.src}&rel=0&showinfo=0&controls=2&loop=1`} allowFullScreen></iframe>
+                                <iframe id="myVideo" src={`${video.src}&rel=0&showinfo=0&controls=2&loop=1`} allowFullScreen ></iframe>
                             </div>
                         </div>
                     );

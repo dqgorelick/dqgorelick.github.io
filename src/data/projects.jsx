@@ -92,7 +92,7 @@ export const PROJECTS = {
         ],
         videos: [
             {
-                src: "https://www.youtube.com/embed/WN6uD2r1it8?autoplay=1",
+                src: "https://www.youtube.com/embed/WN6uD2r1it8?",
             }
         ],
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
@@ -201,7 +201,7 @@ export const PROJECTS = {
         ],
         videos: [
             {
-                src: "https://www.youtube.com/embed/0qiosG5gr-A?autoplay=1"
+                src: "https://www.youtube.com/embed/0qiosG5gr-A?autoplay=1?volume=0"
             }
         ],
         date: "Jan 2016",
@@ -283,13 +283,13 @@ export const PROJECTS = {
         ],
         videos: [
             {
-                src: "https://www.youtube.com/embed/hCtMevYWCf0?autoplay=1",
+                src: "https://www.youtube.com/embed/MKrYlIsjqiI?autoplay=1",
             },
             {
                 src: "https://www.youtube.com/embed/VOHYuH8qYiU?",
             },
             {
-                src: "https://www.youtube.com/embed/MKrYlIsjqiI?",
+                src: "https://www.youtube.com/embed/hCtMevYWCf0?",
             }
         ],
         date: "Jan\u2014May 2016",
