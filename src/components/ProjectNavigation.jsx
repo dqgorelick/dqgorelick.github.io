@@ -12,23 +12,25 @@ export default function ProjectNavigation (props) {
     };
 
     document.addEventListener('keyup', function handleKeyUp() {
-        console.log('props.page',props.page);
         switch(event.key) {
             case ('ArrowRight'):
                 changeHash(options.next);
                 if (props.page !== options.next) {
                     document.removeEventListener('keyup', handleKeyUp);
+                    window.scrollTo(0,0);
                 }
                 break;
             case ('ArrowLeft'):
                 changeHash(options.previous);
                 if (props.page !== options.previous) {
                     document.removeEventListener('keyup', handleKeyUp);
+                    window.scrollTo(0,0);
                 }
                 break;
             case ('Escape'):
                 changeHash('');
                 document.removeEventListener('keyup', handleKeyUp);
+                window.scrollTo(0,0);
                 break;
         }
     });

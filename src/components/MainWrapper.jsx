@@ -7,7 +7,7 @@ export default function MainWrapper () {
     const tiles = ACTIVE_PROJECTS.map((project, index) => {
         const details = PROJECTS[project];
         return (
-            <ProjectTile key={index} details={details} id={project} />
+            <ProjectTile index={index} key={index} details={details} id={project} />
         )
     });
 
