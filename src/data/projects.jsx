@@ -2,8 +2,8 @@ export const ACTIVE_PROJECTS = [
     "pokemon",
     "breakerbot",
     "mbta",
-    "sharks_and_minnows",
     "popallston",
+    "sharks_and_minnows",
     "processing",
     "bostonhacks",
     "neif",
@@ -85,7 +85,7 @@ export const PROJECTS = {
         link: "https://player.vimeo.com/video/179276133?autoplay=1",
         github: "https://github.com/dqgorelick/processing/blob/master/pop_allston/pop_allston.pde",
         areas: "Design and development",
-        description: "Installation created for the <a target='_blank' href='http://www.tellmeeverything.show/'>Tell Me Everything</a> art show. The artwork reacts to ambient music, continuously generating new designs. The show was co-curated by <a target='_blank' href='http://fritzhowser.com/'>Fritz Howser</a> and <a target='_blank' href='http://www.bryan-fountain.com/'>Bryan Fountain</a>. <br><br>More photos of the event <a target='_blank' href='http://www.bryan-fountain.com/tell-me-everything/'>&#10149;</a> <br>Artwork in action <a target='_blank' href='https://player.vimeo.com/video/179276133?autoplay=1'>&#10149;</a> ",
+        description: "Installation created for the <a target='_blank' href='http://www.tellmeeverything.show/'>Tell Me Everything</a> art show. The artwork reacts to ambient music, continuously generating new designs. The show was co-curated by <a target='_blank' href='http://fritzhowser.com/'>Fritz Howser</a> and <a target='_blank' href='http://www.bryan-fountain.com/'>Bryan Fountain</a>. <br><br>More photos of the event <a target='_blank' href='http://www.bryan-fountain.com/tell-me-everything/'>&#10149;</a>",
         images: [
             "../images/popallston/screenshot1.jpeg",
             "../images/popallston/screenshot2.gif",
@@ -98,7 +98,7 @@ export const PROJECTS = {
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
         date: "Apr 2016",
         classes: "fixed-margin-2",
-        pretty: "Tell Me Everything"
+        pretty: "Installation"
     },
     wikinauts: {
         title: "Wikinauts Android App",
@@ -260,7 +260,7 @@ export const PROJECTS = {
         tagline: "This is just a test for now, to be filled in later",
         link: "http://nickebnerfitness.com/",
         areas: "Development",
-        description: "Worked alongside <a target='_blank' href='http://avenir-interactive.com/'>Avenir Interactive</a> to create the professional site for <a target='_blank' href='http://nickebnerfitness.com/'>Nick Ebner's gym</a>.",
+        description: "Worked alongside <a target='_blank' href='http://avenir-interactive.com/'>Avenir Interactive</a> and <a target='_blank' href='https://www.instagram.com/cvin519/'>Calvin Chin</a> to create the professional site for <a target='_blank' href='http://nickebnerfitness.com/'>Nick Ebner's gym</a>.",
         technologies: [{name: "Middleman", link: "https://middlemanapp.com/"}],
         iframe: "http://nickebnerfitness.com/",
         images: [
@@ -301,7 +301,7 @@ export const PROJECTS = {
         areas: "Development / Design",
         link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
         github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",
-        description: "Worked with the <a target='_blank' href='http://www.mbta.com/'>Massachusetts Bay Transportation Authority</a> to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.",
+        description: "Worked with the <a target='_blank' href='http://www.mbta.com/'>Massachusetts Bay Transportation Authority</a> to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br>Check out the current status of the MBTA <a target='_blank' href='http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/'>&#10149;</a>",
         technologies: [{name: "Python/Node"}, {name: "D3.js", link: "http://d3js.org"}, {name: "Sqlite3"}],
         date: "Feb\u2014May 2016",
         images: [
