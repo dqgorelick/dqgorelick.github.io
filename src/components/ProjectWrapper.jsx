@@ -12,7 +12,7 @@ export default function ProjectWrapper (props) {
     return (
         <div className="modal">
             <ProjectNavigation page={props.page} />
-            <ProjectDetails details={details} />
+            <ProjectDetails page={props.page} details={details} />
             <ProjectFrame iframe={details.iframe} />
             <ProjectMedia details={details} />
         </div>
