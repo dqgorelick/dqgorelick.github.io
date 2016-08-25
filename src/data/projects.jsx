@@ -264,7 +264,7 @@ export const PROJECTS = {
     },
     processing: {
         title: "Interactive Design",
-        tagline: "Various projects interactive design projects created with processing.",
+        tagline: "Various interactive design projects created with processing language.",
         areas: "Development / Design",
         github: "https://github.com/dqgorelick/processing",
         description: "Collection of projects created during the Boston University <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> course Interactive Design. All of the projects are created using the <a target='_blank' href='http://processingjs.org/'>Processing language</a>.",

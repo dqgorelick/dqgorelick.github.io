@@ -8,10 +8,13 @@ import { getHashLocation } from './helpers';
 
 class App extends React.Component {
     render() {
+        window.scrollTo(0,0);
         const currentPage = this.props.page;
         switch(currentPage) {
             case('') :
-                return (<MainWrapper />);
+                return (<MainWrapper page="home"/>);
+            case('about'):
+                return (<MainWrapper page="about"/>)
             default:
                 return (<ProjectWrapper page={currentPage}/>);
         }

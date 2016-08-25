@@ -38,7 +38,7 @@ export default function ProjectNavigation (props) {
     return (
         <div className="navigation">
             <div className="nav-btn nav-back" onClick={() => { changeHash(previous) }}>&#10094; BACK</div>
-            <div className="nav-btn nav-home" onClick={() => { changeHash('') }}>INDEX</div>
+            <div className="nav-btn nav-home" onClick={() => { changeHash('') }}>GALLERY</div>
             <div className="nav-btn nav-next" onClick={() => { changeHash(next) }}>NEXT &#10095;</div>
         </div>
     );

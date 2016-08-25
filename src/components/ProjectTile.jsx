@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { changeHash } from '../helpers';
+
 export default function ProjectTile (props) {
     const styles = props.details.classes ? props.details.classes : '';
     const TileGroup = CSSTransitionGroup;
