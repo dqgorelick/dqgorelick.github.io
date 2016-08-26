@@ -17,7 +17,6 @@ body{
 	margin:0;
 	color: #black;
 	overflow-y: scroll;
-	min-height: 100vh;
 	-webkit-overflow-scrolling: touch;
 	a{
 		text-decoration: none;
@@ -77,6 +76,7 @@ h1,h2,h3,p{
 			background-color: #fff;
 			-webkit-transition: all 400ms $transition;
 			transition: all 400ms $transition;
+			border-bottom: 2px solid transparent;
 			&.active {
 				border-bottom: 2px solid $blue;
 			}

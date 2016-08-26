@@ -119,7 +119,6 @@ export const PROJECTS = {
     newyorktimes: {
         title: "Times Trailer",
         tagline: "Render and edit videos all in the browser! Editing tool created for NYT.",
-        link: "./nytimes/index.html",
         description: "Video editing and rendering web application created for the <a target='_blank' href='nytimes.com'>New York Times</a>. Purpose of the project is to pragmatically generate video content for static articles, for the newsroom to be able to rapidly edit and publish. The web application is built using Angular.js and can render .mov, .webm, and .gif by capturing animation frames from the canvas object.",
         technologies: [
             {name: "HTML5 canvas w/ Fabric.js library", link: "http://fabricjs.com/"},
