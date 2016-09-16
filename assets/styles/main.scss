@@ -246,6 +246,14 @@ h1,h2,h3,p{
 				background-color: $blue;
 				color: #fff;
 			}
+			&.inactive {
+				color: #aaa;
+				cursor: not-allowed;
+				&:hover {
+					background-color: #fff;
+					color: #aaa;
+				}
+			}
 			&.nav-back {
 				left: 0;
 				width: 30%;

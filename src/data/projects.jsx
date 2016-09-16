@@ -41,9 +41,9 @@ export const PROJECTS = {
     bostonhacks: {
         title: "Bostonhacks Live Page",
         tagline: "Webpage created for hackathon of with 500+ hackers @ BU.",
-        link: "http://live.bostonhacks.io",
+        link: "http://boston-hacks.github.io",
         github: "https://github.com/boston-hacks/boston-hacks.github.io",
-        iframe: "http://live.bostonhacks.io/map",
+        iframe: "http://boston-hacks.github.io/map",
         areas: "Design and development",
         description: "Led team to create day-of website created for the <a target='_blank' href='https://bostonhacks.io/'>first national hackathon at Boston University</a> in October 2015. The site acted as the main form of communication with the <a target='_blank' href='http://www.bu.edu/today/2015/bu-hackathon-draws-500/'>500 hackers</a> who attended.",
         technologies: [
