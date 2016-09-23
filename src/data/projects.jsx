@@ -243,7 +243,7 @@ export const PROJECTS = {
     },
     breakerbot: {
         title: "Breakerbot",
-        tagline: "Work with ConEd to bring robot automation to the utilities industry.",
+        tagline: "Worked with ConEd to bring robot automation to the utilities industry.",
         github: "https://github.com/dqgorelick/breakerbot",
         areas: "Development / Project Management",
         description: "Senior Design project for Boston University <a target='_blank' href='http://www.bu.edu/eng/'>College of Engineering</a>. Created a semi-autonomous robot for <a target='_blank' href='http://www.conedison.com/'>Con Edison</a> which transports and aligns circuit breakers. Finalist in the <a target='_blank' href='http://www.systemseng.cornell.edu/intel/'>Intel Cornell Cup</a> Systems Engineering competition and won best overall project in the Computer and Electrical Engineering Department.",
