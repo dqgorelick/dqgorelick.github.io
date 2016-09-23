@@ -11,6 +11,7 @@ export const ACTIVE_PROJECTS = [
     "map",
     "typespecimen",
     "newyorktimes",
+    "cribbage",
     "wikinauts",
     "timesmachine"
 ];
@@ -81,6 +82,20 @@ export const PROJECTS = {
         ],
         date: "Aug 2016",
         pretty: "Chrome Tab Management"
+    },
+    cribbage: {
+        title: "CNC Cribbage Board",
+        tagline: "Custom designed, CNC'd aluminum game board",
+        areas: "Engineering / Design",
+        description: "Realizing that I lacked a cribbage board, and that at the time I was a student worker in our machine shop I decided to create my own! I modeled the board off of my father's board my brothers and I would play on. The CAD design work was done in SolidWorks, and GibbsCam was used to program the CNC machines. The game board is aluminum, and the game pieces are 1/4\" steel pins.",
+        technologies: [{name: "GibbsCam"}, {name: "SolidWorks"}],
+        date: "Oct 2014",
+        images: [
+            "../images/cribbage/screenshot1.jpg",
+            "../images/cribbage/screenshot2.jpg",
+            "../images/cribbage/screenshot3.jpg",
+        ],
+        pretty: "CNC Cribbage Board"
     },
     timesmachine: {
         title: "NYTimes Machine",
