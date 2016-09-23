@@ -1,8 +1,9 @@
 export const ACTIVE_PROJECTS = [
-    "pokemon",
     "breakerbot",
     "mbta",
+    "tabbo",
     "popallston",
+    "pokemon",
     "sharks_and_minnows",
     "processing",
     "bostonhacks",
@@ -11,6 +12,7 @@ export const ACTIVE_PROJECTS = [
     "typespecimen",
     "newyorktimes",
     "wikinauts",
+    "timesmachine"
 ];
 
 export const PROCESSING_PROJECTS = {
@@ -57,6 +59,45 @@ export const PROJECTS = {
         ],
         date: "Sep\u2014Nov 2015",
         pretty: "Bostonhacks Live Site",
+    },
+    tabbo: {
+        title: "Tabbo Chrome Extension",
+        tagline: "Bringing much-needed features to google chrome",
+        link: "https://chrome.google.com/webstore/detail/tabbo/hedbkonckghacebehjebpfknhdbobiko",
+        github: "https://github.com/hackny2016labs/tabbo",
+        areas: "Development",
+        description: "A project built to solve an everyday need of (some) chrome users. My original motivation to create this extension was that there is no keybind in google chrome that allows you to move tabs left and right, or pop tabs off. Tabbo became the niche utility tool that changes how you use chrome.",
+        technologies: [
+            {name: "Google Chrome API"}
+        ],
+        images: [
+            "../images/tabbo/screenshot1.png",
+            "../images/tabbo/screenshot2.png"
+        ],
+        videos: [
+            {
+                "src": "https://www.youtube.com/embed/lnltvwTZZpU?"
+            }
+        ],
+        date: "Aug 2016",
+        pretty: "Chrome Tab Management"
+    },
+    timesmachine: {
+        title: "NYTimes Machine",
+        tagline: "Read news from “TODAY” many years back!",
+        link: "http://danielgorelick.com/timesmachine/index.html",
+        github: "https://github.com/dqgorelick/dqgorelick.github.io/timesmachine",
+        areas: "Development",
+        description: "Learning about the NYTimes API inspired me to create this small web application to explore the question: “What would the news look like from today, but many years ago?” I built this web application when I was new to javascript and had just learned the magic of REST APIs.",
+        technologies: [
+            {name: "NYTimes API", link: "https://developer.nytimes.com/"}
+        ],
+        iframe: "http://danielgorelick.com/timesmachine/index.html",
+        images: [
+            "../images/timesmachine/screenshot1.png"
+        ],
+        date: "Mar 2015",
+        pretty: "NYTimes Machine"
     },
     orator: {
         title: "Orator WebApp",
@@ -269,7 +310,8 @@ export const PROJECTS = {
         description: "Collection of projects created during the Boston University <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> course Interactive Design. All of the projects are created using the <a target='_blank' href='http://processingjs.org/'>Processing language</a>.",
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
         images: [
-            "../images/processing/screenshot2.png",
+            "../images/processing/screenshot5.png",
+            "../images/processing/tesseract.gif",
         ],
         videos: [
             {
