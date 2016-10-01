@@ -2,7 +2,7 @@ import React from 'react';
 import { ABOUT } from '../data/about.jsx';
 export default function AboutWrapper() {
     return(
-        <div className="about">
+        <div className="about-wrapper">
             <div className="about-bio">
                 <p dangerouslySetInnerHTML={{__html: ABOUT.bio}}></p>
                 <div className="contact">

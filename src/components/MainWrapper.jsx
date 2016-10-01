@@ -8,7 +8,7 @@ export default function MainWrapper (props) {
     return (
         <div className="wrapper">
             <section className="upper">
-                <h2 id="about">DANIEL GORELICK</h2>
+                <h2>DANIEL GORELICK</h2>
                 <div id="tagline">
                     <p>New York, NY<br/>developer / designer</p>
                 </div>

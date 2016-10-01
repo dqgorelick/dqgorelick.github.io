@@ -222,7 +222,7 @@ export const PROJECTS = {
     },
     typespecimen: {
         title: "Type Specimens: Helvetica",
-        tagline: "This is my helvetica poster. Created for a typography course at BU's CFA.",
+        tagline: "This is my helvetica poster– a type specimen.",
         description: "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> at Boston University. The poster is 24&#34 x 36&#34 printed black and white.",
         areas: "Design",
         images: [
