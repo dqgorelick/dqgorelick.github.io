@@ -232,6 +232,53 @@ export const PROJECTS = {
         ],
         date: "Nov 2015",
         pretty: "Helvetica Type Specimin",
+        longform: {
+            summary: "A type specimen for the world's most popular font. 24\" x 36\" poster printed in black and white.",
+            motivation: "As a computer engineering student I had spent lots of time learning about topics such as logic design, computer architecture, and algorithms. Ever since I was I young as I can remember, however, I would love to play with graphic design. What started with Microsoft Paint, led to Paint.net, then to the Adobe Suite, and in a roundabout way– web development. I wanted to enrich my graphic design experience and take advantage of being part of Boston University. I decided to enroll in BU's College of Fine Arts course: Typography I. What started as an inkling of an idea turned into one of my most fulfilling courses during my college career.",
+            process: "We started with exercises to pay attention to the form of the letters, and the moments created by the negative and positive space in each work of art. Each new assignment seemed very constrained, and almost elementary, but the fundamental skills I learned from this process I now find invaluable. As one of the final projects we were tasked with creating a type specimen for a font chosen out of a hat. I ended up with the font Helvetica. In my research of the font, I found out that the typeface comes with an unexpected rich history.",
+            result: "After many iterations, my final poster design features 3 color tones, examples of the Helvetica typeface being used in display and paragraphs, many different sizes of the font, and the main phrase noting that Helvetica is the “The typeface that is fucking every where.” Arriving at such a seemingly simple design took many more hours and iterations than I had expected. While the typeface is perhaps one of the most widely used, the letterforms create a powerful matrix between the positive and negative space which the design needs to cater towards. In the designs, a lot of attention had to be given to this as well as following a strict grid system. I am very pleased with the end result, and have a newfound respect for the font.",
+            timeline: "3 weeks",
+            images: [
+                {
+                    type: "medium",
+                    path: "../images/typespecimen/longform/final.png",
+                },
+                {
+                    type: "small",
+                    path: "../images/typespecimen/longform/sophisticated.png",
+                    caption: "Produced on Microsoft Paint XP by Me cerca 6 y.o."
+                },
+                {
+                    type: "grid",
+                    path: [
+                        "../images/typespecimen/longform/elastic1.png",
+                        "../images/typespecimen/longform/explode1.png",
+                        "../images/typespecimen/longform/minimize.png",
+                        "../images/typespecimen/longform/initials1.png",
+                        "../images/typespecimen/longform/initials2.png",
+                        "../images/typespecimen/longform/initials3.png",
+                    ],
+                    caption: "Selections of work from typography course."
+                },
+                {
+                    type: "medium",
+                    path: "../images/typespecimen/longform/helvetica_progress.gif",
+                    caption: "Progress towards the final version of the poster."
+                }
+            ],
+            order: [
+                "summary",
+                "images",
+                "timeline",
+                "areas",
+                "motivation",
+                "images",
+                "process",
+                "images",
+                "result",
+                "images"
+            ]
+        }
     },
     sharks_and_minnows: {
         title: "Sharks \u0026 Minnows",
