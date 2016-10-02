@@ -73,10 +73,10 @@ function flash(back, page){
 	if (day < 10){
 		day = "0"+day;
 	}
-	beginDate = (back)+month+(day);
-	endDate = (back)+month+(day);
+	beginDate = back.toString()+month.toString()+day.toString();
+	endDate = back.toString()+month.toString()+day.toString();
 
-	urlDate = back + month + day;
+	urlDate = back.toString() + month.toString() + day.toString();
 	//api call
 	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&sort=newest&api-key=18db54dfa62f1e62a054c842b2f3da90:6:66888243";
 	url += '&end_date='+endDate;
