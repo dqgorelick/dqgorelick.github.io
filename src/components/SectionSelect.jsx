@@ -11,6 +11,11 @@ export default function SectionSelect(props) {
             <div className={`section ${(props.page === 'about' ? 'active' : '')}`}>
                 <p onClick={() => {changeHash('about')}}>ABOUT</p>
             </div>
+            <div className={`section ${(props.page === 'blog' ? 'active' : '')}`}>
+                <a href="./blog">
+                    <p>BLOG</p>
+                </a>
+            </div>
         </div>
     );
 }

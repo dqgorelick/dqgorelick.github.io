@@ -9,7 +9,7 @@
 	}
 }
 
-body{
+body {
 	// font-family: $copy-font;
 	font-family: $main-font;
 	padding:0;
@@ -77,8 +77,9 @@ h1,h2,h3,p{
 	.sections {
 		margin: 0 auto;
 		padding-bottom: 20px;
-		cursor: pointer;
 		.section {
+			cursor: pointer;
+			text-transform: uppercase;
 			width: 60px;
 			display: inline-block;
 			-webkit-box-sizing: border-box;

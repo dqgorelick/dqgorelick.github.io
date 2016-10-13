@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --config webpack.production.config.js --progress --profile; jekyll build"
+    "build": "webpack --config webpack.production.config.js --progress --profile",
+    "serve": "webpack --config webpack.production.config.js --progress --profile --watch"
   },
   "repository": {
     "type": "git",

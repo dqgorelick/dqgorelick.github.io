@@ -1,0 +1,115 @@
+&.blog-wrapper {
+    max-width: 610px;
+}
+
+.blog-back {
+    margin-top: 20px;
+    -webkit-transition: all 400ms $transition;
+    transition: all 400ms $transition;
+    a {
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+.posts {
+    margin: 0 auto;
+    padding: 0 55px;
+    text-align: left;
+    @include media(medium) {
+        padding: 0 20px;
+    }
+    .post-date {
+        color: $copy;
+        margin-top: 12px;
+    }
+    .entry-date {
+        color: $copy;
+        font-family: $blog-title;
+    }
+    img {
+        width: 200px;
+        height: auto;
+        text-align: center;
+    }
+    a {
+        &:hover {
+            color: $black;
+        }
+    }
+    .post {
+        padding: 15px 30px;
+        background-color: #fff;
+        width: 400px;
+        margin: 0 auto 30px;
+        border-bottom: 2px solid rgba(255,255,255,0);
+        -webkit-transition: all 400ms $transition;
+        transition: all 400ms $transition;
+        &:hover {
+            border-bottom: 2px solid $blue;
+        }
+    }
+    .entry-wrapper {
+        color: #333333;
+        font-family: $blog-copy;
+        max-width: 700px;
+        margin: 50px auto 100px;
+        h1 {
+            font-family: $blog-title-bold;
+            font-size: 2.5rem;
+            padding-bottom: 0.3*2rem;
+            margin-top: 0.8*2rem;
+            line-height: 1.04;
+            letter-spacing: -.028em;
+            @include media(small) {
+                font-size: 2rem;
+
+            }
+        }
+        h3 {
+            font-family: $blog-title-bold;
+            font-size: 2rem;
+            margin-top: 3.3125rem;
+            line-height: 1.15;
+            letter-spacing: -.02em;
+            @include media(small) {
+                font-size: 1.75rem;
+                margin-top: 2.8125rem;
+            }
+        }
+        li {
+            font-size: 1.3125rem;
+        }
+        ul {
+            margin: 0;
+            padding-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.3125rem;
+            margin-top: 1.8125rem;
+            line-height: 1.6;
+            @include media(small) {
+                font-size: 1.125rem;
+                margin-top: 1.3125rem;
+            }
+            &.center {
+                text-align: center;
+            }
+            &.large {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        h3 + p {
+            margin-top: 0.5rem;
+        }
+        iframe {
+            margin-top: 1rem;
+            width: 100%;
+            border: none;
+        }
+    }
+}

@@ -6,9 +6,11 @@
     {% if page.excerpt %}
     <meta name="description" content="{{ page.excerpt| strip_html }}" />
     <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/9147241?v=3&s=466" />
     {% else %}
     <meta name="description" content="{{ site.description }}">
     <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/9147241?v=3&s=466" />
     {% endif %}
     <meta name="author" content="{{ site.name }}" />
 
