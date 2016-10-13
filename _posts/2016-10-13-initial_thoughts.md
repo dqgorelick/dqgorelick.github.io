@@ -13,7 +13,8 @@ I want to produce a kick-ass project(s) during my time here.
 
 Let's boggie (aka brainstorm). Cue Cowboy Bebop intro song.
 
-{% youtube n6jCJZEFIto 100 100 %}
+[Cowboy Bebop](https://www.youtube.com/watch?v=n6jCJZEFIto)
+
 
 ### Ideas
 - Is creative technology more about the idea or the tooling?
