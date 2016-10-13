@@ -15,7 +15,7 @@ google_analytics: "UA-70796463-1"
 
 url: "http://danielgorelick.com"
 
-baseurl: "http://dqgorelick.github.io"
+baseurl: ""
 
 permalink: /:title/
 
