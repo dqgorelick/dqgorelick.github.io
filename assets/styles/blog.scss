@@ -41,7 +41,7 @@
     .post {
         padding: 15px 30px;
         background-color: #fff;
-        width: 400px;
+        max-width: 400px;
         margin: 0 auto 30px;
         border-bottom: 2px solid rgba(255,255,255,0);
         -webkit-transition: all 400ms $transition;
