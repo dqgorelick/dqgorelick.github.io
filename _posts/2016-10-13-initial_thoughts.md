@@ -13,7 +13,7 @@ I want to produce a kick-ass project(s) during my time here.
 
 Let's boggie (aka brainstorm). Cue Cowboy Bebop intro song.
 
-[Cowboy Bebop](https://www.youtube.com/watch?v=n6jCJZEFIto)
+[&#10149; Play Cowboy Bebop](https://www.youtube.com/watch?v=n6jCJZEFIto){:target="_blank"}
 
 
 ### Ideas
