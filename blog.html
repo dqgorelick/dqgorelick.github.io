@@ -3,38 +3,18 @@ layout: default
 ---
 <body class="grid">
     <div class="wrapper blog-wrapper">
-        <section class="upper">
-            <h2>DANIEL GORELICK</h2>
-            <div id="tagline">
-                <p>New York, NY<br/>developer / designer</p>
-            </div>
-        </section>
-        <div class="sections">
-            <div class="section">
-                <a href="{{ site.baseurl }}/#gallery">
-                    <p>Gallery</p>
-                </a>
-            </div>
-            <div class="section">
-                <a href="{{ site.baseurl }}/#about">
-                    <p>About</p>
-                </a>
-            </div>
-            <div class="section active">
-                <a href="{{ site.baseurl }}/blog">
-                    <p>Blog</p>
-                </a>
-            </div>
+        <div class="header-longform">
+            {% include header.html %}
         </div>
-        <div class="posts">
+        <div class="longform-wrapper">
             {% for post in site.posts %}
             <a href="{{ site.baseurl }}{{ post.url }}">
-                <article class="post" >
+                <article class="longform" >
                     <h1>{{ post.title }}</h1>
                     <div class="entry">
                         {{ post.excerpt }}
                     </div>
-                    <div class="post-date">
+                    <div class="longform-date">
                         {{ post.date | date: "%B %e, %Y" }}
                     </div>
                 </article>

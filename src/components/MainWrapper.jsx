@@ -9,8 +9,8 @@ export default function MainWrapper (props) {
         <div className="wrapper">
             <section className="upper">
                 <h2>DANIEL GORELICK</h2>
-                <div id="tagline">
-                    <p>New York, NY<br/>developer / designer</p>
+                <div className="tagline">
+                    <p>Digital &amp; Hardware Creative Technologist<br/>New York, NY</p>
                 </div>
             </section>
             <SectionSelect page={props.page} />

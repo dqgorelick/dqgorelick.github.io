@@ -13,14 +13,14 @@
     }
 }
 
-.posts {
+.longform-wrapper {
     margin: 0 auto;
     padding: 0 55px;
     text-align: left;
     @include media(medium) {
         padding: 0 20px;
     }
-    .post-date {
+    .longform-date {
         color: $copy;
         margin-top: 12px;
     }
@@ -38,7 +38,7 @@
             color: $black;
         }
     }
-    .post {
+    .longform {
         padding: 15px 30px;
         background-color: #fff;
         max-width: 400px;
@@ -54,7 +54,7 @@
         color: #333333;
         font-family: $blog-copy;
         max-width: 700px;
-        margin: 50px auto 100px;
+        margin: 50px auto 50px;
         h1 {
             font-family: $blog-title-bold;
             font-size: 2.5rem;

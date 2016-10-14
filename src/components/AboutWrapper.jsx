@@ -4,6 +4,9 @@ export default function AboutWrapper() {
     return(
         <div className="about-wrapper">
             <div className="about-bio">
+                <div className="about-photo-mobile">
+                    <img src={ABOUT.photo}/>
+                </div>
                 <p dangerouslySetInnerHTML={{__html: ABOUT.bio}}></p>
                 <div className="contact">
                     <p>GITHUB <a href="http://github.com/dqgorelick">&#10149;</a></p>
