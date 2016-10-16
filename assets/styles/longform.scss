@@ -52,9 +52,6 @@
     padding: 0 55px;
     text-align: left;
     font-family: $blog-copy;
-    > a {
-        text-decoration: none;
-    }
     @include media(medium) {
         padding: 0 20px;
     }
@@ -100,11 +97,11 @@
         padding: 0;
         list-style: none;
         list-style-image: none;
-        margin-top: 29px;
+        margin-top: 1rem;
     }
     li {
         margin-left: 40px;
-        margin-bottom: 14px;
+        margin-bottom: 0;
         p {
           display: inline-block;
           margin-top: 0.4rem;
@@ -174,12 +171,14 @@
         margin: 0 auto 50px;
         &.project {
             margin-bottom: 20px;
+            .project-information {
+                margin-top: 1rem;
+            }
             .project-image {
                 text-align: center;
                 padding-top: 1rem;
                 img {
-                    width: 100%;
-                    max-width: 300px;
+                    width: 90%;
                     height: auto;
                 }
             }

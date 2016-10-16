@@ -57,7 +57,8 @@ export const PROJECTS = {
             "../images/bostonhacks/screenshot1.png",
             "../images/bostonhacks/screenshot2.png"
         ],
-        date: "Sep\u2014Nov 2015",
+        date: "November 2015",
+        timeline: "2 weeks",
         pretty: "Bostonhacks Live Site",
     },
     tabbo: {
@@ -79,7 +80,8 @@ export const PROJECTS = {
                 "src": "https://www.youtube.com/embed/lnltvwTZZpU?"
             }
         ],
-        date: "Aug 2016",
+        timeline: "2 nights",
+        date: "August 2016",
         pretty: "Chrome Tab Management"
     },
     cribbage: {
@@ -88,8 +90,11 @@ export const PROJECTS = {
         areas: "Engineering / Design",
         description: "Realizing that I lacked a cribbage board, and that at the time I was a student worker in our machine shop I decided to create my own! I modeled the board off of my father's board my brothers and I would play on. The CAD design work was done in SolidWorks, and GibbsCam was used to program the CNC machines. The game board is aluminum, and the game pieces are 1/4\" steel pins.",
         technologies: [{name: "GibbsCam"}, {name: "SolidWorks"}],
-        date: "Oct 2014",
+        date: "October 2014",
         banner: "../images/cribbage/screenshot1.jpg",
+        timeline: "2 weeks",
+        budget: "$100",
+        materials: "Aluminum, Steel",
         images: [
             "../images/cribbage/screenshot2.jpg",
             "../images/cribbage/screenshot3.jpg",
@@ -106,9 +111,10 @@ export const PROJECTS = {
         technologies: [
             {name: "NYTimes API", link: "https://developer.nytimes.com/"}
         ],
+        timeline: "24 hours",
         iframe: "http://danielgorelick.com/timesmachine/index.html",
         banner: "../images/timesmachine/screenshot1.jpg",
-        date: "Mar 2015",
+        date: "March 2015",
         pretty: "NYTimes Machine"
     },
     orator: {
@@ -128,8 +134,9 @@ export const PROJECTS = {
             "../images/orator/screenshot1.png",
             "../images/orator/screenshot2.png"
         ],
-        date: "Apr 2015",
-        pretty: "Orator Project",
+        timeline: "24 hours",
+        date: "April 2015",
+        pretty: "Orator Project"
     },
     popallston: {
         title: "Tell Me Everything",
@@ -147,8 +154,9 @@ export const PROJECTS = {
                 src: "https://www.youtube.com/embed/WN6uD2r1it8?",
             }
         ],
+        timeline: "3 days",
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
-        date: "Apr 2016",
+        date: "April 2016",
         pretty: "Interactive Installation"
     },
     wikinauts: {
@@ -167,7 +175,8 @@ export const PROJECTS = {
             "../images/wikinauts/screenshot4.png"
         ],
         small_image: true,
-        date: "Sep\u2014Dec 2014",
+        timeline: "3 months",
+        date: "December 2014",
         pretty: "Wikinauts App"
     },
     newyorktimes: {
@@ -187,7 +196,8 @@ export const PROJECTS = {
             "../images/newyorktimes/screenshot1.png",
             "../images/newyorktimes/screenshot3.png"
         ],
-        date: "Jun\u2014Aug 2015",
+        timeline: "2 months",
+        date: "August 2015",
         pretty: "New York Times Webapp",
     },
     calvin: {
@@ -201,7 +211,8 @@ export const PROJECTS = {
             "../images/calvin/screenshot2.png",
             "../images/calvin/screenshot3.png"
         ],
-        date: "Feb 2015",
+        timeline: "1 week",
+        date: "February 2015",
         pretty: "Design Portfolio",
     },
     map: {
@@ -216,7 +227,8 @@ export const PROJECTS = {
             "../images/map/screenshot3.jpg",
             "../images/map/screenshot4.jpg"
         ],
-        date: "Oct\u2014Nov 2015",
+        budget: "$50",
+        date: "November 2015",
         pretty: "Marauders Map Project",
     },
     typespecimen: {
@@ -229,7 +241,8 @@ export const PROJECTS = {
             "../images/typespecimen/screenshot2.png",
             "../images/typespecimen/screenshot3.png"
         ],
-        date: "Nov 2015",
+        timeline: "2 weeks",
+        date: "November 2015",
         pretty: "Helvetica Type Specimin",
         longform: {
             summary: "A type specimen for the world's most popular font. 24\" x 36\" poster printed in black and white.",
@@ -299,7 +312,8 @@ export const PROJECTS = {
                 src: "https://www.youtube.com/embed/0qiosG5gr-A?"
             }
         ],
-        date: "Jan 2016",
+        timeline: "36 hours",
+        date: "Janurary 2016",
         pretty: "Sharks \u0026 Minnows Game"
     },
     breakerbot: {
@@ -325,7 +339,9 @@ export const PROJECTS = {
                 src: "https://www.youtube.com/embed/yyhNmTSDY2Q?start=66&autoplay=1",
             }
         ],
-        date: "Sep 2015\u2014May 2016",
+        timeline: "8 months",
+        budget: "$2000",
+        date: "May 2016",
         link: "https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1",
         pretty: "Breakerbot Project",
     },
@@ -345,6 +361,7 @@ export const PROJECTS = {
             "../images/pokemon/screenshot1.png",
             "../images/pokemon/screenshot2.png",
         ],
+        timeline: "3 days",
         date: "June 2016",
         pretty: "Twitch Plays Pkmn Go",
     },
@@ -357,7 +374,8 @@ export const PROJECTS = {
         technologies: [{name: "Middleman", link: "https://middlemanapp.com/"}],
         iframe: "http://nickebnerfitness.com/",
         banner: "../images/neif/screenshot1.png",
-        date: "Oct\u2014Dec 2015",
+        timeline: "2 months",
+        date: "December 2015",
         pretty: "Nick Ebner Gym Site",
     },
     processing: {
@@ -383,7 +401,8 @@ export const PROJECTS = {
                 src: "https://www.youtube.com/embed/hCtMevYWCf0?",
             }
         ],
-        date: "Jan\u2014May 2016",
+        timeline: "4 months",
+        date: "May 2016",
         pretty: "Processing Projects",
     },
     mbta: {
@@ -394,7 +413,8 @@ export const PROJECTS = {
         github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",
         description: "Worked with the <a target='_blank' href='http://www.mbta.com/'>Massachusetts Bay Transportation Authority</a> to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br>Check out the current status of the MBTA <a target='_blank' href='http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/'>&#10149;</a>",
         technologies: [{name: "Python/Node"}, {name: "D3.js", link: "http://d3js.org"}, {name: "Sqlite3"}],
-        date: "Feb\u2014May 2016",
+        timeline: "3 months",
+        date: "May 2016",
         banner: "../images/mbta/screenshot1.png",
         images: [
             "../images/mbta/screenshot2.png",

@@ -55,7 +55,7 @@ h1,h2,h3,p{
 
 .wrapper{
 	position: relative;
-	padding: 60px 25px 100px;
+	padding: 40px 25px 50px;
 	width: 80%;
 	min-width: 320px;
 	max-width: 1000px;
@@ -65,7 +65,6 @@ h1,h2,h3,p{
 	background-color: $light-gray;
 	&.project-wrapper {
 		margin: 0 auto;
-		padding: 40px 25px 50px;
 	}
 	@include media(small) {
 		padding: 40px 5px 60px;
@@ -149,12 +148,10 @@ h1,h2,h3,p{
 			margin-top: 10px;
 		}
 		.about-bio {
-			direction: ltr;
 			text-align: left;
 			display: inline-block;
 			width: 40%;
 			padding: 30px;
-			background-color: #fff;
 			.about-photo-mobile {
 				display: none;
 				margin: 0 auto 20px;
@@ -192,13 +189,8 @@ h1,h2,h3,p{
 }
 
 .embed-video {
-	width: 50%;
-	margin: 0px auto 10px;
-	-webkit-transition: width 0.2s, height 0.2s, -webkit-transform 0.2s;
-	transition: width 0.2s, height 0.2s, transform 0.2s;
-	&:hover {
-		width: 90%;
-	}
+	width: 90%;
+	margin: 1.5rem auto 10px;
 	> div {
 		position: relative;
 		padding-bottom: 56%;
@@ -330,13 +322,6 @@ h1,h2,h3,p{
 
 // tablets
 @media only screen and (max-width: 64.063em) {
-	.embed-video {
-		width: 90%;
-		margin: 0px auto 10px;
-		> div {
-			margin-left: -5%;
-		}
-	}
 	.modal {
 		.navigation {
 			position: absolute;

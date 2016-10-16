@@ -7,12 +7,36 @@ export default function ProjectDetails (props) {
     const details = props.details;
     return (
         <div>
-            { details.areas &&
-                <p className='areas'>{details.areas}</p>
-            }
-            { details.date &&
-                <p className='date'>{`${details.date}`}</p>
-            }
+            <ul className='project-information'>
+                { details.areas &&
+                    <li className='areas'>
+                        <p>
+                            <span>Areas: </span>{details.areas}
+                        </p>
+                    </li>
+                }
+                { details.date &&
+                    <li className='date'>
+                        <p>
+                            <span>Date: </span>{`${details.date}`}
+                        </p>
+                    </li>
+                }
+                { details.budget &&
+                    <li className='budget'>
+                        <p>
+                            <span>Budget: </span>{`${details.budget}`}
+                        </p>
+                    </li>
+                }
+                { details.timeline &&
+                    <li className='timeline'>
+                        <p>
+                            <span>Timeline: </span>{`${details.timeline}`}
+                        </p>
+                    </li>
+                }
+            </ul>
             { details.description &&
                 <p className='description' dangerouslySetInnerHTML={{__html: details.description}}/>
             }
@@ -25,16 +49,18 @@ export default function ProjectDetails (props) {
                                 if (tech.link) {
                                     return (
                                         <li key={tech.name+index}>
-                                            <a target='_blank' href={tech.link}>
-                                                <p>{tech.name}</p>
-                                            </a>
+                                            <p>
+                                                <a target='_blank' href={tech.link}>
+                                                    {tech.name}
+                                                </a>
+                                            </p>
                                             <br/>
                                         </li>
                                     );
                                 } else {
                                     return (
-                                        <li key={tech.name+index}>
-                                            <p>{tech.name}</p>
+                                            <li key={tech.name+index}>
+                                                <p>{tech.name}</p>
                                             <br/>
                                         </li>
                                     );

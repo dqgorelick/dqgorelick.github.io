@@ -8,12 +8,16 @@ export default function ProjectLinks (props) {
                 <ul>
                     {props.details.link &&
                         <li>
-                            <a target='_blank' href={props.details.link}><p>Demo</p></a>
+                            <p>
+                                <a target='_blank' href={props.details.link}>Demo</a>
+                            </p>
                         </li>
                     }
                     {props.details.github &&
                         <li>
-                            <a target='_blank' href={props.details.github}><p>Github</p></a>
+                            <p>
+                                <a target='_blank' href={props.details.github}>Github</a>
+                            </p>
                         </li>
                     }
                 </ul>
