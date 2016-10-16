@@ -1,3 +1,11 @@
+.additional-projects {
+    margin-top: 60px;
+    .additional-tiles {
+        margin: 20px auto 40px;
+        overflow-x: scroll;
+    }
+}
+
 .tiles {
     padding: 0;
     display: -webkit-flex;
@@ -14,6 +22,32 @@
     flex-flow: row wrap;
     -webkit-align-content: flex-end;
     align-content: flex-end;
+    &.additional {
+        width: 100%;
+        min-width: 780px;
+        .tile-wrapper {
+            width: 240px;
+            height: 250px;
+            .tile {
+                height: 130px;
+            }
+            .project-info {
+                .tagline-wrapper {
+                    p {
+                        margin-top: initial;
+                        line-height: initial;
+                        font-family: $main-font;
+                    }
+                    .tile-title {
+                        font-family: $tile-font;
+                    }
+                    .tile-tagline {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
     .tile-wrapper {
         width: 280px;
         height: 280px;

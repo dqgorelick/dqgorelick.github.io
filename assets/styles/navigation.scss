@@ -10,7 +10,7 @@
         text-decoration: none;
     }
     @include media(small) {
-        width: 100%;
+        width: 90%;
         top: 0;
         margin: 0;
         padding: 0;
@@ -25,9 +25,6 @@
                 width: 30%;
                 margin-right: 0;
             }
-        }
-        .project-details {
-            margin: 60px 5% 0 5%;
         }
     }
     .nav-btn {

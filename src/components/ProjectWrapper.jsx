@@ -6,6 +6,7 @@ import ProjectNavigation from './ProjectNavigation';
 import ProjectDetails from './ProjectDetails';
 import ProjectMedia from './ProjectMedia';
 import ProjectDetailsHeader from './ProjectDetailsHeader';
+import AdditionalProjects from './AdditionalProjects';
 
 export default function ProjectWrapper (props) {
     const details = PROJECTS[props.page];
@@ -19,7 +20,12 @@ export default function ProjectWrapper (props) {
                     <ProjectDetails page={props.page} details={details} />
                     <ProjectMedia details={details} />
                 </div>
-                <ProjectNavigation page={props.page} />
+            </div>
+            <div className='additional-projects'>
+                <h3>Additional Projects</h3>
+                <div className='additional-tiles'>
+                    <AdditionalProjects page={props.page} />
+                </div>
             </div>
             <div className='copyright'>&copy; daniel gorelick 2016</div>
         </div>

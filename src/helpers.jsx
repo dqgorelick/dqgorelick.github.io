@@ -26,3 +26,28 @@ export const changeHash = (newHash) => {
         location.hash = '';
     }
 }
+
+export const getRandom = (projects, count) => {
+    const selected = []
+    if (projects.length < count) {
+        return null;
+    }
+    while(selected.length < count){
+        const randomNumber=Math.floor(Math.random()*projects.length)
+        let found = false;
+        for(let i=0; i<selected.length; i++) {
+            if (selected[i]==randomNumber) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            selected[selected.length] = randomNumber;
+        }
+    }
+    const subset = [];
+    selected.forEach(num => {
+        subset.push(projects[num])
+    })
+    return subset;
+}

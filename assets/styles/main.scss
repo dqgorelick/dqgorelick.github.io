@@ -65,7 +65,7 @@ h1,h2,h3,p{
 	background-color: $light-gray;
 	&.project-wrapper {
 		margin: 0 auto;
-		padding-top: 40px;
+		padding: 40px 25px 50px;
 	}
 	@include media(small) {
 		padding: 40px 5px 60px;
@@ -224,71 +224,8 @@ h1,h2,h3,p{
 	left:0;
 	overflow: scroll;
 	@include media(small) {
-		.navigation {
-			width: 100%;
-			top: 0;
-			margin: 0;
-			padding: 0;
-			position: fixed;
-			.nav-btn {
-				background-color: $link-background;
-				&.nav-back {
-					width: 30%;
-					margin-left: 0;
-				}
-				&.nav-next {
-					width: 30%;
-					margin-right: 0;
-				}
-			}
-		}
 		.project-details {
 			margin: 60px 5% 0 5%;
-		}
-	}
-	.navigation {
-		width: 250px;
-		margin: 32px 0 0 5%;
-		position: fixed;
-		height: 30px;
-		background-color: transparent;
-		z-index: 9999;
-		.nav-btn {
-			position: absolute;
-			background-color: $light-gray;
-			width: 100px;
-			height: 100%;
-			line-height: 30px;
-			text-align: center;
-			cursor: pointer;
-			-webkit-transition: background-color color 0.25s $transition;
-			transition: background-color color 0.25s $transition;
-			&:hover {
-				background-color: $blue;
-				color: #fff;
-			}
-			&.inactive {
-				color: #aaa;
-				cursor: not-allowed;
-				&:hover {
-					background-color: $light-gray;
-					color: #aaa;
-				}
-			}
-			&.nav-back {
-				left: 0;
-				width: 30%;
-			}
-			&.nav-next {
-				right: 0;
-				width: 30%;
-			}
-			&.nav-home {
-				margin: 0 auto;
-				width: 40%;
-				left: 0;
-				right: 0;
-			}
 		}
 	}
 	.project-details {
