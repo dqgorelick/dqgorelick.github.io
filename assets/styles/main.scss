@@ -18,14 +18,15 @@ body {
 	color: #black;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-	a{
+	a {
 		text-decoration: none;
 		color: $black;
-		background-color: $link-background;
+		background-color: rgba(0,0,0,0);
+		text-decoration: underline;
 		-webkit-transition: color, background-color 0.25s $transition;
 		transition: color, background-color 0.25s $transition;
 	}
-	a:hover{
+	a:hover {
 		color: #fff;
 		background-color: $blue;
 	}
@@ -62,6 +63,10 @@ h1,h2,h3,p{
 	margin: 90px auto;
 	text-align:center;
 	background-color: $light-gray;
+	&.project-wrapper {
+		margin: 0 auto;
+		padding-top: 40px;
+	}
 	@include media(small) {
 		padding: 40px 5px 60px;
 		width: calc(100% - 10px);
@@ -79,7 +84,15 @@ h1,h2,h3,p{
 	.upper {
 		max-width: 400px;
 		margin: 0 auto;
+		a {
+			text-decoration: none;
+			&:hover {
+				background-color: transparent;
+				color: #000;
+			}
+		}
 		h2 {
+			cursor: pointer;
 			font-size: 2.5rem;
 			font-family: $tile-font;
 		}
@@ -99,6 +112,7 @@ h1,h2,h3,p{
 		padding-bottom: 20px;
 		> a {
 			background-color: transparent;
+			text-decoration: none;
 		}
 		.section {
 			text-align: center;
@@ -113,6 +127,9 @@ h1,h2,h3,p{
 			-webkit-transition: all 400ms $transition;
 			transition: all 400ms $transition;
 			border-bottom: 2px solid transparent;
+			> a {
+				text-decoration: none;
+			}
 			&.active {
 				border-bottom: 2px solid $blue;
 			}

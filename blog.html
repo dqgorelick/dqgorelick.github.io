@@ -3,19 +3,17 @@ layout: default
 ---
 <body class="grid">
     <div class="wrapper blog-wrapper">
-        <div class="header-longform">
-            {% include header.html %}
-        </div>
-        <div class="longform-wrapper">
+        {% include header.html %}
+        <div class="posts">
             {% for post in site.posts %}
             <a href="{{ site.baseurl }}{{ post.url }}">
-                <article class="longform" >
+                <article class="post" >
                     <h1>{{ post.title }}</h1>
                     <div class="entry">
                         {{ post.excerpt }}
                     </div>
-                    <div class="longform-date">
-                        {{ post.date | date: "%B %e, %Y" }}
+                    <div class="post-date">
+                        {{ post.date | date: "%e %B %Y" }}
                     </div>
                 </article>
             </a>

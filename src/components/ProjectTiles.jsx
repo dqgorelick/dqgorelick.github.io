@@ -12,8 +12,8 @@ export default function ProjectTiles (props) {
     });
 
     return (
-        <section className="projects">
-            <div className="tiles">
+        <section className='projects'>
+            <div className='tiles'>
                 {tiles}
             </div>
         </section>

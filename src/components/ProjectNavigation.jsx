@@ -34,9 +34,15 @@ export default function ProjectNavigation (props) {
 
     return (
         <div className="navigation">
-            <div className={`nav-btn nav-back ${options.previous === props.page ? 'inactive' : ''}`} onClick={() => { changeHash(previous) }}>&#10094; BACK</div>
-            <div className={`nav-btn nav-home`} onClick={() => { changeHash('') }}>GALLERY</div>
-            <div className={`nav-btn nav-next ${options.next === props.page ? 'inactive' : ''}`} onClick={() => { changeHash(next) }}>NEXT &#10095;</div>
+            <a href={`/#${previous}`}>
+                <div className={`nav-btn nav-back ${options.previous === props.page ? 'inactive' : ''}`}>&#10094; BACK</div>
+            </a>
+            <a href={`/#gallery`}>
+                <div className={`nav-btn nav-home`}>GALLERY</div>
+            </a>
+            <a href={`/#${next}`}>
+                <div className={`nav-btn nav-next ${options.next === props.page ? 'inactive' : ''}`}> NEXT &#10095;</div>
+            </a>
         </div>
     );
 }

@@ -15,9 +15,9 @@ function VideoElements(props) {
             { props.videos &&
                 props.videos.map((video, index) => {
                     return (
-                        <div key={index} className="embed-video">
+                        <div key={index} className='embed-video'>
                             <div>
-                                <iframe id="myVideo" src={`${video.src}&rel=0&showinfo=0&controls=2&loop=1`} allowFullScreen ></iframe>
+                                <iframe id='myVideo' src={`${video.src}&rel=0&showinfo=0&controls=2&loop=1`} allowFullScreen ></iframe>
                             </div>
                         </div>
                     );
@@ -33,9 +33,8 @@ function ImageElements(props) {
             { props.images &&
                 props.images.map((image, index) => {
                     return (
-                        <div key={index}>
+                        <div className='project-image' key={index}>
                             <img src={image}/>
-                            <br/>
                         </div>
                     );
                 })

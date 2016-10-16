@@ -6,7 +6,6 @@ export const ACTIVE_PROJECTS = [
     "pokemon",
     "sharks_and_minnows",
     "processing",
-    "bostonhacks",
     "neif",
     "map",
     "typespecimen",
@@ -71,8 +70,8 @@ export const PROJECTS = {
         technologies: [
             {name: "Google Chrome API"}
         ],
+        banner: "../images/tabbo/screenshot1.png",
         images: [
-            "../images/tabbo/screenshot1.png",
             "../images/tabbo/screenshot2.png"
         ],
         videos: [
@@ -90,8 +89,8 @@ export const PROJECTS = {
         description: "Realizing that I lacked a cribbage board, and that at the time I was a student worker in our machine shop I decided to create my own! I modeled the board off of my father's board my brothers and I would play on. The CAD design work was done in SolidWorks, and GibbsCam was used to program the CNC machines. The game board is aluminum, and the game pieces are 1/4\" steel pins.",
         technologies: [{name: "GibbsCam"}, {name: "SolidWorks"}],
         date: "Oct 2014",
+        banner: "../images/cribbage/screenshot1.jpg",
         images: [
-            "../images/cribbage/screenshot1.jpg",
             "../images/cribbage/screenshot2.jpg",
             "../images/cribbage/screenshot3.jpg",
         ],
@@ -108,9 +107,7 @@ export const PROJECTS = {
             {name: "NYTimes API", link: "https://developer.nytimes.com/"}
         ],
         iframe: "http://danielgorelick.com/timesmachine/index.html",
-        images: [
-            "../images/timesmachine/screenshot1.png"
-        ],
+        banner: "../images/timesmachine/screenshot1.jpg",
         date: "Mar 2015",
         pretty: "NYTimes Machine"
     },
@@ -141,8 +138,8 @@ export const PROJECTS = {
         github: "https://github.com/dqgorelick/processing/blob/master/pop_allston/pop_allston.pde",
         areas: "Design and development",
         description: "Installation created for the <a target='_blank' href='http://www.tellmeeverything.show/'>Tell Me Everything</a> art show. The artwork reacts to ambient music, continuously generating new designs. The show was co-curated by <a target='_blank' href='http://fritzhowser.com/'>Fritz Howser</a> and <a target='_blank' href='http://www.bryan-fountain.com/'>Bryan Fountain</a>. <br><br>More photos of the event <a target='_blank' href='http://www.bryan-fountain.com/tell-me-everything/'>&#10149;</a>",
+        banner: "../images/popallston/screenshot1.jpeg",
         images: [
-            "../images/popallston/screenshot1.jpeg",
             "../images/popallston/screenshot2.gif",
         ],
         videos: [
@@ -161,6 +158,7 @@ export const PROJECTS = {
         iframe: "http://wikinauts.github.io",
         areas: "Design and development",
         description: "The mobile take on the popular <a target='_blank' href='https://en.wikipedia.org/wiki/Wikipedia:Wiki_Game'>Wikipedia game</a>, where the goal is to find the shortest path between Wikipedia article pages by only clicking on the links. The application was completed as a final project in the EC327 course at Boston University. Available in the <a target='_blank' href='https://play.google.com/store/apps/details?id=com.beep_boop.Beep&hl=en'>Google Play store</a>.",
+        banner: "../images/wikinauts/banner.png",
         images : [
             "../images/wikinauts/screenshot0.png",
             "../images/wikinauts/screenshot1.png",
@@ -183,10 +181,10 @@ export const PROJECTS = {
             {name: "Node and Express", link: "https://expressjs.com/"}
         ],
         areas: "Design and development",
+        banner: "../images/newyorktimes/screenshot2.png",
         images: [
             "../images/newyorktimes/example.gif",
             "../images/newyorktimes/screenshot1.png",
-            "../images/newyorktimes/screenshot2.png",
             "../images/newyorktimes/screenshot3.png"
         ],
         date: "Jun\u2014Aug 2015",
@@ -207,15 +205,16 @@ export const PROJECTS = {
         pretty: "Design Portfolio",
     },
     map: {
-        title: "Boston University Marauder's Map",
+        title: "Boston University Marauder’s Map",
         tagline: "Making maps and raising money for clean water!",
         description: "Created for the Boston University chapter of <a target='_blank' href='https://www.globalbrigades.org/experience-water-brigades'>Global Water Brigades</a> Harry Potter Movie Marathon event. The maps are printed on tabloid size parchment paper in color. Raised over $1.2k for the BU Global Water Brigades. Painted elements created by Alison Staffin (BU ‘17).",
         areas: "Design",
+        banner: "../images/map/screenshot1.jpg",
         images: [
-            "../images/map/screenshot1.jpg",
             "../images/map/screenshot2.jpg",
-            "../images/map/screenshot3.png",
-            "../images/map/screenshot4.png"
+            "../images/map/screenshot5.jpg",
+            "../images/map/screenshot3.jpg",
+            "../images/map/screenshot4.jpg"
         ],
         date: "Oct\u2014Nov 2015",
         pretty: "Marauders Map Project",
@@ -225,8 +224,8 @@ export const PROJECTS = {
         tagline: "This is my helvetica poster– a type specimen.",
         description: "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> at Boston University. The poster is 24&#34 x 36&#34 printed black and white.",
         areas: "Design",
+        banner: "../images/typespecimen/screenshot1.png",
         images: [
-            "../images/typespecimen/screenshot1.png",
             "../images/typespecimen/screenshot2.png",
             "../images/typespecimen/screenshot3.png"
         ],
@@ -291,8 +290,8 @@ export const PROJECTS = {
             {name: "Node and Express", link: "https://expressjs.com/"},
             {name: "HTML5 Canvas"}
         ],
+        banner: "../images/sharks/screenshot0.png",
         images: [
-            "../images/sharks/screenshot0.png",
             "../images/sharks/screenshot2.png"
         ],
         videos: [
@@ -314,8 +313,8 @@ export const PROJECTS = {
             {name: "UNIX sockets (C++/Node)"},
             {name: "Intel Edison", link: "http://www.intel.com/content/www/us/en/do-it-yourself/edison.html"}
         ],
+        banner: "../images/breakerbot/screenshot0.jpeg",
         images: [
-            "../images/breakerbot/screenshot0.jpeg",
             "../images/breakerbot/screenshot1.jpeg",
             "../images/breakerbot/screenshot2.jpeg",
             "../images/breakerbot/screenshot3.jpeg",
@@ -340,11 +339,11 @@ export const PROJECTS = {
             {name: "Flask", link: "http://flask.pocoo.org/"}
         ],
         areas: "Development / Design",
+        banner: "../images/pokemon/screenshot3.png",
         images: [
             "../images/pokemon/screenshot0.png",
             "../images/pokemon/screenshot1.png",
             "../images/pokemon/screenshot2.png",
-            "../images/pokemon/screenshot3.png",
         ],
         date: "June 2016",
         pretty: "Twitch Plays Pkmn Go",
@@ -357,10 +356,7 @@ export const PROJECTS = {
         description: "Worked alongside <a target='_blank' href='http://avenir-interactive.com/'>Avenir Interactive</a> and <a target='_blank' href='https://www.instagram.com/cvin519/'>Calvin Chin</a> to create the professional site for <a target='_blank' href='http://nickebnerfitness.com/'>Nick Ebner's gym</a>.",
         technologies: [{name: "Middleman", link: "https://middlemanapp.com/"}],
         iframe: "http://nickebnerfitness.com/",
-        images: [
-            "../images/neif/screenshot1.png",
-            "../images/neif/screenshot2.png",
-        ],
+        banner: "../images/neif/screenshot1.png",
         date: "Oct\u2014Dec 2015",
         pretty: "Nick Ebner Gym Site",
     },
@@ -371,6 +367,7 @@ export const PROJECTS = {
         github: "https://github.com/dqgorelick/processing",
         description: "Collection of projects created during the Boston University <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> course Interactive Design. All of the projects are created using the <a target='_blank' href='http://processingjs.org/'>Processing language</a>.",
         technologies: [{name: "Processing language", link: "http://processingjs.org/"}],
+        banner: "../images/processing/screenshot3.jpg",
         images: [
             "../images/processing/screenshot5.png",
             "../images/processing/tesseract.gif",
@@ -390,7 +387,7 @@ export const PROJECTS = {
         pretty: "Processing Projects",
     },
     mbta: {
-        title: "MBTA Alerts and Performance Analysis",
+        title: "MBTA Performance Analysis",
         tagline: "Teamed up with the MBTA to improve performance and delay alerts.",
         areas: "Development / Design",
         link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
@@ -398,8 +395,8 @@ export const PROJECTS = {
         description: "Worked with the <a target='_blank' href='http://www.mbta.com/'>Massachusetts Bay Transportation Authority</a> to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br>Check out the current status of the MBTA <a target='_blank' href='http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/'>&#10149;</a>",
         technologies: [{name: "Python/Node"}, {name: "D3.js", link: "http://d3js.org"}, {name: "Sqlite3"}],
         date: "Feb\u2014May 2016",
+        banner: "../images/mbta/screenshot1.png",
         images: [
-            "../images/mbta/screenshot1.png",
             "../images/mbta/screenshot2.png",
             "../images/mbta/screenshot3.png",
             "../images/mbta/screenshot4.png",

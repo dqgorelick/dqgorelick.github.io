@@ -15,6 +15,7 @@ class App extends React.Component {
             case('about'):
                 return (<MainWrapper page="about"/>)
             default:
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
                 return (<ProjectWrapper page={currentPage}/>);
         }
     }
