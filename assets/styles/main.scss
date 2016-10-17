@@ -53,6 +53,7 @@ h1,h2,h3,p{
 	margin:0;
 }
 
+
 .wrapper{
 	position: relative;
 	padding: 40px 25px 50px;
@@ -80,9 +81,20 @@ h1,h2,h3,p{
 			}
 		}
 	}
+	&.header-blog {
+		margin: 0 auto;
+		.upper img {
+			width: 70px;
+			float: left;
+			margin-right: 20px;
+		}
+	}
 	.upper {
 		max-width: 400px;
 		margin: 0 auto;
+		img {
+			width: 80px;
+		}
 		a {
 			text-decoration: none;
 			&:hover {
@@ -92,7 +104,8 @@ h1,h2,h3,p{
 		}
 		h2 {
 			cursor: pointer;
-			font-size: 2.5rem;
+			font-size: 1.5rem;
+			margin-top: 1rem;
 			font-family: $tile-font;
 		}
 		.section-title {
@@ -100,10 +113,8 @@ h1,h2,h3,p{
 		}
 
 		.tagline {
+			margin-top: 0.5rem;
 			padding-bottom: 1rem;
-			p {
-				margin-top: 1rem;
-			}
 		}
 	}
 	.sections {

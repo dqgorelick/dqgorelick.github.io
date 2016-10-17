@@ -9,11 +9,12 @@ export default function MainWrapper (props) {
         <div className='wrapper'>
             <section className='upper'>
                 <a href='/#home'>
+                    <img src="../images/logo.png" alt="main logo"/>
                     <h2>DANIEL GORELICK</h2>
-                    <div className='tagline'>
-                        <p>Digital &amp; Hardware Creative Technologist<br/>New York, NY</p>
-                    </div>
                 </a>
+                <div className='tagline'>
+                    <p>Digital &amp; Hardware Creative Technologist<br/>New York, NY</p>
+                </div>
             </section>
             <SectionSelect page={props.page} />
             {props.page === 'home' &&
