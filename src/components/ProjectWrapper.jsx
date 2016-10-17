@@ -13,9 +13,9 @@ export default function ProjectWrapper (props) {
 
     return (
         <div className='wrapper project-wrapper'>
+            <ProjectNavigation page={props.page} />
+            <ProjectDetailsHeader details={details} />
             <div className='longform-wrapper'>
-                <ProjectNavigation page={props.page} />
-                <ProjectDetailsHeader details={details} />
                 <div className='project longform'>
                     <ProjectDetails page={props.page} details={details} />
                     <ProjectMedia details={details} />

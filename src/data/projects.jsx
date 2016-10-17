@@ -166,10 +166,10 @@ export const PROJECTS = {
         iframe: "http://wikinauts.github.io",
         areas: "Design and development",
         description: "The mobile take on the popular <a target='_blank' href='https://en.wikipedia.org/wiki/Wikipedia:Wiki_Game'>Wikipedia game</a>, where the goal is to find the shortest path between Wikipedia article pages by only clicking on the links. The application was completed as a final project in the EC327 course at Boston University. Available in the <a target='_blank' href='https://play.google.com/store/apps/details?id=com.beep_boop.Beep&hl=en'>Google Play store</a>.",
-        banner: "../images/wikinauts/banner.png",
+        banner_portrait: true,
+        banner: "../images/wikinauts/screenshot1.png",
         images : [
             "../images/wikinauts/screenshot0.png",
-            "../images/wikinauts/screenshot1.png",
             "../images/wikinauts/screenshot2.png",
             "../images/wikinauts/screenshot3.png",
             "../images/wikinauts/screenshot4.png"
@@ -236,6 +236,7 @@ export const PROJECTS = {
         tagline: "This is my helvetica poster– a type specimen.",
         description: "A type specimen poster and digital material created for the font face Helvetica. The project was created during a Typography course in the <a target='_blank' href='https://www.bu.edu/cfa/'>College of Fine Arts</a> at Boston University. The poster is 24&#34 x 36&#34 printed black and white.",
         areas: "Design",
+        banner_portrait: true,
         banner: "../images/typespecimen/screenshot1.png",
         images: [
             "../images/typespecimen/screenshot2.png",

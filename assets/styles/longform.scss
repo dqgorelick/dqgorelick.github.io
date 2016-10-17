@@ -46,6 +46,33 @@
         }
     }
 }
+.longform-header {
+    text-align: center;
+    h1 {
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+    .tagline {
+        text-align: center;
+        margin-top: 0.25rem;
+    }
+    .banner {
+        width: 90%;
+        height: auto;
+        text-align: center;
+        margin-top: 1.5rem;
+        &.portrait {
+            width: 35%;
+        }
+        @include media(medium) {
+            width: 100%;
+            height: auto;
+            &.portrait {
+                width: 50%;
+            }
+        }
+    }
+}
 
 .longform-wrapper {
     margin: 0 auto;
@@ -143,27 +170,6 @@
         margin-top: 1rem;
         width: 100%;
         border: none;
-    }
-    .longform-header {
-        text-align: center;
-        h1 {
-            text-align: center;
-            letter-spacing: 0.01em;
-        }
-        .tagline {
-            text-align: center;
-            margin-top: 0.25rem;
-        }
-        .banner {
-            height: 500px;
-            width: auto;
-            text-align: center;
-            margin-top: 1.25rem;
-            @include media(medium) {
-                width: 100%;
-                height: auto;
-            }
-        }
     }
     .longform {
         color: #333333;
