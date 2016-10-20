@@ -167,7 +167,6 @@
         margin-top: 0.5rem;
     }
     iframe {
-        margin-top: 1rem;
         width: 100%;
         border: none;
     }
@@ -183,11 +182,29 @@
             .project-image {
                 text-align: center;
                 padding-top: 1rem;
+                &.portrait {
+                    img {
+                        max-width: 300px;
+                    }
+                }
                 img {
-                    width: 90%;
+                    width: 80%;
                     height: auto;
                 }
             }
         }
     }
+}
+
+
+.media-caption {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.2rem!important;
+    color: $copy;
+    text-align: center;
+    font-family: $blog-title!important;
+    margin-top: 0.25rem!important;
+    margin-bottom: 1rem;
+    line-height: 1em;
 }

@@ -15,7 +15,11 @@ export default function ProjectDetails (props) {
                 </div>
             </div>
             { details.banner &&
-                <img className={`banner ${details.banner_portrait ? 'portrait' : ''}`} src={details.banner}/>
+                <div>
+                    <img className={`banner ${details.banner_portrait ? 'portrait' : ''}`} src={details.banner.src}/>
+                    <p className='media-caption'>{details.banner.caption}</p>
+                </div>
+
             }
         </div>
     )

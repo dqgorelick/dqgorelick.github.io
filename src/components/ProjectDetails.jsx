@@ -36,6 +36,13 @@ export default function ProjectDetails (props) {
                         </p>
                     </li>
                 }
+                { details.collaborators &&
+                    <li className='collaborators '>
+                        <p>
+                            <span>Collaborators : </span>{`${details.collaborators }`}
+                        </p>
+                    </li>
+                }
             </ul>
             { details.description &&
                 <p className='description' dangerouslySetInnerHTML={{__html: details.description}}/>

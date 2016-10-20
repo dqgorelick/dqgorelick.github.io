@@ -18,6 +18,9 @@ export default function ProjectWrapper (props) {
             <div className='longform-wrapper'>
                 <div className='project longform'>
                     <ProjectDetails page={props.page} details={details} />
+                    { !!details.images &&
+                        <h3>Results</h3>
+                    }
                     <ProjectMedia details={details} />
                 </div>
             </div>

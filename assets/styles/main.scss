@@ -46,6 +46,7 @@ body {
 
 .browser {
 	-webkit-overflow-scrolling: touch;
+	margin-top: 1rem;
 }
 
 h1,h2,h3,p{
@@ -53,10 +54,9 @@ h1,h2,h3,p{
 	margin:0;
 }
 
-
 .wrapper{
 	position: relative;
-	padding: 40px 25px 50px;
+	padding: 40px 25px 80px;
 	width: 80%;
 	min-width: 320px;
 	max-width: 1000px;
@@ -66,6 +66,18 @@ h1,h2,h3,p{
 	background-color: $light-gray;
 	&.project-wrapper {
 		margin: 0 auto;
+	}
+	.about-wrapper {
+		.about-bio {
+			p span {
+				float: left;
+				font-size: 80px;
+				line-height: 60px;
+				padding-top: 4px;
+				padding-right: 5px;
+				padding-left: 3px;
+			}
+		}
 	}
 	@include media(small) {
 		padding: 40px 5px 60px;
@@ -83,10 +95,13 @@ h1,h2,h3,p{
 	}
 	&.header-blog {
 		margin: 0 auto;
-		.upper img {
-			width: 70px;
-			float: left;
-			margin-right: 20px;
+		.upper {
+			// height: 82px;
+			img {
+				width: 70px;
+				float: left;
+				margin-right: 20px;
+			}
 		}
 	}
 	.upper {
@@ -154,9 +169,12 @@ h1,h2,h3,p{
 	}
 	.about-wrapper {
 		line-height: 1.5em;
-		color: $copy;
+		color: #333;
 		.contact {
-			margin-top: 10px;
+			margin-top: 2rem;
+			a {
+				text-decoration: none;
+			}
 		}
 		.about-bio {
 			text-align: left;
@@ -323,6 +341,7 @@ h1,h2,h3,p{
 	}
 	.browser{
 		width: 60%;
+		margin-top: 1rem;
 		iframe{
 			border: none;
 			height: 100vh;
@@ -374,6 +393,7 @@ h1,h2,h3,p{
 		}
 		.browser {
 			display: none;
+			margin-top: 1rem;
 		}
 	}
 }
