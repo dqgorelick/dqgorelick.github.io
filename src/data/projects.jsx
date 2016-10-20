@@ -47,7 +47,7 @@ export const PROJECTS = {
         github: "https://github.com/boston-hacks/boston-hacks.github.io",
         iframe: "http://boston-hacks.github.io/map",
         areas: "Design and development",
-        description: "Led team to create day-of website created for the <a target='_blank' href='https://bostonhacks.io/'>first national hackathon at Boston University</a> in October 2015. The site acted as the main form of communication with the <a target='_blank' href='http://www.bu.edu/today/2015/bu-hackathon-draws-500/'>500 hackers</a> who attended.",
+        description: "Led team to create day-of website created for the <a target=’_blank' href='https://bostonhacks.io/'>first national hackathon at Boston University</a> in October 2015. The site acted as the main form of communication with the <a target='_blank' href='http://www.bu.edu/today/2015/bu-hackathon-draws-500/'>500 hackers</a> who attended.",
         technologies: [
             {name: "Foundation", link: "http://foundation.zurb.com/"},
             {name: "Parse backend", link: "http://www.parse.com/"},
@@ -306,7 +306,7 @@ export const PROJECTS = {
         areas: "Design",
         banner: {
             src: "../images/map/screenshot1.jpg",
-            caption: "Final maps were sold as tickets to visitors to the events."
+            caption: "Maps were sold as tickets to visitors for the events."
         },
         images: [
             {
@@ -360,8 +360,8 @@ export const PROJECTS = {
         date: "November 2015",
         pretty: "Helvetica Type Specimin",
         longform: {
-            summary: "A type specimen for the world's most popular font. 24\" x 36\" poster printed in black and white.",
-            motivation: "As a computer engineering student I had spent lots of time learning about topics such as logic design, computer architecture, and algorithms. Ever since I was I young as I can remember, however, I would love to play with graphic design. What started with Microsoft Paint, led to Paint.net, then to the Adobe Suite, and in a roundabout way– web development. I wanted to enrich my graphic design experience and take advantage of being part of Boston University. I decided to enroll in BU's College of Fine Arts course: Typography I. What started as an inkling of an idea turned into one of my most fulfilling courses during my college career.",
+            summary: "A type specimen for the world’s most popular font. 24\" x 36\" poster printed in black and white.",
+            motivation: "As a computer engineering student I had spent lots of time learning about topics such as logic design, computer architecture, and algorithms. Ever since I was I young as I can remember, however, I would love to play with graphic design. What started with Microsoft Paint, led to Paint.net, then to the Adobe Suite, and in a roundabout way– web development. I wanted to enrich my graphic design experience and take advantage of being part of Boston University. I decided to enroll in BU’s College of Fine Arts course: Typography I. What started as an inkling of an idea turned into one of my most fulfilling courses during my college career.",
             process: "We started with exercises to pay attention to the form of the letters, and the moments created by the negative and positive space in each work of art. Each new assignment seemed very constrained, and almost elementary, but the fundamental skills I learned from this process I now find invaluable. As one of the final projects we were tasked with creating a type specimen for a font chosen out of a hat. I ended up with the font Helvetica. In my research of the font, I found out that the typeface comes with an unexpected rich history.",
             result: "After many iterations, my final poster design features 3 color tones, examples of the Helvetica typeface being used in display and paragraphs, many different sizes of the font, and the main phrase noting that Helvetica is the “The typeface that is fucking every where.” Arriving at such a seemingly simple design took many more hours and iterations than I had expected. While the typeface is perhaps one of the most widely used, the letterforms create a powerful matrix between the positive and negative space which the design needs to cater towards. In the designs, a lot of attention had to be given to this as well as following a strict grid system. I am very pleased with the end result, and have a newfound respect for the font.",
             timeline: "3 weeks",
@@ -413,7 +413,7 @@ export const PROJECTS = {
         tagline: "Play tag with friends online using web sockets. A winning hack.",
         github: "https://github.com/dqgorelick/digital-ocean",
         areas: "Development",
-        description: "A winning hackathon project built at <a target='_blank' href='https://hackbeanpot.com/'>HackBeanpot 2016</a>. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn't sleep much).",
+        description: "A winning hackathon project built at <a target='_blank' href='https://hackbeanpot.com/'>HackBeanpot 2016</a>. My first experience at using web sockets extensively as well as game development paradigms. We had a great team, and we all learned a bunch (and didn’t sleep much).",
         technologies: [
             {name: "Socket.io", link: "http://socket.io/"},
             {name: "Node and Express", link: "https://expressjs.com/"},
@@ -520,7 +520,7 @@ export const PROJECTS = {
         link: "http://nickebnerfitness.com/",
         collaborators: "Avenir Interactive, Calvin Chin",
         areas: "Development",
-        description: "Worked alongside <a target='_blank' href='http://avenir-interactive.com/'>Avenir Interactive</a> and <a target='_blank' href='https://www.instagram.com/cvin519/'>Calvin Chin</a> to create the professional site for <a target='_blank' href='http://nickebnerfitness.com/'>Nick Ebner's gym</a>.",
+        description: "Worked alongside <a target='_blank' href='http://avenir-interactive.com/'>Avenir Interactive</a> and <a target='_blank' href='https://www.instagram.com/cvin519/'>Calvin Chin</a> to create the professional site for <a target='_blank' href='http://nickebnerfitness.com/'>Nick Ebner’s gym</a>.",
         technologies: [{name: "Middleman", link: "https://middlemanapp.com/"}],
         iframe: "http://nickebnerfitness.com/",
         banner: {
@@ -561,7 +561,7 @@ export const PROJECTS = {
             },
             {
                 src: "https://www.youtube.com/embed/VOHYuH8qYiU?",
-                caption: "The design responding to Jack Garratt’s - “The Love You're Given”."
+                caption: "The design responding to Jack Garratt’s - “The Love You’re Given”."
 
             },
             {

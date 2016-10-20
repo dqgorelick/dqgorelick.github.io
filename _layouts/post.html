@@ -2,26 +2,24 @@
 layout: default
 ---
 
-<body class="grid">
-    <div class="wrapper header-blog">
-        <div class="header-longform">
-            {% include header.html %}
-        </div>
-        <div class="longform-wrapper">
-            <div class="longform">
-                <div class="entry-date">
-                  {{ page.date | date: "%B %e %Y" }}
-                </div>
-                <h1>{{ page.title }}</h1>
-                <div class="entry">
-                  {{ content }}
-                </div>
+<div class="wrapper header-blog">
+    <div class="header-longform">
+        {% include header.html %}
+    </div>
+    <div class="longform-wrapper">
+        <div class="longform">
+            <div class="entry-date">
+              {{ page.date | date: "%B %e %Y" }}
+            </div>
+            <h1>{{ page.title }}</h1>
+            <div class="entry">
+              {{ content }}
             </div>
         </div>
-        <div class="copyright">
-            &copy; daniel gorelick 2016
-            {% include svg-icons.html %}
-        </div>
     </div>
-</body>
+    <div class="copyright">
+        &copy; daniel gorelick 2016
+        {% include svg-icons.html %}
+    </div>
+</div>
 

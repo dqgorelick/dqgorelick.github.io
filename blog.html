@@ -1,28 +1,26 @@
 ---
 layout: default
 ---
-<body class="grid">
-    <div class="wrapper blog-wrapper">
-        {% include header.html %}
-        <div class="posts">
-            {% for post in site.posts %}
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                <article class="post" >
-                    <h1>{{ post.title }}</h1>
-                    <div class="entry">
-                        {{ post.excerpt }}
-                    </div>
-                    <div class="post-date">
-                        {{ post.date | date: "%e %B %Y" }}
-                    </div>
-                </article>
-            </a>
-            {% endfor %}
-        </div>
-        <div class="copyright">
-            &copy; daniel gorelick 2016
-            {% include svg-icons.html %}
-        </div>
+<div class="wrapper blog-wrapper">
+    {% include header.html %}
+    <div class="posts">
+        {% for post in site.posts %}
+        <a href="{{ site.baseurl }}{{ post.url }}">
+            <article class="post" >
+                <h1>{{ post.title }}</h1>
+                <div class="entry">
+                    {{ post.excerpt }}
+                </div>
+                <div class="post-date">
+                    {{ post.date | date: "%e %B %Y" }}
+                </div>
+            </article>
+        </a>
+        {% endfor %}
     </div>
-</body>
+    <div class="copyright">
+        &copy; daniel gorelick 2016
+        {% include svg-icons.html %}
+    </div>
+</div>
 
