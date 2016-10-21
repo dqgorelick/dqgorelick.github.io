@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import ProjectLinks from './ProjectLinks';
 import ProjectFrame from './ProjectFrame';
 
 export default function ProjectDetails (props) {
@@ -47,7 +46,6 @@ export default function ProjectDetails (props) {
             { details.description &&
                 <p className='description' dangerouslySetInnerHTML={{__html: details.description}}/>
             }
-            <ProjectFrame iframe={details.iframe} />
             { details.technologies &&
                 <div className='technologies'>
                     <h3>Technologies</h3>
@@ -77,7 +75,7 @@ export default function ProjectDetails (props) {
                     </ul>
                 </div>
             }
-            <ProjectLinks details={details} />
+            <ProjectFrame iframe={details.iframe} />
         </div>
     )
 }

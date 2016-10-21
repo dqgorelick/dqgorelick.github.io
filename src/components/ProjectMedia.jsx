@@ -31,12 +31,10 @@ function VideoElements(props) {
 }
 
 function ImageElements(props) {
-    console.log('props.images',props.images);
     return (
         <div>
             { props.images &&
                 props.images.map((image, index) => {
-                    console.log('image',image);
                     return (
                         <div className={`project-image ${image.portrait ? 'portrait' : ''}`} key={index}>
                             <img src={image.src}/>

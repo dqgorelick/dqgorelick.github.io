@@ -4,7 +4,7 @@ export default function ProjectLinks (props) {
     if (props.details.link || props.details.github) {
         return (
             <div className='links'>
-                <h3 className='technologies-title'>Additional</h3>
+                <h3 className='technologies-title'>Additional Links</h3>
                 <ul>
                     {props.details.link &&
                         <li>
