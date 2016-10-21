@@ -2,15 +2,15 @@ export const ACTIVE_PROJECTS = [
     "mbta",
     "popallston",
     "typespecimen",
+    "newyorktimes",
     "breakerbot",
     "map",
     "tabbo",
     "processing",
     "pokemon",
     "neif",
-    "newyorktimes",
-    "cribbage",
     "wikinauts",
+    "cribbage",
     "timesmachine"
 ];
 
@@ -73,7 +73,7 @@ export const PROJECTS = {
         link: "https://chrome.google.com/webstore/detail/tabbo/hedbkonckghacebehjebpfknhdbobiko",
         github: "https://github.com/hackny2016labs/tabbo",
         areas: "Development",
-        description: "A project built to solve an everyday need of (some) chrome users. My original motivation to create this extension was that there is no keybind in google chrome that allows you to move tabs left and right, or pop tabs off. Tabbo became the niche utility tool that changes how you use chrome.",
+        description: "A project built to solve an everyday need of (some) chrome users. My original motivation to create this extension was that there is no keybind in google chrome that allows you to move tabs left and right, or pop tabs off. Tabbo became the niche utility tool that changes how you use chrome.<br><br>See the extension in the chrome store. <a target='_blank' href='https://chrome.google.com/webstore/detail/tabbo/hedbkonckghacebehjebpfknhdbobiko'>&#10149;</a>",
         technologies: [
             {name: "Google Chrome API"}
         ],
@@ -463,6 +463,14 @@ export const PROJECTS = {
                 caption: "The robot uses video processing and a state machine to autonomously align with the breaker cabinet."
             },
             {
+                src: "../images/breakerbot/software.png",
+                caption: "Software architecture created for the interaction between the C++ program for the hardware, and interface with the web stack."
+            },
+            {
+                src: "../images/breakerbot/software2.png",
+                caption: "Final C++ control program layout using OOP with a different module for each hardware component."
+            },
+            {
                 src: "../images/breakerbot/screenshot4.jpeg",
                 caption: "Our team consisted of four mechanical engineers, two computer engineers, and one electrical engineer."
             }
@@ -485,7 +493,7 @@ export const PROJECTS = {
         tagline: "The best of Twitch Plays and Pokemon Go brought together.",
         link: "https://www.twitch.tv/twitchpokemongo",
         collaborators: "hackNY 2016 fellows",
-        description: "Brought the phenomena of <a target='_blank' href='https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon'>Twitch plays</a> and <a target='_blank' href='http://www.pokemongo.com/'>Pokemon Go</a> together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Created at <a target='_blank' href='hackny.org'>hackNY</a>.<br><br>The brief 3-day run had over 180,000 participants, and over 2,800 followers on Twitch.<br><br>Internet fame <a target='_blank' href='http://www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>&#10149;</a>",
+        description: "Brought the phenomena of <a target='_blank' href='https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon'>Twitch plays</a> and <a target='_blank' href='http://www.pokemongo.com/'>Pokemon Go</a> together for a wonderful crowdsourced Pokemon experience. This is made possible by location spoofing and simulating touch events on the iPhone. Stream viewers are able to vote for the player's movement by typing the commands into the chat. Created at <a target='_blank' href='hackny.org'>hackNY</a>.<br><br>The brief 3-day run had over 180,000 participants, and over 2,800 followers on Twitch. Also, we garnered some <a target='_blank' href='http://www.theverge.com/2016/7/12/12167120/twitch-plays-pokemon-go-stream'>internet fame </a>.",
         technologies: [
             {name: "Cycript", link: "http://www.cycript.org/"},
             {name: "Flask", link: "http://flask.pocoo.org/"}
