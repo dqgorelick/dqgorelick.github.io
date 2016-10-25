@@ -4,9 +4,8 @@
   "description": "Personal site for Daniel Q Gorelick",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "build": "webpack --config webpack.production.config.js --progress --profile",
-    "serve": "webpack --config webpack.config.js --progress --profile --watch"
+    "start": "webpack --config webpack.config.js --progress --profile --watch"
   },
   "repository": {
     "type": "git",
