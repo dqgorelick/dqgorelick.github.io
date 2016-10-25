@@ -97,7 +97,7 @@ h1,h2,h3,p{
 	&.header-blog {
 		margin: 0 auto;
 		.upper {
-			// height: 82px;
+			min-height: 90px;
 			img {
 				width: 70px;
 				float: left;

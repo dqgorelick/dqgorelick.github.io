@@ -151,6 +151,12 @@
         &.center {
             text-align: center;
         }
+        &.medium {
+            img {
+                width: 60%;
+                height: auto;
+            }
+        }
         &.large {
             img {
                 width: 100%;
