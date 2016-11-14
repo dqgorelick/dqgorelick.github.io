@@ -10,8 +10,7 @@ export const ACTIVE_PROJECTS = [
     "pokemon",
     "neif",
     "wikinauts",
-    "cribbage",
-    "timesmachine"
+    "cribbage"
 ];
 
 export const PROCESSING_PROJECTS = {
