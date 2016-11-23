@@ -5,7 +5,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
-    'webpack/hot/only-dev-server',
     './src/app'
   ],
   output: {
@@ -14,7 +13,6 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('main.css', {
       allChunks: true,
     })

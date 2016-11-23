@@ -1,9 +1,9 @@
 export const ACTIVE_PROJECTS = [
     "mbta",
     "popallston",
-    "typespecimen",
-    "newyorktimes",
     "breakerbot",
+    "newyorktimes",
+    "typespecimen",
     "map",
     "tabbo",
     "processing",
@@ -536,7 +536,7 @@ export const PROJECTS = {
         },
         timeline: "2 months",
         date: "December 2015",
-        pretty: "Nick Ebner Gym Site",
+        pretty: "Nick Ebner Site",
     },
     processing: {
         title: "Interactive Design",

@@ -13,7 +13,7 @@ export default function MainWrapper (props) {
                     <h2>DANIEL GORELICK</h2>
                 </a>
                 <div className='tagline'>
-                    <p>Creative Technologist and Designer<br/>New York, NY</p>
+                    <p>Creative Technologist<br/>New York, NY</p>
                 </div>
             </section>
             <SectionSelect page={props.page} />
