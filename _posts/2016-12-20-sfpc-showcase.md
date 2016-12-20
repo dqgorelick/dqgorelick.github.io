@@ -11,15 +11,13 @@ These are works I presented at the show:
 
 ### Counterpoint
 
+Counterpoint is an instrument which transforms drawn lines into musical note patterns. The melodies are visualized on a projection where colored circles represent the patterns drawn, following the sequence in a sinusoidal path. Players can draw lines on an iPad which rests on a music stand in front of the projection, or can add additional voices on their mobile devices.
 
 {: .center .large}
 ![Counterpoint]({{ site.url}}/images/blog/counterpoint.jpg)
 
 {: .media-caption}
 Drawn lines are transformed into musical patterns.
-
-Counterpoint is an instrument which transforms drawn lines into musical note patterns. The melodies are visualized on a projection where colored circles represent the patterns drawn, following the sequence in a sinusoidal path.
-Players can draw lines on an iPad which rests on a music stand in front of the projection, or can add additional voices on their mobile devices.
 
 The piece celebrates collaboration between players to create more complex melodies comprised of multiple, concurrent note sequences.
 
