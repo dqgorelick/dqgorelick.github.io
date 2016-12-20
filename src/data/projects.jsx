@@ -8,7 +8,6 @@ export const ACTIVE_PROJECTS = [
     "tabbo",
     "processing",
     "pokemon",
-    "neif",
     "wikinauts",
     "cribbage"
 ];
