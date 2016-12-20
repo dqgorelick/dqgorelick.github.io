@@ -41,7 +41,7 @@ Win. You now have a dumb phone.
 
 When I was home or at the school I would have wifi turned on to have access to my phone. However, by turning off wifi I could choose to have a “dumb phone”. This was especially refreshing when I was going out to see friends or going to events to not have access to things like email, facebook, instagram, etc.
 
-It was however, a nuisance when I needed to use Google Maps. Looking up directions on the fly is a luxery I have become far too accustomed to.
+It was however, a nuisance when I needed to use Google Maps. Looking up directions on the fly is a luxury I have become far too accustomed to.
 
 Another downside is that turning off cellular data for an app does not turn off push notifications. Even when not being on wifi, push notifications come through. Possible solutions would be go between every app and turn off notifications, or just put the phone into airplane mode.
 
