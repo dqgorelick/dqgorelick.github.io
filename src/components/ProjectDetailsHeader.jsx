@@ -1,6 +1,11 @@
 import React, { PropTypes } from 'react';
+import ImageComponent from './ImageComponent';
 
 export default function ProjectDetails (props) {
+    var imageLoaded = function(evt) {
+        console.log(evt);
+    }
+
     const details = props.details;
     return (
         <div className='longform-header'>
@@ -16,7 +21,10 @@ export default function ProjectDetails (props) {
             </div>
             { details.banner &&
                 <div>
-                    <img className={`banner ${details.banner_portrait ? 'portrait' : ''}`} src={details.banner.src}/>
+                    <ImageComponent
+                        className={`banner ${details.banner_portrait ? 'portrait' : ''}`}
+                        src={details.banner.src}
+                    />
                     <p className='media-caption'>{details.banner.caption}</p>
                 </div>
 

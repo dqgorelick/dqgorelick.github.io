@@ -38,6 +38,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "node-sass": "^3.13.0",
     "react": "^15.3.0",
     "react-addons-css-transition-group": "^15.3.0",

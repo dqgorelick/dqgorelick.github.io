@@ -9,6 +9,10 @@
 	}
 }
 
+.image { opacity: 0; transition: opacity 0.5s; }
+.image-loaded { opacity: 1 };
+.image-not-loaded {opacity: 0 };
+
 body {
 	// font-family: $copy-font;
 	font-family: $main-font;

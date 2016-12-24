@@ -37,6 +37,46 @@ export const PROCESSING_PROJECTS = {
 };
 
 export const PROJECTS = {
+    mbta: {
+        title: "MBTA Performance Analysis",
+        category: "project",
+        tagline: "Teamed up with the MBTA to improve performance and delay alerts.",
+        areas: "Development / Design",
+        collaborators: "MBTA, Ben Snyder, EJ Fitzpatrick, and Eddy Luo",
+        link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
+        github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",
+        description: "Worked with the <a target='_blank' href='http://www.mbta.com/'>Massachusetts Bay Transportation Authority</a> to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br>Check out the current status of the MBTA <a target='_blank' href='http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/'>&#10149;</a>",
+        technologies: [{name: "Python/Node"}, {name: "D3.js", link: "http://d3js.org"}, {name: "Sqlite3"}, {name: "R (for data analysis)"}],
+        timeline: "3 months",
+        date: "May 2016",
+        banner: {
+            src: "../images/mbta/screenshot1.png",
+            caption: "Web application offers real-time analysis and predictions for the MBTA subway lines."
+        },
+        images: [
+            {
+                src:"../images/mbta/dwells.png",
+                caption: "From analysing two months of historical data, we found that the ma wait time is most influenced by the variation in dwell times (time the train stays in the station)."
+            },
+            {
+                src:"../images/mbta/dwells2.png",
+                caption: "Dwell times at each station are shown during peak rush hour. The size is relative to the amount of time."
+            },
+            {
+                src:"../images/mbta/screenshot2.png",
+                caption: "A live view of each train is available for each line."
+            },
+            {
+                src:"../images/mbta/screenshot3.png",
+                caption: "D3.js is used to show the status of key stations for the control center for each line."
+            },
+            {
+                src:"../images/mbta/screenshot4.png",
+                caption: "A breakdown of each station can be viewed when clicking on the station node."
+            }
+        ],
+        pretty: "MBTA Visualization"
+    },
     bostonhacks: {
         title: "Bostonhacks Live Page",
         category: "project",
@@ -578,45 +618,5 @@ export const PROJECTS = {
         timeline: "4 months",
         date: "May 2016",
         pretty: "Processing Projects",
-    },
-    mbta: {
-        title: "MBTA Performance Analysis",
-        category: "project",
-        tagline: "Teamed up with the MBTA to improve performance and delay alerts.",
-        areas: "Development / Design",
-        collaborators: "MBTA, Ben Snyder, EJ Fitzpatrick, and Eddy Luo",
-        link: "http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/",
-        github: "https://github.com/BU-NU-CLOUD-SP16/MBTA-Alerts-and-Performance-Anlaysis",
-        description: "Worked with the <a target='_blank' href='http://www.mbta.com/'>Massachusetts Bay Transportation Authority</a> to better analyze and communicate the effectiveness of performance alerts. Developed full-stack web application to measure real-time performance against statistical models created from aggregated historical data.<br><br>Check out the current status of the MBTA <a target='_blank' href='http://ec2-52-34-3-119.us-west-2.compute.amazonaws.com/'>&#10149;</a>",
-        technologies: [{name: "Python/Node"}, {name: "D3.js", link: "http://d3js.org"}, {name: "Sqlite3"}, {name: "R (for data analysis)"}],
-        timeline: "3 months",
-        date: "May 2016",
-        banner: {
-            src: "../images/mbta/screenshot1.png",
-            caption: "Web application offers real-time analysis and predictions for the MBTA subway lines."
-        },
-        images: [
-            {
-                src:"../images/mbta/dwells.png",
-                caption: "From analysing two months of historical data, we found that the ma wait time is most influenced by the variation in dwell times (time the train stays in the station)."
-            },
-            {
-                src:"../images/mbta/dwells2.png",
-                caption: "Dwell times at each station are shown during peak rush hour. The size is relative to the amount of time."
-            },
-            {
-                src:"../images/mbta/screenshot2.png",
-                caption: "A live view of each train is available for each line."
-            },
-            {
-                src:"../images/mbta/screenshot3.png",
-                caption: "D3.js is used to show the status of key stations for the control center for each line."
-            },
-            {
-                src:"../images/mbta/screenshot4.png",
-                caption: "A breakdown of each station can be viewed when clicking on the station node."
-            }
-        ],
-        pretty: "MBTA Visualization"
     }
 }
