@@ -25,20 +25,21 @@ var ImageComponent = React.createClass({
   },
 
   componentDidMount() {
-    this.loadImage();
+    setTimeout(this.loadImage, 90);
   },
 
   componentWillReceiveProps() {
     if (this.props.src !== this.state.src) {
+      console.log('changed last: ', this.props.src, 'current: ', this.state.src);
       this.setState({loaded: false});
-      this.loadImage();
+      setTimeout(this.loadImage, 90);
     }
     this.setState({ src: this.props.src});
   },
 
   render() {
     return (
-      <img ref="img" {...this.props} className={`image ${(this.state.loaded ? 'image-loaded' : 'image-not-loaded') + ' ' + this.props.className}`} />
+      <img ref="img" {...this.props} className={`image ${(this.state.loaded ? 'image-loaded' : 'image-not-loaded') + ' ' + (this.props.className ? this.props.className : '')}`} />
     );
   }
 });

@@ -19,7 +19,17 @@ function VideoElements(props) {
             <div key={index}>
               <div className='embed-video'>
                 <div>
-                  <iframe id='myVideo' src={`${video.src}&rel=0&showinfo=0&controls=2&loop=1`} allowFullScreen ></iframe>
+                  <iframe
+                    id='myVideo'
+                    src={
+                      `${video.src}${video.type === 'vimeo' ?
+                        '?byline=0&title=0&portrait=0&badge=0&color=23BDEF'
+                        :
+                        '&rel=0&showinfo=0&controls=2&loop=1&color=white'
+                      }`
+                    }
+                    allowFullScreen
+                  />
                 </div>
               </div>
               <p className='media-caption'>{video.caption}</p>
