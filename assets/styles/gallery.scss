@@ -52,6 +52,9 @@
         width: 280px;
         height: 280px;
         margin: 12px 12px;
+        @include media(medium) {
+            margin: 10px 10px;
+        }
         background-color: #ffffff;
         border-bottom: 2px solid transparent;
         cursor: pointer;

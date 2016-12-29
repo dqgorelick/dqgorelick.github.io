@@ -9,7 +9,7 @@ SFPC was an incredible experience. The final show for featured finished projects
 
 These are works I presented at the show:
 
-### Counterpoint
+### Counterpoint Instrument
 
 Counterpoint is an instrument which transforms drawn lines into musical note patterns. The melodies are visualized on a projection where colored circles represent the patterns drawn, following the sequence in a sinusoidal path. Players can draw lines on an iPad which rests on a music stand in front of the projection, or can add additional voices on their mobile devices.
 
