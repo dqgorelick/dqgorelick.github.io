@@ -47,7 +47,7 @@ function ImageElements(props) {
       { props.images &&
         props.images.map((image, index) => {
           return (
-            <div className={`project-image ${image.portrait ? 'portrait' : ''}`} key={index}>
+            <div className={`project-image ${image.portrait ? 'portrait' : ''}${image.smaller ? 'smaller' : ''}`} key={index}>
               <a target='_blank' href={image.src}>
                 <ImageComponent src={image.src}/>
               </a>

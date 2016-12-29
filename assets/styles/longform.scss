@@ -189,6 +189,11 @@
             max-width: 300px;
           }
         }
+        &.smaller {
+          img {
+            width: 70%;
+          }
+        }
         a:hover {
           background-color: transparent;
         }
