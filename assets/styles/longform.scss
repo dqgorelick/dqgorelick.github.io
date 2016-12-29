@@ -179,7 +179,27 @@
     &.project {
       margin-bottom: 20px;
       .project-information {
-        margin-top: 1rem;
+        margin-top: 1.25rem;
+        font-family: $blog-title;
+        p {
+          margin-top: 0.25rem;
+          // font-size: 1.1rem;
+          text-align: center;
+          span {
+            display: inline-block;
+            &::after {
+              content: '|';
+              padding-left: 10px;
+              padding-right: 10px;
+            }
+            &:last-child {
+              &::after {
+                content: '';
+                padding: 0;
+              }
+            }
+          }
+        }
       }
       .project-image {
         text-align: center;

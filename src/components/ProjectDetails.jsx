@@ -5,77 +5,24 @@ import ProjectFrame from './ProjectFrame';
 export default function ProjectDetails(props) {
   const details = props.details;
   return (
-    <div>
-      <ul className='project-information'>
-        { details.areas &&
-          <li className='areas'>
-            <p>
-              <span>Areas: </span>{details.areas}
-            </p>
-          </li>
-        }
+    <div className='project-information'>
+      <p>
         { details.date &&
-          <li className='date'>
-            <p>
-              {`${details.date}`}
-            </p>
-          </li>
+          <span>{details.date}</span>
+        }
+        { details.areas &&
+          <span>{details.areas}</span>
         }
         { details.budget &&
-          <li className='budget'>
-            <p>
-              <span>Budget: </span>{`${details.budget}`}
-            </p>
-          </li>
+          <span>Budget: {details.budget}</span>
         }
         { details.timeline &&
-          <li className='timeline'>
-            <p>
-              <span>Timeline: </span>{`${details.timeline}`}
-            </p>
-          </li>
+          <span>Timeline: {details.timeline}</span>
         }
         { details.collaborators &&
-          <li className='collaborators'>
-            <p>
-              <span>Collaborators : </span>{`${details.collaborators }`}
-            </p>
-          </li>
+          <span>Collaborators: {details.collaborators}</span>
         }
-      </ul>
-      { details.description &&
-        <p className='description' dangerouslySetInnerHTML={{__html: details.description}}/>
-      }
-      { details.technologies &&
-        <div className='technologies'>
-          <h3>Technologies</h3>
-          <ul>
-            {
-            details.technologies.map((tech, index) => {
-              if (tech.link) {
-                return (
-                  <li key={tech.name+index}>
-                    <p>
-                      <a target='_blank' href={tech.link}>
-                        {tech.name}
-                      </a>
-                    </p>
-                    <br/>
-                  </li>
-                );
-              } else {
-                return (
-                  <li key={tech.name+index}>
-                    <p>{tech.name}</p>
-                    <br/>
-                  </li>
-                );
-              }
-            })
-            }
-          </ul>
-        </div>
-      }
+      </p>
       <ProjectFrame iframe={details.iframe} />
     </div>
   )

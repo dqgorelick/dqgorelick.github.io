@@ -4,6 +4,7 @@ import { PROJECTS, ACTIVE_PROJECTS } from '../data/projects';
 
 import ProjectNavigation from './ProjectNavigation';
 import ProjectDetails from './ProjectDetails';
+import ProjectTechnologies from './ProjectTechnologies';
 import ProjectMedia from './ProjectMedia';
 import ProjectLinks from './ProjectLinks';
 import ProjectDetailsHeader from './ProjectDetailsHeader';
@@ -19,10 +20,11 @@ export default function ProjectWrapper(props) {
       <div className='longform-wrapper'>
         <div className='project longform'>
           <ProjectDetails page={props.page} details={details} />
-          { !!details.images &&
-            <h3>Results</h3>
+          { details.description &&
+            <p className='description' dangerouslySetInnerHTML={{__html: details.description}}/>
           }
           <ProjectMedia details={details} />
+          <ProjectTechnologies page={props.page} details={details} />
         </div>
       </div>
       <div className='longform-wrapper'>
