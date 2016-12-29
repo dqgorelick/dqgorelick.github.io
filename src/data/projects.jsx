@@ -4,16 +4,13 @@ export const ACTIVE_PROJECTS = [
   "atc",
   "popallston",
   "mbta",
-  "newyorktimes",
   "breakerbot",
-  "typespecimen",
-  "map",
-  "tabbo",
+  "newyorktimes",
   "processing",
   "pokemon",
+  "typespecimen",
+  "map",
   "wikinauts",
-  "neif",
-  "cribbage"
 ];
 
 // add tile background in assets/styles/gallery.scss
