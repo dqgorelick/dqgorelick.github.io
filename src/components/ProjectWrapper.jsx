@@ -6,6 +6,7 @@ import ProjectNavigation from './ProjectNavigation';
 import ProjectDetails from './ProjectDetails';
 import ProjectTechnologies from './ProjectTechnologies';
 import ProjectMedia from './ProjectMedia';
+import ProjectFrame from './ProjectFrame';
 import ProjectLinks from './ProjectLinks';
 import ProjectDetailsHeader from './ProjectDetailsHeader';
 import AdditionalProjects from './AdditionalProjects';
@@ -23,6 +24,7 @@ export default function ProjectWrapper(props) {
           { details.description &&
             <p className='description' dangerouslySetInnerHTML={{__html: details.description}}/>
           }
+          <ProjectFrame iframe={details.iframe} />
           <ProjectMedia details={details} />
           <ProjectTechnologies page={props.page} details={details} />
         </div>

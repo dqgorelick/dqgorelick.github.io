@@ -176,6 +176,12 @@
     color: #333333;
     max-width: 700px;
     margin: 0 auto 50px;
+    .slideshow {
+      margin-top: 1.75rem;
+      @include media(medium) {
+        margin-top: 1rem;
+      }
+    }
     &.project {
       margin-bottom: 20px;
       .project-information {

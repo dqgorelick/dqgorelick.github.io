@@ -39,6 +39,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - assets/
   - node_modules/
   - src/
   - projects/

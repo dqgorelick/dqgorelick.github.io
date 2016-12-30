@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import ProjectFrame from './ProjectFrame';
-
 export default function ProjectDetails(props) {
   const details = props.details;
   return (
@@ -23,7 +21,6 @@ export default function ProjectDetails(props) {
           <span>Collaborators: {details.collaborators}</span>
         }
       </p>
-      <ProjectFrame iframe={details.iframe} />
     </div>
   )
 }
