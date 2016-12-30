@@ -435,7 +435,7 @@ export const PROJECTS = {
       caption: "The map also incorporats iconic landmarks from the BU campus."
     }, ],
     date: "November 2015",
-    pretty: "Marauders Map Project",
+    pretty: "Marauders Map",
   },
   typespecimen: {
     title: "Type Specimens: Helvetica",
@@ -531,7 +531,7 @@ export const PROJECTS = {
     budget: "$2000",
     date: "May 2016",
     link: "https://www.youtube.com/embed/yyhNmTSDY2Q?autoplay=1",
-    pretty: "Breakerbot Project",
+    pretty: "Breakerbot",
   },
   pokemon: {
     title: "Twitch Plays Pokemon Go!",
