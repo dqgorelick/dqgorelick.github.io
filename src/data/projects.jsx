@@ -331,7 +331,6 @@ export const PROJECTS = {
     collaborators: "Doug Roeper, Pablo Velarde, Brian Tan, & Nick Maresco",
     tagline: "A twist on the Wikipedia game, brought to android.",
     link: "http://wikinauts.github.io",
-    iframe: "http://wikinauts.github.io",
     areas: "Design & development",
     description: "The mobile take on the popular <a target='_blank' href='https://en.wikipedia.org/wiki/Wikipedia:Wiki_Game'>Wikipedia game</a>, where the goal is to find the shortest path between Wikipedia article pages by only clicking on the links. The application was completed as a final project in the EC327 course at Boston University. Available in the <a target='_blank' href='https://play.google.com/store/apps/details?id=com.beep_boop.Beep&hl=en'>Google Play store</a>.",
     banner_portrait: true,
@@ -342,7 +341,6 @@ export const PROJECTS = {
     images: [{
       src: "../images/wikinauts/screenshot0.png",
       caption: "Artwork for the character Cosmo created for the application",
-      portrait: true
     }, {
       src: "../images/wikinauts/screenshot2.png",
       caption: "Links from Wikipedia pages are parsed and displayed in a scrollable interface for users.",
@@ -355,6 +353,11 @@ export const PROJECTS = {
       src: "../images/wikinauts/screenshot4.png",
       caption: "Users select different levels in the game’s map view.",
       portrait: true
+    }],
+    videos: [{
+      src: "https://player.vimeo.com/video/119089066",
+      caption: "Promo video created for the game.",
+      type: "vimeo"
     }],
     small_image: true,
     timeline: "3 months",
