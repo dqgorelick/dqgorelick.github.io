@@ -6,6 +6,17 @@ export default function ProjectLinks (props) {
             <div className='links'>
                 <h3 className='technologies-title'>Additional Links</h3>
                 <ul>
+                    {props.details.press &&
+                        props.details.press.map((article) => {
+                            return(
+                            <li>
+                                <p>
+                                    <a target='_blank' href={article.src}>{article.name}</a>
+                                </p>
+                            </li>
+                            )
+                        })
+                    }
                     {props.details.link &&
                         <li>
                             <p>
