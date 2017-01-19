@@ -9,7 +9,7 @@ export default function ProjectLinks (props) {
                     {props.details.press &&
                         props.details.press.map((article) => {
                             return(
-                            <li>
+                            <li key={article.name}>
                                 <p>
                                     <a target='_blank' href={article.src}>{article.name}</a>
                                 </p>

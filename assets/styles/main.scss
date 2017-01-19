@@ -138,6 +138,9 @@ h1,h2,h3,p{
 		.tagline {
 			margin-top: 0.5rem;
 			padding-bottom: 1rem;
+			span p {
+				margin-top: 5px;
+			}
 		}
 	}
 	.sections {

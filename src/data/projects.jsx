@@ -86,10 +86,6 @@ export const PROJECTS = {
     category: "project",
     timeline: "1 month",
     link: "http://venmostrips.com",
-    press: [{
-      name: "Creative Applications Network",
-      src: "http://www.creativeapplications.net/education/school-for-poetic-computation-fall-2016-final-showcase/"
-    }],
     tagline: "Creating new (sometimes comical) narratives.",
     github: "https://github.com/dqgorelick/venmo-bots",
     description: "Generates randomized three-panel comic strips using the most-recent Venmo transaction messages. Visitors can select to choose to re-randomize all or a specific panel. Created comic strips can be saved by printing it onto a receipt to take away. <br><br> The interface is a web application, and the Venmo transactions are accessed by tweaking query paramters on the Venmo’s public API. A Raspberry Pi interfaces with a receipt printer to print the finished comic strips.<br><br>The final web application can be viewed at <a href='http://venmostrips.com' target='_blank'>http://venmostrips.com</a>. More details on retreiving the transaction data from Venmo can be found in my <a href='./scraping-venmo' target='_blank'>post</a>.",

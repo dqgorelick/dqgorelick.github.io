@@ -30,7 +30,6 @@ var ImageComponent = React.createClass({
 
   componentWillReceiveProps() {
     if (this.props.src !== this.state.src) {
-      console.log('changed last: ', this.props.src, 'current: ', this.state.src);
       this.setState({loaded: false});
       setTimeout(this.loadImage, 90);
     }
