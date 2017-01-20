@@ -8,9 +8,9 @@ export const ACTIVE_PROJECTS = [
   "processing",
   "newyorktimes",
   "pokemon",
-  "typespecimen",
   "map",
-  "wikinauts",
+  "typespecimen",
+  "cribbage",
 ];
 
 
