@@ -34,6 +34,7 @@ I've used S3 before, but this time I have to make sure to connect my Google Doma
 Since I already created a standalone web application, I was able to use the code from my [Node server](https://github.com/dqgorelick/venmo-bots/blob/master/server.js){:target="_blank"} to create the lambda function. The one challenge was figuring out how to connect the Lambda function to the S3 bucket. I made sure to create the Lambda function in the same region as the bucket and crossed my fingers. 
 
 The crux of the Lambda function is here: 
+
 ```
 exports.handler = (event, context, callback) => {
   request(`https://venmo.com/api/v5/public?limit=${LIMIT}`, function(error, response, body) {
