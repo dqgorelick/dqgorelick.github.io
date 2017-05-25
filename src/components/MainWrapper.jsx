@@ -20,7 +20,7 @@ export default function MainWrapper(props) {
             <h2>DANIEL GORELICK</h2>
           </a>
           <div className='tagline'>
-            <p>Engineer | Creative Coder | Musician</p>
+            <p>Developer | Technologist | Engineer</p>
             <span><p>New York, NY</p></span>
           </div>
         </section>
