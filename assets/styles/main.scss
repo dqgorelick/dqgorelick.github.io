@@ -1,10 +1,12 @@
 * {
 	&::selection {
 		background-color: $blue-transparent;
+		text-decoration-color: #fff!important;
 		color: #fff;
 	}
 	&::-moz-selection {
 		background-color: $blue-transparent;
+		text-decoration-color: #fff!important;
 		color: #fff;
 	}
 }
@@ -23,12 +25,17 @@ body {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	a {
-		text-decoration: none;
 		color: $black;
 		background-color: rgba(0,0,0,0);
 		text-decoration: underline;
 		-webkit-transition: color, background-color 0.25s $transition;
 		transition: color, background-color 0.25s $transition;
+		&::selection {
+			text-decoration-color: #fff;
+		}
+		&::-moz-selection {
+			text-decoration-color: #fff;
+		}
 	}
 	a:hover {
 		color: #fff;
