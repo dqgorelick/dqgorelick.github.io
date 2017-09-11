@@ -1,0 +1,433 @@
+<html>
+
+<head>
+    <title>Moscow Midi</title>
+    <meta charset="utf-8">
+    <meta content="text/html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>window.TONE_SILENCE_VERSION_LOGGING = true</script>
+    <script src='./javascripts/vendor/tone.min.js'></script>
+    <script src='./javascripts/vendor/teoria.js'></script>
+    <script src='./javascripts/vendor/jquery-3.1.1.min.js'></script>
+    <style>
+    html,
+    body {
+        margin: 0;
+        background-color: #222222;
+        color: #eee;
+    }
+
+    body {
+        height: 100%;
+        transition: background-color 5s linear;
+        font-family: Helvetica, sans-serif;
+    }
+
+    a {
+        cursor: pointer;
+        color: #aaa;
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .instructions-wrapper {
+        color: #eee;
+        font-size: 12px;
+        width: 100%;
+        padding-bottom: 20px;
+        position: absolute;
+        bottom: 0;
+    }
+    .instructions {
+        margin: 0 20px;
+        max-width: 600px;
+        font-family: Helvetica, sans-serif;
+    }
+    .instructions span {
+        font-family: Courier, monospace;
+        padding: 0 10px;
+    }
+    .scale-wrapper {
+        position: absolute;
+        width: 100%;
+    }
+    .scale {
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 40px;
+        font-family: Courier, monospace;
+    }
+    .scale a {
+        font-family: Helvetica, sans-serif;
+        font-size: 12px;
+    }
+    .keys {
+        margin: 0 auto;
+        padding-top: 200px;
+        max-width: 750;
+    }
+
+    .keys-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -20px;
+    }
+
+    .spacer {
+        min-width: 25px;
+    }
+
+    .key-wrapper {
+        width: 80px;
+        height: 40px;
+        cursor: pointer;
+        position: relative;
+        margin: 1px;
+    }
+    .key {
+        opacity: 0.5;
+        z-index: 99;
+        border-radius: 100%;
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        top: calc(50% - 8px);
+        left: -8px;
+        border: 1px #fff solid;
+        filter: saturate(0);
+        transition: all 750ms cubic-bezier(0, 0.98, 0.19, 0.82);
+    }
+
+    .key.playable {
+        border-color: #fff;
+        height: 26px;
+        width: 26px;
+        top: calc(50% - 13px);
+        left: -13px;
+    }
+
+    .key.active {
+        opacity: 0.9;
+        background-color: rgba(255,153,153,1);
+        border-color: rgba(255,153,153,1);
+        background-color: rgba(17,136,136,1);
+        border-color: rgba(17,136,136,1);
+        height: 104px;
+        width: 104px;
+        top: calc(50% - 52px);
+        left: -52px;
+        z-index:9;
+        filter: saturate(1);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="scale-wrapper">
+            <div class="scale">playing the C <span></span> scale<br><i><a>[change]</a></i></div>
+        </div>
+        <div class="keys">
+        </div>
+        <div class="instructions-wrapper">
+            <div class="instructions">
+                <div class="instructions-toggle"><i><a>[hide]</a></i></div><br>
+                <div class="instructions-content">
+                    <i>mouse controls:</i><br><br>
+                    hover = play note<br>
+                    click = stop all noises<br><br>
+                    <i>keyboard controls: (piano mapping)</i><br><br>
+                    black keys = {<span>2 3   5 6 7   9 0 =</span>}<br>
+                    white keys = {<span>q w e r t y u i o p [ ]</span>}<br><br>
+                    black keys = {<span>s d   g h j   l ;</span>}<br>
+                    white keys = {<span>z x c v b n m , . /</span>}<br><br>
+                    <!-- bad audio quality? headphones recommended, or try <a href="./#lofi">lo-fi mode</a>.<br> -->
+                    <i>only tested on recent Chrome and Firefox browsers. Definitely not mobile friendly.</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+
+(function () {
+'use strict'
+
+var octaves = 5;
+var steps = 12;
+var offset = 36;
+
+var upper = [81,50,87,51,69,82,53,84,54,89,55,85,73,57,79,48,80,219,187,221]
+var lower = [90,83,88,68,67,86,71,66,72,78,74,77,188,76,190,186,191]
+var keysPressed = {}
+
+var playingNotes = false;
+var backgroundHue = randRange(0, 256)
+
+
+/*
+other scales to use:
+
+[aeolian, blues, chromatic, dorian, doubleharmonic, harmonicminor, ionian, locrian, lydian, majorpentatonic, melodicminor, minorpentatonic, mixolydian, phrygian, wholetone]
+*/
+var c3 = teoria.note('c3');
+var scales = ['major', 'blues', 'chromatic', 'dorian', 'flamenco', 'harmonicminor', 'minor', 'locrian', 'lydian', 'majorpentatonic', 'melodicminor', 'minorpentatonic', 'mixolydian', 'phrygian', 'wholetone']
+var scaleChoice = scales[randRange(0, scales.length)];
+$('.scale span').html(scaleChoice);
+var scale = c3.scale(scaleChoice).simple();
+
+$('.scale a').on('click', function() {
+    scaleChoice = scales[randRange(0, scales.length)];
+    $('.scale span').html(scaleChoice);
+    setScale(c3.scale(scaleChoice).simple());
+    setPlayable();
+})
+
+var vol = new Tone.Volume(12);
+var freeverb = new Tone.Freeverb(0.7, 1200).toMaster();
+
+var synth = new Tone.PolySynth(5, Tone.DuoSynth, {
+'vibratoAmount': 0.25,
+'vibratoRate': 3.5,
+"envelope": {
+    'attack': 0.05,
+    'decay': 0,
+    'release': 0.5
+},
+}).chain(vol).connect(freeverb).toMaster();
+
+function lofiSynth() {
+    synth = new Tone.PolySynth(4, Tone.DuoSynth, {
+    'vibratoAmount': 0.5,
+    'vibratoRate': 2.5,
+    "envelope": {
+        'attack': 0.05,
+        'decay': 0,
+        'release': 0.5
+    },
+    }).chain(vol).toMaster();
+}
+
+function randRange(min, max) {
+  return Math.floor(Math.random()*(max-min)) + min;
+}
+
+function map(n, start1, stop1, start2, stop2) {
+  return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
+};
+
+function createKeys() {
+    var final = "";
+    var midi = steps * octaves;
+    for (var i=0; i<octaves; i++) {
+        final +='<div class="keys-row">'
+        for (var k=i; k<octaves; k++) {
+            final += '<div class="spacer"></div>'
+        }
+        for (var j=0; j<steps+1; j++) {
+            final += (
+            '<div class="key-wrapper">' +
+                '<div class="key" id="' + (j !== steps ? 'key' : 'mouse') + '-' + (offset + midi - steps + j*2) + '"></div>'
+            + '</div>')
+            if (j !== steps) {
+                midi--;
+            }
+        }
+        for (var k=octaves-i; k<octaves; k++) {
+            final += '<div class="spacer"></div>'
+        }
+        final +='</div>';
+    }
+    return final;
+}
+
+function setKeyColors() {
+    var min = offset;
+    var max = octaves * steps + offset;
+    var startingHue = randRange(0, 256)
+
+    for (var i=min; i<max+1; i++) {
+        var key = $('#key-' + i);
+        var color = (startingHue + map(i, min, max, 0, 400))%256
+        key.css('background-color','hsla('+ color +', 100%, 75%, 1)');
+        key.css('border-color','hsla('+ color +', 100%, 75%, 1)');
+        var mouse = $('#mouse-' + i);
+        mouse.css('background-color','hsla('+ color +', 100%, 75%, 1)');
+        mouse.css('border-color','hsla('+ color +', 100%, 75%, 1)');
+    }
+}
+
+function backgroundHaze(on) {
+    if (on) {
+        backgroundHue = (backgroundHue + 4)%256
+        $('body').css('background-color', 'hsla('+ backgroundHue +', 100%, 40%, 0.3)')
+    } else {
+        $('body').css('background-color', '#222222')
+    }
+}
+
+function setScale(scale) {
+    $('.playable').removeClass('playable');
+    scale.forEach(function(note) {
+        for (var i=0; i<octaves+1; i++) {
+            var noteOctave = note + (2 + i).toString();
+            var midi = teoria.note(noteOctave).midi();
+            $('#key-' + midi.toString()).addClass('playable');
+            $('#mouse-' + midi.toString()).addClass('playable');
+        }
+    })
+}
+
+function animateNote(midi, duration) {
+    var activeNote = $('#key-' + midi)
+    var extraNote = $('#mouse-' + midi)
+    activeNote.addClass('active');
+    extraNote.addClass('active');
+    playingNotes = true;
+    backgroundHaze(true);
+    setTimeout(function() {
+        activeNote.removeClass('active');
+        extraNote.removeClass('active');
+        playingNotes = false
+    }, duration);
+    setTimeout(function() {
+        activeNote.addClass('playable')
+        extraNote.addClass('playable')
+        if (!playingNotes) {
+            backgroundHaze(false);
+        }
+    }, duration + 25);
+}
+
+function disableNote(midi) {
+    $('#key-' + midi).removeClass('active');
+    $('#mouse-' + midi).removeClass('active');
+    playingNotes = false;
+    setTimeout(function() {
+        if (!playingNotes) {
+            backgroundHaze(false);
+        }
+    }, 500)
+}
+
+function activateNote(midi) {
+    $('#key-' + midi).addClass('active');
+    $('#mouse-' + midi).addClass('active');
+    backgroundHaze(true);
+    playingNotes = true;
+}
+
+function stopAll() {
+    synth.voices.forEach(function(voice) { voice.triggerRelease() })
+    upper.forEach(function(key) {
+        var midi = upper.indexOf(key) + 60
+        disableNote(midi);
+    });
+    lower.forEach(function(key) {
+        var midi = lower.indexOf(key) + 48
+        disableNote(midi);
+    });
+    keysPressed = {};
+    backgroundHaze(false);
+}
+
+function setPlayable() {
+    $('.key').on('mouseenter', function() {
+        if ($(this).hasClass('playable')) {
+            $(this).removeClass('playable')
+            var midi = this.id.split("-")[1]
+            animateNote(midi, 1000)
+            synth.triggerAttackRelease(Tone.Frequency(midi, "midi").eval(), "2n");
+        }
+    });
+}
+
+function init() {
+    // if (location.hash === "#lofi") {
+    //     lofiSynth()
+    // }
+    $(".keys").html(createKeys());
+    setKeyColors();
+    setScale(scale)
+    setPlayable();
+}
+
+var specialKeys = [16, 91, 18, 17];
+document.addEventListener('keydown', function(e) {
+    var key = e.which;
+    if (specialKeys.indexOf(key) !== -1) {
+        keysPressed[key] = true
+    }
+    if (keysPressed[specialKeys[0]] || keysPressed[specialKeys[1]] || keysPressed[specialKeys[2]] || keysPressed[specialKeys[3]]) {
+        return
+    }
+    var up = upper.indexOf(key)
+    var low = lower.indexOf(key)
+    if (up !== -1 && !keysPressed[key]) {
+        var midi = up + 60
+        keysPressed[key] = true
+        synth.triggerAttackRelease(Tone.Frequency(midi, "midi").eval());
+        activateNote(midi)
+    }
+    if (low !== -1 && !keysPressed[key]) {
+        var midi = low + 48
+        keysPressed[key] = true
+        synth.triggerAttackRelease(Tone.Frequency(midi, "midi").eval());
+        activateNote(midi)
+    }
+});
+
+document.addEventListener('keyup', function(e) {
+    var key = e.which;
+    if (specialKeys.indexOf(key) !== -1) {
+        keysPressed[key] = false
+    }
+    var up = upper.indexOf(key)
+    var low = lower.indexOf(key)
+    if (up !== -1) {
+        var midi = up + 60
+        keysPressed[key] = false
+        synth.triggerRelease(Tone.Frequency(midi, "midi").eval());
+        disableNote(midi)
+    }
+    if (low !== -1) {
+        var midi = low + 48
+        keysPressed[key] = false
+        synth.triggerRelease(Tone.Frequency(midi, "midi").eval());
+        disableNote(midi)
+    }
+});
+
+document.addEventListener('mousedown', function(e) {
+    stopAll();
+});
+
+// window.addEventListener('hashchange', function(e) {
+//     if (location.hash === "#lofi") {
+//         lofiSynth()
+//     }
+// });
+
+init();
+
+
+var menus = {
+    instrutions: true
+}
+
+$('.instructions-toggle a').on('click', function() {
+    menus.instructions = !menus.instructions
+    $('.instructions-content').css('display', menus.instructions ? 'none' : 'initial');
+    $('.instructions-toggle a').html(menus.instructions ? '[show instructions]' : '[hide]')
+});
+
+})()
+</script>
+</html>

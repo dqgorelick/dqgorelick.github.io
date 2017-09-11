@@ -78,7 +78,7 @@ function flash(back, page){
 
 	urlDate = back.toString() + month.toString() + day.toString();
 	//api call
-	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&sort=newest&api-key=18db54dfa62f1e62a054c842b2f3da90:6:66888243";
+	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&sort=newest&api-key=764dd52bcbc04773a32ed9ec6e44ec90";
 	url += '&end_date='+endDate;
 
 	if(page > 1){

@@ -21,7 +21,6 @@ export default function MainWrapper(props) {
           </a>
           <div className='tagline'>
             <p>Developer | Technologist | Engineer</p>
-            <span><p>New York, NY</p></span>
           </div>
         </section>
         <SectionSelect page={props.page} />

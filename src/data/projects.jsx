@@ -3,16 +3,16 @@ export const ACTIVE_PROJECTS = [
   "counterpoint",
   "venmostrips",
   "atc",
-  "popallston",
-  "mbta",
-  "breakerbot",
-  "processing",
-  "newyorktimes",
   "pokemon",
   // "tabbo",
-  // "wikinauts",
+  // "processing",
+  "popallston",
+  "breakerbot",
+  "mbta",
   "map",
   "typespecimen",
+  "newyorktimes",
+  "wikinauts",
   "cribbage",
 ];
 
@@ -274,7 +274,7 @@ export const PROJECTS = {
     }],
     timeline: "2 nights",
     date: "August 2016",
-    pretty: "Chrome Tab Management"
+    pretty: "Google Chrome Keybinds"
   },
   cribbage: {
     title: "CNC Cribbage Board",
@@ -612,7 +612,7 @@ export const PROJECTS = {
       caption: "The README.md for the commands displayed on the screen.",
       smaller: true
     }, {
-      src: "../images/pokemon/screenshot4.jpg",
+      src: "../images/pokemon/screenshot5.jpg",
       caption: "Our means to control the location which the Twitch stream controls. Kidding, we used GPS spoofing.",
       portrait: true
     }],
