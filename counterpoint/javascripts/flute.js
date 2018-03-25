@@ -39,7 +39,6 @@ var NOTE_DURATION = 200; // 0.2 second delay set in SuperCollider
 
 var notes = [];
 
-
 var vol = new Tone.Volume(12);
 var freeverb = new Tone.Freeverb(0.7, 1200).toMaster();
 
@@ -343,8 +342,8 @@ $(document).ready(function() {
   var players = {};
 
   // view web socket
-  // var socket = new WebSocket('ws://localhost:8082/');
-  var socket = new WebSocket('ws://ec2-54-175-77-220.compute-1.amazonaws.com:8082/');
+  var socket = new WebSocket('ws://localhost:8082/');
+  // var socket = new WebSocket('ws://ec2-54-175-77-220.compute-1.amazonaws.com:8082/');
   socket.onmessage = function(evt) {
     var message = JSON.parse(evt.data);
     if (message.type === 'notes') {
@@ -429,7 +428,7 @@ $(document).ready(function() {
         duration = '4n';
         break;
     }
-    console.log(note);
+    // console.log(note);
     synth.triggerAttackRelease(Tone.Frequency(note, "midi").eval(), duration);
     // socket.send(JSON.stringify({note: note, tempo: tempo}));
   }

@@ -17,7 +17,7 @@ export default function MainWrapper(props) {
         <section className='upper'>
           <a href='/#home'>
             <img src="../images/logo.png" alt="main logo"/>
-            <h2>DANIEL GORELICK</h2>
+            <h2>DAN GORELICK</h2>
           </a>
           <div className='tagline'>
             <p>Developer | Technologist | Engineer</p>
@@ -30,7 +30,7 @@ export default function MainWrapper(props) {
         {props.page === 'about' &&
           <AboutWrapper />
         }
-        <div className='copyright'>&copy; daniel gorelick 2017</div>
+        <div className='copyright'>dan gorelick 2018</div>
       </div>
     );
   }

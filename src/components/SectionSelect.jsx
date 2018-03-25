@@ -15,11 +15,6 @@ export default function SectionSelect(props) {
                     <p>ABOUT</p>
                 </a>
             </div>
-            <div className={`section ${(props.page === 'blog' ? 'active' : '')}`}>
-                <a href='./blog'>
-                    <p>BLOG</p>
-                </a>
-            </div>
         </div>
     );
 }

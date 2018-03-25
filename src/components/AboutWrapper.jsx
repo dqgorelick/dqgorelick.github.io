@@ -14,7 +14,7 @@ export default function AboutWrapper() {
                     <p><a target='_blank' href='http://github.com/dqgorelick'>GITHUB &#10149;</a></p>
                     <p><a target='_blank' href='https://www.linkedin.com/in/dqgorelick/'>LINKEDIN &#10149;</a></p>
                     <p><a target='_blank' href='https://twitter.com/dqgorelick'>TWITTER &#10149;</a></p>
-                    <p><a target='_blank' href='./cv.pdf'>RESUME &#10149;</a></p>
+                    <p><a target='_blank' href='https://www.instagram.com/dqgorelick/'>INSTAGRAM &#10149;</a></p>
                 </div>
             </div>
             <div className='about-photo'>

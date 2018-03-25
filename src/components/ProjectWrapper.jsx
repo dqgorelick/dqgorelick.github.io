@@ -40,7 +40,7 @@ export default function ProjectWrapper(props) {
           <AdditionalProjects page={props.page} />
         </div>
       </div>
-      <div className='copyright'>&copy; daniel gorelick 2017</div>
+      <div className='copyright'>dan gorelick 2018</div>
     </div>
   );
 }

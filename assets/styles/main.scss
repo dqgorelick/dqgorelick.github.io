@@ -92,6 +92,9 @@ h1,h2,h3,p{
 				padding-left: 3px;
 			}
 		}
+		.about-photo {
+			padding-top: 30px;
+		}
 	}
 	@include media(small) {
 		padding: 40px 5px 60px;
