@@ -14,7 +14,7 @@
   }
 }
 
-&.blog-wrapper {
+.blog-wrapper {
   max-width: 610px;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .longform-wrapper {
-  margin: 0 auto;
+  margin: 1 auto;
   padding: 0 55px;
   text-align: left;
   font-family: $blog-copy;
