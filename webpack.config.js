@@ -13,16 +13,16 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
-    new ExtractTextPlugin('main.css', {
-      allChunks: true,
+    new ExtractTextPlugin({
+      filename: 'main.css',
+      allChunks: true
     })
   ],
   module: {
     loaders: [{
       test: /\.jsx$/,
       loaders: [
-        'react-hot',
-        'babel'
+        'babel-loader'
       ],
       include: path.join(__dirname, 'src')
     },
@@ -45,6 +45,6 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.scss', 'sass', 'css']
+    extensions: ['.js', '.jsx', '.json', '.scss', 'sass', 'css']
   }
 };
