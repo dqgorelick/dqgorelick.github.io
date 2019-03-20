@@ -5,7 +5,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   devtool: 'cheap-module-source-map',
   cache: false,
-  debug: false,
   bail: true,
   entry: [
     './src/app'
@@ -29,15 +28,16 @@ module.exports = {
         comments: false,
       },
     }),
-    new ExtractTextPlugin('main.css', {
-      allChunks: true,
+    new ExtractTextPlugin({
+      filename: 'main.css',
+      allChunks: true
     })
   ],
   module: {
     loaders: [{
       test: /\.jsx$/,
       loaders: [
-        'babel'
+        'babel-loader'
       ],
       include: path.join(__dirname, 'src')
     },
@@ -56,6 +56,6 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.scss', 'sass', 'css']
+    extensions: ['.js', '.jsx', '.json', '.scss', 'sass', 'css']
   }
 };
