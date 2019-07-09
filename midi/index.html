@@ -12,6 +12,7 @@
     <script src='./javascripts/vendor/tone.js'></script>
     <script src='./javascripts/vendor/teoria.js'></script>
     <script src='./javascripts/vendor/jquery-3.1.1.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/webmidi@2.0.0"></script>
     <style>
     html,
     body {
@@ -425,6 +426,34 @@ function setPlayable() {
     });
 }
 
+
+function initMidi() {
+  WebMidi.enable(function (err) {
+
+      WebMidi.inputs.forEach(function(input) {
+        // Listen for a 'note on' message on all channels
+        input.addListener('noteon', "all",
+          function (e) {
+            synth.triggerAttackRelease(Tone.Frequency(e.note.number, "midi").eval());
+            activateNote(e.note.number)
+          }
+        );
+
+        // Listen to pitch bend message on channel 3
+        input.addListener('noteoff', "all",
+          function (e) {
+            synth.triggerRelease(Tone.Frequency(e.note.number, "midi").eval());
+            disableNote(e.note.number)
+          }
+        );
+
+      })
+  });
+
+
+}
+
+
 function init() {
     $(".keys").html(createKeys());
     setKeyColors();
@@ -480,18 +509,17 @@ function init() {
         stopAll()
     });
 
+    initMidi();
+
 }
 
-
 var specialKeys = [16, 91, 18, 17];
-
 
 var menus = {
     instructions: false
 }
 
 $('.instructions-toggle a').on('click', function() {
-    console.log(menus.instructions);
     if (!menus.instructions) {
         $('.instructions-content').addClass('active');
         $('.instructions-toggle a').html('[hide]');
@@ -503,7 +531,6 @@ $('.instructions-toggle a').on('click', function() {
 });
 
 $('#lofi').on('click', function() {
-    console.log('clicked');
     location.hash = "#lofi"
     location.reload()
 });
