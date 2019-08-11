@@ -1,0 +1,118 @@
+:root {
+  --stroke;
+  --len;
+  --offset;
+  --start;
+  --end;
+  --initial;
+  --segment_length;
+  --segment_length_half;
+  --timeout: 7s;
+  --timeout2: 2s;
+}
+
+html {
+  background-color: #222222;
+}
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #222222;
+  transition: background-color 5s linear;
+}
+
+
+
+.initialize {
+    text-align: center;
+    padding-top: 0;
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+.initialize.active {
+    padding-top: 200px;
+    display: block;
+}
+
+
+path,
+line {
+  fill: none;
+  /*stroke: rgba(0, 0, 0, 0);*/
+  stroke-width: 25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /*stroke-miterlimit: 1;*/
+}
+
+html, body { margin:0; padding:0; overflow:hidden }
+svg {
+  position:fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+}
+
+.animatingEnd {
+  animation: linePulseEnd var(--timeout2) linear forwards;
+}
+
+@keyframes linePulseEnd {
+    0% {
+      stroke: hsla(var(--stroke), 100%, 75%, 1);
+      /*stroke: rgba(255,255,255,1);*/
+      stroke-dashoffset: var(--offset);
+      stroke-width: var(--stroke-width);
+      stroke-dasharray: var(--start) var(--initial) var(--segment_length);
+    }
+    /*25% {
+      stroke: rgba(255,255,255,0.5);
+    }*/
+    49% {
+      stroke: rgba(255,255,255,1);
+      stroke-width: var(--stroke-width);
+      /*stroke: hsla(var(--stroke), 100%, 75%, 1);*/
+    }
+    50% {
+      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
+      /*stroke-width: 0;*/
+      stroke: rgba(255,255,255,0);
+      stroke-width: var(--stroke-width);
+      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
+      stroke-dashoffset: var(--offset);
+      stroke-dasharray: var(--start_midway) var(--initial) 0;
+    }
+    100% {
+      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
+      stroke: rgba(255,255,255,0);
+      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
+      stroke-dashoffset: var(--offset);
+      stroke-dasharray: var(--end) var(--initial) var(--segment_length);
+    }
+}
+
+
+.animating {
+  /*animation: linePulse var(--timeout) cubic-bezier(0.075, 0.82, 0.165, 1) forwards;*/
+  animation: linePulse var(--timeout) cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes linePulse {
+    0% {
+      stroke: hsla(var(--stroke), 100%, 75%, 1);
+      stroke-width: var(--stroke-width);
+      stroke-dashoffset: var(--offset);
+      stroke-dasharray: var(--start) var(--initial) var(--segment_length);
+    }
+    100% {
+      stroke: hsla(var(--stroke), 100%, 75%, 1);
+      stroke-width: var(--stroke-width);
+      stroke-dashoffset: var(--offset);
+      stroke-dasharray: var(--end) var(--initial) var(--segment_length);
+    }
+}
