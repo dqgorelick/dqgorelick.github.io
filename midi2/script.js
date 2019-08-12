@@ -252,8 +252,14 @@
       const low = lower.indexOf(key)
       if (FIXED_LENGTH) {
         let midi = up + 60
+        if (!FIXED_LENGTH) {
+          midi = up + 48
+        }
         if (up === -1) {
           midi = low + 48;
+          if (!FIXED_LENGTH) {
+            midi = low + 36
+          }
         }
         if (up === -1 && low === -1) {
           return
@@ -261,7 +267,10 @@
         playFixedLengthMidi(midi, 0.7)
       } else {
         if (up !== -1 && !keysPressed[key]) {
-            const midi = up + 60
+            var midi = up + 60
+            if (!FIXED_LENGTH) {
+              midi = up + 48
+            }
             keysPressed[key] = true
             // console.log(midi)
             const id = addKeyCount(midi)
@@ -269,7 +278,10 @@
             startNoteAnimation(midi, id, 1)
         }
         if (low !== -1 && !keysPressed[key]) {
-            const midi = low + 48
+            var midi = low + 48
+            if (!FIXED_LENGTH) {
+              midi = low + 36
+            }
             keysPressed[key] = true
             // console.log(midi)
             const id = addKeyCount(midi)
@@ -284,7 +296,10 @@
         const up = upper.indexOf(key)
         const low = lower.indexOf(key)
         if (up !== -1) {
-            const midi = up + 60
+            var midi = up + 60
+            if (!FIXED_LENGTH) {
+              midi = up + 48
+            }
             keysPressed[key] = false
             if (!FIXED_LENGTH) {
               endMidi(midi)
@@ -293,7 +308,10 @@
             }
         }
         if (low !== -1) {
-            const midi = low + 48
+            var midi = low + 48
+            if (!FIXED_LENGTH) {
+              midi = low + 36
+            }
             keysPressed[key] = false
             if (!FIXED_LENGTH) {
               endMidi(midi)
