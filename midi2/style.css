@@ -21,9 +21,30 @@ body {
   height: 100vh;
   background-color: #222222;
   transition: background-color 5s linear;
+  color: #eee;
+  font-size: 10px;
+  font-family: Helvetica, sans-serif;
 }
 
+.instructions-wrapper, .vibrato-control {
+    padding-bottom: 20px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin: 0 2%;
 
+}
+.vibrato-control {
+    right: 0;
+    padding
+}
+.instructions {
+    max-width: 600px;
+}
+.instructions span {
+    font-family: Courier, monospace;
+    padding: 0 10px;
+}
 
 .initialize {
     text-align: center;

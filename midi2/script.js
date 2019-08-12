@@ -246,6 +246,7 @@
   }
 
   const init = () => {
+
     document.addEventListener('keydown', function(e) {
       const key = e.which;
       const up = upper.indexOf(key)
@@ -491,4 +492,5 @@
       setKeyColors();
       init();
   });
+
 })()
