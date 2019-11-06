@@ -1,32 +1,31 @@
 (function () {
-
-  const randRange = (min, max) => {
+  // utility functions
+  var randRange = function(min, max) {
     return Math.floor(Math.random()*(max-min)) + min;
   }
-
-  const map = (n, start1, stop1, start2, stop2) => {
+  var map = function(n, start1, stop1, start2, stop2) {
     return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
   };
+  
+  var mapVelocity = function (velocity) {return map(velocity, 0, 1, 20, 60)};
 
-  const mapVelocity = (velocity) => {
-    const MIN_STROKE_WIDTH = 20;
-    const MAX_STROKE_WIDTH = 60
-    return map(velocity, 0, 1, MIN_STROKE_WIDTH, MAX_STROKE_WIDTH);
-  }
-
-  var FIXED_LENGTH = true;
-  const urlParams = new URLSearchParams(window.location.search);
-  const voice = urlParams.get('voice');
+  var fixedLength = false;
+  var MOBILE_WIDTH = 700; 
+  
+  var urlParams = new URLSearchParams(window.location.search);
+  var voice = urlParams.get('voice');
   if (!!voice) {
-    FIXED_LENGTH = false;
+    fixedLength = false;
   }
 
-  const MOUSE_CONTROL = false;
+  var MOUSE_CONTROL = false;
 
-  const NOTE_LENGTH = 0.7;
-  const ANIMATION_TIME = 3
-  const OUTPUT_AUDIO = false
+  var NOTE_LENGTH = 0.7;
+  var ANIMATION_TIME = 3.0;
+  var OUTPUT_AUDIO = true
 
+  var sampleSelected = 'ORGAN'; 
+  
   var paramSet = 0
   var params = [
   {
@@ -43,97 +42,60 @@
     y: 0.9215686274509803
   }
   ]
-
+  
   var px = params[paramSet].x
   var py = params[paramSet].y
-  // SVG bezier path code from: https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
-
-  const svgPath = (points, command) => {
-    // build the d attributes by looping over the points
-    const d = points.reduce((acc, point, i, a) => i === 0
-      // if first point
-      ? `M ${point[0]},${point[1]}`
-      // else
-      : `${acc} ${command(point, i, a)}`
-    , '')
-    return d
+  
+  
+  var setBezierParams = () => {
+    px = params[paramSet].x
+    py = params[paramSet].y
   }
-
-  const line = (pointA, pointB) => {
-    const lengthX = pointB[0] - pointA[0]
-    const lengthY = pointB[1] - pointA[1]
-    return {
-      length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
-      angle: Math.atan2(lengthY, lengthX)
-    }
-  }
-
-  const lineCommand = point => `L ${point[0]} ${point[1]}`
-
-  const controlPoint = (current, previous, next, reverse) => {
-    const p = previous || current
-    const n = next || current
-    // The smoothing ratio
-    let smoothing = 1.3
-    // if (MOUSE_CONTROL) {
-      smoothing = 2 * py;
-    // }
-    // Properties of the opposed-line
-    const o = line(p, n)
-    // If is end-control-point, add PI to the angle to go backward
-    const angle = o.angle + (reverse ? Math.PI : 0)
-    const length = o.length * smoothing
-    // The control point position is relative to the current point
-    const x = current[0] + Math.cos(angle) * length
-    const y = current[1] + Math.sin(angle) * length
-    return [x, y]
-  }
-
-  const bezierCommand = (point, i, a) => {
-    // start control point
-    const [cpsX, cpsY] = controlPoint(a[i - 1], a[i - 2], point)
-    // end control point
-    const [cpeX, cpeY] = controlPoint(point, a[i - 1], a[i + 1], true)
-    return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`
-  }
-
-  const generatePoints = (num, offsetX) => {
-    const scaleX = window.innerHeight / 88
-    const scaleY = (window.innerHeight / (num));
-    // const scale
-    const points = []
-    // dir = 1;
-    for (let i=0; i<num; i++) {
-      const dir = Math.random() < 0.5 ? -1 : 1;
-      var offsetFactor = randRange(0, 300)
-      // if (MOUSE_CONTROL) {
-        offsetFactor = offsetFactor * px;
-      // }
-      const x = offsetX + dir * 0.20 * (i) * offsetFactor
-      const y = window.innerHeight - i * scaleY
-      // const x = offsetX
+  
+  var svg = document.querySelector('.svg')
+  
+  var generatePoints = function(num, offsetX) {
+    var scaleX = window.innerHeight / 88
+    var scaleY = (window.innerHeight / (num));
+    var points = []
+    for (var i=0; i<num; i++) {
+      var dir = Math.random() < 0.5 ? -1 : 1;
+      var offsetFactorX = randRange(0, 300) * px;
+      var x = offsetX + dir * 0.20 * (i) * offsetFactorX;
+      var offsetY =  scaleY*0.6;
+      var y = window.innerHeight - (i * scaleY) + (Math.random() * offsetY);
       points.push([x, y])
     }
     points.push([offsetX, -10])
     return points
   }
-
-  const svg = document.querySelector('.svg')
-
-  const createSVGPath = (key, path, animation, id, velocity) => {
-      let newPath = document.createElementNS("http://www.w3.org/2000/svg","path");
+  
+  var getAnimationTimeForParam = function(param) {
+    if (param === 0) {
+      return '6s'
+    } else if (param === 1) {
+      return '7s'
+    } else if (param === 2){
+      return '10s'
+    } else if (param === 3) {
+      return '11s'
+    }
+  }
+    
+  var createSVGPath = function(key, path, animation, id, velocity) {
+      var newPath = document.createElementNS("http://www.w3.org/2000/svg","path");
       newPath.setAttributeNS(null, "class", animation);
       newPath.setAttributeNS(null, "id", id);
       newPath.setAttributeNS(null, "d", path);
       newPath.setAttributeNS(null, "data-velocity", velocity);
 
-      const color = keyColors[key]
-      const len = newPath.getTotalLength()
-      const path_offset = len
-      const start = len
-      const initial = len
-      const segment_length = len
-      const end = len*2
+      var color = keyColors[key]
+      var len = newPath.getTotalLength()
+      var path_offset = len
+      var start = len
+      var initial = len
+      var segment_length = len
+      var end = len*2
 
       newPath.setAttributeNS(null, 'style',
         `--stroke: ${color};
@@ -142,14 +104,15 @@
         --start: ${start};
         --end: ${end};
         --initial: ${initial};
+        --timeout: ${getAnimationTimeForParam(paramSet)};
         --segment_length: ${segment_length}`)
 
       return newPath
   }
 
-  const keyCounters = {}
+  var keyCounters = {}
 
-  const addKeyCount = (key) => {
+  var addKeyCount = function(key) {
     if (keyCounters.hasOwnProperty(key)) {
       keyCounters[key] += 1
     } else {
@@ -158,78 +121,92 @@
     return keyCounters[key]
   }
 
-  const startNoteAnimation = (midi, id, velocity) => {
-    // TODO: figure out how to get rid of lines drawn by notes played by two inputs (ie: midi1, midi2 or midi1 and keyboard)
-    // const lastPath = document.getElementById(midi + '_' + (id-1))
-    // if (lastPath !== null) {
-    //   endNoteAnimation(midi, id-1)
-    // }
-    const steps = window.innerWidth/60
-    const points = generatePoints(7,  ((midi) - 25) * steps)
-    const d = svgPath(points, bezierCommand)
-    const path = createSVGPath(midi, d, 'animating', midi + '_' + id, velocity);
+  var startNoteAnimation = function(midi, id, velocity) {
+    var steps = window.innerWidth/65
+    // where do the notes appear?    
+    var points = generatePoints(7,  ((midi) - 30) * steps)
+    var d = svgPath(points, bezierCommand)
+    var path = createSVGPath(midi, d, 'animating', midi + '_' + id, velocity);
     svg.appendChild(path);
   }
+  
+  var endAllAnimations = function() {
+    var animating = [...document.querySelectorAll('.animating')];
+    animating.forEach(path => {
+      var midi = path.id.split('_')[0];
+      var id = path.id.split('_')[1]
+      endNoteAnimation(midi, id);
+    });
+  }
 
-  const endNoteAnimation = (midi, id, velocity) => {
-    const path = document.getElementById(midi + '_' + id)
-    const matrix = getComputedStyle(path).getPropertyValue('stroke-dasharray')
-    const dashArrayStart = parseFloat(matrix.split('px')[0], 10)
+  var endNoteAnimation = function(midi, id) {
+    var path = document.getElementById(midi + '_' + id)
+    if (!path) {
+      return
+    }
+    if (path.classList.contains('animatingEnd')) {
+      return;
+    }
+    var matrix = getComputedStyle(path).getPropertyValue('stroke-dasharray')
+    var velocity = getComputedStyle(path).getPropertyValue('stroke-width')
+    var dashArrayStart = parseFloat(matrix.split('px')[0], 10)
 
-    const len = path.getTotalLength()
-    const color = keyColors[midi]
-    const path_offset = len*2
-    const start = len
-    const initial = len
-    const segment_length = dashArrayStart - len
-    const end = len + len + segment_length
+    var len = path.getTotalLength()
+    var color = keyColors[midi]
+    var path_offset = len*2
+    var start = len
+    var initial = len
+    var segment_length = dashArrayStart - len
+    var end = len + len + segment_length
 
     path.setAttributeNS(null, 'style',
       `--stroke: ${color};
-      --stroke-width: ${mapVelocity(path.dataset.velocity)};
+      --stroke-width: ${velocity};
       --offset: ${path_offset};
       --start: ${start};
       --end: ${end};
       --initial: ${initial};
       --start_midway: ${(start + end)/2};
+      --timeout2: ${(fixedLength ? '1.5s' : '2s')};
       --segment_length: ${segment_length}`)
     path.setAttributeNS(null, 'class', 'animatingEnd')
 
-    setTimeout(() => {
-      svg.removeChild(path)
+    setTimeout(function() {
+        svg.removeChild(path)
     }, 1000 * ANIMATION_TIME)
   }
 
-  const keyColors = [];
+  var keyColors = [];
 
-  const setKeyColors = () => {
+  var setKeyColors = function() {
       var min = 0;
       var max = 160;
       var startingHue = randRange(0, 256)
 
       for (var i=min; i<max+1; i++) {
           keyColors.push(map(i, startingHue + min, startingHue + max, 0, 1000))%256
-          // keyColors.push(randRange(0, 256))
       }
   }
 
 
-  const upper = [81,50,87,51,69,82,53,84,54,89,55,85,73,57,79,48,80,219,187,221]
-  const lower = [90,83,88,68,67,86,71,66,72,78,74,77,188,76,190,186,191]
-  const keysPressed = {}
+  var upper = [81,50,87,51,69,82,53,84,54,89,55,85,73,57,79,48,80,219,187,221]
+  var lower = [90,83,88,68,67,86,71,66,72,78,74,77,188,76,190,186,191]
+  var keysPressed = {}
 
-  const playFixedLengthMidi = (midi, velocity) => {
-    const id = addKeyCount(midi)
+  var playFixedLengthMidi = function(midi, velocity) {
+    var id = addKeyCount(midi)
     startNoteAnimation(midi, id, velocity)
-    startWaveTableNow(midi, velocity)
-    setTimeout(() => {
-      endNoteAnimation(midi, id, velocity);
+    if (OUTPUT_AUDIO) {
+      startWaveTableNow(midi, velocity)
+    }
+    setTimeout(function() {
+      endNoteAnimation(midi, id);
     }, NOTE_LENGTH/(4 * (py*3 + 1)) * 1000)
   }
 
-  const keyEnvelopes = {}
+  var keyEnvelopes = {}
 
-  const startMidi = (midiNote, velocity) => {
+  var startMidi = function(midiNote, velocity) {
     if (keyEnvelopes[midiNote] !== undefined) {
       endMidi(midiNote)
     }
@@ -238,259 +215,460 @@
     }
   }
 
-  const endMidi = (midiNote) => {
-    if (keyEnvelopes[midiNote].envelope) {
-      keyEnvelopes[midiNote].envelope.cancel();
-      keyEnvelopes[midiNote].envelope=null;
+  var endMidi = function(midiNote) {
+    if (!!keyEnvelopes[midiNote]) {
+      if (keyEnvelopes[midiNote].envelope) {
+        keyEnvelopes[midiNote].envelope.cancel();
+        keyEnvelopes[midiNote].envelope=null;
+      }
     }
   }
 
-  const init = () => {
-
+  var controlsActive = true;
+  var init = function () {
+    var modifierKeys = [91, 93, 18, 16, 17];
+    
     document.addEventListener('keydown', function(e) {
-      const key = e.which;
-      const up = upper.indexOf(key)
-      const low = lower.indexOf(key)
-      if (FIXED_LENGTH) {
-        let midi = up + 60
-        if (!FIXED_LENGTH) {
-          midi = up + 48
+      var key = e.which;
+      var up = upper.indexOf(key)
+      var low = lower.indexOf(key)
+      
+      if (key === 32) {
+        controlsActive = !controlsActive;
+        if (!controlsActive) {
+          document.querySelectorAll('.mode-button-wrapper')[0].classList.add('inactive') 
+        } else {
+          document.querySelectorAll('.mode-button-wrapper')[0].classList.remove('inactive') 
         }
+        if (MOUSE_CONTROL) {
+          toggleMouseControl()
+        }
+      }
+      
+      if (key === 27) {
+        document.querySelectorAll('.instructions-wrapper')[0].classList.add('inactive');
+      }
+      // detect modifiers so Shift+Key does not start audio
+      if (modifierKeys.indexOf(key) !== -1) {
+        keysPressed[key] = true
+      }
+      for (var i=0; i<modifierKeys.length; i++) {
+        if (!!keysPressed[modifierKeys[i]]) {
+          if (up !== -1 || low !== -1) {
+            document.querySelectorAll('.modifier')[0].classList.add('active')
+          }
+          return
+        }       
+      }
+    
+      if (fixedLength) {
+        var midi = up + 60
         if (up === -1) {
           midi = low + 48;
-          if (!FIXED_LENGTH) {
-            midi = low + 36
-          }
         }
         if (up === -1 && low === -1) {
           return
         }
-        playFixedLengthMidi(midi, 0.7)
+        playFixedLengthMidi(midi, 0.6)
       } else {
         if (up !== -1 && !keysPressed[key]) {
             var midi = up + 60
-            if (!FIXED_LENGTH) {
+            if (sampleSelected === 'VOICE') {
               midi = up + 48
             }
             keysPressed[key] = true
-            // console.log(midi)
-            const id = addKeyCount(midi)
+            var id = addKeyCount(midi)
             startMidi(midi)
-            startNoteAnimation(midi, id, 1)
-        }
-        if (low !== -1 && !keysPressed[key]) {
+            startNoteAnimation(midi, id, 0.7)
+        } else if (low !== -1 && !keysPressed[key]) {
             var midi = low + 48
-            if (!FIXED_LENGTH) {
+            if (sampleSelected === 'VOICE') {
               midi = low + 36
-            }
+            } 
             keysPressed[key] = true
-            // console.log(midi)
-            const id = addKeyCount(midi)
-            startMidi(midi, 0.7)
-            startNoteAnimation(midi, id, 1)
+            var id = addKeyCount(midi)
+            startMidi(midi, 0.9)
+            startNoteAnimation(midi, id, 0.7)
         }
       }
+      document.querySelectorAll('.modifier')[0].classList.remove('active')
     });
 
     document.addEventListener('keyup', function(e) {
-        const key = e.which;
-        const up = upper.indexOf(key)
-        const low = lower.indexOf(key)
+        var key = e.which;
+        if (modifierKeys.indexOf(key) !== -1) {
+          keysPressed[key] = false
+        }
+        var up = upper.indexOf(key)
+        var low = lower.indexOf(key)
         if (up !== -1) {
             var midi = up + 60
-            if (!FIXED_LENGTH) {
-              midi = up + 48
-            }
             keysPressed[key] = false
-            if (!FIXED_LENGTH) {
+            if (!fixedLength) {     
+              if (sampleSelected === 'VOICE') {
+                midi = up + 48
+              }
               endMidi(midi)
-              const id = keyCounters[midi]
-              endNoteAnimation(midi, id, 1)
+              var id = keyCounters[midi]
+              endNoteAnimation(midi, id)
             }
         }
         if (low !== -1) {
             var midi = low + 48
-            if (!FIXED_LENGTH) {
-              midi = low + 36
-            }
             keysPressed[key] = false
-            if (!FIXED_LENGTH) {
+            if (!fixedLength) {
+              if (sampleSelected === 'VOICE') {
+                midi = low + 36
+              }
               endMidi(midi)
-              const id = keyCounters[midi]
-              endNoteAnimation(midi, id, 1)
+              var id = keyCounters[midi]
+              endNoteAnimation(midi, id)
             }
         }
     });
-
+  
+    var lastMouseX, lastMouseY;
     document.addEventListener('mousemove', function(e) {
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
       if (MOUSE_CONTROL) {
-        py = 1 - ((e.clientY)/ window.innerHeight);
-        px = ((e.clientX)/ window.innerWidth);
+        py = 1 - ((lastMouseY)/ window.innerHeight);
+        px = ((lastMouseX)/ window.innerWidth);
       }
     });
+    
+    var hideInstructions = function(e) {
+      document.querySelectorAll('.instructions-wrapper')[0].classList.add('inactive');
+    }
+    
+    document.querySelectorAll('.instructions-content')[0].addEventListener('click', hideInstructions);
+    
+    var showAbout = function(e) {
+      document.querySelectorAll('.instructions-wrapper')[0].classList.add('inactive');
+      document.querySelectorAll('.about-wrapper')[0].classList.remove('inactive');
+    }
+    document.querySelectorAll('.about-button')[0].addEventListener('click', showAbout);
+    
+    var showHelp = function(e) {
+      document.querySelectorAll('.instructions-wrapper')[0].classList.remove('inactive');
+      document.querySelectorAll('.about-wrapper')[0].classList.add('inactive');
+    }
+    document.querySelectorAll('.help-button')[0].addEventListener('click', showHelp);
+    document.querySelectorAll('.about-back-button')[0].addEventListener('click', showHelp);
+    
+    var modeButtons = document.querySelectorAll('.mode-button')
+    var selectModeButton = function(e) {
+       var id = e.target.id;
+       var buttons = [...modeButtons]
+       buttons.forEach(button => {button.classList.remove('active')});
 
-    document.addEventListener('click', function(e) {
-      playFixedLengthMidi(randRange(30, 90), 0.7)
-      counter++;
-      console.log(counter, py, px)
-      if (!MOUSE_CONTROL) {
-        paramSet = (paramSet + 1) % params.length
-        console.log('paramSet:', paramSet)
-        px = params[paramSet].x
-        py = params[paramSet].y
+       document.querySelectorAll(`#${id}`)[0].classList.add('active');
+       if (id === 'vox') {
+          selectedPreset = _tone_0530_Aspirin_sf2_file; // ooos
+          sampleSelected = 'VOICE';
+          fixedLength = false;
+          playAHDSR()
+       } else if (id === 'vibes') {
+          selectedPreset = _tone_0110_FluidR3_GM_sf2_file; // vibes
+          sampleSelected = 'VIBES';
+          fixedLength = true;  
+       } else if (id === 'organ') {
+          selectedPreset=_tone_0161_SoundBlasterOld_sf2; // organ     
+          sampleSelected = 'ORGAN';
+          fixedLength = false;
+          playAHDSR()
+       }
+     }
+    
+    modeButtons.forEach(function(mode) {
+      mode.addEventListener('click', selectModeButton);  
+    })
+    
+    var bezierModeButtons = document.querySelectorAll('.bezier-mode-button')
+    var selectBezierMode = function(e) {
+       var id = e.target.id;
+       var buttons = [...bezierModeButtons]
+       buttons.forEach(function(button) {button.classList.remove('active')});
+       document.querySelectorAll(`#${id}`)[0].classList.add('active');
+       if (id === 'bezier0') {
+          paramSet = 0
+          setBezierParams()
+       } else if (id === 'bezier1') {
+          paramSet = 1
+          setBezierParams()
+       } else if (id === 'bezier2') {
+          paramSet = 2 
+          setBezierParams()
+       } else if (id === 'bezier3') {
+          paramSet = 3
+          setBezierParams()
+       }
+     }
+    bezierModeButtons.forEach(function(mode) {
+      mode.addEventListener('click', selectBezierMode);  
+    })
+    
+    // add mouse click to get things un-stuck
+    var getUnstuck = function() {
+      modifierKeys.forEach(function(key) {
+        keysPressed[key] = false;
+      });
+      document.querySelectorAll('.modifier')[0].classList.remove('active')
+      
+      for (var midinote of Object.keys(keyEnvelopes)) {
+        if (keyEnvelopes[midinote].envelope) {
+          keyEnvelopes[midinote].envelope.cancel();
+          keyEnvelopes[midinote].envelope=null;
+        }
       }
-    });
-
-    document.addEventListener('touchend', function(e) {
-      playFixedLengthMidi(randRange(30, 90), 0.7)
-      counter++;
-      console.log(counter, py, px)
-    });
-
-    WebMidi.enable(function (err) {
-
-      WebMidi.inputs.forEach(function(input) {
-        // 'IAC Driver ableton<>processing'
-        // console.log(input)
-
-        var outputAudio = OUTPUT_AUDIO;
-        // Listen for a 'note on' message on all channels
-
-        input.addListener('noteon', "all", (e) => {
-            const midi = e.note.number
-            if (FIXED_LENGTH) {
-              playFixedLengthMidi(midi, e.velocity)
-            } else {
-              const id = addKeyCount(midi)
-              startMidi(midi, e.velocity)
-              startNoteAnimation(midi, id, e.velocity)
+      endAllAnimations();
+    }
+    
+    document.addEventListener('click', getUnstuck);
+    
+    var toggleMouseControl = function() {
+      if (MOUSE_CONTROL) {
+        MOUSE_CONTROL = false;
+      } else {
+        MOUSE_CONTROL = true;
+      }
+    }
+    
+    // midi listener
+    var connected = [];
+    
+    var getDeviceById = function(id){
+      const index = connected.findIndex(d => d.id === id)
+      return connected[index]
+    }
+    
+    var removeDevice = function(id) {
+      const index = connected.findIndex(d => d.id === id)
+      connected.splice(index, 1)
+    }
+    
+    var addMidiListerner = function(inputDevice) {
+      var device = WebMidi.getInputById(inputDevice.id);
+      connected.push(device)
+      device.addListener('noteon', "all", function(e) {
+          var midi = e.note.number
+          if (fixedLength) {
+            playFixedLengthMidi(midi, (e.velocity)*0.7)
+          } else {
+            var id = addKeyCount(midi)
+            startNoteAnimation(midi, id, 0.7)
+            if (OUTPUT_AUDIO) {
+              startMidi(midi, 0.7)
             }
           }
-        );
+        }
+      );
 
-        input.addListener('noteoff', "all", (e) => {
-            if (!FIXED_LENGTH) {
-              const midi = e.note.number
+      device.addListener('noteoff', "all", function(e) {
+          if (!fixedLength) {
+            var midi = e.note.number;
+            if (OUTPUT_AUDIO) {
               endMidi(midi)
-              const id = keyCounters[midi]
-              endNoteAnimation(midi, id, e.velocity)
             }
+            var id = keyCounters[midi]
+            endNoteAnimation(midi, id)
           }
-        );
+        }
+      );
+    }
+    
+    WebMidi.enable(function(err) {
+      if (!err){
+        setTimeout(function() {
+          if (WebMidi.inputs) {
+            WebMidi.inputs.forEach(function(input) {
+              addMidiListerner(input)
+            })
+          }
+          WebMidi.addListener('connected', function(connectedDevice) {
+            var device = connectedDevice
+            if (connectedDevice.port) {
+              device = connectedDevice.port
+            }
+            if (device.type === 'input') {
+              addMidiListerner(device)
+            }
+          })
 
-      })
-    });
+          WebMidi.addListener('disconnected', function(disconnected) {
+            var device = getDeviceById(disconnected.id)
+            if (disconnected.port) {
+              device = getDeviceById(disconnected.port.id)
+            }
+            if (device){
+              device.removeListener('noteon')
+              device.removeListener('noteoff')
+              removeDevice(disconnected.id)
+            }
+          })
+        }, 100)
+      }
+    })
   }
 
-  var counter = 0;
   var selectedPreset, audioContext, player;
-
-  StartAudioContext(Tone.context, '.starter-button').then(function(){
-
-      // selectedPreset = _tone_0110_Aspirin_sf2_file; // vibes
-      selectedPreset = _tone_0110_FluidR3_GM_sf2_file;
-      if (!FIXED_LENGTH) {
-        // selectedPreset = _tone_0530_Chaos_sf2_file; // ooos
-        selectedPreset = _tone_0530_Aspirin_sf2_file; // ooos
+  
+    function playAHDSR() {
+      if (sampleSelected === 'ORGAN') {
+        for (var i = 0; i < selectedPreset.zones.length; i++) {
+          selectedPreset.zones[i].ahdsr = [{
+              duration: NOTE_LENGTH,
+              volume: 1.0
+            }
+          ];
+        }
+      } else if (sampleSelected === 'VOICE') {
+        for (var i = 0; i < selectedPreset.zones.length; i++) {
+          selectedPreset.zones[i].ahdsr = [{
+              duration: 0,
+              volume: 0.9
+            }, {
+              duration: NOTE_LENGTH/5,
+              volume: 0.7
+            }, {
+              duration: NOTE_LENGTH/5,
+              volume: 0.6
+            }, {
+              duration: NOTE_LENGTH/5,
+              volume: 0.4
+            }, {
+              duration: NOTE_LENGTH/5,
+              volume: 0.3
+            }, {
+              duration: NOTE_LENGTH/5,
+              volume: 0.2
+            }
+          ];
+        }
       }
-      // var selectedPreset=_tone_0161_SoundBlasterOld_sf2; // organ
+    }
+    function playFixedAHDSR() {
+      for (var i = 0; i < selectedPreset.zones.length; i++) {
+        selectedPreset.zones[i].ahdsr = [{
+            duration: 0,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.6
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.4
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.3
+          }, {
+            duration: NOTE_LENGTH/10,
+            volume: 0.2
+          }
+        ];
+      }
+    }
+  
+  var started = false;
+  document.addEventListener('touchstart', function(e) {
+    if (!started) {
+      start();
+    }
+  });
+  
+  document.querySelectorAll('svg')[0].addEventListener('touchstart', function(e) {
+    if (window.innerWidth < MOBILE_WIDTH) {
+      var midinote = Math.floor(map(e.pageX, 0, window.innerWidth, 30, 95));
+      playFixedLengthMidi(midinote, 0.7)   
+    }
+  })
+
+  document.addEventListener('mousemove', function() {
+    if (!started) {
+      start();
+    }
+  });
+
+  var start = function() {
+      started = true;
+      selectedPreset = _tone_0161_SoundBlasterOld_sf2;
       var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
       audioContext = new AudioContextFunc();
       player = new WebAudioFontPlayer();
-      var channelMaster = player.createChannel(audioContext);
-      var reverberator = player.createReverberator(audioContext);
-
-      var channelDrums = player.createChannel(audioContext);
-      var channelBass = player.createChannel(audioContext);
-      var channelDistortion = player.createChannel(audioContext);
-      var channelMaster = player.createChannel(audioContext);
-      var reverberator = player.createReverberator(audioContext);
-      channelDrums.output.connect(channelMaster.input);
-      channelBass.output.connect(channelMaster.input);
-      channelDistortion.output.connect(channelMaster.input);
-      channelMaster.output.connect(reverberator.input);
-      reverberator.output.connect(audioContext.destination);
-      if (FIXED_LENGTH) {
+      if (fixedLength) {
         playFixedAHDSR()
       } else {
         playAHDSR()
       }
-      function playAHDSR() {
-        for (var i = 0; i < selectedPreset.zones.length; i++) {
-          selectedPreset.zones[i].ahdsr = [{
-              duration: 0,
-              volume: 0.8
-            }, {
-              duration: NOTE_LENGTH/5,
-              volume: 0.7
-            }, {
-              duration: NOTE_LENGTH/5,
-              volume: 0.6
-            }, {
-              duration: NOTE_LENGTH/5,
-              volume: 0.4
-            }, {
-              duration: NOTE_LENGTH/5,
-              volume: 0.3
-            }, {
-              duration: NOTE_LENGTH/5,
-              volume: 0.2
-            }
-          ];
-        }
-      }
-      function playFixedAHDSR() {
-        for (var i = 0; i < selectedPreset.zones.length; i++) {
-          selectedPreset.zones[i].ahdsr = [{
-              duration: 0,
-              volume: 1
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.9
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.9
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.9
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.8
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.7
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.6
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.6
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.4
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.3
-            }, {
-              duration: NOTE_LENGTH/10,
-              volume: 0.2
-            }
-          ];
-        }
-      }
-      // reverberator.wet.gain.setTargetAtTime(1.5,0,0.0001)
       player.adjustPreset(audioContext,selectedPreset);
-
+      
       window.startWaveTableNow = function(pitch, velocity) {
-          // var audioBufferSourceNode = player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime + 0, pitch, 0.4);
-          // var audioBufferSourceNode = player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime + 0.4, pitch, 0.2);
-          // var audioBufferSourceNode = player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime + 0.6, pitch, 0.2);
-          // var audioBufferSourceNode = player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime, pitch, NOTE_LENGTH);
           player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime + 0.02, pitch, NOTE_LENGTH, velocity);
       }
-      document.querySelectorAll('.initialize')[0].classList = ['initialize'];
       setKeyColors();
       init();
-  });
+  }
+
+  
+  // referenced this guide to get started w/ SVG beziers https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
+  
+  var svgPath = (points, command) => {
+    var d = points.reduce((acc, point, i, a) => i === 0
+      ? `M ${point[0]},${point[1]}`
+      : `${acc} ${command(point, i, a)}`
+    , '')
+    return d
+  }
+
+  var line = (pointA, pointB) => {
+    var lengthX = pointB[0] - pointA[0]
+    var lengthY = pointB[1] - pointA[1]
+    return {
+      length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+      angle: Math.atan2(lengthY, lengthX)
+    }
+  }
+
+  var lineCommand = point => `L ${point[0]} ${point[1]}`
+
+  var controlPoint = (current, previous, next, reverse) => {
+    var p = previous || current
+    var n = next || current
+    // The smoothing ratio
+    var smoothing = 2 * py;
+    // Properties of the opposed-line
+    var o = line(p, n)
+    // If is end-control-point, add PI to the angle to go backward
+    var angle = o.angle + (reverse ? Math.PI : 0)
+    var length = o.length * smoothing
+    // The control point position is relative to the current point
+    var x = current[0] + Math.cos(angle) * length
+    var y = current[1] + Math.sin(angle) * length
+    return [x, y]
+  }
+
+  var bezierCommand = (point, i, a) => {
+    var [cpsX, cpsY] = controlPoint(a[i - 1], a[i - 2], point)
+    var [cpeX, cpeY] = controlPoint(point, a[i - 1], a[i + 1], true)
+    return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`
+  }
 
 })()

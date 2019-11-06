@@ -1,73 +1,276 @@
 :root {
-  --stroke;
-  --len;
-  --offset;
-  --start;
-  --end;
-  --initial;
-  --segment_length;
-  --segment_length_half;
   --timeout: 7s;
   --timeout2: 2s;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
   background-color: #222222;
 }
+
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   margin: 0;
   padding: 0;
   height: 100vh;
   background-color: #222222;
-  transition: background-color 5s linear;
   color: #eee;
-  font-size: 10px;
-  font-family: Helvetica, sans-serif;
+  font-size: 16px;
 }
 
-.instructions-wrapper, .vibrato-control {
-    padding-bottom: 20px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    margin: 0 2%;
 
-}
-.vibrato-control {
-    right: 0;
-    padding
-}
-.instructions {
-    max-width: 600px;
-}
-.instructions span {
-    font-family: Courier, monospace;
-    padding: 0 10px;
+a {
+  color: #eee;
 }
 
-.initialize {
-    text-align: center;
-    padding-top: 0;
-    display: none;
-    cursor: pointer;
-    color: white;
+a:hover {
+  color: #FC3381;
 }
 
-.initialize.active {
-    padding-top: 200px;
-    display: block;
+.about-button {
+  text-align:left;
+  color: #bbb;
+  cursor: pointer;
 }
 
+.about-button:hover {
+  color: #FC3381;
+  text-decoration: underline;
+}
+
+.glitchButton a {
+  color: #222;
+}
+
+
+.svg {
+/*   transform: rotate(-90deg); */
+}
+
+/* UI styling */
+
+.mobile-support {
+  display: none;
+}
+
+.mobile-support.active {
+  display: block;
+}
+.instructions-wrapper, .about-wrapper {
+  z-index: 999;
+  position: absolute;
+  min-width: 400px;
+  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 2%;
+  padding: 20px 40px 15px;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.instructions-wrapper p, .about-wrapper p {
+  font-size: 14px;
+}
+
+.instructions-content {
+  cursor: pointer;
+/*   border-bottom: 1px solid #eee; */
+}
+
+.instructions-content:hover .play-button {
+  color: #FC3381;
+}
+
+.about-back-button:hover  {
+  color: #FC3381;
+}
+
+.play-button {
+  margin-top: 20px;
+}
+
+
+.instructions-wrapper.inactive, .about-wrapper.inactive {
+  display: none;
+}
+
+.about-wrapper h2 {
+  margin-bottom: 1.5rem;  
+}
+
+ul {
+  display: table;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 1em;
+  margin-right: auto;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 1px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0;
+}
+
+li {
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:relative;
+  float:right
+}
+
+ul .white {
+  vertical-align: bottom;
+  display: table-cell;
+  line-height: 6em;
+  text-align: center;
+  height:4em;
+  width:1em;
+  z-index:1;
+  color: #000;
+  border-left: 1px solid #333;
+/*   border-top: 1px solid #bbb; */
+/*   border-bottom: 1px solid #bbb; */
+  background:linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.9) 100%)
+}
+
+.white:first-child {
+/*     border-right: 1px solid #bbb; */
+}
+
+.black {
+  vertical-align: top;
+  display: table-cell;
+  line-height: 2em;
+  text-align: center;
+  height:2em;
+  width:0.75em;
+  margin:0 -.5em 0 0;
+/*   border: 1px solid #bbb; */
+  z-index:2;
+  background:linear-gradient(45deg,rgba(22,22,22,1) 0%,rgba(55,55,55,1) 100%)
+}
+
+.a,.g,.f,.d,.c {
+  margin:0 -.25em 0 0;
+}
+
+
+.modifier {
+  text-align: center;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  cursor: pointer;
+  color: white;
+  z-index: 99999;
+}
+
+.initialize.active, .modifier.active {
+  display: block;
+}
+
+
+.mode-button-wrapper {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.mode-button-wrapper.inactive {
+  display: none;
+}
+
+.mode-buttons {
+  position: relative;
+}
+
+.mode-button, .bezier-mode-button, .stroke-mode-button, .help-button {
+  float: right;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  background-color: #454545;
+  transition: background-color 0.1s linear;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.02rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.bezier-mode-button, .stroke-mode-button {
+  float: left;
+  margin: 10px 0;
+}
+
+.help-button {
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.mode-button:last-child, .bezier-mode-button:first-child, .stroke-mode-button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 10px;
+}
+
+.mode-button:first-child, .bezier-mode-button:last-child, .stroke-mode-button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-right: 10px;
+}
+
+.button.active {
+  background-color: #FC3381;
+}
+
+.button:hover {
+  background-color: #FF91BB;
+}
+
+.button:hover {
+  background-color: #FC3381;
+}
+
+@media all and (max-width: 600px) {
+  .mode-button, .bezier-mode-button, .stroke-mode-button, .help-button {
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .instructions-wrapper, .about-wrapper {
+    font-size: 12px;
+    padding: 15px 15px 5px;
+    min-width: 300px;
+  }
+  
+  .play-button {
+    font-size: 16px;
+  }
+}
+
+/* lines styling */
 
 path,
 line {
   fill: none;
-  /*stroke: rgba(0, 0, 0, 0);*/
   stroke-width: 25;
   stroke-linecap: round;
-  stroke-linejoin: round;
-  /*stroke-miterlimit: 1;*/
 }
 
 html, body { margin:0; padding:0; overflow:hidden }
@@ -86,32 +289,22 @@ svg {
 @keyframes linePulseEnd {
     0% {
       stroke: hsla(var(--stroke), 100%, 75%, 1);
-      /*stroke: rgba(255,255,255,1);*/
       stroke-dashoffset: var(--offset);
       stroke-width: var(--stroke-width);
       stroke-dasharray: var(--start) var(--initial) var(--segment_length);
     }
-    /*25% {
-      stroke: rgba(255,255,255,0.5);
-    }*/
     49% {
       stroke: rgba(255,255,255,1);
       stroke-width: var(--stroke-width);
-      /*stroke: hsla(var(--stroke), 100%, 75%, 1);*/
     }
     50% {
-      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
-      /*stroke-width: 0;*/
       stroke: rgba(255,255,255,0);
       stroke-width: var(--stroke-width);
-      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
       stroke-dashoffset: var(--offset);
       stroke-dasharray: var(--start_midway) var(--initial) 0;
     }
     100% {
-      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
       stroke: rgba(255,255,255,0);
-      /*stroke: hsla(var(--stroke), 100%, 75%, 0);*/
       stroke-dashoffset: var(--offset);
       stroke-dasharray: var(--end) var(--initial) var(--segment_length);
     }
@@ -119,7 +312,6 @@ svg {
 
 
 .animating {
-  /*animation: linePulse var(--timeout) cubic-bezier(0.075, 0.82, 0.165, 1) forwards;*/
   animation: linePulse var(--timeout) cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 

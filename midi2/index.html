@@ -1,44 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Midi 2</title>
+    <title>Bezier Play</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="vendor/jquery.min.js"></script>
-    <script src="vendor/tone.min.js"></script>
+    <link rel="icon" href="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2Ffavicon.png?v=1572245286859">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dqgorelick">
+    <meta name="twitter:creator" content="@dqgorelick">
+    <meta property="og:site_name" content="Bezier Play – a musical web experiment">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bezier Play – a musical web experiment">
+    <meta property="og:url" content="https://bezier-play.glitch.me/">
+    <meta property="og:description" content="Bezier Play – a musical web experiment.">
+    <meta property="og:image" content="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2Ffavicon.png?v=1572245286859">
+    <meta property="og:image:url" content="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2Ffavicon.png?v=1572245286859">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="908">
+    <meta property="og:image:height" content="908">
     <script>window.TONE_SILENCE_VERSION_LOGGING = true</script>
-    <script src="vendor/StartAudioContext.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/webmidi@2.0.0"></script>
-
-    <script src='https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js'></script>
-    <script src='./0110_Aspirin_sf2_file.js'></script>
-    <script src='./0530_Aspirin_sf2_file.js'></script>
-    <script src='./0110_FluidR3_GM_sf2_file.js'></script>
-    <script src='./0530_Chaos_sf2_file.js'></script>
-    <script src='./0161_SoundBlasterOld_sf2.js'></script>
-
+    <script src="https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2F0530_Chaos_sf2_file.js?v=1567643760818"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2F0110_FluidR3_GM_sf2_file.js?v=1567643766959"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2F0530_Aspirin_sf2_file.js?v=1567643774700"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2F0110_Aspirin_sf2_file.js?v=1567643854534"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2F0161_SoundBlasterOld_sf2.js?v=1567643866211"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2FStartAudioContext.js?v=1567643878006"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="initialize active">
-        <div class="starter-button">Click anywhere when ready 😎</div>
+    <div class="modifier">
+        <p>
+          Modifier key pressed. Click anywhere when continue
+        </p>
     </div>
     <div class="instructions-wrapper">
-        <div class="instructions">
             <div class="instructions-content">
-                <i>keyboard controls: (piano mapping)</i><br><br>
-                black keys = {<span>2 3   5 6 7   9 0 =</span>}<br>
-                white keys = {<span>q w e r t y u i o p [ ]</span>}<br><br>
-                black keys = {<span>s d   g h j   l ;</span>}<br>
-                white keys = {<span>z x c v b n m , . /</span>}<br><br>
-                <i>mouse controls:</i><br><br>
-                click = change modes<br><br>
+              <h2>
+                Bezier Play
+              </h2>  
+              <p>
+                <i>BEH-ZEE-AY play</i> – a musical web experiment.
+              </p>
+              <p>
+                  Play using your computer keys or MIDI keyboard.
+              </p>
+              <p>
+                <b>Computer keys:</b>
+              </p>
+                <ul class="set">
+                  <li class="white g">]</li>
+                  <li class="black fs">=</li>
+                  <li class="white f">[</li>
+                  <li class="white e">p</li>
+                  <li class="black ds">0</li>
+                  <li class="white d">o</li>
+                  <li class="black cs">9</li>
+                  <li class="white c">i</li>
+                  <li class="white b">u</li>
+                  <li class="black as">7</li>
+                  <li class="white a">y</li>
+                  <li class="black gs">6</li>
+                  <li class="white g">t</li>
+                  <li class="black fs">5</li>
+                  <li class="white f">r</li>
+                  <li class="white e">e</li>
+                  <li class="black ds">3</li>
+                  <li class="white d">w</li>
+                  <li class="black cs">2</li>
+                  <li class="white c">q</li>
+                </ul>
+                <br>
+                <ul class="set">
+                  <li class="white e">/</li>
+                  <li class="black ds">;</li>
+                  <li class="white d">.</li>
+                  <li class="black cs">l</li>
+                  <li class="white c">,</li>
+                  <li class="white b">m</li>
+                  <li class="black as">j</li>
+                  <li class="white a">n</li>
+                  <li class="black gs">h</li>
+                  <li class="white g">b</li>
+                  <li class="black fs">g</li>
+                  <li class="white f">v</li>
+                  <li class="white e">c</li>
+                  <li class="black ds">d</li>
+                  <li class="white d">x</li>
+                  <li class="black cs">s</li>
+                  <li class="white c">z</li>
+                </ul>
+                <p>
+                  <b>Click:</b> cut off notes
+                  <br>
+                  <b>Spacebar:</b> show & hide interface
+                  <br>
+                  <b>Tap (mobile):</b> generate note at x position
+                </p>
+                <h3 class="play-button">
+                  <b><span>&#10149; Play! (sound on)</span></b>         
+                </h3>
+          </div>
+          <div>
+            <p class="about-button">
+              About
+            </p>
+          </div>
+      </div>
+    </div>
+    <div class="about-wrapper inactive">
+            <div class="about-content">
+              <h2>
+                About
+              </h2>  
+              <p>
+                Bezier Play is an audio visualizer web experiment created by <a href="https://twitter.com/dqgorelick" target="_blank">Dan Gorelick</a>. The <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank">bezier curve</a> visuals are created using SVGs and CSS animations.
+              </p>
+              <p>
+                The sounds are generated using the <a href="https://github.com/surikov/webaudiofont" target="_blank">web audio font</a> library.
+              </p>
+              <p>
+                The experiment is hosted on <a target="_blank" href="https://glitch.com">Glitch.</a>
+              </p>
+              <h3 class="about-back-button">
+                <b><span>Back</span></b>                  
+              </h3>
+              <!-- include the Glitch button to show what the webpage is about and to make it easier for folks to view source and remix -->
+              <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        </div>
+    </div>
+    <div class="mode-button-wrapper">
+      <div class="bezier-mode-buttons">
+          <div class="button bezier-mode-button active" id="bezier0">
+              1
+          </div>
+          <div class="button bezier-mode-button" id="bezier1">
+              2
+          </div>
+          <div class="button bezier-mode-button" id="bezier3">
+              3
+          </div>
+      </div>
+      <!-- <div class="stroke-mode-buttons">
+          <div class="button stroke-mode-button" id="stroke-minus">
+              -
+          </div>
+          <div class="button stroke-mode-button" id="stroke-plus">
+              +
+          </div>
+      </div> -->
+      <div class="mode-buttons">
+          <div class="button help-button">
+              ?
+          </div>
+      </div>
+      <div class="mode-buttons">
+            <div class="button mode-button" id="vibes">
+                III
+            </div>
+            <div class="button mode-button" id="vox">
+                II
+            </div>
+            <div class="button mode-button active" id="organ">
+                I
             </div>
         </div>
     </div>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="svg">
     </svg>
     <script src="./script.js"></script>
+    <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
