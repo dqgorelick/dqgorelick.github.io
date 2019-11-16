@@ -9,10 +9,11 @@
     <script>window.TONE_SILENCE_VERSION_LOGGING = true</script>
     <script src='./javascripts/vendor/browsercheck.js'></script>
     <script src='./javascripts/vendor/StartAudioContext.js'></script>
-    <script src='./javascripts/vendor/tone.js'></script>
     <script src='./javascripts/vendor/teoria.js'></script>
     <script src='./javascripts/vendor/jquery-3.1.1.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/webmidi@2.0.0"></script>
+    <script src="https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js"></script>
+    <script src="https://cdn.glitch.com/e5e39981-592e-4def-bff2-b9495d2de2b5%2F0161_SoundBlasterOld_sf2.js?v=1567643866211"></script>
     <style>
     html,
     body {
@@ -193,10 +194,10 @@
                 </div>
             </div>
         </div>
-        <div class="vibrato-control">
+        <!-- <div class="vibrato-control">
             <div class="vibrato-amount">Amount: <span>3.5</span></div>
             Mouse control vibrato: <input type="checkbox" name="">
-        </div>
+        </div> -->
     </div>
 
 </body>
@@ -223,25 +224,6 @@ var keysPressed = {}
 var playingNotes = false;
 var backgroundHue = randRange(0, 256)
 
-document.addEventListener('mousemove', function(e) {
-    if ($('.vibrato-control input')[0].checked) {
-        var py = 1 - ((e.clientY)/ window.innerHeight);
-        var vibratoRateRange = 7;
-        var vibratoAmountRange = 0.20;
-        var amount = py * vibratoRateRange;
-        if (amount < 0.15) {
-            amount = 0;
-        }
-        synth.set('vibratoRate', amount);
-        synth.set('vibratoAmount', 0.05 + py * vibratoAmountRange);
-        $('.vibrato-amount span').html((amount).toFixed(1));
-    } else {
-        $('.vibrato-amount span').html(3.5);
-        synth.set('vibratoRate', 3.5);
-        synth.set('vibratoAmount', 0.25);
-    }
-});
-
 /*
 other scales to use:
 
@@ -260,37 +242,6 @@ $('.scale a').on('click', function() {
     setScale(c3.scale(scaleChoice).simple());
     setPlayable();
 })
-var vol = new Tone.Volume(12);
-var freeverb = new Tone.Freeverb(0.7, 1200).toMaster();
-
-var synth = (location.hash === '#lofi' ? lofiSynth() : duoSynth());
-Tone.bufferSize = 2048*2;
-
-StartAudioContext(Tone.context, '.starter-button').then(function(){
-    $('.initialize').removeClass('active');
-    init();
-});
-
-function duoSynth() {
-    return new Tone.PolySynth(5, Tone.DuoSynth, {
-    'vibratoAmount': 0.25,
-    'vibratoRate': 3.5,
-    'envelope': {
-        'attack': 0.05,
-        'decay': 0,
-        'release': 0.5
-    },
-    }).chain(vol).connect(freeverb).toMaster();
-}
-function lofiSynth() {
-    return new Tone.PolySynth(5, Tone.Synth, {
-    'envelope': {
-        'attack': 0.05,
-        'decay': 0,
-        'release': 0.5
-    },
-    }).chain(vol).toMaster();
-}
 
 function randRange(min, max) {
   return Math.floor(Math.random()*(max-min)) + min;
@@ -402,7 +353,6 @@ function activateNote(midi) {
 }
 
 function stopAll() {
-    synth.voices.forEach(function(voice) { voice.triggerRelease() })
     upper.forEach(function(key) {
         var midi = upper.indexOf(key) + 60
         disableNote(midi);
@@ -419,40 +369,16 @@ function setPlayable() {
     $('.key').on('mouseenter', function() {
         if ($(this).hasClass('playable') && !$(this).hasClass('active')) {
             $(this).removeClass('playable');
+
             var midi = this.id.split("-")[1]
+            startMidi(midi, 0.9)
+            setTimeout(function() {
+                endMidi(midi)
+            }, 1000 + 25)
             animateNote(midi, 1000)
-            synth.triggerAttackRelease(Tone.Frequency(midi, "midi").eval(), "2n");
         }
     });
 }
-
-
-function initMidi() {
-  WebMidi.enable(function (err) {
-
-      WebMidi.inputs.forEach(function(input) {
-        // Listen for a 'note on' message on all channels
-        input.addListener('noteon', "all",
-          function (e) {
-            synth.triggerAttackRelease(Tone.Frequency(e.note.number, "midi").eval());
-            activateNote(e.note.number)
-          }
-        );
-
-        // Listen to pitch bend message on channel 3
-        input.addListener('noteoff', "all",
-          function (e) {
-            synth.triggerRelease(Tone.Frequency(e.note.number, "midi").eval());
-            disableNote(e.note.number)
-          }
-        );
-
-      })
-  });
-
-
-}
-
 
 function init() {
     $(".keys").html(createKeys());
@@ -473,13 +399,13 @@ function init() {
         if (up !== -1 && !keysPressed[key]) {
             var midi = up + 60
             keysPressed[key] = true
-            synth.triggerAttackRelease(Tone.Frequency(midi, "midi").eval());
+            startMidi(midi, 0.9)
             activateNote(midi)
         }
         if (low !== -1 && !keysPressed[key]) {
             var midi = low + 48
             keysPressed[key] = true
-            synth.triggerAttackRelease(Tone.Frequency(midi, "midi").eval());
+            startMidi(midi, 0.9)
             activateNote(midi)
         }
     });
@@ -494,23 +420,21 @@ function init() {
         if (up !== -1) {
             var midi = up + 60
             keysPressed[key] = false
-            synth.triggerRelease(Tone.Frequency(midi, "midi").eval());
+            endMidi(midi)
             disableNote(midi)
         }
         if (low !== -1) {
             var midi = low + 48
             keysPressed[key] = false
-            synth.triggerRelease(Tone.Frequency(midi, "midi").eval());
+            endMidi(midi)
             disableNote(midi)
         }
     });
 
     document.addEventListener('mousedown', function() {
+        getUnstuck()
         stopAll()
     });
-
-    initMidi();
-
 }
 
 var specialKeys = [16, 91, 18, 17];
@@ -530,10 +454,135 @@ $('.instructions-toggle a').on('click', function() {
     menus.instructions = !menus.instructions;
 });
 
-$('#lofi').on('click', function() {
-    location.hash = "#lofi"
-    location.reload()
+var keyEnvelopes = {}
+
+var getUnstuck = function() {  
+  for (var midinote of Object.keys(keyEnvelopes)) {
+    if (keyEnvelopes[midinote].envelope) {
+      keyEnvelopes[midinote].envelope.cancel();
+      keyEnvelopes[midinote].envelope=null;
+    }
+  }
+}
+
+var startMidi = function(midiNote, velocity) {
+    if (keyEnvelopes[midiNote] !== undefined) {
+      endMidi(midiNote)
+    }
+    keyEnvelopes[midiNote] = {
+      envelope: player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime + 0.02, midiNote, 999, velocity),
+    }
+  }
+
+  var endMidi = function(midiNote) {
+    if (!!keyEnvelopes[midiNote]) {
+      if (keyEnvelopes[midiNote].envelope) {
+        keyEnvelopes[midiNote].envelope.cancel();
+        keyEnvelopes[midiNote].envelope=null;
+      }
+    }
+  }
+
+// midi listener
+var connected = [];
+
+var getDeviceById = function(id){
+const index = connected.findIndex(d => d.id === id)
+return connected[index]
+}
+
+var removeDevice = function(id) {
+const index = connected.findIndex(d => d.id === id)
+connected.splice(index, 1)
+}
+
+var addMidiListerner = function(inputDevice) {
+var device = WebMidi.getInputById(inputDevice.id);
+connected.push(device)
+device.addListener('noteon', "all", function(e) {
+    var midi = e.note.number   
+    startMidi(midi, e.velocity)
+    activateNote(e.note.number)
 });
+
+device.addListener('noteoff', "all", function(e) {
+    var midi = e.note.number;
+    endMidi(midi)
+    disableNote(e.note.number)
+  });
+}
+
+WebMidi.enable(function(err) {
+if (!err){
+  setTimeout(function() {
+    if (WebMidi.inputs) {
+      WebMidi.inputs.forEach(function(input) {
+        addMidiListerner(input)
+      })
+    }
+    WebMidi.addListener('connected', function(connectedDevice) {
+      var device = connectedDevice
+      if (connectedDevice.port) {
+        device = connectedDevice.port
+      }
+      if (device.type === 'input') {
+        addMidiListerner(device)
+      }
+    })
+
+    WebMidi.addListener('disconnected', function(disconnected) {
+      var device = getDeviceById(disconnected.id)
+      if (disconnected.port) {
+        device = getDeviceById(disconnected.port.id)
+      }
+      if (device){
+        device.removeListener('noteon')
+        device.removeListener('noteoff')
+        removeDevice(disconnected.id)
+      }
+    })
+  }, 100)
+}
+})
+
+var started = false;
+var selectedPreset, audioContext, player;
+
+selectedPreset = _tone_0161_SoundBlasterOld_sf2;
+
+function playAHDSR() {
+  for (var i = 0; i < selectedPreset.zones.length; i++) {
+    selectedPreset.zones[i].ahdsr = [{
+        duration: 1,
+        volume: 1.0
+      }
+    ];
+  }
+}
+
+document.addEventListener('mousemove', function() {
+  if (!started) {
+    start();
+  }
+});
+
+function start() {
+    $('.initialize').removeClass('active');
+    init();
+    started = true;
+    selectedPreset = _tone_0161_SoundBlasterOld_sf2;
+    var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
+    audioContext = new AudioContextFunc();
+    player = new WebAudioFontPlayer();
+    playAHDSR()
+    player.adjustPreset(audioContext,selectedPreset);
+    
+    window.startWaveTableNow = function(pitch, velocity) {
+        player.queueWaveTable(audioContext, audioContext.destination, selectedPreset, audioContext.currentTime + 0.02, pitch, NOTE_LENGTH, velocity);
+    }
+    setKeyColors();
+    init();
+}
 
 })();
 </script>
