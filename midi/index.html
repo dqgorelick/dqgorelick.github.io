@@ -213,6 +213,8 @@ if (checkMobile() || checkBrowser() === 'other') {
     $('.starter-button').html('<div class="warning">This web experiment is only tested on the most modern versions of Google Chrome and Firefox. <br><br>Click if you would still like to continue.</div>')
 }
 
+var SHOW_OCTAVE = false 
+
 var octaves = 5;
 var steps = 12;
 var offset = 36;
@@ -254,12 +256,16 @@ function map(n, start1, stop1, start2, stop2) {
 function createKeys() {
     var final = '';
     var midi = steps * octaves;
+    var maxStep = 13; // toggle showing octave at end 
     for (var i=0; i<octaves; i++) {
         final +='<div class="keys-row">'
         for (var k=i; k<octaves; k++) {
             final += '<div class="spacer"></div>'
         }
-        for (var j=0; j<steps+1; j++) {
+        if (!SHOW_OCTAVE) {
+            maxStep = 12
+        } 
+        for (var j=0; j<maxStep; j++) {
             final += (
             '<div class="key-wrapper">' +
                 '<div class="key" id="' + (j !== steps ? 'key' : 'mouse') + '-' + (offset + midi - steps + j*2) + '"></div>'
