@@ -1,0 +1,78 @@
+I"x<h3 id="motivation-to-use-neo4j">Motivation to use Neo4j</h3>
+
+<p>Here’s the thing. I need a database that works efficiently with graphs. Two people said neo4j is good, so I’m doing it!</p>
+
+<p>Moving on…</p>
+
+<h3 id="installation">Installation:</h3>
+
+<p>I simply did <code class="highlighter-rouge">brew install neo4j</code> then <code class="highlighter-rouge">neo4j start</code> and finally went to the <code class="highlighter-rouge">http://localhost:7474/</code> for the build-in GUI. So far so good. It is great that this is all built in, and that there’s also a tutorial.</p>
+
+<p>Useful snippets:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE (ee:Person { name: "Emil", from: "Sweden", klout: 99 })
+
+- CREATE clause to create data
+- () parenthesis to indicate a node
+- ee:Person a variable 'ee' and label 'Person' for the new node
+- {} brackets to add properties to the node
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH (ee:Person) WHERE ee.name = "Emil" RETURN ee;
+
+- MATCH clause to specify a pattern of nodes and relationships
+- (ee:Person) a single node pattern with label 'Person' which will assign matches to the variable 'ee'
+- WHERE clause to constrain the results
+- ee.name = "Emil" compares name property to the value "Emil"
+- RETURN clause used to request particular results
+</code></pre></div></div>
+
+<h3 id="creating-the-database">Creating the database</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH (ee:Person) WHERE ee.name = "Emil"
+CREATE (js:Person { name: "Johan", from: "Sweden", learn: "surfing" }),
+(ir:Person { name: "Ian", from: "England", title: "author" }),
+(rvb:Person { name: "Rik", from: "Belgium", pet: "Orval" }),
+(ally:Person { name: "Allison", from: "California", hobby: "surfing" }),
+(ee)-[:KNOWS {since: 2001}]-&gt;(js),(ee)-[:KNOWS {rating: 5}]-&gt;(ir),
+(js)-[:KNOWS]-&gt;(ir),(js)-[:KNOWS]-&gt;(rvb),
+(ir)-[:KNOWS]-&gt;(js),(ir)-[:KNOWS]-&gt;(ally),
+(rvb)-[:KNOWS]-&gt;(ally)
+</code></pre></div></div>
+
+<p class="center large"><img src="http://localhost:4000/images/blog/neo4j_graph.png" alt="Graph created by data inserted from a Neo4j example" /></p>
+
+<p class="media-caption">Graph created by data inserted from a Neo4j example</p>
+
+<h3 id="example-queries">Example Queries</h3>
+
+<p>View everything in database</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH (n) RETURN n
+</code></pre></div></div>
+
+<p>Returns all people related to “Cloud Atlas”</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH (people:Person)-[relatedTo]-(:Movie {title: "Cloud Atlas"}) RETURN people.name, Type(relatedTo), relatedTo
+</code></pre></div></div>
+
+<p>Deleting everything in database:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH (a:Person),(m:Movie) OPTIONAL MATCH (a)-[r1]-(), (m)-[r2]-() DELETE a,r1,m,r2
+</code></pre></div></div>
+
+<h3 id="useful-for-6-degrees-of-separation">Useful for 6 degrees of separation</h3>
+
+<p>Finds all connections 4 hops away from Kevin Bacon</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH (bacon:Person {name:"Kevin Bacon"})-[*1..4]-(hollywood)
+RETURN DISTINCT hollywood
+</code></pre></div></div>
+
+<p>Finds shortest path between two people</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH p=shortestPath(
+  (bacon:Person {name:"Kevin Bacon"})-[*]-(meg:Person {name:"Meg Ryan"})
+)
+RETURN p
+</code></pre></div></div>
+
+<p><em>fin</em></p>
+:ET

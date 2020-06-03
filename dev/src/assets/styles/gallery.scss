@@ -1,0 +1,242 @@
+.additional-projects {
+  margin-top: 60px;
+  .additional-tiles {
+    margin: 20px auto 40px;
+    overflow-x: scroll;
+  }
+}
+
+.tiles {
+  padding: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+  &.additional {
+    width: 100%;
+    min-width: 780px;
+    .tile-wrapper {
+      width: 240px;
+      height: 250px;
+      .tile {
+        height: 130px;
+      }
+      .project-info {
+        .tagline-wrapper {
+          p {
+            margin-top: initial;
+            line-height: initial;
+            font-family: $main-font;
+          }
+          .tile-title {
+            font-family: $tile-font;
+          }
+          .tile-tagline {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  .tile-wrapper {
+    width: 280px;
+    height: 280px;
+    margin: 12px 12px;
+    @include media(medium) {
+      margin: 10px 10px;
+    }
+    background-color: #ffffff;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: border-color 0.25s $transition;
+    transition: border-color 0.25s $transition;
+    &:hover {
+      border-bottom: 2px solid $blue;
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        color: #000;
+      }
+    }
+    .tile {
+      width: 100%;
+      height: 160px;
+      margin: 0 auto;
+      position: relative;
+      display: block;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .project-info {
+      text-align: left;
+      .tagline-wrapper {
+        padding: 15px 20px 0;
+        .tile-title {
+          font-family: $tile-font;
+          font-weight: bold;
+          font-size: 16px;
+          text-transform: uppercase;
+          margin-bottom: 7px;
+        }
+        .tile-tagline {
+          font-size: 15px;
+        }
+      }
+      .tile-footer-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        width: 100%;
+        padding-bottom: 15px;
+        .tile-date {
+          font-size: 12px;
+          color: $copy;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 544px) {
+  .tiles {
+    .tile {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 35px;
+      -webkit-filter: initial;
+      filter: initial;
+      .filter {
+        background-color: rgba(255, 255, 255, 0.02);
+        overflow: visible;
+        mix-blend-mode: initial;
+        hr {
+          display: none;
+        }
+        p {
+          position: absolute;
+          color: #000;
+          width: 100%;
+          font-align: center;
+          top: initial;
+          bottom: -25px;
+          font-size: 20px;
+          text-align: center;
+          margin: 0;
+          opacity: 1;
+          &.tile-date {
+            display: none;
+          }
+          &.tile-tagline {
+            display: none;
+          }
+        }
+        &:hover {
+          background-color: transparent;
+          p {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+#pokemon {
+  background-image: url("../../images/pokemon/pokemon_thumb_2.png");
+}
+
+#breakerbot {
+  background-image: url("../../images/breakerbot/breakerbot_thumb.png");
+}
+
+#processing {
+  background-image: url("../../images/processing/processing_thumb.jpg");
+  // background-size: contain;
+}
+
+#sharks_and_minnows {
+  background-image: url("../../images/sharks/thumb.png");
+}
+
+#neif {
+  background-image: url("../../images/neif/thumb.jpg");
+}
+
+#bostonhacks {
+  background-image: url("../../images/bostonhacks/thumb.png");
+}
+
+#typespecimen {
+  background-image: url("../../images/typespecimen/thumb2.png");
+}
+
+#map {
+  background-image: url("../../images/map/thumb.png");
+}
+
+#newyorktimes {
+  background-image: url("../../images/newyorktimes/thumb.gif");
+}
+
+#wikinauts {
+  background-image: url("../../images/wikinauts/thumb1.png");
+}
+
+#calvin {
+  background-image: url("../../images/calvin/thumb.png");
+}
+
+#orator {
+  background-image: url("../../images/orator/thumb.png");
+}
+
+#mbta {
+  background-image: url("../../images/mbta/thumb3.png");
+}
+
+#popallston {
+  background-image: url("../../images/popallston/screenshot2.gif");
+}
+
+#tabbo {
+  background-image: url("../../images/tabbo/thumb.png");
+}
+
+#timesmachine {
+  background-image: url("../../images/timesmachine/thumb.png");
+}
+
+#cribbage {
+  background-image: url("../../images/cribbage/thumb2.jpg");
+}
+
+#counterpoint {
+  background-image: url("../../images/counterpoint/counterpoint_thumb.jpg");
+}
+
+#venmostrips {
+  background-image: url("../../images/venmo/venmo_strips_thumb.jpg");
+}
+
+#atc {
+  background-image: url("../../images/atc/atc-soundscape_thumb3.jpg");
+}
+
+#maproom {
+ background-image: url("../../images/maproom/robots_1.jpg");
+}

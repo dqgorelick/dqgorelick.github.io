@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af6dba3a.chunk.css",
+    "main.js": "/static/js/main.dccf27a4.chunk.js",
+    "main.js.map": "/static/js/main.dccf27a4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.63473bd0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.63473bd0.js.map",
+    "static/js/2.c44bbf23.chunk.js": "/static/js/2.c44bbf23.chunk.js",
+    "static/js/2.c44bbf23.chunk.js.map": "/static/js/2.c44bbf23.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5aa817d4674dbbd7d7abc995e3c3c812.js": "/precache-manifest.5aa817d4674dbbd7d7abc995e3c3c812.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.af6dba3a.chunk.css.map": "/static/css/main.af6dba3a.chunk.css.map",
+    "static/js/2.c44bbf23.chunk.js.LICENSE.txt": "/static/js/2.c44bbf23.chunk.js.LICENSE.txt",
+    "static/media/all.scss": "/static/media/venmo_strips_thumb.6f87c8c1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63473bd0.js",
+    "static/js/2.c44bbf23.chunk.js",
+    "static/css/main.af6dba3a.chunk.css",
+    "static/js/main.dccf27a4.chunk.js"
+  ]
+}
