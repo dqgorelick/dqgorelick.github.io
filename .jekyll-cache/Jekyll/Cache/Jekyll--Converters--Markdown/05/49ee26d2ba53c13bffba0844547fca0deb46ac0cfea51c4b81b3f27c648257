@@ -1,4 +1,4 @@
-I"Y<h3 id="literally-everything-is-a-vector">Literally everything is a Vector</h3>
+I"Ë<h3 id="literally-everything-is-a-vector">Literally everything is a Vector</h3>
 
 <p>Lecture at SFPC by Patricio Gonzalez Vivo, author of <a href="https://thebookofshaders.com/" target="_blank">The Book of Shaders</a>.</p>
 
@@ -8,7 +8,7 @@
 
 <p>The code for this is here:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ifdef GL_ES
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ifdef GL_ES
 precision mediump float;
 #endif
 
@@ -30,14 +30,14 @@ void main() {
 
 <p>The main input here is gl_FragCoord, it is a vec3 that has the value of each pixel (0 to width-1)</p>
 
-<p>The main output is <code class="highlighter-rouge">gl_FragColor</code>, a vec4 which has RED, BLUE, GREEN, and ALPHA.</p>
+<p>The main output is <code class="language-plaintext highlighter-rouge">gl_FragColor</code>, a vec4 which has RED, BLUE, GREEN, and ALPHA.</p>
 
 <p>We are creating a vec2 using the gl_FragCoord.xy. We normalize it with this:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vec2 st = gl_FragCoord.xy/u_resolution.xy;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vec2 st = gl_FragCoord.xy/u_resolution.xy;
 </code></pre></div></div>
 
 <p>We then create a gradient with the RED, and GREEN values by doing so:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>color = vec3(st.x,st.y,0.0);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>color = vec3(st.x,st.y,0.0);
 </code></pre></div></div>
 
 <p>The last value of the BLUE is set to 0.0, and the ALPHA is set to be 1.0.</p>
@@ -52,7 +52,7 @@ void main() {
 
 <p>The code for the piece above:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -83,7 +83,7 @@ void main() {
 }
 </code></pre></div></div>
 
-<p>The key piece of code which creates the effect is <code class="highlighter-rouge">sin(PI/-pos.y*PI)</code>.</p>
+<p>The key piece of code which creates the effect is <code class="language-plaintext highlighter-rouge">sin(PI/-pos.y*PI)</code>.</p>
 
 <h3 id="main-takeaway">Main takeaway</h3>
 

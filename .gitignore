@@ -7,3 +7,5 @@ _site
 Gemfile
 Gemfile.lock
 node_modules
+dev/build/
+.jekyll-cache

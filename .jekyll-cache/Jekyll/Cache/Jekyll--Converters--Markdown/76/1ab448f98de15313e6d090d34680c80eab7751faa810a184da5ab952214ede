@@ -1,4 +1,4 @@
-I"K
+I"^
 <h3 id="my-week-without-google">My “week” without Google</h3>
 
 <p>Tasked with the mission to see what life is like without using Google for a week, this is my strategy.</p>
@@ -11,7 +11,7 @@
 
 <h3 id="step-one">Step one:</h3>
 
-<p>iPhones have the option to disable data in certain apps. If you navigate to <code class="highlighter-rouge">Settings &gt; Cellular</code> you should see a screen similar to this.</p>
+<p>iPhones have the option to disable data in certain apps. If you navigate to <code class="language-plaintext highlighter-rouge">Settings &gt; Cellular</code> you should see a screen similar to this.</p>
 
 <p class="center medium"><img src="http://localhost:4000/images/blog/dumb_phone.png" alt="Normal smartphone screenshot" /></p>
 

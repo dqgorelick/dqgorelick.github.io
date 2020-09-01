@@ -1,4 +1,4 @@
-I"<h3 id="how-to-get-info-from-any-public-transaction-on-venmo">How to get info from any (public) transaction on Venmo</h3>
+I"<h3 id="how-to-get-info-from-any-public-transaction-on-venmo">How to get info from any (public) transaction on Venmo</h3>
 
 <p>Venmo is a popular payment app used by a lot of people (at least a lot of people I interact with). Whenever you pay someone venmo (by default) adds your transaction to the public feed. You can see the public feed within the native apps, as well as the website. On the main page of the website you can see this:</p>
 
@@ -12,32 +12,32 @@
 
 <p class="media-caption">XHR calls being made to the public API</p>
 
-<p>It appears the endpoint that’s being it is <code class="highlighter-rouge">https://venmo.com/api/v5/public</code>. This request returns 20 transactions that occured at the current UNIX timestamp. Success!</p>
+<p>It appears the endpoint that’s being it is <code class="language-plaintext highlighter-rouge">https://venmo.com/api/v5/public</code>. This request returns 20 transactions that occured at the current UNIX timestamp. Success!</p>
 
-<p>You can go to the endpoint and see the results yourself: <a href="https://venmo.com/api/v5/public" target="_blank"><code class="highlighter-rouge">https://venmo.com/api/v5/public</code></a></p>
+<p>You can go to the endpoint and see the results yourself: <a href="https://venmo.com/api/v5/public" target="_blank"><code class="language-plaintext highlighter-rouge">https://venmo.com/api/v5/public</code></a></p>
 
 <p>This is cool, but what can we really do with 20 transactions, limited to the current UNIX timestamp? Let’s mess with the query params and see what happens.</p>
 
 <h3 id="messing-with-query-params">Messing with Query Params</h3>
 
-<p>Query parameters can be appended to the url to receive different data from the endpoint. On the screenshot above you can see that the query parameter <code class="highlighter-rouge">until</code> is added the the query made. Let’s start there. The query made was <code class="highlighter-rouge">"http://venmo.com/api/v5/public?until=1477420066"</code>.</p>
+<p>Query parameters can be appended to the url to receive different data from the endpoint. On the screenshot above you can see that the query parameter <code class="language-plaintext highlighter-rouge">until</code> is added the the query made. Let’s start there. The query made was <code class="language-plaintext highlighter-rouge">"http://venmo.com/api/v5/public?until=1477420066"</code>.</p>
 
 <p>Most “coders” can recognize the number attached as a UNIX timestamp. The unix timestamp is the amount of seconds since January 1st 1980. It’s just an easier way to display numbers than MM/DD/YYYY or DD/MM/YYYY.</p>
 
-<p>There is no published documentation on the public venmo API, but we can make some assumptions. Since there is an <code class="highlighter-rouge">until</code> query, we can assume there is something like a <code class="highlighter-rouge">since</code> or <code class="highlighter-rouge">from</code> query parameter. Let’s try it out.</p>
+<p>There is no published documentation on the public venmo API, but we can make some assumptions. Since there is an <code class="language-plaintext highlighter-rouge">until</code> query, we can assume there is something like a <code class="language-plaintext highlighter-rouge">since</code> or <code class="language-plaintext highlighter-rouge">from</code> query parameter. Let’s try it out.</p>
 
 <p>I use this site <a href="http://www.epochconverter.com/" target="_blank">http://www.epochconverter.com/</a> to make all of my UNIX conversions. Eventually we will use some sort of library in our code so we don’t have to resort to using this site.</p>
 
 <p>For now though, let’s try getting data from a certain time. I am going to try getting data from a week ago. The results from the site are as shown:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch timestamp: 1476921600
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch timestamp: 1476921600
 Timestamp in milliseconds: 1476921600000
 Human time (GMT): Thu, 20 Oct 2016 00:00:00 GMT
 Human time (your time zone): 10/19/2016, 8:00:00 PM
 </code></pre></div></div>
 
-<p>This can be our <code class="highlighter-rouge">since</code> time. Let’s make our <code class="highlighter-rouge">until</code> time one minute in the future from this.</p>
+<p>This can be our <code class="language-plaintext highlighter-rouge">since</code> time. Let’s make our <code class="language-plaintext highlighter-rouge">until</code> time one minute in the future from this.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch timestamp: 1476921660
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch timestamp: 1476921660
 Timestamp in milliseconds: 1476921660000
 Human time (GMT): Thu, 20 Oct 2016 00:01:00 GMT
 Human time (your time zone): 10/19/2016, 8:01:00 PM
@@ -46,10 +46,10 @@ Human time (your time zone): 10/19/2016, 8:01:00 PM
 <p>We can take “Epoch timestamp” and append that to our query.</p>
 
 <p>Our final query should look like this:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://venmo.com/api/v5/public?since=1476921600&amp;until=1476921660
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://venmo.com/api/v5/public?since=1476921600&amp;until=1476921660
 </code></pre></div></div>
 
-<p>We can chain as many query parameters as we want, and as you can see, each one is separated by an ampersand (<code class="highlighter-rouge">&amp;</code>).</p>
+<p>We can chain as many query parameters as we want, and as you can see, each one is separated by an ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>).</p>
 
 <p>If we copy and paste the query into our browser we can see the result. I use a chrome extension called “JSONView” so it formats my JSON nicely. A snippet from the result:</p>
 
@@ -61,7 +61,7 @@ Human time (your time zone): 10/19/2016, 8:01:00 PM
 
 <p>It’s data! It looks like we have a list of transactions. There also seems to be paging so we can see more transactions. By using the search function, it is also aparent that there are only 20 transactions listed. Hmm I think we can do better. Let’s try adding the limit query parameter to try to increase the amount of transactions returned.</p>
 
-<p>We are going to use the same query as before, but now let’s append a limit parameter. Our final query looks like this: <code class="highlighter-rouge">https://venmo.com/api/v5/public?since=1476921600&amp;until=1476921660&amp;limit=1000000</code></p>
+<p>We are going to use the same query as before, but now let’s append a limit parameter. Our final query looks like this: <code class="language-plaintext highlighter-rouge">https://venmo.com/api/v5/public?since=1476921600&amp;until=1476921660&amp;limit=1000000</code></p>
 
 <p>We can see that there are not 1,000,000 results, but we did max-out the amount of results returned. It looks like in the minute from October 20th 12:00:00AM until October 20th 12:01:00:AM there were 471 transactions made on the service.</p>
 

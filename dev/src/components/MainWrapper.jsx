@@ -30,7 +30,7 @@ export default function MainWrapper(props) {
         {props.page === 'about' &&
           <AboutWrapper />
         }
-        <div className='copyright'>dan gorelick 2019</div>
+        <div className='copyright'>dan gorelick 2020</div>
       </div>
     );
   }

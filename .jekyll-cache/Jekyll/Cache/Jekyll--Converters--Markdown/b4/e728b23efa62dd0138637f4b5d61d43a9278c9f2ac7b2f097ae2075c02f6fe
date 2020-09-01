@@ -1,4 +1,4 @@
-I"X<h3 id="deploying-to-the--cloud-">Deploying to the ~~ Cloud ~~</h3>
+I"�<h3 id="deploying-to-the--cloud-">Deploying to the ~~ Cloud ~~</h3>
 
 <p>Recently for the SFPC Showcase, I created the <a href="http://danielgorelick.com/#venmobots" target="_blank">Venmo Strips</a> Comic Creator. For the installation it was suitable to run the web application locally, but now I want to deploy it. It is almost a static web app, except we need to make a server-side call to the public Venmo API to refresh the data.</p>
 
@@ -34,7 +34,7 @@
 
 <p>The crux of the Lambda function is here:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exports.handler = (event, context, callback) =&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exports.handler = (event, context, callback) =&gt; {
   request(`https://venmo.com/api/v5/public?limit=${LIMIT}`, function(error, response, body) {
     if (!error &amp;&amp; response.statusCode == 200) {
       filterPayments(body, (filtered) =&gt; {
@@ -54,7 +54,7 @@
 <h3 id="connecting-it-all-together">Connecting it all together</h3>
 <p>The moment of truth came when testing the Lambda function. I used the AWS web tool to “Test” the function, and upon checking the S3 bucket– the data was sent!</p>
 
-<p>There was however, one hiccup. The file being sent <code class="highlighter-rouge">feed.json</code> was not being read properly from the client side. The GET request kept returning a 403 error. After a bit of time on Google / Stackoverflow I found that this was due to the lack of a bucket policy for <code class="highlighter-rouge">"Action": "s3:GetObject"</code>. After adding the policy, things worked!</p>
+<p>There was however, one hiccup. The file being sent <code class="language-plaintext highlighter-rouge">feed.json</code> was not being read properly from the client side. The GET request kept returning a 403 error. After a bit of time on Google / Stackoverflow I found that this was due to the lack of a bucket policy for <code class="language-plaintext highlighter-rouge">"Action": "s3:GetObject"</code>. After adding the policy, things worked!</p>
 
 <h3 id="cron-jobing">Cron Jobing</h3>
 <p>Probably the most straight-forward part. Last but not least was setting up the cron job to continually update the data. After a google search I found the CloudWatch did exactly that. I was able to connect the Lambda function to the CloudWatch job, and have it run every 5 minutes.</p>
